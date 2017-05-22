@@ -4,6 +4,8 @@ All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**authorizeReturnAccessToken**](UsersApi.md#authorizeReturnAccessToken) | **POST** /oauth2/token | 
+[**authorizeReturnCode**](UsersApi.md#authorizeReturnCode) | **GET** /oauth2/authorize | 
 [**changeMobile**](UsersApi.md#changeMobile) | **POST** /user/changeMobile | 
 [**changeStore**](UsersApi.md#changeStore) | **POST** /user/changeStore | 
 [**confirmMobilePin**](UsersApi.md#confirmMobilePin) | **POST** /user/confirmMobilePin | 
@@ -20,6 +22,106 @@ Method | HTTP request | Description
 [**submitMobile**](UsersApi.md#submitMobile) | **POST** /user/submitMobile | 
 [**userGetDetails**](UsersApi.md#userGetDetails) | **GET** /user/details/{id} | 
 
+
+# **authorizeReturnAccessToken**
+> \Swagger\Client\Model\AccessToken authorizeReturnAccessToken($activation_code_parameters)
+
+
+
+Given an Activation Code, Client App Username and Password header parameters, returns an Access Token.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuthClient
+Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+
+$api_instance = new Swagger\Client\Api\UsersApi();
+$activation_code_parameters = new \Swagger\Client\Model\ActivationCodeParameters(); // \Swagger\Client\Model\ActivationCodeParameters | Activation Code parameters consisting of grant_type that must have the default value \"authorization_code\" and code parameters that must be the Activation Code returned from /oauth2/authorize.
+
+try {
+    $result = $api_instance->authorizeReturnAccessToken($activation_code_parameters);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->authorizeReturnAccessToken: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activation_code_parameters** | [**\Swagger\Client\Model\ActivationCodeParameters**](../Model/\Swagger\Client\Model\ActivationCodeParameters.md)| Activation Code parameters consisting of grant_type that must have the default value \&quot;authorization_code\&quot; and code parameters that must be the Activation Code returned from /oauth2/authorize. |
+
+### Return type
+
+[**\Swagger\Client\Model\AccessToken**](../Model/AccessToken.md)
+
+### Authorization
+
+[basicAuthClient](../../README.md#basicAuthClient)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **authorizeReturnCode**
+> \Swagger\Client\Model\ActivationCode authorizeReturnCode($client_id, $response_type)
+
+
+
+User Authorization functionality based on client app id and user logged-in information.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuthUser
+Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+
+$api_instance = new Swagger\Client\Api\UsersApi();
+$client_id = "client_id_example"; // string | Client ID for the Application that requests access to the User.
+$response_type = "response_type_example"; // string | response_type must equals the value code for the default functionality.
+
+try {
+    $result = $api_instance->authorizeReturnCode($client_id, $response_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->authorizeReturnCode: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **client_id** | **string**| Client ID for the Application that requests access to the User. |
+ **response_type** | **string**| response_type must equals the value code for the default functionality. |
+
+### Return type
+
+[**\Swagger\Client\Model\ActivationCode**](../Model/ActivationCode.md)
+
+### Authorization
+
+[basicAuthUser](../../README.md#basicAuthUser)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeMobile**
 > \Swagger\Client\Model\PIN changeMobile($change_mobile_number_parameter)
