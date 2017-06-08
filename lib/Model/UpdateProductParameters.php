@@ -57,8 +57,8 @@ class UpdateProductParameters implements ArrayAccess
         'productype' => 'string',
         'name' => 'string',
         'description' => 'string',
-        'images_uris' => 'string[]',
-        'brand_id' => 'string',
+        'imagesUris' => 'string[]',
+        'brandID' => 'string',
         'merchantsids' => 'string[]'
     ];
 
@@ -75,8 +75,8 @@ class UpdateProductParameters implements ArrayAccess
         'productype' => 'productype',
         'name' => 'name',
         'description' => 'description',
-        'images_uris' => 'imagesUris',
-        'brand_id' => 'brandID',
+        'imagesUris' => 'imagesUris',
+        'brandID' => 'brandID',
         'merchantsids' => 'merchantsids'
     ];
 
@@ -89,8 +89,8 @@ class UpdateProductParameters implements ArrayAccess
         'productype' => 'setProductype',
         'name' => 'setName',
         'description' => 'setDescription',
-        'images_uris' => 'setImagesUris',
-        'brand_id' => 'setBrandId',
+        'imagesUris' => 'setImagesUris',
+        'brandID' => 'setBrandID',
         'merchantsids' => 'setMerchantsids'
     ];
 
@@ -103,8 +103,8 @@ class UpdateProductParameters implements ArrayAccess
         'productype' => 'getProductype',
         'name' => 'getName',
         'description' => 'getDescription',
-        'images_uris' => 'getImagesUris',
-        'brand_id' => 'getBrandId',
+        'imagesUris' => 'getImagesUris',
+        'brandID' => 'getBrandID',
         'merchantsids' => 'getMerchantsids'
     ];
 
@@ -142,8 +142,8 @@ class UpdateProductParameters implements ArrayAccess
         $this->container['productype'] = isset($data['productype']) ? $data['productype'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['images_uris'] = isset($data['images_uris']) ? $data['images_uris'] : null;
-        $this->container['brand_id'] = isset($data['brand_id']) ? $data['brand_id'] : null;
+        $this->container['imagesUris'] = isset($data['imagesUris']) ? $data['imagesUris'] : null;
+        $this->container['brandID'] = isset($data['brandID']) ? $data['brandID'] : null;
         $this->container['merchantsids'] = isset($data['merchantsids']) ? $data['merchantsids'] : null;
     }
 
@@ -183,7 +183,7 @@ class UpdateProductParameters implements ArrayAccess
 
     /**
      * Sets productype
-     * @param string $productype
+     * @param string $productype Product type must be between 2 and 1084 characters and can contain only letters, digits and dashes
      * @return $this
      */
     public function setProductype($productype)
@@ -204,7 +204,7 @@ class UpdateProductParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Product name must be between 2 and 1084 characters
      * @return $this
      */
     public function setName($name)
@@ -225,7 +225,7 @@ class UpdateProductParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Product description must be between 2 and 1284 characters
      * @return $this
      */
     public function setDescription($description)
@@ -236,43 +236,43 @@ class UpdateProductParameters implements ArrayAccess
     }
 
     /**
-     * Gets images_uris
+     * Gets imagesUris
      * @return string[]
      */
     public function getImagesUris()
     {
-        return $this->container['images_uris'];
+        return $this->container['imagesUris'];
     }
 
     /**
-     * Sets images_uris
-     * @param string[] $images_uris
+     * Sets imagesUris
+     * @param string[] $imagesUris imagesUris contain array with elements valid image url
      * @return $this
      */
-    public function setImagesUris($images_uris)
+    public function setImagesUris($imagesUris)
     {
-        $this->container['images_uris'] = $images_uris;
+        $this->container['imagesUris'] = $imagesUris;
 
         return $this;
     }
 
     /**
-     * Gets brand_id
+     * Gets brandID
      * @return string
      */
-    public function getBrandId()
+    public function getBrandID()
     {
-        return $this->container['brand_id'];
+        return $this->container['brandID'];
     }
 
     /**
-     * Sets brand_id
-     * @param string $brand_id
+     * Sets brandID
+     * @param string $brandID Brand ID for the Brand that the product will be connected with
      * @return $this
      */
-    public function setBrandId($brand_id)
+    public function setBrandID($brandID)
     {
-        $this->container['brand_id'] = $brand_id;
+        $this->container['brandID'] = $brandID;
 
         return $this;
     }
@@ -288,7 +288,7 @@ class UpdateProductParameters implements ArrayAccess
 
     /**
      * Sets merchantsids
-     * @param string[] $merchantsids
+     * @param string[] $merchantsids contain array with elements of merhant ids for the product
      * @return $this
      */
     public function setMerchantsids($merchantsids)

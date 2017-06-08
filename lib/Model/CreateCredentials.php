@@ -55,15 +55,15 @@ class CreateCredentials implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'last_name' => 'string',
+        'lastName' => 'string',
         'email' => 'string',
         'password' => 'string',
-        'date_of_birth' => '\DateTime',
+        'dateOfBirth' => '\DateTime',
         'gender' => 'string',
-        'fb_id' => 'string',
-        'facebook_image_url' => 'string',
-        'google_id' => 'string',
-        'google_img_url' => 'string'
+        'fbID' => 'string',
+        'facebookImageURL' => 'string',
+        'googleID' => 'string',
+        'googleImgURL' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -77,15 +77,15 @@ class CreateCredentials implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'last_name' => 'lastName',
+        'lastName' => 'lastName',
         'email' => 'email',
         'password' => 'password',
-        'date_of_birth' => 'dateOfBirth',
+        'dateOfBirth' => 'dateOfBirth',
         'gender' => 'gender',
-        'fb_id' => 'fbID',
-        'facebook_image_url' => 'facebookImageURL',
-        'google_id' => 'googleID',
-        'google_img_url' => 'googleImgURL'
+        'fbID' => 'fbID',
+        'facebookImageURL' => 'facebookImageURL',
+        'googleID' => 'googleID',
+        'googleImgURL' => 'googleImgURL'
     ];
 
 
@@ -95,15 +95,15 @@ class CreateCredentials implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'last_name' => 'setLastName',
+        'lastName' => 'setLastName',
         'email' => 'setEmail',
         'password' => 'setPassword',
-        'date_of_birth' => 'setDateOfBirth',
+        'dateOfBirth' => 'setDateOfBirth',
         'gender' => 'setGender',
-        'fb_id' => 'setFbId',
-        'facebook_image_url' => 'setFacebookImageUrl',
-        'google_id' => 'setGoogleId',
-        'google_img_url' => 'setGoogleImgUrl'
+        'fbID' => 'setFbID',
+        'facebookImageURL' => 'setFacebookImageURL',
+        'googleID' => 'setGoogleID',
+        'googleImgURL' => 'setGoogleImgURL'
     ];
 
 
@@ -113,15 +113,15 @@ class CreateCredentials implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'last_name' => 'getLastName',
+        'lastName' => 'getLastName',
         'email' => 'getEmail',
         'password' => 'getPassword',
-        'date_of_birth' => 'getDateOfBirth',
+        'dateOfBirth' => 'getDateOfBirth',
         'gender' => 'getGender',
-        'fb_id' => 'getFbId',
-        'facebook_image_url' => 'getFacebookImageUrl',
-        'google_id' => 'getGoogleId',
-        'google_img_url' => 'getGoogleImgUrl'
+        'fbID' => 'getFbID',
+        'facebookImageURL' => 'getFacebookImageURL',
+        'googleID' => 'getGoogleID',
+        'googleImgURL' => 'getGoogleImgURL'
     ];
 
     public static function attributeMap()
@@ -156,15 +156,15 @@ class CreateCredentials implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['date_of_birth'] = isset($data['date_of_birth']) ? $data['date_of_birth'] : null;
+        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['fb_id'] = isset($data['fb_id']) ? $data['fb_id'] : null;
-        $this->container['facebook_image_url'] = isset($data['facebook_image_url']) ? $data['facebook_image_url'] : null;
-        $this->container['google_id'] = isset($data['google_id']) ? $data['google_id'] : null;
-        $this->container['google_img_url'] = isset($data['google_img_url']) ? $data['google_img_url'] : null;
+        $this->container['fbID'] = isset($data['fbID']) ? $data['fbID'] : null;
+        $this->container['facebookImageURL'] = isset($data['facebookImageURL']) ? $data['facebookImageURL'] : null;
+        $this->container['googleID'] = isset($data['googleID']) ? $data['googleID'] : null;
+        $this->container['googleImgURL'] = isset($data['googleImgURL']) ? $data['googleImgURL'] : null;
     }
 
     /**
@@ -179,8 +179,8 @@ class CreateCredentials implements ArrayAccess
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['last_name'] === null) {
-            $invalid_properties[] = "'last_name' can't be null";
+        if ($this->container['lastName'] === null) {
+            $invalid_properties[] = "'lastName' can't be null";
         }
         if ($this->container['email'] === null) {
             $invalid_properties[] = "'email' can't be null";
@@ -203,7 +203,7 @@ class CreateCredentials implements ArrayAccess
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['last_name'] === null) {
+        if ($this->container['lastName'] === null) {
             return false;
         }
         if ($this->container['email'] === null) {
@@ -227,7 +227,7 @@ class CreateCredentials implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name User first name must be between 2 and 485 characters and can contain only letters, digits and dashes.
      * @return $this
      */
     public function setName($name)
@@ -238,22 +238,22 @@ class CreateCredentials implements ArrayAccess
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
-     * @param string $last_name
+     * Sets lastName
+     * @param string $lastName User last name must be between 2 and 485 characters and can contain only letters.
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -269,7 +269,7 @@ class CreateCredentials implements ArrayAccess
 
     /**
      * Sets email
-     * @param string $email
+     * @param string $email User email address
      * @return $this
      */
     public function setEmail($email)
@@ -290,7 +290,7 @@ class CreateCredentials implements ArrayAccess
 
     /**
      * Sets password
-     * @param string $password
+     * @param string $password User password
      * @return $this
      */
     public function setPassword($password)
@@ -301,22 +301,22 @@ class CreateCredentials implements ArrayAccess
     }
 
     /**
-     * Gets date_of_birth
+     * Gets dateOfBirth
      * @return \DateTime
      */
     public function getDateOfBirth()
     {
-        return $this->container['date_of_birth'];
+        return $this->container['dateOfBirth'];
     }
 
     /**
-     * Sets date_of_birth
-     * @param \DateTime $date_of_birth
+     * Sets dateOfBirth
+     * @param \DateTime $dateOfBirth User date of birth must be a string representing an RFC2822 or ISO 8601 date
      * @return $this
      */
-    public function setDateOfBirth($date_of_birth)
+    public function setDateOfBirth($dateOfBirth)
     {
-        $this->container['date_of_birth'] = $date_of_birth;
+        $this->container['dateOfBirth'] = $dateOfBirth;
 
         return $this;
     }
@@ -332,7 +332,7 @@ class CreateCredentials implements ArrayAccess
 
     /**
      * Sets gender
-     * @param string $gender
+     * @param string $gender User gender with possible values male/female/other
      * @return $this
      */
     public function setGender($gender)
@@ -343,85 +343,85 @@ class CreateCredentials implements ArrayAccess
     }
 
     /**
-     * Gets fb_id
+     * Gets fbID
      * @return string
      */
-    public function getFbId()
+    public function getFbID()
     {
-        return $this->container['fb_id'];
+        return $this->container['fbID'];
     }
 
     /**
-     * Sets fb_id
-     * @param string $fb_id
+     * Sets fbID
+     * @param string $fbID Facebook ID for User to be created with his facebook id
      * @return $this
      */
-    public function setFbId($fb_id)
+    public function setFbID($fbID)
     {
-        $this->container['fb_id'] = $fb_id;
+        $this->container['fbID'] = $fbID;
 
         return $this;
     }
 
     /**
-     * Gets facebook_image_url
+     * Gets facebookImageURL
      * @return string
      */
-    public function getFacebookImageUrl()
+    public function getFacebookImageURL()
     {
-        return $this->container['facebook_image_url'];
+        return $this->container['facebookImageURL'];
     }
 
     /**
-     * Sets facebook_image_url
-     * @param string $facebook_image_url
+     * Sets facebookImageURL
+     * @param string $facebookImageURL Facebook Image URL for User that was created with facebook id
      * @return $this
      */
-    public function setFacebookImageUrl($facebook_image_url)
+    public function setFacebookImageURL($facebookImageURL)
     {
-        $this->container['facebook_image_url'] = $facebook_image_url;
+        $this->container['facebookImageURL'] = $facebookImageURL;
 
         return $this;
     }
 
     /**
-     * Gets google_id
+     * Gets googleID
      * @return string
      */
-    public function getGoogleId()
+    public function getGoogleID()
     {
-        return $this->container['google_id'];
+        return $this->container['googleID'];
     }
 
     /**
-     * Sets google_id
-     * @param string $google_id
+     * Sets googleID
+     * @param string $googleID Google ID for User to be created with his google id
      * @return $this
      */
-    public function setGoogleId($google_id)
+    public function setGoogleID($googleID)
     {
-        $this->container['google_id'] = $google_id;
+        $this->container['googleID'] = $googleID;
 
         return $this;
     }
 
     /**
-     * Gets google_img_url
+     * Gets googleImgURL
      * @return string
      */
-    public function getGoogleImgUrl()
+    public function getGoogleImgURL()
     {
-        return $this->container['google_img_url'];
+        return $this->container['googleImgURL'];
     }
 
     /**
-     * Sets google_img_url
-     * @param string $google_img_url
+     * Sets googleImgURL
+     * @param string $googleImgURL Google Image URL for User that was created with Google id
      * @return $this
      */
-    public function setGoogleImgUrl($google_img_url)
+    public function setGoogleImgURL($googleImgURL)
     {
-        $this->container['google_img_url'] = $google_img_url;
+        $this->container['googleImgURL'] = $googleImgURL;
 
         return $this;
     }

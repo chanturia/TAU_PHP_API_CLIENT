@@ -83,9 +83,9 @@ class StoreIDTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "store_id"
+     * Test attribute "storeID"
      */
-    public function testPropertyStoreId()
+    public function testPropertyStoreID()
     {
 
     }

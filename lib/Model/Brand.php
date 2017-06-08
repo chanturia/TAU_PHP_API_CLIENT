@@ -57,10 +57,10 @@ class Brand implements ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'type' => 'string',
-        'created_by' => 'string',
+        'createdBy' => 'string',
         'description' => 'string',
-        'main_image_url' => 'string',
-        'logo_url' => 'string'
+        'mainImageURL' => 'string',
+        'logoURL' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -76,10 +76,10 @@ class Brand implements ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'type' => 'type',
-        'created_by' => 'createdBy',
+        'createdBy' => 'createdBy',
         'description' => 'description',
-        'main_image_url' => 'mainImageURL',
-        'logo_url' => 'logoURL'
+        'mainImageURL' => 'mainImageURL',
+        'logoURL' => 'logoURL'
     ];
 
 
@@ -91,10 +91,10 @@ class Brand implements ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'type' => 'setType',
-        'created_by' => 'setCreatedBy',
+        'createdBy' => 'setCreatedBy',
         'description' => 'setDescription',
-        'main_image_url' => 'setMainImageUrl',
-        'logo_url' => 'setLogoUrl'
+        'mainImageURL' => 'setMainImageURL',
+        'logoURL' => 'setLogoURL'
     ];
 
 
@@ -106,10 +106,10 @@ class Brand implements ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'type' => 'getType',
-        'created_by' => 'getCreatedBy',
+        'createdBy' => 'getCreatedBy',
         'description' => 'getDescription',
-        'main_image_url' => 'getMainImageUrl',
-        'logo_url' => 'getLogoUrl'
+        'mainImageURL' => 'getMainImageURL',
+        'logoURL' => 'getLogoURL'
     ];
 
     public static function attributeMap()
@@ -146,10 +146,10 @@ class Brand implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
+        $this->container['createdBy'] = isset($data['createdBy']) ? $data['createdBy'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['main_image_url'] = isset($data['main_image_url']) ? $data['main_image_url'] : null;
-        $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
+        $this->container['mainImageURL'] = isset($data['mainImageURL']) ? $data['mainImageURL'] : null;
+        $this->container['logoURL'] = isset($data['logoURL']) ? $data['logoURL'] : null;
     }
 
     /**
@@ -253,22 +253,22 @@ class Brand implements ArrayAccess
     }
 
     /**
-     * Gets created_by
+     * Gets createdBy
      * @return string
      */
     public function getCreatedBy()
     {
-        return $this->container['created_by'];
+        return $this->container['createdBy'];
     }
 
     /**
-     * Sets created_by
-     * @param string $created_by
+     * Sets createdBy
+     * @param string $createdBy
      * @return $this
      */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy($createdBy)
     {
-        $this->container['created_by'] = $created_by;
+        $this->container['createdBy'] = $createdBy;
 
         return $this;
     }
@@ -295,43 +295,43 @@ class Brand implements ArrayAccess
     }
 
     /**
-     * Gets main_image_url
+     * Gets mainImageURL
      * @return string
      */
-    public function getMainImageUrl()
+    public function getMainImageURL()
     {
-        return $this->container['main_image_url'];
+        return $this->container['mainImageURL'];
     }
 
     /**
-     * Sets main_image_url
-     * @param string $main_image_url
+     * Sets mainImageURL
+     * @param string $mainImageURL
      * @return $this
      */
-    public function setMainImageUrl($main_image_url)
+    public function setMainImageURL($mainImageURL)
     {
-        $this->container['main_image_url'] = $main_image_url;
+        $this->container['mainImageURL'] = $mainImageURL;
 
         return $this;
     }
 
     /**
-     * Gets logo_url
+     * Gets logoURL
      * @return string
      */
-    public function getLogoUrl()
+    public function getLogoURL()
     {
-        return $this->container['logo_url'];
+        return $this->container['logoURL'];
     }
 
     /**
-     * Sets logo_url
-     * @param string $logo_url
+     * Sets logoURL
+     * @param string $logoURL
      * @return $this
      */
-    public function setLogoUrl($logo_url)
+    public function setLogoURL($logoURL)
     {
-        $this->container['logo_url'] = $logo_url;
+        $this->container['logoURL'] = $logoURL;
 
         return $this;
     }

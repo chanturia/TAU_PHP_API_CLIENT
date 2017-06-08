@@ -83,9 +83,9 @@ class CompanyBrandCreateParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }
@@ -107,17 +107,17 @@ class CompanyBrandCreateParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "main_image_url"
+     * Test attribute "mainImageURL"
      */
-    public function testPropertyMainImageUrl()
+    public function testPropertyMainImageURL()
     {
 
     }
 
     /**
-     * Test attribute "logo_url"
+     * Test attribute "logoURL"
      */
-    public function testPropertyLogoUrl()
+    public function testPropertyLogoURL()
     {
 
     }

@@ -123,7 +123,7 @@ class StoreTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "created_by"
+     * Test attribute "createdBy"
      */
     public function testPropertyCreatedBy()
     {

@@ -54,7 +54,7 @@ class Role implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'role_type' => 'string'
+        'roleType' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class Role implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'role_type' => 'roleType'
+        'roleType' => 'roleType'
     ];
 
 
@@ -76,7 +76,7 @@ class Role implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'role_type' => 'setRoleType'
+        'roleType' => 'setRoleType'
     ];
 
 
@@ -85,7 +85,7 @@ class Role implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'role_type' => 'getRoleType'
+        'roleType' => 'getRoleType'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class Role implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['role_type'] = isset($data['role_type']) ? $data['role_type'] : null;
+        $this->container['roleType'] = isset($data['roleType']) ? $data['roleType'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class Role implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['role_type'] === null) {
-            $invalid_properties[] = "'role_type' can't be null";
+        if ($this->container['roleType'] === null) {
+            $invalid_properties[] = "'roleType' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class Role implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['role_type'] === null) {
+        if ($this->container['roleType'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class Role implements ArrayAccess
 
 
     /**
-     * Gets role_type
+     * Gets roleType
      * @return string
      */
     public function getRoleType()
     {
-        return $this->container['role_type'];
+        return $this->container['roleType'];
     }
 
     /**
-     * Sets role_type
-     * @param string $role_type
+     * Sets roleType
+     * @param string $roleType
      * @return $this
      */
-    public function setRoleType($role_type)
+    public function setRoleType($roleType)
     {
-        $this->container['role_type'] = $role_type;
+        $this->container['roleType'] = $roleType;
 
         return $this;
     }

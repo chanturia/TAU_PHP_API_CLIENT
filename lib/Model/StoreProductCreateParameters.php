@@ -57,9 +57,9 @@ class StoreProductCreateParameters implements ArrayAccess
         'productype' => 'string',
         'name' => 'string',
         'description' => 'string',
-        'images_uris' => 'string[]',
-        'brand_id' => 'string',
-        'user_id' => 'string',
+        'imagesUris' => 'string[]',
+        'brandID' => 'string',
+        'userID' => 'string',
         'merchantsids' => 'string[]'
     ];
 
@@ -76,9 +76,9 @@ class StoreProductCreateParameters implements ArrayAccess
         'productype' => 'productype',
         'name' => 'name',
         'description' => 'description',
-        'images_uris' => 'imagesUris',
-        'brand_id' => 'brandID',
-        'user_id' => 'userID',
+        'imagesUris' => 'imagesUris',
+        'brandID' => 'brandID',
+        'userID' => 'userID',
         'merchantsids' => 'merchantsids'
     ];
 
@@ -91,9 +91,9 @@ class StoreProductCreateParameters implements ArrayAccess
         'productype' => 'setProductype',
         'name' => 'setName',
         'description' => 'setDescription',
-        'images_uris' => 'setImagesUris',
-        'brand_id' => 'setBrandId',
-        'user_id' => 'setUserId',
+        'imagesUris' => 'setImagesUris',
+        'brandID' => 'setBrandID',
+        'userID' => 'setUserID',
         'merchantsids' => 'setMerchantsids'
     ];
 
@@ -106,9 +106,9 @@ class StoreProductCreateParameters implements ArrayAccess
         'productype' => 'getProductype',
         'name' => 'getName',
         'description' => 'getDescription',
-        'images_uris' => 'getImagesUris',
-        'brand_id' => 'getBrandId',
-        'user_id' => 'getUserId',
+        'imagesUris' => 'getImagesUris',
+        'brandID' => 'getBrandID',
+        'userID' => 'getUserID',
         'merchantsids' => 'getMerchantsids'
     ];
 
@@ -146,9 +146,9 @@ class StoreProductCreateParameters implements ArrayAccess
         $this->container['productype'] = isset($data['productype']) ? $data['productype'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['images_uris'] = isset($data['images_uris']) ? $data['images_uris'] : null;
-        $this->container['brand_id'] = isset($data['brand_id']) ? $data['brand_id'] : null;
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['imagesUris'] = isset($data['imagesUris']) ? $data['imagesUris'] : null;
+        $this->container['brandID'] = isset($data['brandID']) ? $data['brandID'] : null;
+        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
         $this->container['merchantsids'] = isset($data['merchantsids']) ? $data['merchantsids'] : null;
     }
 
@@ -170,11 +170,11 @@ class StoreProductCreateParameters implements ArrayAccess
         if ($this->container['description'] === null) {
             $invalid_properties[] = "'description' can't be null";
         }
-        if ($this->container['images_uris'] === null) {
-            $invalid_properties[] = "'images_uris' can't be null";
+        if ($this->container['imagesUris'] === null) {
+            $invalid_properties[] = "'imagesUris' can't be null";
         }
-        if ($this->container['user_id'] === null) {
-            $invalid_properties[] = "'user_id' can't be null";
+        if ($this->container['userID'] === null) {
+            $invalid_properties[] = "'userID' can't be null";
         }
         return $invalid_properties;
     }
@@ -197,10 +197,10 @@ class StoreProductCreateParameters implements ArrayAccess
         if ($this->container['description'] === null) {
             return false;
         }
-        if ($this->container['images_uris'] === null) {
+        if ($this->container['imagesUris'] === null) {
             return false;
         }
-        if ($this->container['user_id'] === null) {
+        if ($this->container['userID'] === null) {
             return false;
         }
         return true;
@@ -218,7 +218,7 @@ class StoreProductCreateParameters implements ArrayAccess
 
     /**
      * Sets productype
-     * @param string $productype
+     * @param string $productype Product type must be between 2 and 1084 characters and can contain only letters, digits and dashes
      * @return $this
      */
     public function setProductype($productype)
@@ -239,7 +239,7 @@ class StoreProductCreateParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Product name must be between 2 and 1084 characters
      * @return $this
      */
     public function setName($name)
@@ -260,7 +260,7 @@ class StoreProductCreateParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Product description must be between 2 and 1284 characters
      * @return $this
      */
     public function setDescription($description)
@@ -271,64 +271,64 @@ class StoreProductCreateParameters implements ArrayAccess
     }
 
     /**
-     * Gets images_uris
+     * Gets imagesUris
      * @return string[]
      */
     public function getImagesUris()
     {
-        return $this->container['images_uris'];
+        return $this->container['imagesUris'];
     }
 
     /**
-     * Sets images_uris
-     * @param string[] $images_uris
+     * Sets imagesUris
+     * @param string[] $imagesUris imagesUris contain array with elements valid image url
      * @return $this
      */
-    public function setImagesUris($images_uris)
+    public function setImagesUris($imagesUris)
     {
-        $this->container['images_uris'] = $images_uris;
+        $this->container['imagesUris'] = $imagesUris;
 
         return $this;
     }
 
     /**
-     * Gets brand_id
+     * Gets brandID
      * @return string
      */
-    public function getBrandId()
+    public function getBrandID()
     {
-        return $this->container['brand_id'];
+        return $this->container['brandID'];
     }
 
     /**
-     * Sets brand_id
-     * @param string $brand_id
+     * Sets brandID
+     * @param string $brandID Brand ID for the Brand that the product will be connected with
      * @return $this
      */
-    public function setBrandId($brand_id)
+    public function setBrandID($brandID)
     {
-        $this->container['brand_id'] = $brand_id;
+        $this->container['brandID'] = $brandID;
 
         return $this;
     }
 
     /**
-     * Gets user_id
+     * Gets userID
      * @return string
      */
-    public function getUserId()
+    public function getUserID()
     {
-        return $this->container['user_id'];
+        return $this->container['userID'];
     }
 
     /**
-     * Sets user_id
-     * @param string $user_id
+     * Sets userID
+     * @param string $userID UserID for user who is making the creation of product
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserID($userID)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userID'] = $userID;
 
         return $this;
     }
@@ -344,7 +344,7 @@ class StoreProductCreateParameters implements ArrayAccess
 
     /**
      * Sets merchantsids
-     * @param string[] $merchantsids
+     * @param string[] $merchantsids contain array with elements of merhant ids for the product
      * @return $this
      */
     public function setMerchantsids($merchantsids)

@@ -93,15 +93,15 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\CreateStoreUserRole $create_store_user_role Store&#39;s User Priveleges Parameters for the store ID and UserID. (required)
-     * @param string $product_id ID of the Product connected with the Store (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Store (optional)
+     * @param \Swagger\Client\Model\CreateStoreUserRole $createStoreUserRole Store&#39;s User Priveleges Parameters for the store ID and UserID. (required)
+     * @param string $productID ID of the Product connected with the Store (optional)
+     * @param string $couponID ID of the Coupon connected with the Store (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function addUserRoleForStore($id, $create_store_user_role, $product_id = null, $coupon_id = null)
+    public function addUserRoleForStore($id, $createStoreUserRole, $productID = null, $couponID = null)
     {
-        list($response) = $this->addUserRoleForStoreWithHttpInfo($id, $create_store_user_role, $product_id, $coupon_id);
+        list($response) = $this->addUserRoleForStoreWithHttpInfo($id, $createStoreUserRole, $productID, $couponID);
         return $response;
     }
 
@@ -111,21 +111,21 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\CreateStoreUserRole $create_store_user_role Store&#39;s User Priveleges Parameters for the store ID and UserID. (required)
-     * @param string $product_id ID of the Product connected with the Store (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Store (optional)
+     * @param \Swagger\Client\Model\CreateStoreUserRole $createStoreUserRole Store&#39;s User Priveleges Parameters for the store ID and UserID. (required)
+     * @param string $productID ID of the Product connected with the Store (optional)
+     * @param string $couponID ID of the Coupon connected with the Store (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserRoleForStoreWithHttpInfo($id, $create_store_user_role, $product_id = null, $coupon_id = null)
+    public function addUserRoleForStoreWithHttpInfo($id, $createStoreUserRole, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserRoleForStore');
         }
-        // verify the required parameter 'create_store_user_role' is set
-        if ($create_store_user_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_store_user_role when calling addUserRoleForStore');
+        // verify the required parameter 'createStoreUserRole' is set
+        if ($createStoreUserRole === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createStoreUserRole when calling addUserRoleForStore');
         }
         // parse inputs
         $resourcePath = "/store/{id}/user";
@@ -140,12 +140,12 @@ class StoreApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
+        if ($productID !== null) {
+            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($productID);
         }
         // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
+        if ($couponID !== null) {
+            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($couponID);
         }
         // path params
         if ($id !== null) {
@@ -160,8 +160,8 @@ class StoreApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_store_user_role)) {
-            $_tempBody = $create_store_user_role;
+        if (isset($createStoreUserRole)) {
+            $_tempBody = $createStoreUserRole;
         }
 
         // for model (json/xml)
@@ -209,7 +209,7 @@ class StoreApi
      * 
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Store
+     * @return \Swagger\Client\Model\StoresArray
      */
     public function allStores()
     {
@@ -223,7 +223,7 @@ class StoreApi
      * 
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Store, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\StoresArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function allStoresWithHttpInfo()
     {
@@ -261,131 +261,15 @@ class StoreApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Store',
+                '\Swagger\Client\Model\StoresArray',
                 '/store/all'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Store', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StoresArray', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Store', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation changeUserStorePrivileges
-     *
-     * 
-     *
-     * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\UpdateStoreUserRole $update_store_user_role Store&#39;s User Priveleges Parameters for the Store ID and UserID. (required)
-     * @param string $product_id ID of the Product connected with the Store (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Store (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UserID
-     */
-    public function changeUserStorePrivileges($id, $update_store_user_role, $product_id = null, $coupon_id = null)
-    {
-        list($response) = $this->changeUserStorePrivilegesWithHttpInfo($id, $update_store_user_role, $product_id, $coupon_id);
-        return $response;
-    }
-
-    /**
-     * Operation changeUserStorePrivilegesWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\UpdateStoreUserRole $update_store_user_role Store&#39;s User Priveleges Parameters for the Store ID and UserID. (required)
-     * @param string $product_id ID of the Product connected with the Store (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Store (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function changeUserStorePrivilegesWithHttpInfo($id, $update_store_user_role, $product_id = null, $coupon_id = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling changeUserStorePrivileges');
-        }
-        // verify the required parameter 'update_store_user_role' is set
-        if ($update_store_user_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_store_user_role when calling changeUserStorePrivileges');
-        }
-        // parse inputs
-        $resourcePath = "/store/{id}/user";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
-        }
-        // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($update_store_user_role)) {
-            $_tempBody = $update_store_user_role;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\UserID',
-                '/store/{id}/user'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserID', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UserID', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\StoresArray', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 0:
@@ -404,13 +288,13 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\StoreCouponcreateParameters $store_couponcreate_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\StoreCouponcreateParameters $storeCouponcreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function createCouponForStore($id, $store_couponcreate_parameters)
+    public function createCouponForStore($id, $storeCouponcreateParameters)
     {
-        list($response) = $this->createCouponForStoreWithHttpInfo($id, $store_couponcreate_parameters);
+        list($response) = $this->createCouponForStoreWithHttpInfo($id, $storeCouponcreateParameters);
         return $response;
     }
 
@@ -420,19 +304,19 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\StoreCouponcreateParameters $store_couponcreate_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\StoreCouponcreateParameters $storeCouponcreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCouponForStoreWithHttpInfo($id, $store_couponcreate_parameters)
+    public function createCouponForStoreWithHttpInfo($id, $storeCouponcreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createCouponForStore');
         }
-        // verify the required parameter 'store_couponcreate_parameters' is set
-        if ($store_couponcreate_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $store_couponcreate_parameters when calling createCouponForStore');
+        // verify the required parameter 'storeCouponcreateParameters' is set
+        if ($storeCouponcreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $storeCouponcreateParameters when calling createCouponForStore');
         }
         // parse inputs
         $resourcePath = "/store/{id}/coupon/create";
@@ -459,8 +343,8 @@ class StoreApi
 
         // body params
         $_tempBody = null;
-        if (isset($store_couponcreate_parameters)) {
-            $_tempBody = $store_couponcreate_parameters;
+        if (isset($storeCouponcreateParameters)) {
+            $_tempBody = $storeCouponcreateParameters;
         }
 
         // for model (json/xml)
@@ -508,13 +392,13 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\StoreProductCreateParameters $store_product_create_parameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\StoreProductCreateParameters $storeProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
      */
-    public function createProductStore($id, $store_product_create_parameters)
+    public function createProductStore($id, $storeProductCreateParameters)
     {
-        list($response) = $this->createProductStoreWithHttpInfo($id, $store_product_create_parameters);
+        list($response) = $this->createProductStoreWithHttpInfo($id, $storeProductCreateParameters);
         return $response;
     }
 
@@ -524,19 +408,19 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\StoreProductCreateParameters $store_product_create_parameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\StoreProductCreateParameters $storeProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createProductStoreWithHttpInfo($id, $store_product_create_parameters)
+    public function createProductStoreWithHttpInfo($id, $storeProductCreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createProductStore');
         }
-        // verify the required parameter 'store_product_create_parameters' is set
-        if ($store_product_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $store_product_create_parameters when calling createProductStore');
+        // verify the required parameter 'storeProductCreateParameters' is set
+        if ($storeProductCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $storeProductCreateParameters when calling createProductStore');
         }
         // parse inputs
         $resourcePath = "/store/{id}/product/create";
@@ -563,8 +447,8 @@ class StoreApi
 
         // body params
         $_tempBody = null;
-        if (isset($store_product_create_parameters)) {
-            $_tempBody = $store_product_create_parameters;
+        if (isset($storeProductCreateParameters)) {
+            $_tempBody = $storeProductCreateParameters;
         }
 
         // for model (json/xml)
@@ -611,13 +495,13 @@ class StoreApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateStoreParameters $create_store_parameters Store Parameters for the store to be created and User ID of User that creates the store. (required)
+     * @param \Swagger\Client\Model\CreateStoreParameters $createStoreParameters Store Parameters for the store to be created and User ID of User that creates the store. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Store
      */
-    public function createStore($create_store_parameters)
+    public function createStore($createStoreParameters)
     {
-        list($response) = $this->createStoreWithHttpInfo($create_store_parameters);
+        list($response) = $this->createStoreWithHttpInfo($createStoreParameters);
         return $response;
     }
 
@@ -626,15 +510,15 @@ class StoreApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateStoreParameters $create_store_parameters Store Parameters for the store to be created and User ID of User that creates the store. (required)
+     * @param \Swagger\Client\Model\CreateStoreParameters $createStoreParameters Store Parameters for the store to be created and User ID of User that creates the store. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Store, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createStoreWithHttpInfo($create_store_parameters)
+    public function createStoreWithHttpInfo($createStoreParameters)
     {
-        // verify the required parameter 'create_store_parameters' is set
-        if ($create_store_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_store_parameters when calling createStore');
+        // verify the required parameter 'createStoreParameters' is set
+        if ($createStoreParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createStoreParameters when calling createStore');
         }
         // parse inputs
         $resourcePath = "/store/create";
@@ -653,8 +537,8 @@ class StoreApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_store_parameters)) {
-            $_tempBody = $create_store_parameters;
+        if (isset($createStoreParameters)) {
+            $_tempBody = $createStoreParameters;
         }
 
         // for model (json/xml)
@@ -702,15 +586,15 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\DeleteStoreUserRole $delete_store_user_role Store&#39;s User ID and privileges to be removed  for the store ID. (required)
-     * @param string $product_id ID of the Product connected with the Store (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Store (optional)
+     * @param \Swagger\Client\Model\DeleteStoreUserRole $deleteStoreUserRole Store&#39;s User ID and privileges to be removed  for the store ID. (required)
+     * @param string $productID ID of the Product connected with the Store (optional)
+     * @param string $couponID ID of the Coupon connected with the Store (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function removeUserStorePrivileges($id, $delete_store_user_role, $product_id = null, $coupon_id = null)
+    public function removeUserStorePrivileges($id, $deleteStoreUserRole, $productID = null, $couponID = null)
     {
-        list($response) = $this->removeUserStorePrivilegesWithHttpInfo($id, $delete_store_user_role, $product_id, $coupon_id);
+        list($response) = $this->removeUserStorePrivilegesWithHttpInfo($id, $deleteStoreUserRole, $productID, $couponID);
         return $response;
     }
 
@@ -720,21 +604,21 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\DeleteStoreUserRole $delete_store_user_role Store&#39;s User ID and privileges to be removed  for the store ID. (required)
-     * @param string $product_id ID of the Product connected with the Store (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Store (optional)
+     * @param \Swagger\Client\Model\DeleteStoreUserRole $deleteStoreUserRole Store&#39;s User ID and privileges to be removed  for the store ID. (required)
+     * @param string $productID ID of the Product connected with the Store (optional)
+     * @param string $couponID ID of the Coupon connected with the Store (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserStorePrivilegesWithHttpInfo($id, $delete_store_user_role, $product_id = null, $coupon_id = null)
+    public function removeUserStorePrivilegesWithHttpInfo($id, $deleteStoreUserRole, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserStorePrivileges');
         }
-        // verify the required parameter 'delete_store_user_role' is set
-        if ($delete_store_user_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $delete_store_user_role when calling removeUserStorePrivileges');
+        // verify the required parameter 'deleteStoreUserRole' is set
+        if ($deleteStoreUserRole === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $deleteStoreUserRole when calling removeUserStorePrivileges');
         }
         // parse inputs
         $resourcePath = "/store/{id}/user";
@@ -749,12 +633,12 @@ class StoreApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
+        if ($productID !== null) {
+            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($productID);
         }
         // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
+        if ($couponID !== null) {
+            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($couponID);
         }
         // path params
         if ($id !== null) {
@@ -769,8 +653,8 @@ class StoreApi
 
         // body params
         $_tempBody = null;
-        if (isset($delete_store_user_role)) {
-            $_tempBody = $delete_store_user_role;
+        if (isset($deleteStoreUserRole)) {
+            $_tempBody = $deleteStoreUserRole;
         }
 
         // for model (json/xml)
@@ -911,13 +795,13 @@ class StoreApi
      * 
      *
      * @param string $id ID for the store to find the details for. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Store
      */
-    public function storeGetDetails($id, $company_parameter = null)
+    public function storeGetDetails($id, $companyID = null)
     {
-        list($response) = $this->storeGetDetailsWithHttpInfo($id, $company_parameter);
+        list($response) = $this->storeGetDetailsWithHttpInfo($id, $companyID);
         return $response;
     }
 
@@ -927,11 +811,11 @@ class StoreApi
      * 
      *
      * @param string $id ID for the store to find the details for. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Store, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storeGetDetailsWithHttpInfo($id, $company_parameter = null)
+    public function storeGetDetailsWithHttpInfo($id, $companyID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -950,8 +834,8 @@ class StoreApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // path params
         if ($id !== null) {
@@ -1010,14 +894,14 @@ class StoreApi
      * 
      *
      * @param string $id ID for the store to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateStoreParameters $update_store_parameters Store Parameters for the store to be updated and User ID for the User who makes the update.Company ID Parameter for the company that the store is connected to is required only if the store is connected with a company. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
+     * @param \Swagger\Client\Model\UpdateStoreParameters $updateStoreParameters Store Parameters for the store to be updated and User ID for the User who makes the update.Company ID Parameter for the company that the store is connected to is required only if the store is connected with a company. (required)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\StoreID
      */
-    public function updateStore($id, $update_store_parameters, $company_parameter = null)
+    public function updateStore($id, $updateStoreParameters, $companyID = null)
     {
-        list($response) = $this->updateStoreWithHttpInfo($id, $update_store_parameters, $company_parameter);
+        list($response) = $this->updateStoreWithHttpInfo($id, $updateStoreParameters, $companyID);
         return $response;
     }
 
@@ -1027,20 +911,20 @@ class StoreApi
      * 
      *
      * @param string $id ID for the store to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateStoreParameters $update_store_parameters Store Parameters for the store to be updated and User ID for the User who makes the update.Company ID Parameter for the company that the store is connected to is required only if the store is connected with a company. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
+     * @param \Swagger\Client\Model\UpdateStoreParameters $updateStoreParameters Store Parameters for the store to be updated and User ID for the User who makes the update.Company ID Parameter for the company that the store is connected to is required only if the store is connected with a company. (required)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\StoreID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateStoreWithHttpInfo($id, $update_store_parameters, $company_parameter = null)
+    public function updateStoreWithHttpInfo($id, $updateStoreParameters, $companyID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateStore');
         }
-        // verify the required parameter 'update_store_parameters' is set
-        if ($update_store_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_store_parameters when calling updateStore');
+        // verify the required parameter 'updateStoreParameters' is set
+        if ($updateStoreParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateStoreParameters when calling updateStore');
         }
         // parse inputs
         $resourcePath = "/store/details/{id}";
@@ -1055,8 +939,8 @@ class StoreApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // path params
         if ($id !== null) {
@@ -1071,8 +955,8 @@ class StoreApi
 
         // body params
         $_tempBody = null;
-        if (isset($update_store_parameters)) {
-            $_tempBody = $update_store_parameters;
+        if (isset($updateStoreParameters)) {
+            $_tempBody = $updateStoreParameters;
         }
 
         // for model (json/xml)

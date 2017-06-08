@@ -83,9 +83,9 @@ class CouponPrimitiveIDTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "coupon_primitive_id"
+     * Test attribute "couponPrimitiveID"
      */
-    public function testPropertyCouponPrimitiveId()
+    public function testPropertyCouponPrimitiveID()
     {
 
     }

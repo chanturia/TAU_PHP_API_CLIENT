@@ -83,9 +83,9 @@ class CreateCompanyParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }
@@ -99,7 +99,7 @@ class CreateCompanyParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "in_charge_person_name"
+     * Test attribute "inChargePersonName"
      */
     public function testPropertyInChargePersonName()
     {
@@ -107,7 +107,7 @@ class CreateCompanyParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "main_address"
+     * Test attribute "mainAddress"
      */
     public function testPropertyMainAddress()
     {
@@ -115,23 +115,23 @@ class CreateCompanyParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "main_image_url"
+     * Test attribute "mainImageURL"
      */
-    public function testPropertyMainImageUrl()
+    public function testPropertyMainImageURL()
     {
 
     }
 
     /**
-     * Test attribute "logo_url"
+     * Test attribute "logoURL"
      */
-    public function testPropertyLogoUrl()
+    public function testPropertyLogoURL()
     {
 
     }
 
     /**
-     * Test attribute "contact_phone"
+     * Test attribute "contactPhone"
      */
     public function testPropertyContactPhone()
     {
@@ -139,7 +139,7 @@ class CreateCompanyParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "company_type"
+     * Test attribute "companyType"
      */
     public function testPropertyCompanyType()
     {
@@ -155,9 +155,9 @@ class CreateCompanyParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "facebook_page_url"
+     * Test attribute "facebookPageURL"
      */
-    public function testPropertyFacebookPageUrl()
+    public function testPropertyFacebookPageURL()
     {
 
     }

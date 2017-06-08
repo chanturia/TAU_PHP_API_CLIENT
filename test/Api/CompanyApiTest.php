@@ -88,17 +88,6 @@ class CompanyApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for changeCompanyUserRoles
-     *
-     * .
-     *
-     */
-    public function testChangeCompanyUserRoles()
-    {
-
-    }
-
-    /**
      * Test case for companyGetDetails
      *
      * .

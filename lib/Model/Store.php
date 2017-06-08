@@ -58,8 +58,8 @@ class Store implements ArrayAccess
         'name' => 'string',
         'type' => 'string',
         'kind' => 'string',
-        'address' => 'string[]',
-        'created_by' => 'string'
+        'address' => 'string',
+        'createdBy' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -77,7 +77,7 @@ class Store implements ArrayAccess
         'type' => 'type',
         'kind' => 'kind',
         'address' => 'address',
-        'created_by' => 'createdBy'
+        'createdBy' => 'createdBy'
     ];
 
 
@@ -91,7 +91,7 @@ class Store implements ArrayAccess
         'type' => 'setType',
         'kind' => 'setKind',
         'address' => 'setAddress',
-        'created_by' => 'setCreatedBy'
+        'createdBy' => 'setCreatedBy'
     ];
 
 
@@ -105,7 +105,7 @@ class Store implements ArrayAccess
         'type' => 'getType',
         'kind' => 'getKind',
         'address' => 'getAddress',
-        'created_by' => 'getCreatedBy'
+        'createdBy' => 'getCreatedBy'
     ];
 
     public static function attributeMap()
@@ -144,7 +144,7 @@ class Store implements ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['kind'] = isset($data['kind']) ? $data['kind'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
+        $this->container['createdBy'] = isset($data['createdBy']) ? $data['createdBy'] : null;
     }
 
     /**
@@ -264,7 +264,7 @@ class Store implements ArrayAccess
 
     /**
      * Gets address
-     * @return string[]
+     * @return string
      */
     public function getAddress()
     {
@@ -273,7 +273,7 @@ class Store implements ArrayAccess
 
     /**
      * Sets address
-     * @param string[] $address
+     * @param string $address
      * @return $this
      */
     public function setAddress($address)
@@ -284,22 +284,22 @@ class Store implements ArrayAccess
     }
 
     /**
-     * Gets created_by
+     * Gets createdBy
      * @return string
      */
     public function getCreatedBy()
     {
-        return $this->container['created_by'];
+        return $this->container['createdBy'];
     }
 
     /**
-     * Sets created_by
-     * @param string $created_by
+     * Sets createdBy
+     * @param string $createdBy
      * @return $this
      */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy($createdBy)
     {
-        $this->container['created_by'] = $created_by;
+        $this->container['createdBy'] = $createdBy;
 
         return $this;
     }

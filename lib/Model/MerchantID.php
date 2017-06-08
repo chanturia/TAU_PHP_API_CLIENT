@@ -54,7 +54,7 @@ class MerchantID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchant_id' => 'string'
+        'merchantID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class MerchantID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant_id' => 'merchantID'
+        'merchantID' => 'merchantID'
     ];
 
 
@@ -76,7 +76,7 @@ class MerchantID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant_id' => 'setMerchantId'
+        'merchantID' => 'setMerchantID'
     ];
 
 
@@ -85,7 +85,7 @@ class MerchantID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant_id' => 'getMerchantId'
+        'merchantID' => 'getMerchantID'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class MerchantID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant_id'] = isset($data['merchant_id']) ? $data['merchant_id'] : null;
+        $this->container['merchantID'] = isset($data['merchantID']) ? $data['merchantID'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class MerchantID implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['merchant_id'] === null) {
-            $invalid_properties[] = "'merchant_id' can't be null";
+        if ($this->container['merchantID'] === null) {
+            $invalid_properties[] = "'merchantID' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class MerchantID implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchant_id'] === null) {
+        if ($this->container['merchantID'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class MerchantID implements ArrayAccess
 
 
     /**
-     * Gets merchant_id
+     * Gets merchantID
      * @return string
      */
-    public function getMerchantId()
+    public function getMerchantID()
     {
-        return $this->container['merchant_id'];
+        return $this->container['merchantID'];
     }
 
     /**
-     * Sets merchant_id
-     * @param string $merchant_id
+     * Sets merchantID
+     * @param string $merchantID
      * @return $this
      */
-    public function setMerchantId($merchant_id)
+    public function setMerchantID($merchantID)
     {
-        $this->container['merchant_id'] = $merchant_id;
+        $this->container['merchantID'] = $merchantID;
 
         return $this;
     }

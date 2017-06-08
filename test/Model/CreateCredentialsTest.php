@@ -91,7 +91,7 @@ class CreateCredentialsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "lastName"
      */
     public function testPropertyLastName()
     {
@@ -115,7 +115,7 @@ class CreateCredentialsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "date_of_birth"
+     * Test attribute "dateOfBirth"
      */
     public function testPropertyDateOfBirth()
     {
@@ -131,33 +131,33 @@ class CreateCredentialsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "fb_id"
+     * Test attribute "fbID"
      */
-    public function testPropertyFbId()
+    public function testPropertyFbID()
     {
 
     }
 
     /**
-     * Test attribute "facebook_image_url"
+     * Test attribute "facebookImageURL"
      */
-    public function testPropertyFacebookImageUrl()
+    public function testPropertyFacebookImageURL()
     {
 
     }
 
     /**
-     * Test attribute "google_id"
+     * Test attribute "googleID"
      */
-    public function testPropertyGoogleId()
+    public function testPropertyGoogleID()
     {
 
     }
 
     /**
-     * Test attribute "google_img_url"
+     * Test attribute "googleImgURL"
      */
-    public function testPropertyGoogleImgUrl()
+    public function testPropertyGoogleImgURL()
     {
 
     }

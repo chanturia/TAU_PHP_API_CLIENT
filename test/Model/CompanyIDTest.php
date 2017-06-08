@@ -83,9 +83,9 @@ class CompanyIDTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "companyID"
      */
-    public function testPropertyCompanyId()
+    public function testPropertyCompanyID()
     {
 
     }

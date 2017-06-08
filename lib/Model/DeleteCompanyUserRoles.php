@@ -54,12 +54,12 @@ class DeleteCompanyUserRoles implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user_id' => 'string',
-        'role_to_remove' => 'string',
-        'brand_id' => 'string',
-        'store_id' => 'string',
-        'product_id' => 'string',
-        'coupon_id' => 'string'
+        'userID' => 'string',
+        'roleToRemove' => 'string',
+        'brandID' => 'string',
+        'storeID' => 'string',
+        'productID' => 'string',
+        'couponID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -72,12 +72,12 @@ class DeleteCompanyUserRoles implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'userID',
-        'role_to_remove' => 'roleToRemove',
-        'brand_id' => 'brandID',
-        'store_id' => 'storeID',
-        'product_id' => 'productID',
-        'coupon_id' => 'couponID'
+        'userID' => 'userID',
+        'roleToRemove' => 'roleToRemove',
+        'brandID' => 'brandID',
+        'storeID' => 'storeID',
+        'productID' => 'productID',
+        'couponID' => 'couponID'
     ];
 
 
@@ -86,12 +86,12 @@ class DeleteCompanyUserRoles implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId',
-        'role_to_remove' => 'setRoleToRemove',
-        'brand_id' => 'setBrandId',
-        'store_id' => 'setStoreId',
-        'product_id' => 'setProductId',
-        'coupon_id' => 'setCouponId'
+        'userID' => 'setUserID',
+        'roleToRemove' => 'setRoleToRemove',
+        'brandID' => 'setBrandID',
+        'storeID' => 'setStoreID',
+        'productID' => 'setProductID',
+        'couponID' => 'setCouponID'
     ];
 
 
@@ -100,12 +100,12 @@ class DeleteCompanyUserRoles implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId',
-        'role_to_remove' => 'getRoleToRemove',
-        'brand_id' => 'getBrandId',
-        'store_id' => 'getStoreId',
-        'product_id' => 'getProductId',
-        'coupon_id' => 'getCouponId'
+        'userID' => 'getUserID',
+        'roleToRemove' => 'getRoleToRemove',
+        'brandID' => 'getBrandID',
+        'storeID' => 'getStoreID',
+        'productID' => 'getProductID',
+        'couponID' => 'getCouponID'
     ];
 
     public static function attributeMap()
@@ -139,12 +139,12 @@ class DeleteCompanyUserRoles implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
-        $this->container['role_to_remove'] = isset($data['role_to_remove']) ? $data['role_to_remove'] : null;
-        $this->container['brand_id'] = isset($data['brand_id']) ? $data['brand_id'] : null;
-        $this->container['store_id'] = isset($data['store_id']) ? $data['store_id'] : null;
-        $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
-        $this->container['coupon_id'] = isset($data['coupon_id']) ? $data['coupon_id'] : null;
+        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
+        $this->container['roleToRemove'] = isset($data['roleToRemove']) ? $data['roleToRemove'] : null;
+        $this->container['brandID'] = isset($data['brandID']) ? $data['brandID'] : null;
+        $this->container['storeID'] = isset($data['storeID']) ? $data['storeID'] : null;
+        $this->container['productID'] = isset($data['productID']) ? $data['productID'] : null;
+        $this->container['couponID'] = isset($data['couponID']) ? $data['couponID'] : null;
     }
 
     /**
@@ -156,11 +156,11 @@ class DeleteCompanyUserRoles implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['user_id'] === null) {
-            $invalid_properties[] = "'user_id' can't be null";
+        if ($this->container['userID'] === null) {
+            $invalid_properties[] = "'userID' can't be null";
         }
-        if ($this->container['role_to_remove'] === null) {
-            $invalid_properties[] = "'role_to_remove' can't be null";
+        if ($this->container['roleToRemove'] === null) {
+            $invalid_properties[] = "'roleToRemove' can't be null";
         }
         return $invalid_properties;
     }
@@ -174,10 +174,10 @@ class DeleteCompanyUserRoles implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['user_id'] === null) {
+        if ($this->container['userID'] === null) {
             return false;
         }
-        if ($this->container['role_to_remove'] === null) {
+        if ($this->container['roleToRemove'] === null) {
             return false;
         }
         return true;
@@ -185,127 +185,127 @@ class DeleteCompanyUserRoles implements ArrayAccess
 
 
     /**
-     * Gets user_id
+     * Gets userID
      * @return string
      */
-    public function getUserId()
+    public function getUserID()
     {
-        return $this->container['user_id'];
+        return $this->container['userID'];
     }
 
     /**
-     * Sets user_id
-     * @param string $user_id
+     * Sets userID
+     * @param string $userID
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserID($userID)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userID'] = $userID;
 
         return $this;
     }
 
     /**
-     * Gets role_to_remove
+     * Gets roleToRemove
      * @return string
      */
     public function getRoleToRemove()
     {
-        return $this->container['role_to_remove'];
+        return $this->container['roleToRemove'];
     }
 
     /**
-     * Sets role_to_remove
-     * @param string $role_to_remove
+     * Sets roleToRemove
+     * @param string $roleToRemove
      * @return $this
      */
-    public function setRoleToRemove($role_to_remove)
+    public function setRoleToRemove($roleToRemove)
     {
-        $this->container['role_to_remove'] = $role_to_remove;
+        $this->container['roleToRemove'] = $roleToRemove;
 
         return $this;
     }
 
     /**
-     * Gets brand_id
+     * Gets brandID
      * @return string
      */
-    public function getBrandId()
+    public function getBrandID()
     {
-        return $this->container['brand_id'];
+        return $this->container['brandID'];
     }
 
     /**
-     * Sets brand_id
-     * @param string $brand_id
+     * Sets brandID
+     * @param string $brandID
      * @return $this
      */
-    public function setBrandId($brand_id)
+    public function setBrandID($brandID)
     {
-        $this->container['brand_id'] = $brand_id;
+        $this->container['brandID'] = $brandID;
 
         return $this;
     }
 
     /**
-     * Gets store_id
+     * Gets storeID
      * @return string
      */
-    public function getStoreId()
+    public function getStoreID()
     {
-        return $this->container['store_id'];
+        return $this->container['storeID'];
     }
 
     /**
-     * Sets store_id
-     * @param string $store_id
+     * Sets storeID
+     * @param string $storeID
      * @return $this
      */
-    public function setStoreId($store_id)
+    public function setStoreID($storeID)
     {
-        $this->container['store_id'] = $store_id;
+        $this->container['storeID'] = $storeID;
 
         return $this;
     }
 
     /**
-     * Gets product_id
+     * Gets productID
      * @return string
      */
-    public function getProductId()
+    public function getProductID()
     {
-        return $this->container['product_id'];
+        return $this->container['productID'];
     }
 
     /**
-     * Sets product_id
-     * @param string $product_id
+     * Sets productID
+     * @param string $productID
      * @return $this
      */
-    public function setProductId($product_id)
+    public function setProductID($productID)
     {
-        $this->container['product_id'] = $product_id;
+        $this->container['productID'] = $productID;
 
         return $this;
     }
 
     /**
-     * Gets coupon_id
+     * Gets couponID
      * @return string
      */
-    public function getCouponId()
+    public function getCouponID()
     {
-        return $this->container['coupon_id'];
+        return $this->container['couponID'];
     }
 
     /**
-     * Sets coupon_id
-     * @param string $coupon_id
+     * Sets couponID
+     * @param string $couponID
      * @return $this
      */
-    public function setCouponId($coupon_id)
+    public function setCouponID($couponID)
     {
-        $this->container['coupon_id'] = $coupon_id;
+        $this->container['couponID'] = $couponID;
 
         return $this;
     }

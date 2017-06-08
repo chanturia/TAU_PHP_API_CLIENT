@@ -54,8 +54,8 @@ class AccessToken implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'access_token' => '\Swagger\Client\Model\AccessTokenAccessToken',
-        'token_type' => 'string'
+        'accessToken' => '\Swagger\Client\Model\AccessTokenAccessToken',
+        'tokenType' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class AccessToken implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'access_token' => 'access_token',
-        'token_type' => 'token_type'
+        'accessToken' => 'access_token',
+        'tokenType' => 'token_type'
     ];
 
 
@@ -78,8 +78,8 @@ class AccessToken implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'access_token' => 'setAccessToken',
-        'token_type' => 'setTokenType'
+        'accessToken' => 'setAccessToken',
+        'tokenType' => 'setTokenType'
     ];
 
 
@@ -88,8 +88,8 @@ class AccessToken implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'access_token' => 'getAccessToken',
-        'token_type' => 'getTokenType'
+        'accessToken' => 'getAccessToken',
+        'tokenType' => 'getTokenType'
     ];
 
     public static function attributeMap()
@@ -123,8 +123,8 @@ class AccessToken implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['access_token'] = isset($data['access_token']) ? $data['access_token'] : null;
-        $this->container['token_type'] = isset($data['token_type']) ? $data['token_type'] : null;
+        $this->container['accessToken'] = isset($data['accessToken']) ? $data['accessToken'] : null;
+        $this->container['tokenType'] = isset($data['tokenType']) ? $data['tokenType'] : null;
     }
 
     /**
@@ -153,43 +153,43 @@ class AccessToken implements ArrayAccess
 
 
     /**
-     * Gets access_token
+     * Gets accessToken
      * @return \Swagger\Client\Model\AccessTokenAccessToken
      */
     public function getAccessToken()
     {
-        return $this->container['access_token'];
+        return $this->container['accessToken'];
     }
 
     /**
-     * Sets access_token
-     * @param \Swagger\Client\Model\AccessTokenAccessToken $access_token
+     * Sets accessToken
+     * @param \Swagger\Client\Model\AccessTokenAccessToken $accessToken
      * @return $this
      */
-    public function setAccessToken($access_token)
+    public function setAccessToken($accessToken)
     {
-        $this->container['access_token'] = $access_token;
+        $this->container['accessToken'] = $accessToken;
 
         return $this;
     }
 
     /**
-     * Gets token_type
+     * Gets tokenType
      * @return string
      */
     public function getTokenType()
     {
-        return $this->container['token_type'];
+        return $this->container['tokenType'];
     }
 
     /**
-     * Sets token_type
-     * @param string $token_type
+     * Sets tokenType
+     * @param string $tokenType
      * @return $this
      */
-    public function setTokenType($token_type)
+    public function setTokenType($tokenType)
     {
-        $this->container['token_type'] = $token_type;
+        $this->container['tokenType'] = $tokenType;
 
         return $this;
     }

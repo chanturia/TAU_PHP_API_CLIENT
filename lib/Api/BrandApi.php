@@ -93,15 +93,15 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand (required)
-     * @param \Swagger\Client\Model\CreateBrandUserRoles $create_brand_user_roles Brand&#39;s User Priveleges Parameters for the brand ID and UserID. (required)
-     * @param string $product_id ID of the Product connected with the Brand (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Brand (optional)
+     * @param \Swagger\Client\Model\CreateBrandUserRoles $createBrandUserRoles Brand&#39;s User Priveleges Parameters for the brand ID and UserID. (required)
+     * @param string $productID ID of the Product connected with the Brand (optional)
+     * @param string $couponID ID of the Coupon connected with the Brand (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function addUserBrand($id, $create_brand_user_roles, $product_id = null, $coupon_id = null)
+    public function addUserBrand($id, $createBrandUserRoles, $productID = null, $couponID = null)
     {
-        list($response) = $this->addUserBrandWithHttpInfo($id, $create_brand_user_roles, $product_id, $coupon_id);
+        list($response) = $this->addUserBrandWithHttpInfo($id, $createBrandUserRoles, $productID, $couponID);
         return $response;
     }
 
@@ -111,21 +111,21 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand (required)
-     * @param \Swagger\Client\Model\CreateBrandUserRoles $create_brand_user_roles Brand&#39;s User Priveleges Parameters for the brand ID and UserID. (required)
-     * @param string $product_id ID of the Product connected with the Brand (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Brand (optional)
+     * @param \Swagger\Client\Model\CreateBrandUserRoles $createBrandUserRoles Brand&#39;s User Priveleges Parameters for the brand ID and UserID. (required)
+     * @param string $productID ID of the Product connected with the Brand (optional)
+     * @param string $couponID ID of the Coupon connected with the Brand (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserBrandWithHttpInfo($id, $create_brand_user_roles, $product_id = null, $coupon_id = null)
+    public function addUserBrandWithHttpInfo($id, $createBrandUserRoles, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserBrand');
         }
-        // verify the required parameter 'create_brand_user_roles' is set
-        if ($create_brand_user_roles === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_brand_user_roles when calling addUserBrand');
+        // verify the required parameter 'createBrandUserRoles' is set
+        if ($createBrandUserRoles === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createBrandUserRoles when calling addUserBrand');
         }
         // parse inputs
         $resourcePath = "/brand/{id}/user";
@@ -140,12 +140,12 @@ class BrandApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
+        if ($productID !== null) {
+            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($productID);
         }
         // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
+        if ($couponID !== null) {
+            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($couponID);
         }
         // path params
         if ($id !== null) {
@@ -160,8 +160,8 @@ class BrandApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_brand_user_roles)) {
-            $_tempBody = $create_brand_user_roles;
+        if (isset($createBrandUserRoles)) {
+            $_tempBody = $createBrandUserRoles;
         }
 
         // for model (json/xml)
@@ -209,7 +209,7 @@ class BrandApi
      * 
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Brand
+     * @return \Swagger\Client\Model\BrandsArray
      */
     public function allBrands()
     {
@@ -223,7 +223,7 @@ class BrandApi
      * 
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Brand, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\BrandsArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function allBrandsWithHttpInfo()
     {
@@ -261,131 +261,15 @@ class BrandApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Brand',
+                '\Swagger\Client\Model\BrandsArray',
                 '/brand/all'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Brand', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\BrandsArray', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Brand', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation changeUserBrandPrivileges
-     *
-     * 
-     *
-     * @param string $id ID for the Brand (required)
-     * @param \Swagger\Client\Model\UpdateBrandUserRoles $update_brand_user_roles Brand&#39;s User Priveleges Parameters for the Store ID and UserID. (required)
-     * @param string $product_id ID of the Product connected with the Brand (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Brand (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UserID
-     */
-    public function changeUserBrandPrivileges($id, $update_brand_user_roles, $product_id = null, $coupon_id = null)
-    {
-        list($response) = $this->changeUserBrandPrivilegesWithHttpInfo($id, $update_brand_user_roles, $product_id, $coupon_id);
-        return $response;
-    }
-
-    /**
-     * Operation changeUserBrandPrivilegesWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id ID for the Brand (required)
-     * @param \Swagger\Client\Model\UpdateBrandUserRoles $update_brand_user_roles Brand&#39;s User Priveleges Parameters for the Store ID and UserID. (required)
-     * @param string $product_id ID of the Product connected with the Brand (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Brand (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function changeUserBrandPrivilegesWithHttpInfo($id, $update_brand_user_roles, $product_id = null, $coupon_id = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling changeUserBrandPrivileges');
-        }
-        // verify the required parameter 'update_brand_user_roles' is set
-        if ($update_brand_user_roles === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_brand_user_roles when calling changeUserBrandPrivileges');
-        }
-        // parse inputs
-        $resourcePath = "/brand/{id}/user";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
-        }
-        // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($update_brand_user_roles)) {
-            $_tempBody = $update_brand_user_roles;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\UserID',
-                '/brand/{id}/user'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserID', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UserID', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\BrandsArray', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 0:
@@ -403,13 +287,13 @@ class BrandApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\BrandCreateParameters $brand_create_parameters Brand parameters for creating new brand consisting of User ID, brand name, description, main image URL and logo image URL. (required)
+     * @param \Swagger\Client\Model\BrandCreateParameters $brandCreateParameters Brand parameters for creating new brand consisting of User ID, brand name, description, main image URL and logo image URL. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Brand
      */
-    public function createBrand($brand_create_parameters)
+    public function createBrand($brandCreateParameters)
     {
-        list($response) = $this->createBrandWithHttpInfo($brand_create_parameters);
+        list($response) = $this->createBrandWithHttpInfo($brandCreateParameters);
         return $response;
     }
 
@@ -418,15 +302,15 @@ class BrandApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\BrandCreateParameters $brand_create_parameters Brand parameters for creating new brand consisting of User ID, brand name, description, main image URL and logo image URL. (required)
+     * @param \Swagger\Client\Model\BrandCreateParameters $brandCreateParameters Brand parameters for creating new brand consisting of User ID, brand name, description, main image URL and logo image URL. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Brand, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createBrandWithHttpInfo($brand_create_parameters)
+    public function createBrandWithHttpInfo($brandCreateParameters)
     {
-        // verify the required parameter 'brand_create_parameters' is set
-        if ($brand_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $brand_create_parameters when calling createBrand');
+        // verify the required parameter 'brandCreateParameters' is set
+        if ($brandCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $brandCreateParameters when calling createBrand');
         }
         // parse inputs
         $resourcePath = "/brand/create";
@@ -445,8 +329,8 @@ class BrandApi
 
         // body params
         $_tempBody = null;
-        if (isset($brand_create_parameters)) {
-            $_tempBody = $brand_create_parameters;
+        if (isset($brandCreateParameters)) {
+            $_tempBody = $brandCreateParameters;
         }
 
         // for model (json/xml)
@@ -494,13 +378,13 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand (required)
-     * @param \Swagger\Client\Model\BrandCouponCreateParameters $brand_coupon_create_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\BrandCouponCreateParameters $brandCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function createCouponBrand($id, $brand_coupon_create_parameters)
+    public function createCouponBrand($id, $brandCouponCreateParameters)
     {
-        list($response) = $this->createCouponBrandWithHttpInfo($id, $brand_coupon_create_parameters);
+        list($response) = $this->createCouponBrandWithHttpInfo($id, $brandCouponCreateParameters);
         return $response;
     }
 
@@ -510,19 +394,19 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand (required)
-     * @param \Swagger\Client\Model\BrandCouponCreateParameters $brand_coupon_create_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\BrandCouponCreateParameters $brandCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCouponBrandWithHttpInfo($id, $brand_coupon_create_parameters)
+    public function createCouponBrandWithHttpInfo($id, $brandCouponCreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createCouponBrand');
         }
-        // verify the required parameter 'brand_coupon_create_parameters' is set
-        if ($brand_coupon_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $brand_coupon_create_parameters when calling createCouponBrand');
+        // verify the required parameter 'brandCouponCreateParameters' is set
+        if ($brandCouponCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $brandCouponCreateParameters when calling createCouponBrand');
         }
         // parse inputs
         $resourcePath = "/brand/{id}/coupon/create";
@@ -549,8 +433,8 @@ class BrandApi
 
         // body params
         $_tempBody = null;
-        if (isset($brand_coupon_create_parameters)) {
-            $_tempBody = $brand_coupon_create_parameters;
+        if (isset($brandCouponCreateParameters)) {
+            $_tempBody = $brandCouponCreateParameters;
         }
 
         // for model (json/xml)
@@ -598,13 +482,13 @@ class BrandApi
      * 
      *
      * @param string $id ID for the brand (required)
-     * @param \Swagger\Client\Model\BrandProductCreateParameters $brand_product_create_parameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\BrandProductCreateParameters $brandProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
      */
-    public function createProductBrand($id, $brand_product_create_parameters)
+    public function createProductBrand($id, $brandProductCreateParameters)
     {
-        list($response) = $this->createProductBrandWithHttpInfo($id, $brand_product_create_parameters);
+        list($response) = $this->createProductBrandWithHttpInfo($id, $brandProductCreateParameters);
         return $response;
     }
 
@@ -614,19 +498,19 @@ class BrandApi
      * 
      *
      * @param string $id ID for the brand (required)
-     * @param \Swagger\Client\Model\BrandProductCreateParameters $brand_product_create_parameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\BrandProductCreateParameters $brandProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createProductBrandWithHttpInfo($id, $brand_product_create_parameters)
+    public function createProductBrandWithHttpInfo($id, $brandProductCreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createProductBrand');
         }
-        // verify the required parameter 'brand_product_create_parameters' is set
-        if ($brand_product_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $brand_product_create_parameters when calling createProductBrand');
+        // verify the required parameter 'brandProductCreateParameters' is set
+        if ($brandProductCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $brandProductCreateParameters when calling createProductBrand');
         }
         // parse inputs
         $resourcePath = "/brand/{id}/product/create";
@@ -653,8 +537,8 @@ class BrandApi
 
         // body params
         $_tempBody = null;
-        if (isset($brand_product_create_parameters)) {
-            $_tempBody = $brand_product_create_parameters;
+        if (isset($brandProductCreateParameters)) {
+            $_tempBody = $brandProductCreateParameters;
         }
 
         // for model (json/xml)
@@ -702,13 +586,13 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand being searched for. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
+     * @param string $companyID Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Brand
      */
-    public function getBrandDetails($id, $company_parameter = null)
+    public function getBrandDetails($id, $companyID = null)
     {
-        list($response) = $this->getBrandDetailsWithHttpInfo($id, $company_parameter);
+        list($response) = $this->getBrandDetailsWithHttpInfo($id, $companyID);
         return $response;
     }
 
@@ -718,11 +602,11 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand being searched for. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
+     * @param string $companyID Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Brand, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBrandDetailsWithHttpInfo($id, $company_parameter = null)
+    public function getBrandDetailsWithHttpInfo($id, $companyID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -741,8 +625,8 @@ class BrandApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // path params
         if ($id !== null) {
@@ -894,15 +778,15 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand (required)
-     * @param \Swagger\Client\Model\DeleteBrandUserRoles $delete_brand_user_roles Brand&#39;s User ID and privileges to be removed  for the brand ID. (required)
-     * @param string $product_id ID of the Product connected with the Brand (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Brand (optional)
+     * @param \Swagger\Client\Model\DeleteBrandUserRoles $deleteBrandUserRoles Brand&#39;s User ID and privileges to be removed  for the brand ID. (required)
+     * @param string $productID ID of the Product connected with the Brand (optional)
+     * @param string $couponID ID of the Coupon connected with the Brand (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function removeUserBrandPrivileges($id, $delete_brand_user_roles, $product_id = null, $coupon_id = null)
+    public function removeUserBrandPrivileges($id, $deleteBrandUserRoles, $productID = null, $couponID = null)
     {
-        list($response) = $this->removeUserBrandPrivilegesWithHttpInfo($id, $delete_brand_user_roles, $product_id, $coupon_id);
+        list($response) = $this->removeUserBrandPrivilegesWithHttpInfo($id, $deleteBrandUserRoles, $productID, $couponID);
         return $response;
     }
 
@@ -912,21 +796,21 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand (required)
-     * @param \Swagger\Client\Model\DeleteBrandUserRoles $delete_brand_user_roles Brand&#39;s User ID and privileges to be removed  for the brand ID. (required)
-     * @param string $product_id ID of the Product connected with the Brand (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Brand (optional)
+     * @param \Swagger\Client\Model\DeleteBrandUserRoles $deleteBrandUserRoles Brand&#39;s User ID and privileges to be removed  for the brand ID. (required)
+     * @param string $productID ID of the Product connected with the Brand (optional)
+     * @param string $couponID ID of the Coupon connected with the Brand (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserBrandPrivilegesWithHttpInfo($id, $delete_brand_user_roles, $product_id = null, $coupon_id = null)
+    public function removeUserBrandPrivilegesWithHttpInfo($id, $deleteBrandUserRoles, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserBrandPrivileges');
         }
-        // verify the required parameter 'delete_brand_user_roles' is set
-        if ($delete_brand_user_roles === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $delete_brand_user_roles when calling removeUserBrandPrivileges');
+        // verify the required parameter 'deleteBrandUserRoles' is set
+        if ($deleteBrandUserRoles === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $deleteBrandUserRoles when calling removeUserBrandPrivileges');
         }
         // parse inputs
         $resourcePath = "/brand/{id}/user";
@@ -941,12 +825,12 @@ class BrandApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
+        if ($productID !== null) {
+            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($productID);
         }
         // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
+        if ($couponID !== null) {
+            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($couponID);
         }
         // path params
         if ($id !== null) {
@@ -961,8 +845,8 @@ class BrandApi
 
         // body params
         $_tempBody = null;
-        if (isset($delete_brand_user_roles)) {
-            $_tempBody = $delete_brand_user_roles;
+        if (isset($deleteBrandUserRoles)) {
+            $_tempBody = $deleteBrandUserRoles;
         }
 
         // for model (json/xml)
@@ -1010,14 +894,14 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand to be updated. (required)
-     * @param \Swagger\Client\Model\BrandUpdateDetailsParameters $brand_update_details_parameters Brand Parameters for the brand to be updated and User ID for the User who makes the update. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
+     * @param \Swagger\Client\Model\BrandUpdateDetailsParameters $brandUpdateDetailsParameters Brand Parameters for the brand to be updated and User ID for the User who makes the update. (required)
+     * @param string $companyID Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\BrandID
      */
-    public function updateBrand($id, $brand_update_details_parameters, $company_parameter = null)
+    public function updateBrand($id, $brandUpdateDetailsParameters, $companyID = null)
     {
-        list($response) = $this->updateBrandWithHttpInfo($id, $brand_update_details_parameters, $company_parameter);
+        list($response) = $this->updateBrandWithHttpInfo($id, $brandUpdateDetailsParameters, $companyID);
         return $response;
     }
 
@@ -1027,20 +911,20 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand to be updated. (required)
-     * @param \Swagger\Client\Model\BrandUpdateDetailsParameters $brand_update_details_parameters Brand Parameters for the brand to be updated and User ID for the User who makes the update. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
+     * @param \Swagger\Client\Model\BrandUpdateDetailsParameters $brandUpdateDetailsParameters Brand Parameters for the brand to be updated and User ID for the User who makes the update. (required)
+     * @param string $companyID Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\BrandID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateBrandWithHttpInfo($id, $brand_update_details_parameters, $company_parameter = null)
+    public function updateBrandWithHttpInfo($id, $brandUpdateDetailsParameters, $companyID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateBrand');
         }
-        // verify the required parameter 'brand_update_details_parameters' is set
-        if ($brand_update_details_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $brand_update_details_parameters when calling updateBrand');
+        // verify the required parameter 'brandUpdateDetailsParameters' is set
+        if ($brandUpdateDetailsParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $brandUpdateDetailsParameters when calling updateBrand');
         }
         // parse inputs
         $resourcePath = "/brand/details/{id}";
@@ -1055,8 +939,8 @@ class BrandApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // path params
         if ($id !== null) {
@@ -1071,8 +955,8 @@ class BrandApi
 
         // body params
         $_tempBody = null;
-        if (isset($brand_update_details_parameters)) {
-            $_tempBody = $brand_update_details_parameters;
+        if (isset($brandUpdateDetailsParameters)) {
+            $_tempBody = $brandUpdateDetailsParameters;
         }
 
         // for model (json/xml)

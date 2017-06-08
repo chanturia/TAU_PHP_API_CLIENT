@@ -83,9 +83,9 @@ class MerchantIDTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchant_id"
+     * Test attribute "merchantID"
      */
-    public function testPropertyMerchantId()
+    public function testPropertyMerchantID()
     {
 
     }

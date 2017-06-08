@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **productype** | **string** |  | [optional] 
 **brandid** | **string** |  | [optional] 
 **merchantsids** | **string[]** |  | [optional] 
-**images_uris** | **string[]** |  | [optional] 
+**imagesUris** | **string[]** |  | [optional] 
 **barcodes** | **string[]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

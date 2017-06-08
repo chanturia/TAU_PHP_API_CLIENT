@@ -83,7 +83,7 @@ class ActivationCodeParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "grant_type"
+     * Test attribute "grantType"
      */
     public function testPropertyGrantType()
     {

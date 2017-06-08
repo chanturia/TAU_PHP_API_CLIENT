@@ -54,7 +54,7 @@ class CouponID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'coupon_id' => 'string'
+        'couponID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class CouponID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'coupon_id' => 'couponID'
+        'couponID' => 'couponID'
     ];
 
 
@@ -76,7 +76,7 @@ class CouponID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'coupon_id' => 'setCouponId'
+        'couponID' => 'setCouponID'
     ];
 
 
@@ -85,7 +85,7 @@ class CouponID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'coupon_id' => 'getCouponId'
+        'couponID' => 'getCouponID'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class CouponID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['coupon_id'] = isset($data['coupon_id']) ? $data['coupon_id'] : null;
+        $this->container['couponID'] = isset($data['couponID']) ? $data['couponID'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class CouponID implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['coupon_id'] === null) {
-            $invalid_properties[] = "'coupon_id' can't be null";
+        if ($this->container['couponID'] === null) {
+            $invalid_properties[] = "'couponID' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class CouponID implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['coupon_id'] === null) {
+        if ($this->container['couponID'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class CouponID implements ArrayAccess
 
 
     /**
-     * Gets coupon_id
+     * Gets couponID
      * @return string
      */
-    public function getCouponId()
+    public function getCouponID()
     {
-        return $this->container['coupon_id'];
+        return $this->container['couponID'];
     }
 
     /**
-     * Sets coupon_id
-     * @param string $coupon_id
+     * Sets couponID
+     * @param string $couponID
      * @return $this
      */
-    public function setCouponId($coupon_id)
+    public function setCouponID($couponID)
     {
-        $this->container['coupon_id'] = $coupon_id;
+        $this->container['couponID'] = $couponID;
 
         return $this;
     }

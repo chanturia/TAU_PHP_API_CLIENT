@@ -83,7 +83,7 @@ class PasswordResetTokenTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reset_token"
+     * Test attribute "resetToken"
      */
     public function testPropertyResetToken()
     {

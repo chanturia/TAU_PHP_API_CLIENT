@@ -99,17 +99,6 @@ class StoreApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for changeUserStorePrivileges
-     *
-     * .
-     *
-     */
-    public function testChangeUserStorePrivileges()
-    {
-
-    }
-
-    /**
      * Test case for createCouponForStore
      *
      * .

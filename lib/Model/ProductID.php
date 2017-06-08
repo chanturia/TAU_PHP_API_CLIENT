@@ -54,7 +54,7 @@ class ProductID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'product_id' => 'string'
+        'productID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class ProductID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'product_id' => 'productID'
+        'productID' => 'productID'
     ];
 
 
@@ -76,7 +76,7 @@ class ProductID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'product_id' => 'setProductId'
+        'productID' => 'setProductID'
     ];
 
 
@@ -85,7 +85,7 @@ class ProductID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'product_id' => 'getProductId'
+        'productID' => 'getProductID'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class ProductID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
+        $this->container['productID'] = isset($data['productID']) ? $data['productID'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class ProductID implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['product_id'] === null) {
-            $invalid_properties[] = "'product_id' can't be null";
+        if ($this->container['productID'] === null) {
+            $invalid_properties[] = "'productID' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class ProductID implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['product_id'] === null) {
+        if ($this->container['productID'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class ProductID implements ArrayAccess
 
 
     /**
-     * Gets product_id
+     * Gets productID
      * @return string
      */
-    public function getProductId()
+    public function getProductID()
     {
-        return $this->container['product_id'];
+        return $this->container['productID'];
     }
 
     /**
-     * Sets product_id
-     * @param string $product_id
+     * Sets productID
+     * @param string $productID
      * @return $this
      */
-    public function setProductId($product_id)
+    public function setProductID($productID)
     {
-        $this->container['product_id'] = $product_id;
+        $this->container['productID'] = $productID;
 
         return $this;
     }

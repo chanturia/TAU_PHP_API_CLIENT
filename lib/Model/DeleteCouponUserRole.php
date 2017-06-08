@@ -54,8 +54,8 @@ class DeleteCouponUserRole implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user_id' => 'string',
-        'role_to_remove' => 'string'
+        'userID' => 'string',
+        'roleToRemove' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class DeleteCouponUserRole implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'userID',
-        'role_to_remove' => 'roleToRemove'
+        'userID' => 'userID',
+        'roleToRemove' => 'roleToRemove'
     ];
 
 
@@ -78,8 +78,8 @@ class DeleteCouponUserRole implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId',
-        'role_to_remove' => 'setRoleToRemove'
+        'userID' => 'setUserID',
+        'roleToRemove' => 'setRoleToRemove'
     ];
 
 
@@ -88,8 +88,8 @@ class DeleteCouponUserRole implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId',
-        'role_to_remove' => 'getRoleToRemove'
+        'userID' => 'getUserID',
+        'roleToRemove' => 'getRoleToRemove'
     ];
 
     public static function attributeMap()
@@ -123,8 +123,8 @@ class DeleteCouponUserRole implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
-        $this->container['role_to_remove'] = isset($data['role_to_remove']) ? $data['role_to_remove'] : null;
+        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
+        $this->container['roleToRemove'] = isset($data['roleToRemove']) ? $data['roleToRemove'] : null;
     }
 
     /**
@@ -136,11 +136,11 @@ class DeleteCouponUserRole implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['user_id'] === null) {
-            $invalid_properties[] = "'user_id' can't be null";
+        if ($this->container['userID'] === null) {
+            $invalid_properties[] = "'userID' can't be null";
         }
-        if ($this->container['role_to_remove'] === null) {
-            $invalid_properties[] = "'role_to_remove' can't be null";
+        if ($this->container['roleToRemove'] === null) {
+            $invalid_properties[] = "'roleToRemove' can't be null";
         }
         return $invalid_properties;
     }
@@ -154,10 +154,10 @@ class DeleteCouponUserRole implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['user_id'] === null) {
+        if ($this->container['userID'] === null) {
             return false;
         }
-        if ($this->container['role_to_remove'] === null) {
+        if ($this->container['roleToRemove'] === null) {
             return false;
         }
         return true;
@@ -165,43 +165,43 @@ class DeleteCouponUserRole implements ArrayAccess
 
 
     /**
-     * Gets user_id
+     * Gets userID
      * @return string
      */
-    public function getUserId()
+    public function getUserID()
     {
-        return $this->container['user_id'];
+        return $this->container['userID'];
     }
 
     /**
-     * Sets user_id
-     * @param string $user_id
+     * Sets userID
+     * @param string $userID
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserID($userID)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userID'] = $userID;
 
         return $this;
     }
 
     /**
-     * Gets role_to_remove
+     * Gets roleToRemove
      * @return string
      */
     public function getRoleToRemove()
     {
-        return $this->container['role_to_remove'];
+        return $this->container['roleToRemove'];
     }
 
     /**
-     * Sets role_to_remove
-     * @param string $role_to_remove
+     * Sets roleToRemove
+     * @param string $roleToRemove
      * @return $this
      */
-    public function setRoleToRemove($role_to_remove)
+    public function setRoleToRemove($roleToRemove)
     {
-        $this->container['role_to_remove'] = $role_to_remove;
+        $this->container['roleToRemove'] = $roleToRemove;
 
         return $this;
     }

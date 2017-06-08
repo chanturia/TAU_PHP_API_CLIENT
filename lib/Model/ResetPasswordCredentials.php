@@ -55,7 +55,7 @@ class ResetPasswordCredentials implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'reset_token' => 'string',
+        'resetToken' => 'string',
         'password' => 'string'
     ];
 
@@ -70,7 +70,7 @@ class ResetPasswordCredentials implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'reset_token' => 'resetToken',
+        'resetToken' => 'resetToken',
         'password' => 'password'
     ];
 
@@ -81,7 +81,7 @@ class ResetPasswordCredentials implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'reset_token' => 'setResetToken',
+        'resetToken' => 'setResetToken',
         'password' => 'setPassword'
     ];
 
@@ -92,7 +92,7 @@ class ResetPasswordCredentials implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'reset_token' => 'getResetToken',
+        'resetToken' => 'getResetToken',
         'password' => 'getPassword'
     ];
 
@@ -128,7 +128,7 @@ class ResetPasswordCredentials implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['reset_token'] = isset($data['reset_token']) ? $data['reset_token'] : null;
+        $this->container['resetToken'] = isset($data['resetToken']) ? $data['resetToken'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
@@ -144,8 +144,8 @@ class ResetPasswordCredentials implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['reset_token'] === null) {
-            $invalid_properties[] = "'reset_token' can't be null";
+        if ($this->container['resetToken'] === null) {
+            $invalid_properties[] = "'resetToken' can't be null";
         }
         if ($this->container['password'] === null) {
             $invalid_properties[] = "'password' can't be null";
@@ -165,7 +165,7 @@ class ResetPasswordCredentials implements ArrayAccess
         if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['reset_token'] === null) {
+        if ($this->container['resetToken'] === null) {
             return false;
         }
         if ($this->container['password'] === null) {
@@ -197,22 +197,22 @@ class ResetPasswordCredentials implements ArrayAccess
     }
 
     /**
-     * Gets reset_token
+     * Gets resetToken
      * @return string
      */
     public function getResetToken()
     {
-        return $this->container['reset_token'];
+        return $this->container['resetToken'];
     }
 
     /**
-     * Sets reset_token
-     * @param string $reset_token
+     * Sets resetToken
+     * @param string $resetToken
      * @return $this
      */
-    public function setResetToken($reset_token)
+    public function setResetToken($resetToken)
     {
-        $this->container['reset_token'] = $reset_token;
+        $this->container['resetToken'] = $resetToken;
 
         return $this;
     }

@@ -54,7 +54,7 @@ class CouponCategoryID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'coupon_category_id' => 'string'
+        'couponCategoryID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class CouponCategoryID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'coupon_category_id' => 'couponCategoryID'
+        'couponCategoryID' => 'couponCategoryID'
     ];
 
 
@@ -76,7 +76,7 @@ class CouponCategoryID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'coupon_category_id' => 'setCouponCategoryId'
+        'couponCategoryID' => 'setCouponCategoryID'
     ];
 
 
@@ -85,7 +85,7 @@ class CouponCategoryID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'coupon_category_id' => 'getCouponCategoryId'
+        'couponCategoryID' => 'getCouponCategoryID'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class CouponCategoryID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['coupon_category_id'] = isset($data['coupon_category_id']) ? $data['coupon_category_id'] : null;
+        $this->container['couponCategoryID'] = isset($data['couponCategoryID']) ? $data['couponCategoryID'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class CouponCategoryID implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['coupon_category_id'] === null) {
-            $invalid_properties[] = "'coupon_category_id' can't be null";
+        if ($this->container['couponCategoryID'] === null) {
+            $invalid_properties[] = "'couponCategoryID' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class CouponCategoryID implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['coupon_category_id'] === null) {
+        if ($this->container['couponCategoryID'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class CouponCategoryID implements ArrayAccess
 
 
     /**
-     * Gets coupon_category_id
+     * Gets couponCategoryID
      * @return string
      */
-    public function getCouponCategoryId()
+    public function getCouponCategoryID()
     {
-        return $this->container['coupon_category_id'];
+        return $this->container['couponCategoryID'];
     }
 
     /**
-     * Sets coupon_category_id
-     * @param string $coupon_category_id
+     * Sets couponCategoryID
+     * @param string $couponCategoryID
      * @return $this
      */
-    public function setCouponCategoryId($coupon_category_id)
+    public function setCouponCategoryID($couponCategoryID)
     {
-        $this->container['coupon_category_id'] = $coupon_category_id;
+        $this->container['couponCategoryID'] = $couponCategoryID;
 
         return $this;
     }

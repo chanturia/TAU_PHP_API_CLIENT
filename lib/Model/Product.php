@@ -60,7 +60,7 @@ class Product implements ArrayAccess
         'productype' => 'string',
         'brandid' => 'string',
         'merchantsids' => 'string[]',
-        'images_uris' => 'string[]',
+        'imagesUris' => 'string[]',
         'barcodes' => 'string[]'
     ];
 
@@ -80,7 +80,7 @@ class Product implements ArrayAccess
         'productype' => 'productype',
         'brandid' => 'brandid',
         'merchantsids' => 'merchantsids',
-        'images_uris' => 'imagesUris',
+        'imagesUris' => 'imagesUris',
         'barcodes' => 'barcodes'
     ];
 
@@ -96,7 +96,7 @@ class Product implements ArrayAccess
         'productype' => 'setProductype',
         'brandid' => 'setBrandid',
         'merchantsids' => 'setMerchantsids',
-        'images_uris' => 'setImagesUris',
+        'imagesUris' => 'setImagesUris',
         'barcodes' => 'setBarcodes'
     ];
 
@@ -112,7 +112,7 @@ class Product implements ArrayAccess
         'productype' => 'getProductype',
         'brandid' => 'getBrandid',
         'merchantsids' => 'getMerchantsids',
-        'images_uris' => 'getImagesUris',
+        'imagesUris' => 'getImagesUris',
         'barcodes' => 'getBarcodes'
     ];
 
@@ -153,7 +153,7 @@ class Product implements ArrayAccess
         $this->container['productype'] = isset($data['productype']) ? $data['productype'] : null;
         $this->container['brandid'] = isset($data['brandid']) ? $data['brandid'] : null;
         $this->container['merchantsids'] = isset($data['merchantsids']) ? $data['merchantsids'] : null;
-        $this->container['images_uris'] = isset($data['images_uris']) ? $data['images_uris'] : null;
+        $this->container['imagesUris'] = isset($data['imagesUris']) ? $data['imagesUris'] : null;
         $this->container['barcodes'] = isset($data['barcodes']) ? $data['barcodes'] : null;
     }
 
@@ -315,22 +315,22 @@ class Product implements ArrayAccess
     }
 
     /**
-     * Gets images_uris
+     * Gets imagesUris
      * @return string[]
      */
     public function getImagesUris()
     {
-        return $this->container['images_uris'];
+        return $this->container['imagesUris'];
     }
 
     /**
-     * Sets images_uris
-     * @param string[] $images_uris
+     * Sets imagesUris
+     * @param string[] $imagesUris
      * @return $this
      */
-    public function setImagesUris($images_uris)
+    public function setImagesUris($imagesUris)
     {
-        $this->container['images_uris'] = $images_uris;
+        $this->container['imagesUris'] = $imagesUris;
 
         return $this;
     }

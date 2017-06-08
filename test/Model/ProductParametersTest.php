@@ -107,7 +107,7 @@ class ProductParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "images_uris"
+     * Test attribute "imagesUris"
      */
     public function testPropertyImagesUris()
     {
@@ -115,17 +115,17 @@ class ProductParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "brand_id"
+     * Test attribute "brandID"
      */
-    public function testPropertyBrandId()
+    public function testPropertyBrandID()
     {
 
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }

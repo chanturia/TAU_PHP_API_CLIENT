@@ -93,17 +93,17 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\AddBarcode $add_barcode Barcode parameters for updating product consisting of productID, barcodes array of strings and userID for authorization. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\AddBarcode $addBarcode Barcode parameters for updating product consisting of productID, barcodes array of strings and userID for authorization. (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ProductID
      */
-    public function addProductBarcode($id, $add_barcode, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null)
+    public function addProductBarcode($id, $addBarcode, $companyID = null, $brandID = null, $storeID = null, $merchantID = null)
     {
-        list($response) = $this->addProductBarcodeWithHttpInfo($id, $add_barcode, $company_parameter, $brand_parameter, $store_parameter, $merchant_parameter);
+        list($response) = $this->addProductBarcodeWithHttpInfo($id, $addBarcode, $companyID, $brandID, $storeID, $merchantID);
         return $response;
     }
 
@@ -113,23 +113,23 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\AddBarcode $add_barcode Barcode parameters for updating product consisting of productID, barcodes array of strings and userID for authorization. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\AddBarcode $addBarcode Barcode parameters for updating product consisting of productID, barcodes array of strings and userID for authorization. (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ProductID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addProductBarcodeWithHttpInfo($id, $add_barcode, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null)
+    public function addProductBarcodeWithHttpInfo($id, $addBarcode, $companyID = null, $brandID = null, $storeID = null, $merchantID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling addProductBarcode');
         }
-        // verify the required parameter 'add_barcode' is set
-        if ($add_barcode === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $add_barcode when calling addProductBarcode');
+        // verify the required parameter 'addBarcode' is set
+        if ($addBarcode === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $addBarcode when calling addProductBarcode');
         }
         // parse inputs
         $resourcePath = "/product/{id}/barcodes";
@@ -144,20 +144,20 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // query params
-        if ($brand_parameter !== null) {
-            $queryParams['brandParameter'] = $this->apiClient->getSerializer()->toQueryValue($brand_parameter);
+        if ($brandID !== null) {
+            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brandID);
         }
         // query params
-        if ($store_parameter !== null) {
-            $queryParams['storeParameter'] = $this->apiClient->getSerializer()->toQueryValue($store_parameter);
+        if ($storeID !== null) {
+            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($storeID);
         }
         // query params
-        if ($merchant_parameter !== null) {
-            $queryParams['merchantParameter'] = $this->apiClient->getSerializer()->toQueryValue($merchant_parameter);
+        if ($merchantID !== null) {
+            $queryParams['merchantID'] = $this->apiClient->getSerializer()->toQueryValue($merchantID);
         }
         // path params
         if ($id !== null) {
@@ -172,8 +172,8 @@ class ProductApi
 
         // body params
         $_tempBody = null;
-        if (isset($add_barcode)) {
-            $_tempBody = $add_barcode;
+        if (isset($addBarcode)) {
+            $_tempBody = $addBarcode;
         }
 
         // for model (json/xml)
@@ -221,14 +221,14 @@ class ProductApi
      * 
      *
      * @param string $id ID for the Product (required)
-     * @param \Swagger\Client\Model\ProductAdminRole $product_admin_role Product&#39;s User Priveleges Parameters for the productID and UserID. (required)
-     * @param string $coupon_id ID of the Coupon connected with the Product (optional)
+     * @param \Swagger\Client\Model\ProductAdminRole $productAdminRole Product&#39;s User Priveleges Parameters for the productID and UserID. (required)
+     * @param string $couponID ID of the Coupon connected with the Product (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function addUserProduct($id, $product_admin_role, $coupon_id = null)
+    public function addUserProduct($id, $productAdminRole, $couponID = null)
     {
-        list($response) = $this->addUserProductWithHttpInfo($id, $product_admin_role, $coupon_id);
+        list($response) = $this->addUserProductWithHttpInfo($id, $productAdminRole, $couponID);
         return $response;
     }
 
@@ -238,20 +238,20 @@ class ProductApi
      * 
      *
      * @param string $id ID for the Product (required)
-     * @param \Swagger\Client\Model\ProductAdminRole $product_admin_role Product&#39;s User Priveleges Parameters for the productID and UserID. (required)
-     * @param string $coupon_id ID of the Coupon connected with the Product (optional)
+     * @param \Swagger\Client\Model\ProductAdminRole $productAdminRole Product&#39;s User Priveleges Parameters for the productID and UserID. (required)
+     * @param string $couponID ID of the Coupon connected with the Product (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserProductWithHttpInfo($id, $product_admin_role, $coupon_id = null)
+    public function addUserProductWithHttpInfo($id, $productAdminRole, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserProduct');
         }
-        // verify the required parameter 'product_admin_role' is set
-        if ($product_admin_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $product_admin_role when calling addUserProduct');
+        // verify the required parameter 'productAdminRole' is set
+        if ($productAdminRole === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $productAdminRole when calling addUserProduct');
         }
         // parse inputs
         $resourcePath = "/product/{id}/user";
@@ -266,8 +266,8 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
+        if ($couponID !== null) {
+            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($couponID);
         }
         // path params
         if ($id !== null) {
@@ -282,8 +282,8 @@ class ProductApi
 
         // body params
         $_tempBody = null;
-        if (isset($product_admin_role)) {
-            $_tempBody = $product_admin_role;
+        if (isset($productAdminRole)) {
+            $_tempBody = $productAdminRole;
         }
 
         // for model (json/xml)
@@ -326,128 +326,18 @@ class ProductApi
     }
 
     /**
-     * Operation changeUserProductPrivileges
-     *
-     * 
-     *
-     * @param string $id ID for the Product (required)
-     * @param \Swagger\Client\Model\UpdateProductUserRole $update_product_user_role Store&#39;s User Priveleges Parameters for the ProductID and UserID. (required)
-     * @param string $coupon_id ID of the Coupon connected with the Product (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UserID
-     */
-    public function changeUserProductPrivileges($id, $update_product_user_role, $coupon_id = null)
-    {
-        list($response) = $this->changeUserProductPrivilegesWithHttpInfo($id, $update_product_user_role, $coupon_id);
-        return $response;
-    }
-
-    /**
-     * Operation changeUserProductPrivilegesWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id ID for the Product (required)
-     * @param \Swagger\Client\Model\UpdateProductUserRole $update_product_user_role Store&#39;s User Priveleges Parameters for the ProductID and UserID. (required)
-     * @param string $coupon_id ID of the Coupon connected with the Product (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function changeUserProductPrivilegesWithHttpInfo($id, $update_product_user_role, $coupon_id = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling changeUserProductPrivileges');
-        }
-        // verify the required parameter 'update_product_user_role' is set
-        if ($update_product_user_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_product_user_role when calling changeUserProductPrivileges');
-        }
-        // parse inputs
-        $resourcePath = "/product/{id}/user";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($update_product_user_role)) {
-            $_tempBody = $update_product_user_role;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\UserID',
-                '/product/{id}/user'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserID', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UserID', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation createCouponProduct
      *
      * 
      *
      * @param string $id ID for the Product (required)
-     * @param \Swagger\Client\Model\ProductCouponCreateParameters $product_coupon_create_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\ProductCouponCreateParameters $productCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function createCouponProduct($id, $product_coupon_create_parameters)
+    public function createCouponProduct($id, $productCouponCreateParameters)
     {
-        list($response) = $this->createCouponProductWithHttpInfo($id, $product_coupon_create_parameters);
+        list($response) = $this->createCouponProductWithHttpInfo($id, $productCouponCreateParameters);
         return $response;
     }
 
@@ -457,19 +347,19 @@ class ProductApi
      * 
      *
      * @param string $id ID for the Product (required)
-     * @param \Swagger\Client\Model\ProductCouponCreateParameters $product_coupon_create_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\ProductCouponCreateParameters $productCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCouponProductWithHttpInfo($id, $product_coupon_create_parameters)
+    public function createCouponProductWithHttpInfo($id, $productCouponCreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createCouponProduct');
         }
-        // verify the required parameter 'product_coupon_create_parameters' is set
-        if ($product_coupon_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $product_coupon_create_parameters when calling createCouponProduct');
+        // verify the required parameter 'productCouponCreateParameters' is set
+        if ($productCouponCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $productCouponCreateParameters when calling createCouponProduct');
         }
         // parse inputs
         $resourcePath = "/product/{id}/coupon/create";
@@ -496,8 +386,8 @@ class ProductApi
 
         // body params
         $_tempBody = null;
-        if (isset($product_coupon_create_parameters)) {
-            $_tempBody = $product_coupon_create_parameters;
+        if (isset($productCouponCreateParameters)) {
+            $_tempBody = $productCouponCreateParameters;
         }
 
         // for model (json/xml)
@@ -544,13 +434,13 @@ class ProductApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ProductParameters $product_parameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\ProductParameters $productParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
      */
-    public function createProduct($product_parameters)
+    public function createProduct($productParameters)
     {
-        list($response) = $this->createProductWithHttpInfo($product_parameters);
+        list($response) = $this->createProductWithHttpInfo($productParameters);
         return $response;
     }
 
@@ -559,15 +449,15 @@ class ProductApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ProductParameters $product_parameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\ProductParameters $productParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createProductWithHttpInfo($product_parameters)
+    public function createProductWithHttpInfo($productParameters)
     {
-        // verify the required parameter 'product_parameters' is set
-        if ($product_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $product_parameters when calling createProduct');
+        // verify the required parameter 'productParameters' is set
+        if ($productParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $productParameters when calling createProduct');
         }
         // parse inputs
         $resourcePath = "/product/create";
@@ -586,8 +476,8 @@ class ProductApi
 
         // body params
         $_tempBody = null;
-        if (isset($product_parameters)) {
-            $_tempBody = $product_parameters;
+        if (isset($productParameters)) {
+            $_tempBody = $productParameters;
         }
 
         // for model (json/xml)
@@ -635,16 +525,16 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product being searched for. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
      */
-    public function getProductById($id, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null)
+    public function getProductById($id, $companyID = null, $brandID = null, $storeID = null, $merchantID = null)
     {
-        list($response) = $this->getProductByIdWithHttpInfo($id, $company_parameter, $brand_parameter, $store_parameter, $merchant_parameter);
+        list($response) = $this->getProductByIdWithHttpInfo($id, $companyID, $brandID, $storeID, $merchantID);
         return $response;
     }
 
@@ -654,14 +544,14 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product being searched for. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProductByIdWithHttpInfo($id, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null)
+    public function getProductByIdWithHttpInfo($id, $companyID = null, $brandID = null, $storeID = null, $merchantID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -680,20 +570,20 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // query params
-        if ($brand_parameter !== null) {
-            $queryParams['brandParameter'] = $this->apiClient->getSerializer()->toQueryValue($brand_parameter);
+        if ($brandID !== null) {
+            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brandID);
         }
         // query params
-        if ($store_parameter !== null) {
-            $queryParams['storeParameter'] = $this->apiClient->getSerializer()->toQueryValue($store_parameter);
+        if ($storeID !== null) {
+            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($storeID);
         }
         // query params
-        if ($merchant_parameter !== null) {
-            $queryParams['merchantParameter'] = $this->apiClient->getSerializer()->toQueryValue($merchant_parameter);
+        if ($merchantID !== null) {
+            $queryParams['merchantID'] = $this->apiClient->getSerializer()->toQueryValue($merchantID);
         }
         // path params
         if ($id !== null) {
@@ -845,14 +735,14 @@ class ProductApi
      * 
      *
      * @param string $id ID for the Product (required)
-     * @param \Swagger\Client\Model\DeleteProductUserRole $delete_product_user_role Product&#39;s User ID and privileges to be removed  for the product ID. (required)
-     * @param string $coupon_id ID of the Coupon connected with the Product (optional)
+     * @param \Swagger\Client\Model\DeleteProductUserRole $deleteProductUserRole Product&#39;s User ID and privileges to be removed  for the product ID. (required)
+     * @param string $couponID ID of the Coupon connected with the Product (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function removeUserProductPrivileges($id, $delete_product_user_role, $coupon_id = null)
+    public function removeUserProductPrivileges($id, $deleteProductUserRole, $couponID = null)
     {
-        list($response) = $this->removeUserProductPrivilegesWithHttpInfo($id, $delete_product_user_role, $coupon_id);
+        list($response) = $this->removeUserProductPrivilegesWithHttpInfo($id, $deleteProductUserRole, $couponID);
         return $response;
     }
 
@@ -862,20 +752,20 @@ class ProductApi
      * 
      *
      * @param string $id ID for the Product (required)
-     * @param \Swagger\Client\Model\DeleteProductUserRole $delete_product_user_role Product&#39;s User ID and privileges to be removed  for the product ID. (required)
-     * @param string $coupon_id ID of the Coupon connected with the Product (optional)
+     * @param \Swagger\Client\Model\DeleteProductUserRole $deleteProductUserRole Product&#39;s User ID and privileges to be removed  for the product ID. (required)
+     * @param string $couponID ID of the Coupon connected with the Product (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserProductPrivilegesWithHttpInfo($id, $delete_product_user_role, $coupon_id = null)
+    public function removeUserProductPrivilegesWithHttpInfo($id, $deleteProductUserRole, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserProductPrivileges');
         }
-        // verify the required parameter 'delete_product_user_role' is set
-        if ($delete_product_user_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $delete_product_user_role when calling removeUserProductPrivileges');
+        // verify the required parameter 'deleteProductUserRole' is set
+        if ($deleteProductUserRole === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $deleteProductUserRole when calling removeUserProductPrivileges');
         }
         // parse inputs
         $resourcePath = "/product/{id}/user";
@@ -890,8 +780,8 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
+        if ($couponID !== null) {
+            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($couponID);
         }
         // path params
         if ($id !== null) {
@@ -906,8 +796,8 @@ class ProductApi
 
         // body params
         $_tempBody = null;
-        if (isset($delete_product_user_role)) {
-            $_tempBody = $delete_product_user_role;
+        if (isset($deleteProductUserRole)) {
+            $_tempBody = $deleteProductUserRole;
         }
 
         // for model (json/xml)
@@ -955,17 +845,17 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateBarcode $update_barcode Product parameters for updating product consisting of productID for which to update the barcodes, userID for Authorization to grand permission and barcodes array. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\UpdateBarcode $updateBarcode Product parameters for updating product consisting of productID for which to update the barcodes, userID for Authorization to grand permission and barcodes array. (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ProductID
      */
-    public function updateBarcodes($id, $update_barcode, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null)
+    public function updateBarcodes($id, $updateBarcode, $companyID = null, $brandID = null, $storeID = null, $merchantID = null)
     {
-        list($response) = $this->updateBarcodesWithHttpInfo($id, $update_barcode, $company_parameter, $brand_parameter, $store_parameter, $merchant_parameter);
+        list($response) = $this->updateBarcodesWithHttpInfo($id, $updateBarcode, $companyID, $brandID, $storeID, $merchantID);
         return $response;
     }
 
@@ -975,23 +865,23 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateBarcode $update_barcode Product parameters for updating product consisting of productID for which to update the barcodes, userID for Authorization to grand permission and barcodes array. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\UpdateBarcode $updateBarcode Product parameters for updating product consisting of productID for which to update the barcodes, userID for Authorization to grand permission and barcodes array. (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ProductID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateBarcodesWithHttpInfo($id, $update_barcode, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null)
+    public function updateBarcodesWithHttpInfo($id, $updateBarcode, $companyID = null, $brandID = null, $storeID = null, $merchantID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateBarcodes');
         }
-        // verify the required parameter 'update_barcode' is set
-        if ($update_barcode === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_barcode when calling updateBarcodes');
+        // verify the required parameter 'updateBarcode' is set
+        if ($updateBarcode === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateBarcode when calling updateBarcodes');
         }
         // parse inputs
         $resourcePath = "/product/{id}/barcodes";
@@ -1006,20 +896,20 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // query params
-        if ($brand_parameter !== null) {
-            $queryParams['brandParameter'] = $this->apiClient->getSerializer()->toQueryValue($brand_parameter);
+        if ($brandID !== null) {
+            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brandID);
         }
         // query params
-        if ($store_parameter !== null) {
-            $queryParams['storeParameter'] = $this->apiClient->getSerializer()->toQueryValue($store_parameter);
+        if ($storeID !== null) {
+            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($storeID);
         }
         // query params
-        if ($merchant_parameter !== null) {
-            $queryParams['merchantParameter'] = $this->apiClient->getSerializer()->toQueryValue($merchant_parameter);
+        if ($merchantID !== null) {
+            $queryParams['merchantID'] = $this->apiClient->getSerializer()->toQueryValue($merchantID);
         }
         // path params
         if ($id !== null) {
@@ -1034,8 +924,8 @@ class ProductApi
 
         // body params
         $_tempBody = null;
-        if (isset($update_barcode)) {
-            $_tempBody = $update_barcode;
+        if (isset($updateBarcode)) {
+            $_tempBody = $updateBarcode;
         }
 
         // for model (json/xml)
@@ -1083,17 +973,17 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateProductParameters $update_product_parameters Product parameters for updating product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\UpdateProductParameters $updateProductParameters Product parameters for updating product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ProductID
      */
-    public function updateProduct($id, $update_product_parameters, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null)
+    public function updateProduct($id, $updateProductParameters, $companyID = null, $brandID = null, $storeID = null, $merchantID = null)
     {
-        list($response) = $this->updateProductWithHttpInfo($id, $update_product_parameters, $company_parameter, $brand_parameter, $store_parameter, $merchant_parameter);
+        list($response) = $this->updateProductWithHttpInfo($id, $updateProductParameters, $companyID, $brandID, $storeID, $merchantID);
         return $response;
     }
 
@@ -1103,23 +993,23 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateProductParameters $update_product_parameters Product parameters for updating product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\UpdateProductParameters $updateProductParameters Product parameters for updating product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ProductID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateProductWithHttpInfo($id, $update_product_parameters, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null)
+    public function updateProductWithHttpInfo($id, $updateProductParameters, $companyID = null, $brandID = null, $storeID = null, $merchantID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateProduct');
         }
-        // verify the required parameter 'update_product_parameters' is set
-        if ($update_product_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_product_parameters when calling updateProduct');
+        // verify the required parameter 'updateProductParameters' is set
+        if ($updateProductParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateProductParameters when calling updateProduct');
         }
         // parse inputs
         $resourcePath = "/product/details/{id}";
@@ -1134,20 +1024,20 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // query params
-        if ($brand_parameter !== null) {
-            $queryParams['brandParameter'] = $this->apiClient->getSerializer()->toQueryValue($brand_parameter);
+        if ($brandID !== null) {
+            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brandID);
         }
         // query params
-        if ($store_parameter !== null) {
-            $queryParams['storeParameter'] = $this->apiClient->getSerializer()->toQueryValue($store_parameter);
+        if ($storeID !== null) {
+            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($storeID);
         }
         // query params
-        if ($merchant_parameter !== null) {
-            $queryParams['merchantParameter'] = $this->apiClient->getSerializer()->toQueryValue($merchant_parameter);
+        if ($merchantID !== null) {
+            $queryParams['merchantID'] = $this->apiClient->getSerializer()->toQueryValue($merchantID);
         }
         // path params
         if ($id !== null) {
@@ -1162,8 +1052,8 @@ class ProductApi
 
         // body params
         $_tempBody = null;
-        if (isset($update_product_parameters)) {
-            $_tempBody = $update_product_parameters;
+        if (isset($updateProductParameters)) {
+            $_tempBody = $updateProductParameters;
         }
 
         // for model (json/xml)

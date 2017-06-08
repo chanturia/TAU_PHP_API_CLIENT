@@ -91,7 +91,7 @@ class CouponTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "created_by"
+     * Test attribute "createdBy"
      */
     public function testPropertyCreatedBy()
     {
@@ -150,14 +150,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      * Test attribute "stores"
      */
     public function testPropertyStores()
-    {
-
-    }
-
-    /**
-     * Test attribute "offerproviders"
-     */
-    public function testPropertyOfferproviders()
     {
 
     }

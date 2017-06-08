@@ -54,7 +54,7 @@ class ActivationCodeParameters implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'grant_type' => 'string',
+        'grantType' => 'string',
         'code' => 'string'
     ];
 
@@ -68,7 +68,7 @@ class ActivationCodeParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'grant_type' => 'grant_type',
+        'grantType' => 'grant_type',
         'code' => 'code'
     ];
 
@@ -78,7 +78,7 @@ class ActivationCodeParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'grant_type' => 'setGrantType',
+        'grantType' => 'setGrantType',
         'code' => 'setCode'
     ];
 
@@ -88,7 +88,7 @@ class ActivationCodeParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'grant_type' => 'getGrantType',
+        'grantType' => 'getGrantType',
         'code' => 'getCode'
     ];
 
@@ -123,7 +123,7 @@ class ActivationCodeParameters implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['grant_type'] = isset($data['grant_type']) ? $data['grant_type'] : null;
+        $this->container['grantType'] = isset($data['grantType']) ? $data['grantType'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
     }
 
@@ -136,8 +136,8 @@ class ActivationCodeParameters implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['grant_type'] === null) {
-            $invalid_properties[] = "'grant_type' can't be null";
+        if ($this->container['grantType'] === null) {
+            $invalid_properties[] = "'grantType' can't be null";
         }
         if ($this->container['code'] === null) {
             $invalid_properties[] = "'code' can't be null";
@@ -154,7 +154,7 @@ class ActivationCodeParameters implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['grant_type'] === null) {
+        if ($this->container['grantType'] === null) {
             return false;
         }
         if ($this->container['code'] === null) {
@@ -165,22 +165,22 @@ class ActivationCodeParameters implements ArrayAccess
 
 
     /**
-     * Gets grant_type
+     * Gets grantType
      * @return string
      */
     public function getGrantType()
     {
-        return $this->container['grant_type'];
+        return $this->container['grantType'];
     }
 
     /**
-     * Sets grant_type
-     * @param string $grant_type
+     * Sets grantType
+     * @param string $grantType
      * @return $this
      */
-    public function setGrantType($grant_type)
+    public function setGrantType($grantType)
     {
-        $this->container['grant_type'] = $grant_type;
+        $this->container['grantType'] = $grantType;
 
         return $this;
     }

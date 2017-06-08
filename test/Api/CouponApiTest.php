@@ -110,17 +110,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for changeUserCouponPrivileges
-     *
-     * .
-     *
-     */
-    public function testChangeUserCouponPrivileges()
-    {
-
-    }
-
-    /**
      * Test case for couponCategoryCreate
      *
      * .

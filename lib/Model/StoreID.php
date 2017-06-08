@@ -54,7 +54,7 @@ class StoreID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'store_id' => 'string'
+        'storeID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class StoreID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'store_id' => 'storeID'
+        'storeID' => 'storeID'
     ];
 
 
@@ -76,7 +76,7 @@ class StoreID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'store_id' => 'setStoreId'
+        'storeID' => 'setStoreID'
     ];
 
 
@@ -85,7 +85,7 @@ class StoreID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'store_id' => 'getStoreId'
+        'storeID' => 'getStoreID'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class StoreID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['store_id'] = isset($data['store_id']) ? $data['store_id'] : null;
+        $this->container['storeID'] = isset($data['storeID']) ? $data['storeID'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class StoreID implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['store_id'] === null) {
-            $invalid_properties[] = "'store_id' can't be null";
+        if ($this->container['storeID'] === null) {
+            $invalid_properties[] = "'storeID' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class StoreID implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['store_id'] === null) {
+        if ($this->container['storeID'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class StoreID implements ArrayAccess
 
 
     /**
-     * Gets store_id
+     * Gets storeID
      * @return string
      */
-    public function getStoreId()
+    public function getStoreID()
     {
-        return $this->container['store_id'];
+        return $this->container['storeID'];
     }
 
     /**
-     * Sets store_id
-     * @param string $store_id
+     * Sets storeID
+     * @param string $storeID
      * @return $this
      */
-    public function setStoreId($store_id)
+    public function setStoreID($storeID)
     {
-        $this->container['store_id'] = $store_id;
+        $this->container['storeID'] = $storeID;
 
         return $this;
     }

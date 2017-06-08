@@ -146,12 +146,4 @@ class UpdateCouponParametersTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    /**
-     * Test attribute "offerproviderids"
-     */
-    public function testPropertyOfferproviderids()
-    {
-
-    }
-
 }

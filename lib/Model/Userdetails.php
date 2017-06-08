@@ -55,9 +55,9 @@ class Userdetails implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'last_name' => 'string',
+        'lastName' => 'string',
         'email' => 'string',
-        'date_of_birth' => '\DateTime',
+        'dateOfBirth' => '\DateTime',
         'gender' => 'string'
     ];
 
@@ -72,9 +72,9 @@ class Userdetails implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'last_name' => 'lastName',
+        'lastName' => 'lastName',
         'email' => 'email',
-        'date_of_birth' => 'dateOfBirth',
+        'dateOfBirth' => 'dateOfBirth',
         'gender' => 'gender'
     ];
 
@@ -85,9 +85,9 @@ class Userdetails implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'last_name' => 'setLastName',
+        'lastName' => 'setLastName',
         'email' => 'setEmail',
-        'date_of_birth' => 'setDateOfBirth',
+        'dateOfBirth' => 'setDateOfBirth',
         'gender' => 'setGender'
     ];
 
@@ -98,9 +98,9 @@ class Userdetails implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'last_name' => 'getLastName',
+        'lastName' => 'getLastName',
         'email' => 'getEmail',
-        'date_of_birth' => 'getDateOfBirth',
+        'dateOfBirth' => 'getDateOfBirth',
         'gender' => 'getGender'
     ];
 
@@ -136,9 +136,9 @@ class Userdetails implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['date_of_birth'] = isset($data['date_of_birth']) ? $data['date_of_birth'] : null;
+        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
     }
 
@@ -178,7 +178,7 @@ class Userdetails implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name User first name must be between 2 and 485 characters and can contain only letters, digits and dashes.
      * @return $this
      */
     public function setName($name)
@@ -189,22 +189,22 @@ class Userdetails implements ArrayAccess
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
-     * @param string $last_name
+     * Sets lastName
+     * @param string $lastName User last name must be between 2 and 485 characters and can contain only letters.
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -220,7 +220,7 @@ class Userdetails implements ArrayAccess
 
     /**
      * Sets email
-     * @param string $email
+     * @param string $email User email address
      * @return $this
      */
     public function setEmail($email)
@@ -231,22 +231,22 @@ class Userdetails implements ArrayAccess
     }
 
     /**
-     * Gets date_of_birth
+     * Gets dateOfBirth
      * @return \DateTime
      */
     public function getDateOfBirth()
     {
-        return $this->container['date_of_birth'];
+        return $this->container['dateOfBirth'];
     }
 
     /**
-     * Sets date_of_birth
-     * @param \DateTime $date_of_birth
+     * Sets dateOfBirth
+     * @param \DateTime $dateOfBirth User date of birth must be a string representing an RFC2822 or ISO 8601 date
      * @return $this
      */
-    public function setDateOfBirth($date_of_birth)
+    public function setDateOfBirth($dateOfBirth)
     {
-        $this->container['date_of_birth'] = $date_of_birth;
+        $this->container['dateOfBirth'] = $dateOfBirth;
 
         return $this;
     }
@@ -262,7 +262,7 @@ class Userdetails implements ArrayAccess
 
     /**
      * Sets gender
-     * @param string $gender
+     * @param string $gender User gender with possible values male/female/other
      * @return $this
      */
     public function setGender($gender)

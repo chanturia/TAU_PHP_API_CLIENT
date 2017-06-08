@@ -83,9 +83,9 @@ class CouponCategoryIDTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "coupon_category_id"
+     * Test attribute "couponCategoryID"
      */
-    public function testPropertyCouponCategoryId()
+    public function testPropertyCouponCategoryID()
     {
 
     }

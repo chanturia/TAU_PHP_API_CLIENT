@@ -93,13 +93,13 @@ class CouponApi
      * 
      *
      * @param string $id ID for the Coupon (required)
-     * @param \Swagger\Client\Model\CreateCouponUserRole $create_coupon_user_role Coupon&#39;s User Priveleges Parameters for the couponID and UserID. (required)
+     * @param \Swagger\Client\Model\CreateCouponUserRole $createCouponUserRole Coupon&#39;s User Priveleges Parameters for the couponID and UserID. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function addUserCoupon($id, $create_coupon_user_role)
+    public function addUserCoupon($id, $createCouponUserRole)
     {
-        list($response) = $this->addUserCouponWithHttpInfo($id, $create_coupon_user_role);
+        list($response) = $this->addUserCouponWithHttpInfo($id, $createCouponUserRole);
         return $response;
     }
 
@@ -109,19 +109,19 @@ class CouponApi
      * 
      *
      * @param string $id ID for the Coupon (required)
-     * @param \Swagger\Client\Model\CreateCouponUserRole $create_coupon_user_role Coupon&#39;s User Priveleges Parameters for the couponID and UserID. (required)
+     * @param \Swagger\Client\Model\CreateCouponUserRole $createCouponUserRole Coupon&#39;s User Priveleges Parameters for the couponID and UserID. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserCouponWithHttpInfo($id, $create_coupon_user_role)
+    public function addUserCouponWithHttpInfo($id, $createCouponUserRole)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserCoupon');
         }
-        // verify the required parameter 'create_coupon_user_role' is set
-        if ($create_coupon_user_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_coupon_user_role when calling addUserCoupon');
+        // verify the required parameter 'createCouponUserRole' is set
+        if ($createCouponUserRole === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createCouponUserRole when calling addUserCoupon');
         }
         // parse inputs
         $resourcePath = "/coupon/{id}/user";
@@ -148,8 +148,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_coupon_user_role)) {
-            $_tempBody = $create_coupon_user_role;
+        if (isset($createCouponUserRole)) {
+            $_tempBody = $createCouponUserRole;
         }
 
         // for model (json/xml)
@@ -197,7 +197,7 @@ class CouponApi
      * 
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CouponCategory
+     * @return \Swagger\Client\Model\CouponCategoriesArray
      */
     public function allCouponCategories()
     {
@@ -211,7 +211,7 @@ class CouponApi
      * 
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CouponCategory, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CouponCategoriesArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function allCouponCategoriesWithHttpInfo()
     {
@@ -249,15 +249,15 @@ class CouponApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CouponCategory',
+                '\Swagger\Client\Model\CouponCategoriesArray',
                 '/coupon/categories'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CouponCategory', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CouponCategoriesArray', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CouponCategory', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CouponCategoriesArray', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 0:
@@ -276,7 +276,7 @@ class CouponApi
      * 
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CouponPrimitive
+     * @return \Swagger\Client\Model\CouponPrimitivesArray
      */
     public function allCouponPrimitives()
     {
@@ -290,7 +290,7 @@ class CouponApi
      * 
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CouponPrimitive, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CouponPrimitivesArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function allCouponPrimitivesWithHttpInfo()
     {
@@ -328,119 +328,15 @@ class CouponApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CouponPrimitive',
+                '\Swagger\Client\Model\CouponPrimitivesArray',
                 '/coupon/primitive/all'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CouponPrimitive', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CouponPrimitivesArray', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CouponPrimitive', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation changeUserCouponPrivileges
-     *
-     * 
-     *
-     * @param string $id ID for the Coupon (required)
-     * @param \Swagger\Client\Model\UpdateCouponUserRole $update_coupon_user_role Store&#39;s User Role Parameters for the CouponID and UserID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UserID
-     */
-    public function changeUserCouponPrivileges($id, $update_coupon_user_role)
-    {
-        list($response) = $this->changeUserCouponPrivilegesWithHttpInfo($id, $update_coupon_user_role);
-        return $response;
-    }
-
-    /**
-     * Operation changeUserCouponPrivilegesWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id ID for the Coupon (required)
-     * @param \Swagger\Client\Model\UpdateCouponUserRole $update_coupon_user_role Store&#39;s User Role Parameters for the CouponID and UserID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function changeUserCouponPrivilegesWithHttpInfo($id, $update_coupon_user_role)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling changeUserCouponPrivileges');
-        }
-        // verify the required parameter 'update_coupon_user_role' is set
-        if ($update_coupon_user_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_coupon_user_role when calling changeUserCouponPrivileges');
-        }
-        // parse inputs
-        $resourcePath = "/coupon/{id}/user";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($update_coupon_user_role)) {
-            $_tempBody = $update_coupon_user_role;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\UserID',
-                '/coupon/{id}/user'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserID', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UserID', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CouponPrimitivesArray', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 0:
@@ -458,13 +354,13 @@ class CouponApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCouponCategoryParameters $create_coupon_category_parameters CouponCategory parameters for creating new category consisting of category name, description and subcategories. (required)
+     * @param \Swagger\Client\Model\CreateCouponCategoryParameters $createCouponCategoryParameters CouponCategory parameters for creating new category consisting of category name, description and subcategories. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponCategory
      */
-    public function couponCategoryCreate($create_coupon_category_parameters)
+    public function couponCategoryCreate($createCouponCategoryParameters)
     {
-        list($response) = $this->couponCategoryCreateWithHttpInfo($create_coupon_category_parameters);
+        list($response) = $this->couponCategoryCreateWithHttpInfo($createCouponCategoryParameters);
         return $response;
     }
 
@@ -473,15 +369,15 @@ class CouponApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCouponCategoryParameters $create_coupon_category_parameters CouponCategory parameters for creating new category consisting of category name, description and subcategories. (required)
+     * @param \Swagger\Client\Model\CreateCouponCategoryParameters $createCouponCategoryParameters CouponCategory parameters for creating new category consisting of category name, description and subcategories. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponCategory, HTTP status code, HTTP response headers (array of strings)
      */
-    public function couponCategoryCreateWithHttpInfo($create_coupon_category_parameters)
+    public function couponCategoryCreateWithHttpInfo($createCouponCategoryParameters)
     {
-        // verify the required parameter 'create_coupon_category_parameters' is set
-        if ($create_coupon_category_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_coupon_category_parameters when calling couponCategoryCreate');
+        // verify the required parameter 'createCouponCategoryParameters' is set
+        if ($createCouponCategoryParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createCouponCategoryParameters when calling couponCategoryCreate');
         }
         // parse inputs
         $resourcePath = "/coupon/category/create";
@@ -500,8 +396,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_coupon_category_parameters)) {
-            $_tempBody = $create_coupon_category_parameters;
+        if (isset($createCouponCategoryParameters)) {
+            $_tempBody = $createCouponCategoryParameters;
         }
 
         // for model (json/xml)
@@ -548,13 +444,13 @@ class CouponApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCouponParameters $create_coupon_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\CreateCouponParameters $createCouponParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function createCoupon($create_coupon_parameters)
+    public function createCoupon($createCouponParameters)
     {
-        list($response) = $this->createCouponWithHttpInfo($create_coupon_parameters);
+        list($response) = $this->createCouponWithHttpInfo($createCouponParameters);
         return $response;
     }
 
@@ -563,15 +459,15 @@ class CouponApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCouponParameters $create_coupon_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\CreateCouponParameters $createCouponParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCouponWithHttpInfo($create_coupon_parameters)
+    public function createCouponWithHttpInfo($createCouponParameters)
     {
-        // verify the required parameter 'create_coupon_parameters' is set
-        if ($create_coupon_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_coupon_parameters when calling createCoupon');
+        // verify the required parameter 'createCouponParameters' is set
+        if ($createCouponParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createCouponParameters when calling createCoupon');
         }
         // parse inputs
         $resourcePath = "/coupon/create";
@@ -590,8 +486,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_coupon_parameters)) {
-            $_tempBody = $create_coupon_parameters;
+        if (isset($createCouponParameters)) {
+            $_tempBody = $createCouponParameters;
         }
 
         // for model (json/xml)
@@ -638,13 +534,13 @@ class CouponApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\PrimitiveParameters $primitive_parameters Coupon Primitive parameters including primitive name, description and primitive validator URL, validator inputs and validator outputs. (required)
+     * @param \Swagger\Client\Model\PrimitiveParameters $primitiveParameters Coupon Primitive parameters including primitive name, description and primitive validator URL, validator inputs and validator outputs. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponPrimitive
      */
-    public function createCouponPrimitive($primitive_parameters)
+    public function createCouponPrimitive($primitiveParameters)
     {
-        list($response) = $this->createCouponPrimitiveWithHttpInfo($primitive_parameters);
+        list($response) = $this->createCouponPrimitiveWithHttpInfo($primitiveParameters);
         return $response;
     }
 
@@ -653,15 +549,15 @@ class CouponApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\PrimitiveParameters $primitive_parameters Coupon Primitive parameters including primitive name, description and primitive validator URL, validator inputs and validator outputs. (required)
+     * @param \Swagger\Client\Model\PrimitiveParameters $primitiveParameters Coupon Primitive parameters including primitive name, description and primitive validator URL, validator inputs and validator outputs. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponPrimitive, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCouponPrimitiveWithHttpInfo($primitive_parameters)
+    public function createCouponPrimitiveWithHttpInfo($primitiveParameters)
     {
-        // verify the required parameter 'primitive_parameters' is set
-        if ($primitive_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $primitive_parameters when calling createCouponPrimitive');
+        // verify the required parameter 'primitiveParameters' is set
+        if ($primitiveParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $primitiveParameters when calling createCouponPrimitive');
         }
         // parse inputs
         $resourcePath = "/coupon/primitive/create";
@@ -680,8 +576,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($primitive_parameters)) {
-            $_tempBody = $primitive_parameters;
+        if (isset($primitiveParameters)) {
+            $_tempBody = $primitiveParameters;
         }
 
         // for model (json/xml)
@@ -728,14 +624,14 @@ class CouponApi
      *
      * 
      *
-     * @param string $coupon_category_id ID for the Coupon Category to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCouponCategoryParameters $update_coupon_category_parameters Coupon Category parameters consisting of category id, name, description and subcategories. (required)
+     * @param string $couponCategoryID ID for the Coupon Category to be updated. (required)
+     * @param \Swagger\Client\Model\UpdateCouponCategoryParameters $updateCouponCategoryParameters Coupon Category parameters consisting of category id, name, description and subcategories. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponCategoryID
      */
-    public function editCouponCategory($coupon_category_id, $update_coupon_category_parameters)
+    public function editCouponCategory($couponCategoryID, $updateCouponCategoryParameters)
     {
-        list($response) = $this->editCouponCategoryWithHttpInfo($coupon_category_id, $update_coupon_category_parameters);
+        list($response) = $this->editCouponCategoryWithHttpInfo($couponCategoryID, $updateCouponCategoryParameters);
         return $response;
     }
 
@@ -744,20 +640,20 @@ class CouponApi
      *
      * 
      *
-     * @param string $coupon_category_id ID for the Coupon Category to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCouponCategoryParameters $update_coupon_category_parameters Coupon Category parameters consisting of category id, name, description and subcategories. (required)
+     * @param string $couponCategoryID ID for the Coupon Category to be updated. (required)
+     * @param \Swagger\Client\Model\UpdateCouponCategoryParameters $updateCouponCategoryParameters Coupon Category parameters consisting of category id, name, description and subcategories. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponCategoryID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editCouponCategoryWithHttpInfo($coupon_category_id, $update_coupon_category_parameters)
+    public function editCouponCategoryWithHttpInfo($couponCategoryID, $updateCouponCategoryParameters)
     {
-        // verify the required parameter 'coupon_category_id' is set
-        if ($coupon_category_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $coupon_category_id when calling editCouponCategory');
+        // verify the required parameter 'couponCategoryID' is set
+        if ($couponCategoryID === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $couponCategoryID when calling editCouponCategory');
         }
-        // verify the required parameter 'update_coupon_category_parameters' is set
-        if ($update_coupon_category_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_coupon_category_parameters when calling editCouponCategory');
+        // verify the required parameter 'updateCouponCategoryParameters' is set
+        if ($updateCouponCategoryParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateCouponCategoryParameters when calling editCouponCategory');
         }
         // parse inputs
         $resourcePath = "/coupon/category/{couponCategoryID}";
@@ -772,10 +668,10 @@ class CouponApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($coupon_category_id !== null) {
+        if ($couponCategoryID !== null) {
             $resourcePath = str_replace(
                 "{" . "couponCategoryID" . "}",
-                $this->apiClient->getSerializer()->toPathValue($coupon_category_id),
+                $this->apiClient->getSerializer()->toPathValue($couponCategoryID),
                 $resourcePath
             );
         }
@@ -784,8 +680,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($update_coupon_category_parameters)) {
-            $_tempBody = $update_coupon_category_parameters;
+        if (isset($updateCouponCategoryParameters)) {
+            $_tempBody = $updateCouponCategoryParameters;
         }
 
         // for model (json/xml)
@@ -832,14 +728,14 @@ class CouponApi
      *
      * 
      *
-     * @param string $primitive_id ID for the Coupon Primitive to be updated. (required)
-     * @param \Swagger\Client\Model\CouponPrimitiveParameters $coupon_primitive_parameters Coupon Primitive parameters including primitive id and primitive name, description, validator URL, validator inputs and validator outputs. (required)
+     * @param string $primitiveID ID for the Coupon Primitive to be updated. (required)
+     * @param \Swagger\Client\Model\CouponPrimitiveParameters $couponPrimitiveParameters Coupon Primitive parameters including primitive id and primitive name, description, validator URL, validator inputs and validator outputs. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponPrimitiveID
      */
-    public function editCouponPrimitive($primitive_id, $coupon_primitive_parameters)
+    public function editCouponPrimitive($primitiveID, $couponPrimitiveParameters)
     {
-        list($response) = $this->editCouponPrimitiveWithHttpInfo($primitive_id, $coupon_primitive_parameters);
+        list($response) = $this->editCouponPrimitiveWithHttpInfo($primitiveID, $couponPrimitiveParameters);
         return $response;
     }
 
@@ -848,20 +744,20 @@ class CouponApi
      *
      * 
      *
-     * @param string $primitive_id ID for the Coupon Primitive to be updated. (required)
-     * @param \Swagger\Client\Model\CouponPrimitiveParameters $coupon_primitive_parameters Coupon Primitive parameters including primitive id and primitive name, description, validator URL, validator inputs and validator outputs. (required)
+     * @param string $primitiveID ID for the Coupon Primitive to be updated. (required)
+     * @param \Swagger\Client\Model\CouponPrimitiveParameters $couponPrimitiveParameters Coupon Primitive parameters including primitive id and primitive name, description, validator URL, validator inputs and validator outputs. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponPrimitiveID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editCouponPrimitiveWithHttpInfo($primitive_id, $coupon_primitive_parameters)
+    public function editCouponPrimitiveWithHttpInfo($primitiveID, $couponPrimitiveParameters)
     {
-        // verify the required parameter 'primitive_id' is set
-        if ($primitive_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $primitive_id when calling editCouponPrimitive');
+        // verify the required parameter 'primitiveID' is set
+        if ($primitiveID === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $primitiveID when calling editCouponPrimitive');
         }
-        // verify the required parameter 'coupon_primitive_parameters' is set
-        if ($coupon_primitive_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $coupon_primitive_parameters when calling editCouponPrimitive');
+        // verify the required parameter 'couponPrimitiveParameters' is set
+        if ($couponPrimitiveParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $couponPrimitiveParameters when calling editCouponPrimitive');
         }
         // parse inputs
         $resourcePath = "/coupon/primitive/{primitiveID}/details";
@@ -876,10 +772,10 @@ class CouponApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($primitive_id !== null) {
+        if ($primitiveID !== null) {
             $resourcePath = str_replace(
                 "{" . "primitiveID" . "}",
-                $this->apiClient->getSerializer()->toPathValue($primitive_id),
+                $this->apiClient->getSerializer()->toPathValue($primitiveID),
                 $resourcePath
             );
         }
@@ -888,8 +784,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($coupon_primitive_parameters)) {
-            $_tempBody = $coupon_primitive_parameters;
+        if (isset($couponPrimitiveParameters)) {
+            $_tempBody = $couponPrimitiveParameters;
         }
 
         // for model (json/xml)
@@ -937,17 +833,17 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon being searched for. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
-     * @param string $product_parameter Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
+     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
+     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function getCouponById($id, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null, $product_parameter = null)
+    public function getCouponById($id, $companyID = null, $brandID = null, $storeID = null, $merchantID = null, $productID = null)
     {
-        list($response) = $this->getCouponByIdWithHttpInfo($id, $company_parameter, $brand_parameter, $store_parameter, $merchant_parameter, $product_parameter);
+        list($response) = $this->getCouponByIdWithHttpInfo($id, $companyID, $brandID, $storeID, $merchantID, $productID);
         return $response;
     }
 
@@ -957,15 +853,15 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon being searched for. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
-     * @param string $product_parameter Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
+     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
+     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCouponByIdWithHttpInfo($id, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null, $product_parameter = null)
+    public function getCouponByIdWithHttpInfo($id, $companyID = null, $brandID = null, $storeID = null, $merchantID = null, $productID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -984,24 +880,24 @@ class CouponApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // query params
-        if ($brand_parameter !== null) {
-            $queryParams['brandParameter'] = $this->apiClient->getSerializer()->toQueryValue($brand_parameter);
+        if ($brandID !== null) {
+            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brandID);
         }
         // query params
-        if ($store_parameter !== null) {
-            $queryParams['storeParameter'] = $this->apiClient->getSerializer()->toQueryValue($store_parameter);
+        if ($storeID !== null) {
+            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($storeID);
         }
         // query params
-        if ($merchant_parameter !== null) {
-            $queryParams['merchantParameter'] = $this->apiClient->getSerializer()->toQueryValue($merchant_parameter);
+        if ($merchantID !== null) {
+            $queryParams['merchantID'] = $this->apiClient->getSerializer()->toQueryValue($merchantID);
         }
         // query params
-        if ($product_parameter !== null) {
-            $queryParams['productParameter'] = $this->apiClient->getSerializer()->toQueryValue($product_parameter);
+        if ($productID !== null) {
+            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($productID);
         }
         // path params
         if ($id !== null) {
@@ -1059,13 +955,13 @@ class CouponApi
      *
      * 
      *
-     * @param string $coupon_category_id ID for the Coupon Category being searched for. (required)
+     * @param string $couponCategoryID ID for the Coupon Category being searched for. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponCategory
      */
-    public function getCouponCategoryById($coupon_category_id)
+    public function getCouponCategoryById($couponCategoryID)
     {
-        list($response) = $this->getCouponCategoryByIdWithHttpInfo($coupon_category_id);
+        list($response) = $this->getCouponCategoryByIdWithHttpInfo($couponCategoryID);
         return $response;
     }
 
@@ -1074,15 +970,15 @@ class CouponApi
      *
      * 
      *
-     * @param string $coupon_category_id ID for the Coupon Category being searched for. (required)
+     * @param string $couponCategoryID ID for the Coupon Category being searched for. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponCategory, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCouponCategoryByIdWithHttpInfo($coupon_category_id)
+    public function getCouponCategoryByIdWithHttpInfo($couponCategoryID)
     {
-        // verify the required parameter 'coupon_category_id' is set
-        if ($coupon_category_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $coupon_category_id when calling getCouponCategoryById');
+        // verify the required parameter 'couponCategoryID' is set
+        if ($couponCategoryID === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $couponCategoryID when calling getCouponCategoryById');
         }
         // parse inputs
         $resourcePath = "/coupon/category/{couponCategoryID}";
@@ -1097,10 +993,10 @@ class CouponApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($coupon_category_id !== null) {
+        if ($couponCategoryID !== null) {
             $resourcePath = str_replace(
                 "{" . "couponCategoryID" . "}",
-                $this->apiClient->getSerializer()->toPathValue($coupon_category_id),
+                $this->apiClient->getSerializer()->toPathValue($couponCategoryID),
                 $resourcePath
             );
         }
@@ -1152,13 +1048,13 @@ class CouponApi
      *
      * 
      *
-     * @param string $primitive_id ID for the Coupon Primitive being searched for. (required)
+     * @param string $primitiveID ID for the Coupon Primitive being searched for. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponPrimitive
      */
-    public function getCouponPrimitiveById($primitive_id)
+    public function getCouponPrimitiveById($primitiveID)
     {
-        list($response) = $this->getCouponPrimitiveByIdWithHttpInfo($primitive_id);
+        list($response) = $this->getCouponPrimitiveByIdWithHttpInfo($primitiveID);
         return $response;
     }
 
@@ -1167,15 +1063,15 @@ class CouponApi
      *
      * 
      *
-     * @param string $primitive_id ID for the Coupon Primitive being searched for. (required)
+     * @param string $primitiveID ID for the Coupon Primitive being searched for. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponPrimitive, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCouponPrimitiveByIdWithHttpInfo($primitive_id)
+    public function getCouponPrimitiveByIdWithHttpInfo($primitiveID)
     {
-        // verify the required parameter 'primitive_id' is set
-        if ($primitive_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $primitive_id when calling getCouponPrimitiveById');
+        // verify the required parameter 'primitiveID' is set
+        if ($primitiveID === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $primitiveID when calling getCouponPrimitiveById');
         }
         // parse inputs
         $resourcePath = "/coupon/primitive/{primitiveID}/details";
@@ -1190,10 +1086,10 @@ class CouponApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($primitive_id !== null) {
+        if ($primitiveID !== null) {
             $resourcePath = str_replace(
                 "{" . "primitiveID" . "}",
-                $this->apiClient->getSerializer()->toPathValue($primitive_id),
+                $this->apiClient->getSerializer()->toPathValue($primitiveID),
                 $resourcePath
             );
         }
@@ -1339,13 +1235,13 @@ class CouponApi
      * 
      *
      * @param string $id ID for the Coupon (required)
-     * @param \Swagger\Client\Model\DeleteCouponUserRole $delete_coupon_user_role Coupons User ID and Role to be removed  for the coupon ID. (required)
+     * @param \Swagger\Client\Model\DeleteCouponUserRole $deleteCouponUserRole Coupons User ID and Role to be removed  for the coupon ID. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function removeUserCouponPrivileges($id, $delete_coupon_user_role)
+    public function removeUserCouponPrivileges($id, $deleteCouponUserRole)
     {
-        list($response) = $this->removeUserCouponPrivilegesWithHttpInfo($id, $delete_coupon_user_role);
+        list($response) = $this->removeUserCouponPrivilegesWithHttpInfo($id, $deleteCouponUserRole);
         return $response;
     }
 
@@ -1355,19 +1251,19 @@ class CouponApi
      * 
      *
      * @param string $id ID for the Coupon (required)
-     * @param \Swagger\Client\Model\DeleteCouponUserRole $delete_coupon_user_role Coupons User ID and Role to be removed  for the coupon ID. (required)
+     * @param \Swagger\Client\Model\DeleteCouponUserRole $deleteCouponUserRole Coupons User ID and Role to be removed  for the coupon ID. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserCouponPrivilegesWithHttpInfo($id, $delete_coupon_user_role)
+    public function removeUserCouponPrivilegesWithHttpInfo($id, $deleteCouponUserRole)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserCouponPrivileges');
         }
-        // verify the required parameter 'delete_coupon_user_role' is set
-        if ($delete_coupon_user_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $delete_coupon_user_role when calling removeUserCouponPrivileges');
+        // verify the required parameter 'deleteCouponUserRole' is set
+        if ($deleteCouponUserRole === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $deleteCouponUserRole when calling removeUserCouponPrivileges');
         }
         // parse inputs
         $resourcePath = "/coupon/{id}/user";
@@ -1394,8 +1290,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($delete_coupon_user_role)) {
-            $_tempBody = $delete_coupon_user_role;
+        if (isset($deleteCouponUserRole)) {
+            $_tempBody = $deleteCouponUserRole;
         }
 
         // for model (json/xml)
@@ -1443,13 +1339,13 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon being searched for (required)
-     * @param \Swagger\Client\Model\SetCouponTermsParameters $set_coupon_terms_parameters Coupon Parameters for the coupon to be updated (required)
+     * @param \Swagger\Client\Model\SetCouponTermsParameters $setCouponTermsParameters Coupon Parameters for the coupon to be updated (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function setCouponTerms($id, $set_coupon_terms_parameters)
+    public function setCouponTerms($id, $setCouponTermsParameters)
     {
-        list($response) = $this->setCouponTermsWithHttpInfo($id, $set_coupon_terms_parameters);
+        list($response) = $this->setCouponTermsWithHttpInfo($id, $setCouponTermsParameters);
         return $response;
     }
 
@@ -1459,19 +1355,19 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon being searched for (required)
-     * @param \Swagger\Client\Model\SetCouponTermsParameters $set_coupon_terms_parameters Coupon Parameters for the coupon to be updated (required)
+     * @param \Swagger\Client\Model\SetCouponTermsParameters $setCouponTermsParameters Coupon Parameters for the coupon to be updated (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setCouponTermsWithHttpInfo($id, $set_coupon_terms_parameters)
+    public function setCouponTermsWithHttpInfo($id, $setCouponTermsParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling setCouponTerms');
         }
-        // verify the required parameter 'set_coupon_terms_parameters' is set
-        if ($set_coupon_terms_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $set_coupon_terms_parameters when calling setCouponTerms');
+        // verify the required parameter 'setCouponTermsParameters' is set
+        if ($setCouponTermsParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $setCouponTermsParameters when calling setCouponTerms');
         }
         // parse inputs
         $resourcePath = "/coupon/{id}/terms";
@@ -1498,8 +1394,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($set_coupon_terms_parameters)) {
-            $_tempBody = $set_coupon_terms_parameters;
+        if (isset($setCouponTermsParameters)) {
+            $_tempBody = $setCouponTermsParameters;
         }
 
         // for model (json/xml)
@@ -1547,18 +1443,18 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCouponParameters $update_coupon_parameters Coupon Parameters consisting of coupon id, userid who initiated the update proccess, name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
-     * @param string $product_parameter Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
+     * @param \Swagger\Client\Model\UpdateCouponParameters $updateCouponParameters Coupon Parameters consisting of coupon id, userid who initiated the update proccess, name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
+     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
+     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponID
      */
-    public function updateCoupon($id, $update_coupon_parameters, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null, $product_parameter = null)
+    public function updateCoupon($id, $updateCouponParameters, $companyID = null, $brandID = null, $storeID = null, $merchantID = null, $productID = null)
     {
-        list($response) = $this->updateCouponWithHttpInfo($id, $update_coupon_parameters, $company_parameter, $brand_parameter, $store_parameter, $merchant_parameter, $product_parameter);
+        list($response) = $this->updateCouponWithHttpInfo($id, $updateCouponParameters, $companyID, $brandID, $storeID, $merchantID, $productID);
         return $response;
     }
 
@@ -1568,24 +1464,24 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCouponParameters $update_coupon_parameters Coupon Parameters consisting of coupon id, userid who initiated the update proccess, name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
-     * @param string $company_parameter Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
-     * @param string $brand_parameter Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
-     * @param string $store_parameter Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
-     * @param string $merchant_parameter Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
-     * @param string $product_parameter Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
+     * @param \Swagger\Client\Model\UpdateCouponParameters $updateCouponParameters Coupon Parameters consisting of coupon id, userid who initiated the update proccess, name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
+     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
+     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCouponWithHttpInfo($id, $update_coupon_parameters, $company_parameter = null, $brand_parameter = null, $store_parameter = null, $merchant_parameter = null, $product_parameter = null)
+    public function updateCouponWithHttpInfo($id, $updateCouponParameters, $companyID = null, $brandID = null, $storeID = null, $merchantID = null, $productID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateCoupon');
         }
-        // verify the required parameter 'update_coupon_parameters' is set
-        if ($update_coupon_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_coupon_parameters when calling updateCoupon');
+        // verify the required parameter 'updateCouponParameters' is set
+        if ($updateCouponParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateCouponParameters when calling updateCoupon');
         }
         // parse inputs
         $resourcePath = "/coupon/{id}/details";
@@ -1600,24 +1496,24 @@ class CouponApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($company_parameter !== null) {
-            $queryParams['companyParameter'] = $this->apiClient->getSerializer()->toQueryValue($company_parameter);
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
         }
         // query params
-        if ($brand_parameter !== null) {
-            $queryParams['brandParameter'] = $this->apiClient->getSerializer()->toQueryValue($brand_parameter);
+        if ($brandID !== null) {
+            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brandID);
         }
         // query params
-        if ($store_parameter !== null) {
-            $queryParams['storeParameter'] = $this->apiClient->getSerializer()->toQueryValue($store_parameter);
+        if ($storeID !== null) {
+            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($storeID);
         }
         // query params
-        if ($merchant_parameter !== null) {
-            $queryParams['merchantParameter'] = $this->apiClient->getSerializer()->toQueryValue($merchant_parameter);
+        if ($merchantID !== null) {
+            $queryParams['merchantID'] = $this->apiClient->getSerializer()->toQueryValue($merchantID);
         }
         // query params
-        if ($product_parameter !== null) {
-            $queryParams['productParameter'] = $this->apiClient->getSerializer()->toQueryValue($product_parameter);
+        if ($productID !== null) {
+            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($productID);
         }
         // path params
         if ($id !== null) {
@@ -1632,8 +1528,8 @@ class CouponApi
 
         // body params
         $_tempBody = null;
-        if (isset($update_coupon_parameters)) {
-            $_tempBody = $update_coupon_parameters;
+        if (isset($updateCouponParameters)) {
+            $_tempBody = $updateCouponParameters;
         }
 
         // for model (json/xml)

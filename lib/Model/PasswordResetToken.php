@@ -54,7 +54,7 @@ class PasswordResetToken implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reset_token' => 'string'
+        'resetToken' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class PasswordResetToken implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'reset_token' => 'resetToken'
+        'resetToken' => 'resetToken'
     ];
 
 
@@ -76,7 +76,7 @@ class PasswordResetToken implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'reset_token' => 'setResetToken'
+        'resetToken' => 'setResetToken'
     ];
 
 
@@ -85,7 +85,7 @@ class PasswordResetToken implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'reset_token' => 'getResetToken'
+        'resetToken' => 'getResetToken'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class PasswordResetToken implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['reset_token'] = isset($data['reset_token']) ? $data['reset_token'] : null;
+        $this->container['resetToken'] = isset($data['resetToken']) ? $data['resetToken'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class PasswordResetToken implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['reset_token'] === null) {
-            $invalid_properties[] = "'reset_token' can't be null";
+        if ($this->container['resetToken'] === null) {
+            $invalid_properties[] = "'resetToken' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class PasswordResetToken implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['reset_token'] === null) {
+        if ($this->container['resetToken'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class PasswordResetToken implements ArrayAccess
 
 
     /**
-     * Gets reset_token
+     * Gets resetToken
      * @return string
      */
     public function getResetToken()
     {
-        return $this->container['reset_token'];
+        return $this->container['resetToken'];
     }
 
     /**
-     * Sets reset_token
-     * @param string $reset_token
+     * Sets resetToken
+     * @param string $resetToken
      * @return $this
      */
-    public function setResetToken($reset_token)
+    public function setResetToken($resetToken)
     {
-        $this->container['reset_token'] = $reset_token;
+        $this->container['resetToken'] = $resetToken;
 
         return $this;
     }

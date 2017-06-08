@@ -83,9 +83,9 @@ class CreateCompanyUserRolesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }
@@ -99,33 +99,33 @@ class CreateCompanyUserRolesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "brand_id"
+     * Test attribute "brandID"
      */
-    public function testPropertyBrandId()
+    public function testPropertyBrandID()
     {
 
     }
 
     /**
-     * Test attribute "store_id"
+     * Test attribute "storeID"
      */
-    public function testPropertyStoreId()
+    public function testPropertyStoreID()
     {
 
     }
 
     /**
-     * Test attribute "product_id"
+     * Test attribute "productID"
      */
-    public function testPropertyProductId()
+    public function testPropertyProductID()
     {
 
     }
 
     /**
-     * Test attribute "coupon_id"
+     * Test attribute "couponID"
      */
-    public function testPropertyCouponId()
+    public function testPropertyCouponID()
     {
 
     }

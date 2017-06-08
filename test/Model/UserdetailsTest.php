@@ -91,7 +91,7 @@ class UserdetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "lastName"
      */
     public function testPropertyLastName()
     {
@@ -107,7 +107,7 @@ class UserdetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "date_of_birth"
+     * Test attribute "dateOfBirth"
      */
     public function testPropertyDateOfBirth()
     {

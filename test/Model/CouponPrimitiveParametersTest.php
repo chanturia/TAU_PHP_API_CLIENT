@@ -99,15 +99,15 @@ class CouponPrimitiveParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "validator_url"
+     * Test attribute "validatorURL"
      */
-    public function testPropertyValidatorUrl()
+    public function testPropertyValidatorURL()
     {
 
     }
 
     /**
-     * Test attribute "validator_inputs"
+     * Test attribute "validatorInputs"
      */
     public function testPropertyValidatorInputs()
     {
@@ -115,7 +115,7 @@ class CouponPrimitiveParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "validator_outputs"
+     * Test attribute "validatorOutputs"
      */
     public function testPropertyValidatorOutputs()
     {

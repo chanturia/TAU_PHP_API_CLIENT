@@ -56,8 +56,8 @@ class LoginCredentials implements ArrayAccess
     protected static $swaggerTypes = [
         'email' => 'string',
         'password' => 'string',
-        'fb_id' => 'string',
-        'google_id' => 'string'
+        'fbID' => 'string',
+        'googleID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -72,8 +72,8 @@ class LoginCredentials implements ArrayAccess
     protected static $attributeMap = [
         'email' => 'email',
         'password' => 'password',
-        'fb_id' => 'fbID',
-        'google_id' => 'googleID'
+        'fbID' => 'fbID',
+        'googleID' => 'googleID'
     ];
 
 
@@ -84,8 +84,8 @@ class LoginCredentials implements ArrayAccess
     protected static $setters = [
         'email' => 'setEmail',
         'password' => 'setPassword',
-        'fb_id' => 'setFbId',
-        'google_id' => 'setGoogleId'
+        'fbID' => 'setFbID',
+        'googleID' => 'setGoogleID'
     ];
 
 
@@ -96,8 +96,8 @@ class LoginCredentials implements ArrayAccess
     protected static $getters = [
         'email' => 'getEmail',
         'password' => 'getPassword',
-        'fb_id' => 'getFbId',
-        'google_id' => 'getGoogleId'
+        'fbID' => 'getFbID',
+        'googleID' => 'getGoogleID'
     ];
 
     public static function attributeMap()
@@ -133,8 +133,8 @@ class LoginCredentials implements ArrayAccess
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['fb_id'] = isset($data['fb_id']) ? $data['fb_id'] : null;
-        $this->container['google_id'] = isset($data['google_id']) ? $data['google_id'] : null;
+        $this->container['fbID'] = isset($data['fbID']) ? $data['fbID'] : null;
+        $this->container['googleID'] = isset($data['googleID']) ? $data['googleID'] : null;
     }
 
     /**
@@ -217,43 +217,43 @@ class LoginCredentials implements ArrayAccess
     }
 
     /**
-     * Gets fb_id
+     * Gets fbID
      * @return string
      */
-    public function getFbId()
+    public function getFbID()
     {
-        return $this->container['fb_id'];
+        return $this->container['fbID'];
     }
 
     /**
-     * Sets fb_id
-     * @param string $fb_id
+     * Sets fbID
+     * @param string $fbID
      * @return $this
      */
-    public function setFbId($fb_id)
+    public function setFbID($fbID)
     {
-        $this->container['fb_id'] = $fb_id;
+        $this->container['fbID'] = $fbID;
 
         return $this;
     }
 
     /**
-     * Gets google_id
+     * Gets googleID
      * @return string
      */
-    public function getGoogleId()
+    public function getGoogleID()
     {
-        return $this->container['google_id'];
+        return $this->container['googleID'];
     }
 
     /**
-     * Sets google_id
-     * @param string $google_id
+     * Sets googleID
+     * @param string $googleID
      * @return $this
      */
-    public function setGoogleId($google_id)
+    public function setGoogleID($googleID)
     {
-        $this->container['google_id'] = $google_id;
+        $this->container['googleID'] = $googleID;
 
         return $this;
     }

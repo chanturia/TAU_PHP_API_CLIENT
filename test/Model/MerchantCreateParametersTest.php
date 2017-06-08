@@ -83,9 +83,9 @@ class MerchantCreateParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }

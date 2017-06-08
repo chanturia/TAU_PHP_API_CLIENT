@@ -131,7 +131,7 @@ class ProductTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "images_uris"
+     * Test attribute "imagesUris"
      */
     public function testPropertyImagesUris()
     {

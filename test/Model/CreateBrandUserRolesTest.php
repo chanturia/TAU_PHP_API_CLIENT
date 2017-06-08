@@ -83,9 +83,9 @@ class CreateBrandUserRolesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }
@@ -99,17 +99,17 @@ class CreateBrandUserRolesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "product_id"
+     * Test attribute "productID"
      */
-    public function testPropertyProductId()
+    public function testPropertyProductID()
     {
 
     }
 
     /**
-     * Test attribute "coupon_id"
+     * Test attribute "couponID"
      */
-    public function testPropertyCouponId()
+    public function testPropertyCouponID()
     {
 
     }

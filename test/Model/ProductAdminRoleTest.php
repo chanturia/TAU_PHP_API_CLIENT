@@ -83,9 +83,9 @@ class ProductAdminRoleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }
@@ -99,9 +99,9 @@ class ProductAdminRoleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "coupon_id"
+     * Test attribute "couponID"
      */
-    public function testPropertyCouponId()
+    public function testPropertyCouponID()
     {
 
     }

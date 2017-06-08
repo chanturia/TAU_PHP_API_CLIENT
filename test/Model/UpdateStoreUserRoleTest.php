@@ -83,15 +83,15 @@ class UpdateStoreUserRoleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }
 
     /**
-     * Test attribute "role_to_update"
+     * Test attribute "roleToUpdate"
      */
     public function testPropertyRoleToUpdate()
     {
@@ -99,7 +99,7 @@ class UpdateStoreUserRoleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "new_role"
+     * Test attribute "newRole"
      */
     public function testPropertyNewRole()
     {
@@ -107,17 +107,17 @@ class UpdateStoreUserRoleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "product_id"
+     * Test attribute "productID"
      */
-    public function testPropertyProductId()
+    public function testPropertyProductID()
     {
 
     }
 
     /**
-     * Test attribute "coupon_id"
+     * Test attribute "couponID"
      */
-    public function testPropertyCouponId()
+    public function testPropertyCouponID()
     {
 
     }

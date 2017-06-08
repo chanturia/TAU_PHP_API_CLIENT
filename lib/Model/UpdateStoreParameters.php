@@ -168,7 +168,7 @@ class UpdateStoreParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Store name must be between 2 and 484 characters
      * @return $this
      */
     public function setName($name)
@@ -189,7 +189,7 @@ class UpdateStoreParameters implements ArrayAccess
 
     /**
      * Sets kind
-     * @param string $kind
+     * @param string $kind Store type must be between 2 and 484 characters and can contain only letters, digits and dashes
      * @return $this
      */
     public function setKind($kind)
@@ -210,7 +210,7 @@ class UpdateStoreParameters implements ArrayAccess
 
     /**
      * Sets address
-     * @param string $address
+     * @param string $address Store main address must be in the form House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country
      * @return $this
      */
     public function setAddress($address)

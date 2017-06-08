@@ -56,9 +56,9 @@ class PrimitiveParameters implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'description' => 'string',
-        'validator_url' => 'string',
-        'validator_inputs' => 'string[]',
-        'validator_outputs' => 'string[]'
+        'validatorURL' => 'string',
+        'validatorInputs' => 'string[]',
+        'validatorOutputs' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -73,9 +73,9 @@ class PrimitiveParameters implements ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'description' => 'description',
-        'validator_url' => 'validatorURL',
-        'validator_inputs' => 'validatorInputs',
-        'validator_outputs' => 'validatorOutputs'
+        'validatorURL' => 'validatorURL',
+        'validatorInputs' => 'validatorInputs',
+        'validatorOutputs' => 'validatorOutputs'
     ];
 
 
@@ -86,9 +86,9 @@ class PrimitiveParameters implements ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'description' => 'setDescription',
-        'validator_url' => 'setValidatorUrl',
-        'validator_inputs' => 'setValidatorInputs',
-        'validator_outputs' => 'setValidatorOutputs'
+        'validatorURL' => 'setValidatorURL',
+        'validatorInputs' => 'setValidatorInputs',
+        'validatorOutputs' => 'setValidatorOutputs'
     ];
 
 
@@ -99,9 +99,9 @@ class PrimitiveParameters implements ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'description' => 'getDescription',
-        'validator_url' => 'getValidatorUrl',
-        'validator_inputs' => 'getValidatorInputs',
-        'validator_outputs' => 'getValidatorOutputs'
+        'validatorURL' => 'getValidatorURL',
+        'validatorInputs' => 'getValidatorInputs',
+        'validatorOutputs' => 'getValidatorOutputs'
     ];
 
     public static function attributeMap()
@@ -137,9 +137,9 @@ class PrimitiveParameters implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['validator_url'] = isset($data['validator_url']) ? $data['validator_url'] : null;
-        $this->container['validator_inputs'] = isset($data['validator_inputs']) ? $data['validator_inputs'] : null;
-        $this->container['validator_outputs'] = isset($data['validator_outputs']) ? $data['validator_outputs'] : null;
+        $this->container['validatorURL'] = isset($data['validatorURL']) ? $data['validatorURL'] : null;
+        $this->container['validatorInputs'] = isset($data['validatorInputs']) ? $data['validatorInputs'] : null;
+        $this->container['validatorOutputs'] = isset($data['validatorOutputs']) ? $data['validatorOutputs'] : null;
     }
 
     /**
@@ -157,14 +157,14 @@ class PrimitiveParameters implements ArrayAccess
         if ($this->container['description'] === null) {
             $invalid_properties[] = "'description' can't be null";
         }
-        if ($this->container['validator_url'] === null) {
-            $invalid_properties[] = "'validator_url' can't be null";
+        if ($this->container['validatorURL'] === null) {
+            $invalid_properties[] = "'validatorURL' can't be null";
         }
-        if ($this->container['validator_inputs'] === null) {
-            $invalid_properties[] = "'validator_inputs' can't be null";
+        if ($this->container['validatorInputs'] === null) {
+            $invalid_properties[] = "'validatorInputs' can't be null";
         }
-        if ($this->container['validator_outputs'] === null) {
-            $invalid_properties[] = "'validator_outputs' can't be null";
+        if ($this->container['validatorOutputs'] === null) {
+            $invalid_properties[] = "'validatorOutputs' can't be null";
         }
         return $invalid_properties;
     }
@@ -184,13 +184,13 @@ class PrimitiveParameters implements ArrayAccess
         if ($this->container['description'] === null) {
             return false;
         }
-        if ($this->container['validator_url'] === null) {
+        if ($this->container['validatorURL'] === null) {
             return false;
         }
-        if ($this->container['validator_inputs'] === null) {
+        if ($this->container['validatorInputs'] === null) {
             return false;
         }
-        if ($this->container['validator_outputs'] === null) {
+        if ($this->container['validatorOutputs'] === null) {
             return false;
         }
         return true;
@@ -208,7 +208,7 @@ class PrimitiveParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Coupon primitive name must be between 2 and 484 characters
      * @return $this
      */
     public function setName($name)
@@ -229,7 +229,7 @@ class PrimitiveParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Coupon primitive description must be between 2 and 1284 characters
      * @return $this
      */
     public function setDescription($description)
@@ -240,64 +240,64 @@ class PrimitiveParameters implements ArrayAccess
     }
 
     /**
-     * Gets validator_url
+     * Gets validatorURL
      * @return string
      */
-    public function getValidatorUrl()
+    public function getValidatorURL()
     {
-        return $this->container['validator_url'];
+        return $this->container['validatorURL'];
     }
 
     /**
-     * Sets validator_url
-     * @param string $validator_url
+     * Sets validatorURL
+     * @param string $validatorURL Coupon primitive validator URL must have valid URL form
      * @return $this
      */
-    public function setValidatorUrl($validator_url)
+    public function setValidatorURL($validatorURL)
     {
-        $this->container['validator_url'] = $validator_url;
+        $this->container['validatorURL'] = $validatorURL;
 
         return $this;
     }
 
     /**
-     * Gets validator_inputs
+     * Gets validatorInputs
      * @return string[]
      */
     public function getValidatorInputs()
     {
-        return $this->container['validator_inputs'];
+        return $this->container['validatorInputs'];
     }
 
     /**
-     * Sets validator_inputs
-     * @param string[] $validator_inputs
+     * Sets validatorInputs
+     * @param string[] $validatorInputs contain array with validation input constrains
      * @return $this
      */
-    public function setValidatorInputs($validator_inputs)
+    public function setValidatorInputs($validatorInputs)
     {
-        $this->container['validator_inputs'] = $validator_inputs;
+        $this->container['validatorInputs'] = $validatorInputs;
 
         return $this;
     }
 
     /**
-     * Gets validator_outputs
+     * Gets validatorOutputs
      * @return string[]
      */
     public function getValidatorOutputs()
     {
-        return $this->container['validator_outputs'];
+        return $this->container['validatorOutputs'];
     }
 
     /**
-     * Sets validator_outputs
-     * @param string[] $validator_outputs
+     * Sets validatorOutputs
+     * @param string[] $validatorOutputs contain array with validation output results
      * @return $this
      */
-    public function setValidatorOutputs($validator_outputs)
+    public function setValidatorOutputs($validatorOutputs)
     {
-        $this->container['validator_outputs'] = $validator_outputs;
+        $this->container['validatorOutputs'] = $validatorOutputs;
 
         return $this;
     }

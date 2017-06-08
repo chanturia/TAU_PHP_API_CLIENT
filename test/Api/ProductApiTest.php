@@ -99,17 +99,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for changeUserProductPrivileges
-     *
-     * .
-     *
-     */
-    public function testChangeUserProductPrivileges()
-    {
-
-    }
-
-    /**
      * Test case for createCouponProduct
      *
      * .

@@ -54,16 +54,16 @@ class CreateCompanyParameters implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user_id' => 'string',
+        'userID' => 'string',
         'name' => 'string',
-        'in_charge_person_name' => 'string',
-        'main_address' => 'string',
-        'main_image_url' => 'string',
-        'logo_url' => 'string',
-        'contact_phone' => 'string',
-        'company_type' => 'string',
+        'inChargePersonName' => 'string',
+        'mainAddress' => 'string',
+        'mainImageURL' => 'string',
+        'logoURL' => 'string',
+        'contactPhone' => 'string',
+        'companyType' => 'string',
         'description' => 'string',
-        'facebook_page_url' => 'string'
+        'facebookPageURL' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -76,16 +76,16 @@ class CreateCompanyParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'userID',
+        'userID' => 'userID',
         'name' => 'name',
-        'in_charge_person_name' => 'inChargePersonName',
-        'main_address' => 'mainAddress',
-        'main_image_url' => 'mainImageURL',
-        'logo_url' => 'logoURL',
-        'contact_phone' => 'contactPhone',
-        'company_type' => 'companyType',
+        'inChargePersonName' => 'inChargePersonName',
+        'mainAddress' => 'mainAddress',
+        'mainImageURL' => 'mainImageURL',
+        'logoURL' => 'logoURL',
+        'contactPhone' => 'contactPhone',
+        'companyType' => 'companyType',
         'description' => 'description',
-        'facebook_page_url' => 'facebookPageURL'
+        'facebookPageURL' => 'facebookPageURL'
     ];
 
 
@@ -94,16 +94,16 @@ class CreateCompanyParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId',
+        'userID' => 'setUserID',
         'name' => 'setName',
-        'in_charge_person_name' => 'setInChargePersonName',
-        'main_address' => 'setMainAddress',
-        'main_image_url' => 'setMainImageUrl',
-        'logo_url' => 'setLogoUrl',
-        'contact_phone' => 'setContactPhone',
-        'company_type' => 'setCompanyType',
+        'inChargePersonName' => 'setInChargePersonName',
+        'mainAddress' => 'setMainAddress',
+        'mainImageURL' => 'setMainImageURL',
+        'logoURL' => 'setLogoURL',
+        'contactPhone' => 'setContactPhone',
+        'companyType' => 'setCompanyType',
         'description' => 'setDescription',
-        'facebook_page_url' => 'setFacebookPageUrl'
+        'facebookPageURL' => 'setFacebookPageURL'
     ];
 
 
@@ -112,16 +112,16 @@ class CreateCompanyParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId',
+        'userID' => 'getUserID',
         'name' => 'getName',
-        'in_charge_person_name' => 'getInChargePersonName',
-        'main_address' => 'getMainAddress',
-        'main_image_url' => 'getMainImageUrl',
-        'logo_url' => 'getLogoUrl',
-        'contact_phone' => 'getContactPhone',
-        'company_type' => 'getCompanyType',
+        'inChargePersonName' => 'getInChargePersonName',
+        'mainAddress' => 'getMainAddress',
+        'mainImageURL' => 'getMainImageURL',
+        'logoURL' => 'getLogoURL',
+        'contactPhone' => 'getContactPhone',
+        'companyType' => 'getCompanyType',
         'description' => 'getDescription',
-        'facebook_page_url' => 'getFacebookPageUrl'
+        'facebookPageURL' => 'getFacebookPageURL'
     ];
 
     public static function attributeMap()
@@ -155,16 +155,16 @@ class CreateCompanyParameters implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['in_charge_person_name'] = isset($data['in_charge_person_name']) ? $data['in_charge_person_name'] : null;
-        $this->container['main_address'] = isset($data['main_address']) ? $data['main_address'] : null;
-        $this->container['main_image_url'] = isset($data['main_image_url']) ? $data['main_image_url'] : null;
-        $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
-        $this->container['contact_phone'] = isset($data['contact_phone']) ? $data['contact_phone'] : null;
-        $this->container['company_type'] = isset($data['company_type']) ? $data['company_type'] : null;
+        $this->container['inChargePersonName'] = isset($data['inChargePersonName']) ? $data['inChargePersonName'] : null;
+        $this->container['mainAddress'] = isset($data['mainAddress']) ? $data['mainAddress'] : null;
+        $this->container['mainImageURL'] = isset($data['mainImageURL']) ? $data['mainImageURL'] : null;
+        $this->container['logoURL'] = isset($data['logoURL']) ? $data['logoURL'] : null;
+        $this->container['contactPhone'] = isset($data['contactPhone']) ? $data['contactPhone'] : null;
+        $this->container['companyType'] = isset($data['companyType']) ? $data['companyType'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['facebook_page_url'] = isset($data['facebook_page_url']) ? $data['facebook_page_url'] : null;
+        $this->container['facebookPageURL'] = isset($data['facebookPageURL']) ? $data['facebookPageURL'] : null;
     }
 
     /**
@@ -176,29 +176,29 @@ class CreateCompanyParameters implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['user_id'] === null) {
-            $invalid_properties[] = "'user_id' can't be null";
+        if ($this->container['userID'] === null) {
+            $invalid_properties[] = "'userID' can't be null";
         }
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['in_charge_person_name'] === null) {
-            $invalid_properties[] = "'in_charge_person_name' can't be null";
+        if ($this->container['inChargePersonName'] === null) {
+            $invalid_properties[] = "'inChargePersonName' can't be null";
         }
-        if ($this->container['main_address'] === null) {
-            $invalid_properties[] = "'main_address' can't be null";
+        if ($this->container['mainAddress'] === null) {
+            $invalid_properties[] = "'mainAddress' can't be null";
         }
-        if ($this->container['main_image_url'] === null) {
-            $invalid_properties[] = "'main_image_url' can't be null";
+        if ($this->container['mainImageURL'] === null) {
+            $invalid_properties[] = "'mainImageURL' can't be null";
         }
-        if ($this->container['logo_url'] === null) {
-            $invalid_properties[] = "'logo_url' can't be null";
+        if ($this->container['logoURL'] === null) {
+            $invalid_properties[] = "'logoURL' can't be null";
         }
-        if ($this->container['contact_phone'] === null) {
-            $invalid_properties[] = "'contact_phone' can't be null";
+        if ($this->container['contactPhone'] === null) {
+            $invalid_properties[] = "'contactPhone' can't be null";
         }
-        if ($this->container['company_type'] === null) {
-            $invalid_properties[] = "'company_type' can't be null";
+        if ($this->container['companyType'] === null) {
+            $invalid_properties[] = "'companyType' can't be null";
         }
         return $invalid_properties;
     }
@@ -212,28 +212,28 @@ class CreateCompanyParameters implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['user_id'] === null) {
+        if ($this->container['userID'] === null) {
             return false;
         }
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['in_charge_person_name'] === null) {
+        if ($this->container['inChargePersonName'] === null) {
             return false;
         }
-        if ($this->container['main_address'] === null) {
+        if ($this->container['mainAddress'] === null) {
             return false;
         }
-        if ($this->container['main_image_url'] === null) {
+        if ($this->container['mainImageURL'] === null) {
             return false;
         }
-        if ($this->container['logo_url'] === null) {
+        if ($this->container['logoURL'] === null) {
             return false;
         }
-        if ($this->container['contact_phone'] === null) {
+        if ($this->container['contactPhone'] === null) {
             return false;
         }
-        if ($this->container['company_type'] === null) {
+        if ($this->container['companyType'] === null) {
             return false;
         }
         return true;
@@ -241,22 +241,22 @@ class CreateCompanyParameters implements ArrayAccess
 
 
     /**
-     * Gets user_id
+     * Gets userID
      * @return string
      */
-    public function getUserId()
+    public function getUserID()
     {
-        return $this->container['user_id'];
+        return $this->container['userID'];
     }
 
     /**
-     * Sets user_id
-     * @param string $user_id
+     * Sets userID
+     * @param string $userID userID for user who is making the creation of company
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserID($userID)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userID'] = $userID;
 
         return $this;
     }
@@ -272,7 +272,7 @@ class CreateCompanyParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Company name must be between 2 and 484 characters
      * @return $this
      */
     public function setName($name)
@@ -283,127 +283,127 @@ class CreateCompanyParameters implements ArrayAccess
     }
 
     /**
-     * Gets in_charge_person_name
+     * Gets inChargePersonName
      * @return string
      */
     public function getInChargePersonName()
     {
-        return $this->container['in_charge_person_name'];
+        return $this->container['inChargePersonName'];
     }
 
     /**
-     * Sets in_charge_person_name
-     * @param string $in_charge_person_name
+     * Sets inChargePersonName
+     * @param string $inChargePersonName In Chanrge Person name must be between 2 and 1084 characters and can contain only letters, digits and dashes
      * @return $this
      */
-    public function setInChargePersonName($in_charge_person_name)
+    public function setInChargePersonName($inChargePersonName)
     {
-        $this->container['in_charge_person_name'] = $in_charge_person_name;
+        $this->container['inChargePersonName'] = $inChargePersonName;
 
         return $this;
     }
 
     /**
-     * Gets main_address
+     * Gets mainAddress
      * @return string
      */
     public function getMainAddress()
     {
-        return $this->container['main_address'];
+        return $this->container['mainAddress'];
     }
 
     /**
-     * Sets main_address
-     * @param string $main_address
+     * Sets mainAddress
+     * @param string $mainAddress Company main address must be in the form House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country
      * @return $this
      */
-    public function setMainAddress($main_address)
+    public function setMainAddress($mainAddress)
     {
-        $this->container['main_address'] = $main_address;
+        $this->container['mainAddress'] = $mainAddress;
 
         return $this;
     }
 
     /**
-     * Gets main_image_url
+     * Gets mainImageURL
      * @return string
      */
-    public function getMainImageUrl()
+    public function getMainImageURL()
     {
-        return $this->container['main_image_url'];
+        return $this->container['mainImageURL'];
     }
 
     /**
-     * Sets main_image_url
-     * @param string $main_image_url
+     * Sets mainImageURL
+     * @param string $mainImageURL Company main image URL must have valid URL form
      * @return $this
      */
-    public function setMainImageUrl($main_image_url)
+    public function setMainImageURL($mainImageURL)
     {
-        $this->container['main_image_url'] = $main_image_url;
+        $this->container['mainImageURL'] = $mainImageURL;
 
         return $this;
     }
 
     /**
-     * Gets logo_url
+     * Gets logoURL
      * @return string
      */
-    public function getLogoUrl()
+    public function getLogoURL()
     {
-        return $this->container['logo_url'];
+        return $this->container['logoURL'];
     }
 
     /**
-     * Sets logo_url
-     * @param string $logo_url
+     * Sets logoURL
+     * @param string $logoURL Company logo URL must have valid URL form
      * @return $this
      */
-    public function setLogoUrl($logo_url)
+    public function setLogoURL($logoURL)
     {
-        $this->container['logo_url'] = $logo_url;
+        $this->container['logoURL'] = $logoURL;
 
         return $this;
     }
 
     /**
-     * Gets contact_phone
+     * Gets contactPhone
      * @return string
      */
     public function getContactPhone()
     {
-        return $this->container['contact_phone'];
+        return $this->container['contactPhone'];
     }
 
     /**
-     * Sets contact_phone
-     * @param string $contact_phone
+     * Sets contactPhone
+     * @param string $contactPhone Company contact phone can contain only numbers and symbols plus sign and dash
      * @return $this
      */
-    public function setContactPhone($contact_phone)
+    public function setContactPhone($contactPhone)
     {
-        $this->container['contact_phone'] = $contact_phone;
+        $this->container['contactPhone'] = $contactPhone;
 
         return $this;
     }
 
     /**
-     * Gets company_type
+     * Gets companyType
      * @return string
      */
     public function getCompanyType()
     {
-        return $this->container['company_type'];
+        return $this->container['companyType'];
     }
 
     /**
-     * Sets company_type
-     * @param string $company_type
+     * Sets companyType
+     * @param string $companyType Company type
      * @return $this
      */
-    public function setCompanyType($company_type)
+    public function setCompanyType($companyType)
     {
-        $this->container['company_type'] = $company_type;
+        $this->container['companyType'] = $companyType;
 
         return $this;
     }
@@ -419,7 +419,7 @@ class CreateCompanyParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Company description must be between 2 and 1284 characters
      * @return $this
      */
     public function setDescription($description)
@@ -430,22 +430,22 @@ class CreateCompanyParameters implements ArrayAccess
     }
 
     /**
-     * Gets facebook_page_url
+     * Gets facebookPageURL
      * @return string
      */
-    public function getFacebookPageUrl()
+    public function getFacebookPageURL()
     {
-        return $this->container['facebook_page_url'];
+        return $this->container['facebookPageURL'];
     }
 
     /**
-     * Sets facebook_page_url
-     * @param string $facebook_page_url
+     * Sets facebookPageURL
+     * @param string $facebookPageURL Company Facebook Page URL must have valid URL form
      * @return $this
      */
-    public function setFacebookPageUrl($facebook_page_url)
+    public function setFacebookPageURL($facebookPageURL)
     {
-        $this->container['facebook_page_url'] = $facebook_page_url;
+        $this->container['facebookPageURL'] = $facebookPageURL;
 
         return $this;
     }

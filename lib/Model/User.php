@@ -58,16 +58,16 @@ class User implements ArrayAccess
         'email' => 'string',
         'password' => 'string',
         'name' => 'string',
-        'last_name' => 'string',
+        'lastName' => 'string',
         'gender' => 'string',
-        'date_of_birth' => 'string',
-        'unique_key' => 'string',
+        'dateOfBirth' => 'string',
+        'uniqueKey' => 'string',
         'mobile' => 'string',
         'pin' => 'string',
-        'facebook_id' => 'string',
-        'facebook_image_url' => 'string',
-        'google_id' => 'string',
-        'google_img_url' => 'string'
+        'facebookID' => 'string',
+        'facebookImageURL' => 'string',
+        'googleID' => 'string',
+        'googleImgURL' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -84,16 +84,16 @@ class User implements ArrayAccess
         'email' => 'email',
         'password' => 'password',
         'name' => 'name',
-        'last_name' => 'lastName',
+        'lastName' => 'lastName',
         'gender' => 'gender',
-        'date_of_birth' => 'dateOfBirth',
-        'unique_key' => 'unique_key',
+        'dateOfBirth' => 'dateOfBirth',
+        'uniqueKey' => 'unique_key',
         'mobile' => 'mobile',
         'pin' => 'pin',
-        'facebook_id' => 'facebookID',
-        'facebook_image_url' => 'facebookImageURL',
-        'google_id' => 'googleID',
-        'google_img_url' => 'googleImgURL'
+        'facebookID' => 'facebookID',
+        'facebookImageURL' => 'facebookImageURL',
+        'googleID' => 'googleID',
+        'googleImgURL' => 'googleImgURL'
     ];
 
 
@@ -106,16 +106,16 @@ class User implements ArrayAccess
         'email' => 'setEmail',
         'password' => 'setPassword',
         'name' => 'setName',
-        'last_name' => 'setLastName',
+        'lastName' => 'setLastName',
         'gender' => 'setGender',
-        'date_of_birth' => 'setDateOfBirth',
-        'unique_key' => 'setUniqueKey',
+        'dateOfBirth' => 'setDateOfBirth',
+        'uniqueKey' => 'setUniqueKey',
         'mobile' => 'setMobile',
         'pin' => 'setPin',
-        'facebook_id' => 'setFacebookId',
-        'facebook_image_url' => 'setFacebookImageUrl',
-        'google_id' => 'setGoogleId',
-        'google_img_url' => 'setGoogleImgUrl'
+        'facebookID' => 'setFacebookID',
+        'facebookImageURL' => 'setFacebookImageURL',
+        'googleID' => 'setGoogleID',
+        'googleImgURL' => 'setGoogleImgURL'
     ];
 
 
@@ -128,16 +128,16 @@ class User implements ArrayAccess
         'email' => 'getEmail',
         'password' => 'getPassword',
         'name' => 'getName',
-        'last_name' => 'getLastName',
+        'lastName' => 'getLastName',
         'gender' => 'getGender',
-        'date_of_birth' => 'getDateOfBirth',
-        'unique_key' => 'getUniqueKey',
+        'dateOfBirth' => 'getDateOfBirth',
+        'uniqueKey' => 'getUniqueKey',
         'mobile' => 'getMobile',
         'pin' => 'getPin',
-        'facebook_id' => 'getFacebookId',
-        'facebook_image_url' => 'getFacebookImageUrl',
-        'google_id' => 'getGoogleId',
-        'google_img_url' => 'getGoogleImgUrl'
+        'facebookID' => 'getFacebookID',
+        'facebookImageURL' => 'getFacebookImageURL',
+        'googleID' => 'getGoogleID',
+        'googleImgURL' => 'getGoogleImgURL'
     ];
 
     public static function attributeMap()
@@ -175,16 +175,16 @@ class User implements ArrayAccess
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['date_of_birth'] = isset($data['date_of_birth']) ? $data['date_of_birth'] : null;
-        $this->container['unique_key'] = isset($data['unique_key']) ? $data['unique_key'] : null;
+        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
+        $this->container['uniqueKey'] = isset($data['uniqueKey']) ? $data['uniqueKey'] : null;
         $this->container['mobile'] = isset($data['mobile']) ? $data['mobile'] : null;
         $this->container['pin'] = isset($data['pin']) ? $data['pin'] : null;
-        $this->container['facebook_id'] = isset($data['facebook_id']) ? $data['facebook_id'] : null;
-        $this->container['facebook_image_url'] = isset($data['facebook_image_url']) ? $data['facebook_image_url'] : null;
-        $this->container['google_id'] = isset($data['google_id']) ? $data['google_id'] : null;
-        $this->container['google_img_url'] = isset($data['google_img_url']) ? $data['google_img_url'] : null;
+        $this->container['facebookID'] = isset($data['facebookID']) ? $data['facebookID'] : null;
+        $this->container['facebookImageURL'] = isset($data['facebookImageURL']) ? $data['facebookImageURL'] : null;
+        $this->container['googleID'] = isset($data['googleID']) ? $data['googleID'] : null;
+        $this->container['googleImgURL'] = isset($data['googleImgURL']) ? $data['googleImgURL'] : null;
     }
 
     /**
@@ -205,8 +205,8 @@ class User implements ArrayAccess
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['last_name'] === null) {
-            $invalid_properties[] = "'last_name' can't be null";
+        if ($this->container['lastName'] === null) {
+            $invalid_properties[] = "'lastName' can't be null";
         }
         return $invalid_properties;
     }
@@ -229,7 +229,7 @@ class User implements ArrayAccess
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['last_name'] === null) {
+        if ($this->container['lastName'] === null) {
             return false;
         }
         return true;
@@ -321,22 +321,22 @@ class User implements ArrayAccess
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
-     * @param string $last_name
+     * Sets lastName
+     * @param string $lastName
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -363,43 +363,43 @@ class User implements ArrayAccess
     }
 
     /**
-     * Gets date_of_birth
+     * Gets dateOfBirth
      * @return string
      */
     public function getDateOfBirth()
     {
-        return $this->container['date_of_birth'];
+        return $this->container['dateOfBirth'];
     }
 
     /**
-     * Sets date_of_birth
-     * @param string $date_of_birth
+     * Sets dateOfBirth
+     * @param string $dateOfBirth
      * @return $this
      */
-    public function setDateOfBirth($date_of_birth)
+    public function setDateOfBirth($dateOfBirth)
     {
-        $this->container['date_of_birth'] = $date_of_birth;
+        $this->container['dateOfBirth'] = $dateOfBirth;
 
         return $this;
     }
 
     /**
-     * Gets unique_key
+     * Gets uniqueKey
      * @return string
      */
     public function getUniqueKey()
     {
-        return $this->container['unique_key'];
+        return $this->container['uniqueKey'];
     }
 
     /**
-     * Sets unique_key
-     * @param string $unique_key
+     * Sets uniqueKey
+     * @param string $uniqueKey
      * @return $this
      */
-    public function setUniqueKey($unique_key)
+    public function setUniqueKey($uniqueKey)
     {
-        $this->container['unique_key'] = $unique_key;
+        $this->container['uniqueKey'] = $uniqueKey;
 
         return $this;
     }
@@ -447,85 +447,85 @@ class User implements ArrayAccess
     }
 
     /**
-     * Gets facebook_id
+     * Gets facebookID
      * @return string
      */
-    public function getFacebookId()
+    public function getFacebookID()
     {
-        return $this->container['facebook_id'];
+        return $this->container['facebookID'];
     }
 
     /**
-     * Sets facebook_id
-     * @param string $facebook_id
+     * Sets facebookID
+     * @param string $facebookID
      * @return $this
      */
-    public function setFacebookId($facebook_id)
+    public function setFacebookID($facebookID)
     {
-        $this->container['facebook_id'] = $facebook_id;
+        $this->container['facebookID'] = $facebookID;
 
         return $this;
     }
 
     /**
-     * Gets facebook_image_url
+     * Gets facebookImageURL
      * @return string
      */
-    public function getFacebookImageUrl()
+    public function getFacebookImageURL()
     {
-        return $this->container['facebook_image_url'];
+        return $this->container['facebookImageURL'];
     }
 
     /**
-     * Sets facebook_image_url
-     * @param string $facebook_image_url
+     * Sets facebookImageURL
+     * @param string $facebookImageURL
      * @return $this
      */
-    public function setFacebookImageUrl($facebook_image_url)
+    public function setFacebookImageURL($facebookImageURL)
     {
-        $this->container['facebook_image_url'] = $facebook_image_url;
+        $this->container['facebookImageURL'] = $facebookImageURL;
 
         return $this;
     }
 
     /**
-     * Gets google_id
+     * Gets googleID
      * @return string
      */
-    public function getGoogleId()
+    public function getGoogleID()
     {
-        return $this->container['google_id'];
+        return $this->container['googleID'];
     }
 
     /**
-     * Sets google_id
-     * @param string $google_id
+     * Sets googleID
+     * @param string $googleID
      * @return $this
      */
-    public function setGoogleId($google_id)
+    public function setGoogleID($googleID)
     {
-        $this->container['google_id'] = $google_id;
+        $this->container['googleID'] = $googleID;
 
         return $this;
     }
 
     /**
-     * Gets google_img_url
+     * Gets googleImgURL
      * @return string
      */
-    public function getGoogleImgUrl()
+    public function getGoogleImgURL()
     {
-        return $this->container['google_img_url'];
+        return $this->container['googleImgURL'];
     }
 
     /**
-     * Sets google_img_url
-     * @param string $google_img_url
+     * Sets googleImgURL
+     * @param string $googleImgURL
      * @return $this
      */
-    public function setGoogleImgUrl($google_img_url)
+    public function setGoogleImgURL($googleImgURL)
     {
-        $this->container['google_img_url'] = $google_img_url;
+        $this->container['googleImgURL'] = $googleImgURL;
 
         return $this;
     }

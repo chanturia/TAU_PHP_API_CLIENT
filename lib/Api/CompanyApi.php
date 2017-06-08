@@ -93,17 +93,17 @@ class CompanyApi
      * 
      *
      * @param string $id Required ID for the Company the role is for. (required)
-     * @param string $brand_id ID of the Brand connected with the Company (optional)
-     * @param string $store_id ID of the Store connected with the Company (optional)
-     * @param string $product_id ID of the Product connected with the Company (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Company (optional)
-     * @param \Swagger\Client\Model\CreateCompanyUserRoles $create_company_user_roles Company&#39;s User Priveleges Parameters for the company ID and userID. (optional)
+     * @param string $brandID ID of the Brand connected with the Company (optional)
+     * @param string $storeID ID of the Store connected with the Company (optional)
+     * @param string $productID ID of the Product connected with the Company (optional)
+     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param \Swagger\Client\Model\CreateCompanyUserRoles $createCompanyUserRoles Company&#39;s User Priveleges Parameters for the company ID and userID. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function addUserCompanyRoles($id, $brand_id = null, $store_id = null, $product_id = null, $coupon_id = null, $create_company_user_roles = null)
+    public function addUserCompanyRoles($id, $brandID = null, $storeID = null, $productID = null, $couponID = null, $createCompanyUserRoles = null)
     {
-        list($response) = $this->addUserCompanyRolesWithHttpInfo($id, $brand_id, $store_id, $product_id, $coupon_id, $create_company_user_roles);
+        list($response) = $this->addUserCompanyRolesWithHttpInfo($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles);
         return $response;
     }
 
@@ -113,15 +113,15 @@ class CompanyApi
      * 
      *
      * @param string $id Required ID for the Company the role is for. (required)
-     * @param string $brand_id ID of the Brand connected with the Company (optional)
-     * @param string $store_id ID of the Store connected with the Company (optional)
-     * @param string $product_id ID of the Product connected with the Company (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Company (optional)
-     * @param \Swagger\Client\Model\CreateCompanyUserRoles $create_company_user_roles Company&#39;s User Priveleges Parameters for the company ID and userID. (optional)
+     * @param string $brandID ID of the Brand connected with the Company (optional)
+     * @param string $storeID ID of the Store connected with the Company (optional)
+     * @param string $productID ID of the Product connected with the Company (optional)
+     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param \Swagger\Client\Model\CreateCompanyUserRoles $createCompanyUserRoles Company&#39;s User Priveleges Parameters for the company ID and userID. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserCompanyRolesWithHttpInfo($id, $brand_id = null, $store_id = null, $product_id = null, $coupon_id = null, $create_company_user_roles = null)
+    public function addUserCompanyRolesWithHttpInfo($id, $brandID = null, $storeID = null, $productID = null, $couponID = null, $createCompanyUserRoles = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -140,20 +140,20 @@ class CompanyApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($brand_id !== null) {
-            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brand_id);
+        if ($brandID !== null) {
+            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brandID);
         }
         // query params
-        if ($store_id !== null) {
-            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($store_id);
+        if ($storeID !== null) {
+            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($storeID);
         }
         // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
+        if ($productID !== null) {
+            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($productID);
         }
         // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
+        if ($couponID !== null) {
+            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($couponID);
         }
         // path params
         if ($id !== null) {
@@ -168,8 +168,8 @@ class CompanyApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_company_user_roles)) {
-            $_tempBody = $create_company_user_roles;
+        if (isset($createCompanyUserRoles)) {
+            $_tempBody = $createCompanyUserRoles;
         }
 
         // for model (json/xml)
@@ -187,134 +187,6 @@ class CompanyApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
                 'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\UserID',
-                '/company/{id}/user'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserID', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UserID', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation changeCompanyUserRoles
-     *
-     * 
-     *
-     * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\UpdateCompanyUserRoles $update_company_user_roles Company&#39;s User Priveleges Parameters for the Company ID and UserID. (required)
-     * @param string $brand_id ID of the Brand connected with the Company (optional)
-     * @param string $store_id ID of the Store connected with the Company (optional)
-     * @param string $product_id ID of the Product connected with the Company (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Company (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UserID
-     */
-    public function changeCompanyUserRoles($id, $update_company_user_roles, $brand_id = null, $store_id = null, $product_id = null, $coupon_id = null)
-    {
-        list($response) = $this->changeCompanyUserRolesWithHttpInfo($id, $update_company_user_roles, $brand_id, $store_id, $product_id, $coupon_id);
-        return $response;
-    }
-
-    /**
-     * Operation changeCompanyUserRolesWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\UpdateCompanyUserRoles $update_company_user_roles Company&#39;s User Priveleges Parameters for the Company ID and UserID. (required)
-     * @param string $brand_id ID of the Brand connected with the Company (optional)
-     * @param string $store_id ID of the Store connected with the Company (optional)
-     * @param string $product_id ID of the Product connected with the Company (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Company (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function changeCompanyUserRolesWithHttpInfo($id, $update_company_user_roles, $brand_id = null, $store_id = null, $product_id = null, $coupon_id = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling changeCompanyUserRoles');
-        }
-        // verify the required parameter 'update_company_user_roles' is set
-        if ($update_company_user_roles === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_company_user_roles when calling changeCompanyUserRoles');
-        }
-        // parse inputs
-        $resourcePath = "/company/{id}/user";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // query params
-        if ($brand_id !== null) {
-            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brand_id);
-        }
-        // query params
-        if ($store_id !== null) {
-            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($store_id);
-        }
-        // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
-        }
-        // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($update_company_user_roles)) {
-            $_tempBody = $update_company_user_roles;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
                 $queryParams,
                 $httpBody,
                 $headerParams,
@@ -438,13 +310,13 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyBrandCreateParameters $company_brand_create_parameters Brand parameters for creating new brand consisting of User ID, brand name, description, main image URL and logo image URL. (required)
+     * @param \Swagger\Client\Model\CompanyBrandCreateParameters $companyBrandCreateParameters Brand parameters for creating new brand consisting of User ID, brand name, description, main image URL and logo image URL. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Brand
      */
-    public function createBrandForCompany($id, $company_brand_create_parameters)
+    public function createBrandForCompany($id, $companyBrandCreateParameters)
     {
-        list($response) = $this->createBrandForCompanyWithHttpInfo($id, $company_brand_create_parameters);
+        list($response) = $this->createBrandForCompanyWithHttpInfo($id, $companyBrandCreateParameters);
         return $response;
     }
 
@@ -454,19 +326,19 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyBrandCreateParameters $company_brand_create_parameters Brand parameters for creating new brand consisting of User ID, brand name, description, main image URL and logo image URL. (required)
+     * @param \Swagger\Client\Model\CompanyBrandCreateParameters $companyBrandCreateParameters Brand parameters for creating new brand consisting of User ID, brand name, description, main image URL and logo image URL. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Brand, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createBrandForCompanyWithHttpInfo($id, $company_brand_create_parameters)
+    public function createBrandForCompanyWithHttpInfo($id, $companyBrandCreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createBrandForCompany');
         }
-        // verify the required parameter 'company_brand_create_parameters' is set
-        if ($company_brand_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $company_brand_create_parameters when calling createBrandForCompany');
+        // verify the required parameter 'companyBrandCreateParameters' is set
+        if ($companyBrandCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $companyBrandCreateParameters when calling createBrandForCompany');
         }
         // parse inputs
         $resourcePath = "/company/{id}/brand/create";
@@ -493,8 +365,8 @@ class CompanyApi
 
         // body params
         $_tempBody = null;
-        if (isset($company_brand_create_parameters)) {
-            $_tempBody = $company_brand_create_parameters;
+        if (isset($companyBrandCreateParameters)) {
+            $_tempBody = $companyBrandCreateParameters;
         }
 
         // for model (json/xml)
@@ -541,13 +413,13 @@ class CompanyApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCompanyParameters $create_company_parameters Company Parameters for the company to be created and User ID of User that creates the company. (required)
+     * @param \Swagger\Client\Model\CreateCompanyParameters $createCompanyParameters Company Parameters for the company to be created and User ID of User that creates the company. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Company
      */
-    public function createCompany($create_company_parameters)
+    public function createCompany($createCompanyParameters)
     {
-        list($response) = $this->createCompanyWithHttpInfo($create_company_parameters);
+        list($response) = $this->createCompanyWithHttpInfo($createCompanyParameters);
         return $response;
     }
 
@@ -556,15 +428,15 @@ class CompanyApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCompanyParameters $create_company_parameters Company Parameters for the company to be created and User ID of User that creates the company. (required)
+     * @param \Swagger\Client\Model\CreateCompanyParameters $createCompanyParameters Company Parameters for the company to be created and User ID of User that creates the company. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Company, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCompanyWithHttpInfo($create_company_parameters)
+    public function createCompanyWithHttpInfo($createCompanyParameters)
     {
-        // verify the required parameter 'create_company_parameters' is set
-        if ($create_company_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_company_parameters when calling createCompany');
+        // verify the required parameter 'createCompanyParameters' is set
+        if ($createCompanyParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createCompanyParameters when calling createCompany');
         }
         // parse inputs
         $resourcePath = "/company/create";
@@ -583,8 +455,8 @@ class CompanyApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_company_parameters)) {
-            $_tempBody = $create_company_parameters;
+        if (isset($createCompanyParameters)) {
+            $_tempBody = $createCompanyParameters;
         }
 
         // for model (json/xml)
@@ -632,13 +504,13 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyCouponCreateParameters $company_coupon_create_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\CompanyCouponCreateParameters $companyCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function createCouponForCompany($id, $company_coupon_create_parameters)
+    public function createCouponForCompany($id, $companyCouponCreateParameters)
     {
-        list($response) = $this->createCouponForCompanyWithHttpInfo($id, $company_coupon_create_parameters);
+        list($response) = $this->createCouponForCompanyWithHttpInfo($id, $companyCouponCreateParameters);
         return $response;
     }
 
@@ -648,19 +520,19 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyCouponCreateParameters $company_coupon_create_parameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. (required)
+     * @param \Swagger\Client\Model\CompanyCouponCreateParameters $companyCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCouponForCompanyWithHttpInfo($id, $company_coupon_create_parameters)
+    public function createCouponForCompanyWithHttpInfo($id, $companyCouponCreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createCouponForCompany');
         }
-        // verify the required parameter 'company_coupon_create_parameters' is set
-        if ($company_coupon_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $company_coupon_create_parameters when calling createCouponForCompany');
+        // verify the required parameter 'companyCouponCreateParameters' is set
+        if ($companyCouponCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $companyCouponCreateParameters when calling createCouponForCompany');
         }
         // parse inputs
         $resourcePath = "/company/{id}/coupon/create";
@@ -687,8 +559,8 @@ class CompanyApi
 
         // body params
         $_tempBody = null;
-        if (isset($company_coupon_create_parameters)) {
-            $_tempBody = $company_coupon_create_parameters;
+        if (isset($companyCouponCreateParameters)) {
+            $_tempBody = $companyCouponCreateParameters;
         }
 
         // for model (json/xml)
@@ -736,13 +608,13 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyProductCreateParameters $company_product_create_parameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\CompanyProductCreateParameters $companyProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
      */
-    public function createProductCompany($id, $company_product_create_parameters)
+    public function createProductCompany($id, $companyProductCreateParameters)
     {
-        list($response) = $this->createProductCompanyWithHttpInfo($id, $company_product_create_parameters);
+        list($response) = $this->createProductCompanyWithHttpInfo($id, $companyProductCreateParameters);
         return $response;
     }
 
@@ -752,19 +624,19 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyProductCreateParameters $company_product_create_parameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\CompanyProductCreateParameters $companyProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createProductCompanyWithHttpInfo($id, $company_product_create_parameters)
+    public function createProductCompanyWithHttpInfo($id, $companyProductCreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createProductCompany');
         }
-        // verify the required parameter 'company_product_create_parameters' is set
-        if ($company_product_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $company_product_create_parameters when calling createProductCompany');
+        // verify the required parameter 'companyProductCreateParameters' is set
+        if ($companyProductCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $companyProductCreateParameters when calling createProductCompany');
         }
         // parse inputs
         $resourcePath = "/company/{id}/product/create";
@@ -791,8 +663,8 @@ class CompanyApi
 
         // body params
         $_tempBody = null;
-        if (isset($company_product_create_parameters)) {
-            $_tempBody = $company_product_create_parameters;
+        if (isset($companyProductCreateParameters)) {
+            $_tempBody = $companyProductCreateParameters;
         }
 
         // for model (json/xml)
@@ -840,13 +712,13 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyStoreCreateParameters $company_store_create_parameters Store Parameters for the store to be created and User ID of User that creates the store. (required)
+     * @param \Swagger\Client\Model\CompanyStoreCreateParameters $companyStoreCreateParameters Store Parameters for the store to be created and User ID of User that creates the store. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Store
      */
-    public function createStoreForCompany($id, $company_store_create_parameters)
+    public function createStoreForCompany($id, $companyStoreCreateParameters)
     {
-        list($response) = $this->createStoreForCompanyWithHttpInfo($id, $company_store_create_parameters);
+        list($response) = $this->createStoreForCompanyWithHttpInfo($id, $companyStoreCreateParameters);
         return $response;
     }
 
@@ -856,19 +728,19 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyStoreCreateParameters $company_store_create_parameters Store Parameters for the store to be created and User ID of User that creates the store. (required)
+     * @param \Swagger\Client\Model\CompanyStoreCreateParameters $companyStoreCreateParameters Store Parameters for the store to be created and User ID of User that creates the store. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Store, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createStoreForCompanyWithHttpInfo($id, $company_store_create_parameters)
+    public function createStoreForCompanyWithHttpInfo($id, $companyStoreCreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createStoreForCompany');
         }
-        // verify the required parameter 'company_store_create_parameters' is set
-        if ($company_store_create_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $company_store_create_parameters when calling createStoreForCompany');
+        // verify the required parameter 'companyStoreCreateParameters' is set
+        if ($companyStoreCreateParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $companyStoreCreateParameters when calling createStoreForCompany');
         }
         // parse inputs
         $resourcePath = "/company/{id}/store/create";
@@ -895,8 +767,8 @@ class CompanyApi
 
         // body params
         $_tempBody = null;
-        if (isset($company_store_create_parameters)) {
-            $_tempBody = $company_store_create_parameters;
+        if (isset($companyStoreCreateParameters)) {
+            $_tempBody = $companyStoreCreateParameters;
         }
 
         // for model (json/xml)
@@ -944,17 +816,17 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\DeleteCompanyUserRoles $delete_company_user_roles Company&#39;s User ID and privileges to be removed  for the company ID. (required)
-     * @param string $brand_id ID of the Brand connected with the Company (optional)
-     * @param string $store_id ID of the Store connected with the Company (optional)
-     * @param string $product_id ID of the Product connected with the Company (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Company (optional)
+     * @param \Swagger\Client\Model\DeleteCompanyUserRoles $deleteCompanyUserRoles Company&#39;s User ID and privileges to be removed  for the company ID. (required)
+     * @param string $brandID ID of the Brand connected with the Company (optional)
+     * @param string $storeID ID of the Store connected with the Company (optional)
+     * @param string $productID ID of the Product connected with the Company (optional)
+     * @param string $couponID ID of the Coupon connected with the Company (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function removeAdminUserCompany($id, $delete_company_user_roles, $brand_id = null, $store_id = null, $product_id = null, $coupon_id = null)
+    public function removeAdminUserCompany($id, $deleteCompanyUserRoles, $brandID = null, $storeID = null, $productID = null, $couponID = null)
     {
-        list($response) = $this->removeAdminUserCompanyWithHttpInfo($id, $delete_company_user_roles, $brand_id, $store_id, $product_id, $coupon_id);
+        list($response) = $this->removeAdminUserCompanyWithHttpInfo($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID);
         return $response;
     }
 
@@ -964,23 +836,23 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\DeleteCompanyUserRoles $delete_company_user_roles Company&#39;s User ID and privileges to be removed  for the company ID. (required)
-     * @param string $brand_id ID of the Brand connected with the Company (optional)
-     * @param string $store_id ID of the Store connected with the Company (optional)
-     * @param string $product_id ID of the Product connected with the Company (optional)
-     * @param string $coupon_id ID of the Coupon connected with the Company (optional)
+     * @param \Swagger\Client\Model\DeleteCompanyUserRoles $deleteCompanyUserRoles Company&#39;s User ID and privileges to be removed  for the company ID. (required)
+     * @param string $brandID ID of the Brand connected with the Company (optional)
+     * @param string $storeID ID of the Store connected with the Company (optional)
+     * @param string $productID ID of the Product connected with the Company (optional)
+     * @param string $couponID ID of the Coupon connected with the Company (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeAdminUserCompanyWithHttpInfo($id, $delete_company_user_roles, $brand_id = null, $store_id = null, $product_id = null, $coupon_id = null)
+    public function removeAdminUserCompanyWithHttpInfo($id, $deleteCompanyUserRoles, $brandID = null, $storeID = null, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling removeAdminUserCompany');
         }
-        // verify the required parameter 'delete_company_user_roles' is set
-        if ($delete_company_user_roles === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $delete_company_user_roles when calling removeAdminUserCompany');
+        // verify the required parameter 'deleteCompanyUserRoles' is set
+        if ($deleteCompanyUserRoles === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $deleteCompanyUserRoles when calling removeAdminUserCompany');
         }
         // parse inputs
         $resourcePath = "/company/{id}/user";
@@ -995,20 +867,20 @@ class CompanyApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($brand_id !== null) {
-            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brand_id);
+        if ($brandID !== null) {
+            $queryParams['brandID'] = $this->apiClient->getSerializer()->toQueryValue($brandID);
         }
         // query params
-        if ($store_id !== null) {
-            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($store_id);
+        if ($storeID !== null) {
+            $queryParams['storeID'] = $this->apiClient->getSerializer()->toQueryValue($storeID);
         }
         // query params
-        if ($product_id !== null) {
-            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($product_id);
+        if ($productID !== null) {
+            $queryParams['productID'] = $this->apiClient->getSerializer()->toQueryValue($productID);
         }
         // query params
-        if ($coupon_id !== null) {
-            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($coupon_id);
+        if ($couponID !== null) {
+            $queryParams['couponID'] = $this->apiClient->getSerializer()->toQueryValue($couponID);
         }
         // path params
         if ($id !== null) {
@@ -1023,8 +895,8 @@ class CompanyApi
 
         // body params
         $_tempBody = null;
-        if (isset($delete_company_user_roles)) {
-            $_tempBody = $delete_company_user_roles;
+        if (isset($deleteCompanyUserRoles)) {
+            $_tempBody = $deleteCompanyUserRoles;
         }
 
         // for model (json/xml)
@@ -1072,13 +944,13 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the company to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCompanyParameters $update_company_parameters Company Parameters for the company to be updated and User ID for the User who makes the update. (required)
+     * @param \Swagger\Client\Model\UpdateCompanyParameters $updateCompanyParameters Company Parameters for the company to be updated and User ID for the User who makes the update. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CompanyID
      */
-    public function updateCompany($id, $update_company_parameters)
+    public function updateCompany($id, $updateCompanyParameters)
     {
-        list($response) = $this->updateCompanyWithHttpInfo($id, $update_company_parameters);
+        list($response) = $this->updateCompanyWithHttpInfo($id, $updateCompanyParameters);
         return $response;
     }
 
@@ -1088,19 +960,19 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the company to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCompanyParameters $update_company_parameters Company Parameters for the company to be updated and User ID for the User who makes the update. (required)
+     * @param \Swagger\Client\Model\UpdateCompanyParameters $updateCompanyParameters Company Parameters for the company to be updated and User ID for the User who makes the update. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CompanyID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCompanyWithHttpInfo($id, $update_company_parameters)
+    public function updateCompanyWithHttpInfo($id, $updateCompanyParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateCompany');
         }
-        // verify the required parameter 'update_company_parameters' is set
-        if ($update_company_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_company_parameters when calling updateCompany');
+        // verify the required parameter 'updateCompanyParameters' is set
+        if ($updateCompanyParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateCompanyParameters when calling updateCompany');
         }
         // parse inputs
         $resourcePath = "/company/details/{id}";
@@ -1127,8 +999,8 @@ class CompanyApi
 
         // body params
         $_tempBody = null;
-        if (isset($update_company_parameters)) {
-            $_tempBody = $update_company_parameters;
+        if (isset($updateCompanyParameters)) {
+            $_tempBody = $updateCompanyParameters;
         }
 
         // for model (json/xml)

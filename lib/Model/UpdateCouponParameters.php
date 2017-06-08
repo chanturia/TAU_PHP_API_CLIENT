@@ -61,8 +61,7 @@ class UpdateCouponParameters implements ArrayAccess
         'categories' => 'string[]',
         'subcategories' => 'string[]',
         'products' => 'string[]',
-        'storeids' => 'string[]',
-        'offerproviderids' => 'string[]'
+        'storeids' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -82,8 +81,7 @@ class UpdateCouponParameters implements ArrayAccess
         'categories' => 'categories',
         'subcategories' => 'subcategories',
         'products' => 'products',
-        'storeids' => 'storeids',
-        'offerproviderids' => 'offerproviderids'
+        'storeids' => 'storeids'
     ];
 
 
@@ -99,8 +97,7 @@ class UpdateCouponParameters implements ArrayAccess
         'categories' => 'setCategories',
         'subcategories' => 'setSubcategories',
         'products' => 'setProducts',
-        'storeids' => 'setStoreids',
-        'offerproviderids' => 'setOfferproviderids'
+        'storeids' => 'setStoreids'
     ];
 
 
@@ -116,8 +113,7 @@ class UpdateCouponParameters implements ArrayAccess
         'categories' => 'getCategories',
         'subcategories' => 'getSubcategories',
         'products' => 'getProducts',
-        'storeids' => 'getStoreids',
-        'offerproviderids' => 'getOfferproviderids'
+        'storeids' => 'getStoreids'
     ];
 
     public static function attributeMap()
@@ -159,7 +155,6 @@ class UpdateCouponParameters implements ArrayAccess
         $this->container['subcategories'] = isset($data['subcategories']) ? $data['subcategories'] : null;
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
         $this->container['storeids'] = isset($data['storeids']) ? $data['storeids'] : null;
-        $this->container['offerproviderids'] = isset($data['offerproviderids']) ? $data['offerproviderids'] : null;
     }
 
     /**
@@ -351,27 +346,6 @@ class UpdateCouponParameters implements ArrayAccess
     public function setStoreids($storeids)
     {
         $this->container['storeids'] = $storeids;
-
-        return $this;
-    }
-
-    /**
-     * Gets offerproviderids
-     * @return string[]
-     */
-    public function getOfferproviderids()
-    {
-        return $this->container['offerproviderids'];
-    }
-
-    /**
-     * Sets offerproviderids
-     * @param string[] $offerproviderids
-     * @return $this
-     */
-    public function setOfferproviderids($offerproviderids)
-    {
-        $this->container['offerproviderids'] = $offerproviderids;
 
         return $this;
     }

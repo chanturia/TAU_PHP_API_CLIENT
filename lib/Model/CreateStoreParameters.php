@@ -54,10 +54,10 @@ class CreateStoreParameters implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user_id' => 'string',
+        'userID' => 'string',
         'name' => 'string',
         'kind' => 'string',
-        'address' => 'string[]'
+        'address' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -70,7 +70,7 @@ class CreateStoreParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'userID',
+        'userID' => 'userID',
         'name' => 'name',
         'kind' => 'kind',
         'address' => 'address'
@@ -82,7 +82,7 @@ class CreateStoreParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId',
+        'userID' => 'setUserID',
         'name' => 'setName',
         'kind' => 'setKind',
         'address' => 'setAddress'
@@ -94,7 +94,7 @@ class CreateStoreParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId',
+        'userID' => 'getUserID',
         'name' => 'getName',
         'kind' => 'getKind',
         'address' => 'getAddress'
@@ -131,7 +131,7 @@ class CreateStoreParameters implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['kind'] = isset($data['kind']) ? $data['kind'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
@@ -146,8 +146,8 @@ class CreateStoreParameters implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['user_id'] === null) {
-            $invalid_properties[] = "'user_id' can't be null";
+        if ($this->container['userID'] === null) {
+            $invalid_properties[] = "'userID' can't be null";
         }
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
@@ -170,7 +170,7 @@ class CreateStoreParameters implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['user_id'] === null) {
+        if ($this->container['userID'] === null) {
             return false;
         }
         if ($this->container['name'] === null) {
@@ -187,22 +187,22 @@ class CreateStoreParameters implements ArrayAccess
 
 
     /**
-     * Gets user_id
+     * Gets userID
      * @return string
      */
-    public function getUserId()
+    public function getUserID()
     {
-        return $this->container['user_id'];
+        return $this->container['userID'];
     }
 
     /**
-     * Sets user_id
-     * @param string $user_id
+     * Sets userID
+     * @param string $userID UserID for user who is making the creation of store
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserID($userID)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userID'] = $userID;
 
         return $this;
     }
@@ -218,7 +218,7 @@ class CreateStoreParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Store name must be between 2 and 484 characters
      * @return $this
      */
     public function setName($name)
@@ -239,7 +239,7 @@ class CreateStoreParameters implements ArrayAccess
 
     /**
      * Sets kind
-     * @param string $kind
+     * @param string $kind Store type must be between 2 and 484 characters and can contain only letters, digits and dashes
      * @return $this
      */
     public function setKind($kind)
@@ -251,7 +251,7 @@ class CreateStoreParameters implements ArrayAccess
 
     /**
      * Gets address
-     * @return string[]
+     * @return string
      */
     public function getAddress()
     {
@@ -260,7 +260,7 @@ class CreateStoreParameters implements ArrayAccess
 
     /**
      * Sets address
-     * @param string[] $address
+     * @param string $address Store main address must be in the form House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country
      * @return $this
      */
     public function setAddress($address)

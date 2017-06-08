@@ -55,7 +55,7 @@ class Coupon implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'created_by' => 'string',
+        'createdBy' => 'string',
         'name' => 'string',
         'description' => 'string',
         'kind' => 'string',
@@ -63,7 +63,6 @@ class Coupon implements ArrayAccess
         'subcategories' => 'string[]',
         'products' => 'string[]',
         'stores' => 'string[]',
-        'offerproviders' => 'string[]',
         'primitives' => 'string[]'
     ];
 
@@ -78,7 +77,7 @@ class Coupon implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'created_by' => 'createdBy',
+        'createdBy' => 'createdBy',
         'name' => 'name',
         'description' => 'description',
         'kind' => 'kind',
@@ -86,7 +85,6 @@ class Coupon implements ArrayAccess
         'subcategories' => 'subcategories',
         'products' => 'products',
         'stores' => 'stores',
-        'offerproviders' => 'offerproviders',
         'primitives' => 'primitives'
     ];
 
@@ -97,7 +95,7 @@ class Coupon implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'created_by' => 'setCreatedBy',
+        'createdBy' => 'setCreatedBy',
         'name' => 'setName',
         'description' => 'setDescription',
         'kind' => 'setKind',
@@ -105,7 +103,6 @@ class Coupon implements ArrayAccess
         'subcategories' => 'setSubcategories',
         'products' => 'setProducts',
         'stores' => 'setStores',
-        'offerproviders' => 'setOfferproviders',
         'primitives' => 'setPrimitives'
     ];
 
@@ -116,7 +113,7 @@ class Coupon implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'created_by' => 'getCreatedBy',
+        'createdBy' => 'getCreatedBy',
         'name' => 'getName',
         'description' => 'getDescription',
         'kind' => 'getKind',
@@ -124,7 +121,6 @@ class Coupon implements ArrayAccess
         'subcategories' => 'getSubcategories',
         'products' => 'getProducts',
         'stores' => 'getStores',
-        'offerproviders' => 'getOfferproviders',
         'primitives' => 'getPrimitives'
     ];
 
@@ -160,7 +156,7 @@ class Coupon implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
+        $this->container['createdBy'] = isset($data['createdBy']) ? $data['createdBy'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['kind'] = isset($data['kind']) ? $data['kind'] : null;
@@ -168,7 +164,6 @@ class Coupon implements ArrayAccess
         $this->container['subcategories'] = isset($data['subcategories']) ? $data['subcategories'] : null;
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
         $this->container['stores'] = isset($data['stores']) ? $data['stores'] : null;
-        $this->container['offerproviders'] = isset($data['offerproviders']) ? $data['offerproviders'] : null;
         $this->container['primitives'] = isset($data['primitives']) ? $data['primitives'] : null;
     }
 
@@ -225,22 +220,22 @@ class Coupon implements ArrayAccess
     }
 
     /**
-     * Gets created_by
+     * Gets createdBy
      * @return string
      */
     public function getCreatedBy()
     {
-        return $this->container['created_by'];
+        return $this->container['createdBy'];
     }
 
     /**
-     * Sets created_by
-     * @param string $created_by
+     * Sets createdBy
+     * @param string $createdBy
      * @return $this
      */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy($createdBy)
     {
-        $this->container['created_by'] = $created_by;
+        $this->container['createdBy'] = $createdBy;
 
         return $this;
     }
@@ -388,27 +383,6 @@ class Coupon implements ArrayAccess
     public function setStores($stores)
     {
         $this->container['stores'] = $stores;
-
-        return $this;
-    }
-
-    /**
-     * Gets offerproviders
-     * @return string[]
-     */
-    public function getOfferproviders()
-    {
-        return $this->container['offerproviders'];
-    }
-
-    /**
-     * Sets offerproviders
-     * @param string[] $offerproviders
-     * @return $this
-     */
-    public function setOfferproviders($offerproviders)
-    {
-        $this->container['offerproviders'] = $offerproviders;
 
         return $this;
     }

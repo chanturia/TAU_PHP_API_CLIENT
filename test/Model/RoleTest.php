@@ -83,7 +83,7 @@ class RoleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "role_type"
+     * Test attribute "roleType"
      */
     public function testPropertyRoleType()
     {

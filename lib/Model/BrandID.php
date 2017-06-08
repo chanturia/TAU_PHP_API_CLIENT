@@ -54,7 +54,7 @@ class BrandID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'brand_id' => 'string'
+        'brandID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class BrandID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'brand_id' => 'brandID'
+        'brandID' => 'brandID'
     ];
 
 
@@ -76,7 +76,7 @@ class BrandID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'brand_id' => 'setBrandId'
+        'brandID' => 'setBrandID'
     ];
 
 
@@ -85,7 +85,7 @@ class BrandID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'brand_id' => 'getBrandId'
+        'brandID' => 'getBrandID'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class BrandID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['brand_id'] = isset($data['brand_id']) ? $data['brand_id'] : null;
+        $this->container['brandID'] = isset($data['brandID']) ? $data['brandID'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class BrandID implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['brand_id'] === null) {
-            $invalid_properties[] = "'brand_id' can't be null";
+        if ($this->container['brandID'] === null) {
+            $invalid_properties[] = "'brandID' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class BrandID implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['brand_id'] === null) {
+        if ($this->container['brandID'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class BrandID implements ArrayAccess
 
 
     /**
-     * Gets brand_id
+     * Gets brandID
      * @return string
      */
-    public function getBrandId()
+    public function getBrandID()
     {
-        return $this->container['brand_id'];
+        return $this->container['brandID'];
     }
 
     /**
-     * Sets brand_id
-     * @param string $brand_id
+     * Sets brandID
+     * @param string $brandID
      * @return $this
      */
-    public function setBrandId($brand_id)
+    public function setBrandID($brandID)
     {
-        $this->container['brand_id'] = $brand_id;
+        $this->container['brandID'] = $brandID;
 
         return $this;
     }

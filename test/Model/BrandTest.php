@@ -107,7 +107,7 @@ class BrandTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "created_by"
+     * Test attribute "createdBy"
      */
     public function testPropertyCreatedBy()
     {
@@ -123,17 +123,17 @@ class BrandTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "main_image_url"
+     * Test attribute "mainImageURL"
      */
-    public function testPropertyMainImageUrl()
+    public function testPropertyMainImageURL()
     {
 
     }
 
     /**
-     * Test attribute "logo_url"
+     * Test attribute "logoURL"
      */
-    public function testPropertyLogoUrl()
+    public function testPropertyLogoURL()
     {
 
     }

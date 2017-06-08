@@ -56,18 +56,18 @@ class Company implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'type' => 'string',
-        'created_by' => 'string',
+        'createdBy' => 'string',
         'name' => 'string',
-        'in_charge_person_name' => 'string',
-        'main_address' => 'string',
-        'main_image_url' => 'string',
-        'logo_url' => 'string',
-        'contact_phone' => 'string',
-        'company_type' => 'string',
-        'points_of_interest' => 'string[]',
+        'inChargePersonName' => 'string',
+        'mainAddress' => 'string',
+        'mainImageURL' => 'string',
+        'logoURL' => 'string',
+        'contactPhone' => 'string',
+        'companyType' => 'string',
+        'pointsOfInterest' => 'string[]',
         'brands' => 'string[]',
         'description' => 'string',
-        'facebook_page_url' => 'string'
+        'facebookPageURL' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -82,18 +82,18 @@ class Company implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'type' => 'type',
-        'created_by' => 'createdBy',
+        'createdBy' => 'createdBy',
         'name' => 'name',
-        'in_charge_person_name' => 'inChargePersonName',
-        'main_address' => 'mainAddress',
-        'main_image_url' => 'mainImageURL',
-        'logo_url' => 'logoURL',
-        'contact_phone' => 'contactPhone',
-        'company_type' => 'companyType',
-        'points_of_interest' => 'pointsOfInterest',
+        'inChargePersonName' => 'inChargePersonName',
+        'mainAddress' => 'mainAddress',
+        'mainImageURL' => 'mainImageURL',
+        'logoURL' => 'logoURL',
+        'contactPhone' => 'contactPhone',
+        'companyType' => 'companyType',
+        'pointsOfInterest' => 'pointsOfInterest',
         'brands' => 'brands',
         'description' => 'description',
-        'facebook_page_url' => 'facebookPageURL'
+        'facebookPageURL' => 'facebookPageURL'
     ];
 
 
@@ -104,18 +104,18 @@ class Company implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'type' => 'setType',
-        'created_by' => 'setCreatedBy',
+        'createdBy' => 'setCreatedBy',
         'name' => 'setName',
-        'in_charge_person_name' => 'setInChargePersonName',
-        'main_address' => 'setMainAddress',
-        'main_image_url' => 'setMainImageUrl',
-        'logo_url' => 'setLogoUrl',
-        'contact_phone' => 'setContactPhone',
-        'company_type' => 'setCompanyType',
-        'points_of_interest' => 'setPointsOfInterest',
+        'inChargePersonName' => 'setInChargePersonName',
+        'mainAddress' => 'setMainAddress',
+        'mainImageURL' => 'setMainImageURL',
+        'logoURL' => 'setLogoURL',
+        'contactPhone' => 'setContactPhone',
+        'companyType' => 'setCompanyType',
+        'pointsOfInterest' => 'setPointsOfInterest',
         'brands' => 'setBrands',
         'description' => 'setDescription',
-        'facebook_page_url' => 'setFacebookPageUrl'
+        'facebookPageURL' => 'setFacebookPageURL'
     ];
 
 
@@ -126,18 +126,18 @@ class Company implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'type' => 'getType',
-        'created_by' => 'getCreatedBy',
+        'createdBy' => 'getCreatedBy',
         'name' => 'getName',
-        'in_charge_person_name' => 'getInChargePersonName',
-        'main_address' => 'getMainAddress',
-        'main_image_url' => 'getMainImageUrl',
-        'logo_url' => 'getLogoUrl',
-        'contact_phone' => 'getContactPhone',
-        'company_type' => 'getCompanyType',
-        'points_of_interest' => 'getPointsOfInterest',
+        'inChargePersonName' => 'getInChargePersonName',
+        'mainAddress' => 'getMainAddress',
+        'mainImageURL' => 'getMainImageURL',
+        'logoURL' => 'getLogoURL',
+        'contactPhone' => 'getContactPhone',
+        'companyType' => 'getCompanyType',
+        'pointsOfInterest' => 'getPointsOfInterest',
         'brands' => 'getBrands',
         'description' => 'getDescription',
-        'facebook_page_url' => 'getFacebookPageUrl'
+        'facebookPageURL' => 'getFacebookPageURL'
     ];
 
     public static function attributeMap()
@@ -173,18 +173,18 @@ class Company implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
+        $this->container['createdBy'] = isset($data['createdBy']) ? $data['createdBy'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['in_charge_person_name'] = isset($data['in_charge_person_name']) ? $data['in_charge_person_name'] : null;
-        $this->container['main_address'] = isset($data['main_address']) ? $data['main_address'] : null;
-        $this->container['main_image_url'] = isset($data['main_image_url']) ? $data['main_image_url'] : null;
-        $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
-        $this->container['contact_phone'] = isset($data['contact_phone']) ? $data['contact_phone'] : null;
-        $this->container['company_type'] = isset($data['company_type']) ? $data['company_type'] : null;
-        $this->container['points_of_interest'] = isset($data['points_of_interest']) ? $data['points_of_interest'] : null;
+        $this->container['inChargePersonName'] = isset($data['inChargePersonName']) ? $data['inChargePersonName'] : null;
+        $this->container['mainAddress'] = isset($data['mainAddress']) ? $data['mainAddress'] : null;
+        $this->container['mainImageURL'] = isset($data['mainImageURL']) ? $data['mainImageURL'] : null;
+        $this->container['logoURL'] = isset($data['logoURL']) ? $data['logoURL'] : null;
+        $this->container['contactPhone'] = isset($data['contactPhone']) ? $data['contactPhone'] : null;
+        $this->container['companyType'] = isset($data['companyType']) ? $data['companyType'] : null;
+        $this->container['pointsOfInterest'] = isset($data['pointsOfInterest']) ? $data['pointsOfInterest'] : null;
         $this->container['brands'] = isset($data['brands']) ? $data['brands'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['facebook_page_url'] = isset($data['facebook_page_url']) ? $data['facebook_page_url'] : null;
+        $this->container['facebookPageURL'] = isset($data['facebookPageURL']) ? $data['facebookPageURL'] : null;
     }
 
     /**
@@ -261,22 +261,22 @@ class Company implements ArrayAccess
     }
 
     /**
-     * Gets created_by
+     * Gets createdBy
      * @return string
      */
     public function getCreatedBy()
     {
-        return $this->container['created_by'];
+        return $this->container['createdBy'];
     }
 
     /**
-     * Sets created_by
-     * @param string $created_by
+     * Sets createdBy
+     * @param string $createdBy
      * @return $this
      */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy($createdBy)
     {
-        $this->container['created_by'] = $created_by;
+        $this->container['createdBy'] = $createdBy;
 
         return $this;
     }
@@ -303,148 +303,148 @@ class Company implements ArrayAccess
     }
 
     /**
-     * Gets in_charge_person_name
+     * Gets inChargePersonName
      * @return string
      */
     public function getInChargePersonName()
     {
-        return $this->container['in_charge_person_name'];
+        return $this->container['inChargePersonName'];
     }
 
     /**
-     * Sets in_charge_person_name
-     * @param string $in_charge_person_name
+     * Sets inChargePersonName
+     * @param string $inChargePersonName
      * @return $this
      */
-    public function setInChargePersonName($in_charge_person_name)
+    public function setInChargePersonName($inChargePersonName)
     {
-        $this->container['in_charge_person_name'] = $in_charge_person_name;
+        $this->container['inChargePersonName'] = $inChargePersonName;
 
         return $this;
     }
 
     /**
-     * Gets main_address
+     * Gets mainAddress
      * @return string
      */
     public function getMainAddress()
     {
-        return $this->container['main_address'];
+        return $this->container['mainAddress'];
     }
 
     /**
-     * Sets main_address
-     * @param string $main_address
+     * Sets mainAddress
+     * @param string $mainAddress
      * @return $this
      */
-    public function setMainAddress($main_address)
+    public function setMainAddress($mainAddress)
     {
-        $this->container['main_address'] = $main_address;
+        $this->container['mainAddress'] = $mainAddress;
 
         return $this;
     }
 
     /**
-     * Gets main_image_url
+     * Gets mainImageURL
      * @return string
      */
-    public function getMainImageUrl()
+    public function getMainImageURL()
     {
-        return $this->container['main_image_url'];
+        return $this->container['mainImageURL'];
     }
 
     /**
-     * Sets main_image_url
-     * @param string $main_image_url
+     * Sets mainImageURL
+     * @param string $mainImageURL
      * @return $this
      */
-    public function setMainImageUrl($main_image_url)
+    public function setMainImageURL($mainImageURL)
     {
-        $this->container['main_image_url'] = $main_image_url;
+        $this->container['mainImageURL'] = $mainImageURL;
 
         return $this;
     }
 
     /**
-     * Gets logo_url
+     * Gets logoURL
      * @return string
      */
-    public function getLogoUrl()
+    public function getLogoURL()
     {
-        return $this->container['logo_url'];
+        return $this->container['logoURL'];
     }
 
     /**
-     * Sets logo_url
-     * @param string $logo_url
+     * Sets logoURL
+     * @param string $logoURL
      * @return $this
      */
-    public function setLogoUrl($logo_url)
+    public function setLogoURL($logoURL)
     {
-        $this->container['logo_url'] = $logo_url;
+        $this->container['logoURL'] = $logoURL;
 
         return $this;
     }
 
     /**
-     * Gets contact_phone
+     * Gets contactPhone
      * @return string
      */
     public function getContactPhone()
     {
-        return $this->container['contact_phone'];
+        return $this->container['contactPhone'];
     }
 
     /**
-     * Sets contact_phone
-     * @param string $contact_phone
+     * Sets contactPhone
+     * @param string $contactPhone
      * @return $this
      */
-    public function setContactPhone($contact_phone)
+    public function setContactPhone($contactPhone)
     {
-        $this->container['contact_phone'] = $contact_phone;
+        $this->container['contactPhone'] = $contactPhone;
 
         return $this;
     }
 
     /**
-     * Gets company_type
+     * Gets companyType
      * @return string
      */
     public function getCompanyType()
     {
-        return $this->container['company_type'];
+        return $this->container['companyType'];
     }
 
     /**
-     * Sets company_type
-     * @param string $company_type
+     * Sets companyType
+     * @param string $companyType
      * @return $this
      */
-    public function setCompanyType($company_type)
+    public function setCompanyType($companyType)
     {
-        $this->container['company_type'] = $company_type;
+        $this->container['companyType'] = $companyType;
 
         return $this;
     }
 
     /**
-     * Gets points_of_interest
+     * Gets pointsOfInterest
      * @return string[]
      */
     public function getPointsOfInterest()
     {
-        return $this->container['points_of_interest'];
+        return $this->container['pointsOfInterest'];
     }
 
     /**
-     * Sets points_of_interest
-     * @param string[] $points_of_interest
+     * Sets pointsOfInterest
+     * @param string[] $pointsOfInterest
      * @return $this
      */
-    public function setPointsOfInterest($points_of_interest)
+    public function setPointsOfInterest($pointsOfInterest)
     {
-        $this->container['points_of_interest'] = $points_of_interest;
+        $this->container['pointsOfInterest'] = $pointsOfInterest;
 
         return $this;
     }
@@ -492,22 +492,22 @@ class Company implements ArrayAccess
     }
 
     /**
-     * Gets facebook_page_url
+     * Gets facebookPageURL
      * @return string
      */
-    public function getFacebookPageUrl()
+    public function getFacebookPageURL()
     {
-        return $this->container['facebook_page_url'];
+        return $this->container['facebookPageURL'];
     }
 
     /**
-     * Sets facebook_page_url
-     * @param string $facebook_page_url
+     * Sets facebookPageURL
+     * @param string $facebookPageURL
      * @return $this
      */
-    public function setFacebookPageUrl($facebook_page_url)
+    public function setFacebookPageURL($facebookPageURL)
     {
-        $this->container['facebook_page_url'] = $facebook_page_url;
+        $this->container['facebookPageURL'] = $facebookPageURL;
 
         return $this;
     }

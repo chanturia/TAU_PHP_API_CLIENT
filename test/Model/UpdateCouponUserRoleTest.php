@@ -83,15 +83,15 @@ class UpdateCouponUserRoleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }
 
     /**
-     * Test attribute "role_to_update"
+     * Test attribute "roleToUpdate"
      */
     public function testPropertyRoleToUpdate()
     {
@@ -99,7 +99,7 @@ class UpdateCouponUserRoleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "new_role"
+     * Test attribute "newRole"
      */
     public function testPropertyNewRole()
     {

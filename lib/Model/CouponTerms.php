@@ -54,7 +54,7 @@ class CouponTerms implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'coupon_terms' => 'string'
+        'couponTerms' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class CouponTerms implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'coupon_terms' => 'couponTerms'
+        'couponTerms' => 'couponTerms'
     ];
 
 
@@ -76,7 +76,7 @@ class CouponTerms implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'coupon_terms' => 'setCouponTerms'
+        'couponTerms' => 'setCouponTerms'
     ];
 
 
@@ -85,7 +85,7 @@ class CouponTerms implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'coupon_terms' => 'getCouponTerms'
+        'couponTerms' => 'getCouponTerms'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class CouponTerms implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['coupon_terms'] = isset($data['coupon_terms']) ? $data['coupon_terms'] : null;
+        $this->container['couponTerms'] = isset($data['couponTerms']) ? $data['couponTerms'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class CouponTerms implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['coupon_terms'] === null) {
-            $invalid_properties[] = "'coupon_terms' can't be null";
+        if ($this->container['couponTerms'] === null) {
+            $invalid_properties[] = "'couponTerms' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class CouponTerms implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['coupon_terms'] === null) {
+        if ($this->container['couponTerms'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class CouponTerms implements ArrayAccess
 
 
     /**
-     * Gets coupon_terms
+     * Gets couponTerms
      * @return string
      */
     public function getCouponTerms()
     {
-        return $this->container['coupon_terms'];
+        return $this->container['couponTerms'];
     }
 
     /**
-     * Sets coupon_terms
-     * @param string $coupon_terms
+     * Sets couponTerms
+     * @param string $couponTerms
      * @return $this
      */
-    public function setCouponTerms($coupon_terms)
+    public function setCouponTerms($couponTerms)
     {
-        $this->container['coupon_terms'] = $coupon_terms;
+        $this->container['couponTerms'] = $couponTerms;
 
         return $this;
     }

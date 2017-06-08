@@ -3,16 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_id** | **string** |  | 
-**name** | **string** |  | 
-**in_charge_person_name** | **string** |  | 
-**main_address** | **string** |  | 
-**main_image_url** | **string** |  | 
-**logo_url** | **string** |  | 
-**contact_phone** | **string** |  | 
-**company_type** | **string** |  | 
-**description** | **string** |  | [optional] 
-**facebook_page_url** | **string** |  | [optional] 
+**userID** | **string** | userID for user who is making the creation of company | 
+**name** | **string** | Company name must be between 2 and 484 characters | 
+**inChargePersonName** | **string** | In Chanrge Person name must be between 2 and 1084 characters and can contain only letters, digits and dashes | 
+**mainAddress** | **string** | Company main address must be in the form House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country | 
+**mainImageURL** | **string** | Company main image URL must have valid URL form | 
+**logoURL** | **string** | Company logo URL must have valid URL form | 
+**contactPhone** | **string** | Company contact phone can contain only numbers and symbols plus sign and dash | 
+**companyType** | **string** | Company type | 
+**description** | **string** | Company description must be between 2 and 1284 characters | [optional] 
+**facebookPageURL** | **string** | Company Facebook Page URL must have valid URL form | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

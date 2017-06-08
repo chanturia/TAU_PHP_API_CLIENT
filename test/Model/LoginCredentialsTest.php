@@ -99,17 +99,17 @@ class LoginCredentialsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "fb_id"
+     * Test attribute "fbID"
      */
-    public function testPropertyFbId()
+    public function testPropertyFbID()
     {
 
     }
 
     /**
-     * Test attribute "google_id"
+     * Test attribute "googleID"
      */
-    public function testPropertyGoogleId()
+    public function testPropertyGoogleID()
     {
 
     }

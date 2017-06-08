@@ -54,7 +54,7 @@ class CouponPrimitiveID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'coupon_primitive_id' => 'string'
+        'couponPrimitiveID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class CouponPrimitiveID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'coupon_primitive_id' => 'couponPrimitiveID'
+        'couponPrimitiveID' => 'couponPrimitiveID'
     ];
 
 
@@ -76,7 +76,7 @@ class CouponPrimitiveID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'coupon_primitive_id' => 'setCouponPrimitiveId'
+        'couponPrimitiveID' => 'setCouponPrimitiveID'
     ];
 
 
@@ -85,7 +85,7 @@ class CouponPrimitiveID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'coupon_primitive_id' => 'getCouponPrimitiveId'
+        'couponPrimitiveID' => 'getCouponPrimitiveID'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class CouponPrimitiveID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['coupon_primitive_id'] = isset($data['coupon_primitive_id']) ? $data['coupon_primitive_id'] : null;
+        $this->container['couponPrimitiveID'] = isset($data['couponPrimitiveID']) ? $data['couponPrimitiveID'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class CouponPrimitiveID implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['coupon_primitive_id'] === null) {
-            $invalid_properties[] = "'coupon_primitive_id' can't be null";
+        if ($this->container['couponPrimitiveID'] === null) {
+            $invalid_properties[] = "'couponPrimitiveID' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class CouponPrimitiveID implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['coupon_primitive_id'] === null) {
+        if ($this->container['couponPrimitiveID'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class CouponPrimitiveID implements ArrayAccess
 
 
     /**
-     * Gets coupon_primitive_id
+     * Gets couponPrimitiveID
      * @return string
      */
-    public function getCouponPrimitiveId()
+    public function getCouponPrimitiveID()
     {
-        return $this->container['coupon_primitive_id'];
+        return $this->container['couponPrimitiveID'];
     }
 
     /**
-     * Sets coupon_primitive_id
-     * @param string $coupon_primitive_id
+     * Sets couponPrimitiveID
+     * @param string $couponPrimitiveID
      * @return $this
      */
-    public function setCouponPrimitiveId($coupon_primitive_id)
+    public function setCouponPrimitiveID($couponPrimitiveID)
     {
-        $this->container['coupon_primitive_id'] = $coupon_primitive_id;
+        $this->container['couponPrimitiveID'] = $couponPrimitiveID;
 
         return $this;
     }

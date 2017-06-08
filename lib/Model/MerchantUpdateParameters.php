@@ -168,7 +168,7 @@ class MerchantUpdateParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Merchant name must be between 2 and 1084 characters
      * @return $this
      */
     public function setName($name)
@@ -189,7 +189,7 @@ class MerchantUpdateParameters implements ArrayAccess
 
     /**
      * Sets address
-     * @param string $address
+     * @param string $address Store main address must be in the form House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country
      * @return $this
      */
     public function setAddress($address)
@@ -210,7 +210,7 @@ class MerchantUpdateParameters implements ArrayAccess
 
     /**
      * Sets logo
-     * @param string $logo
+     * @param string $logo Merchant logo must have valid URL form
      * @return $this
      */
     public function setLogo($logo)

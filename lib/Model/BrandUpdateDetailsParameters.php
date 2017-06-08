@@ -56,9 +56,8 @@ class BrandUpdateDetailsParameters implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'description' => 'string',
-        'main_image_url' => 'string',
-        'logo_url' => 'string',
-        'company_id' => 'string'
+        'mainImageURL' => 'string',
+        'logoURL' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -73,9 +72,8 @@ class BrandUpdateDetailsParameters implements ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'description' => 'description',
-        'main_image_url' => 'mainImageURL',
-        'logo_url' => 'logoURL',
-        'company_id' => 'companyID'
+        'mainImageURL' => 'mainImageURL',
+        'logoURL' => 'logoURL'
     ];
 
 
@@ -86,9 +84,8 @@ class BrandUpdateDetailsParameters implements ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'description' => 'setDescription',
-        'main_image_url' => 'setMainImageUrl',
-        'logo_url' => 'setLogoUrl',
-        'company_id' => 'setCompanyId'
+        'mainImageURL' => 'setMainImageURL',
+        'logoURL' => 'setLogoURL'
     ];
 
 
@@ -99,9 +96,8 @@ class BrandUpdateDetailsParameters implements ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'description' => 'getDescription',
-        'main_image_url' => 'getMainImageUrl',
-        'logo_url' => 'getLogoUrl',
-        'company_id' => 'getCompanyId'
+        'mainImageURL' => 'getMainImageURL',
+        'logoURL' => 'getLogoURL'
     ];
 
     public static function attributeMap()
@@ -137,9 +133,8 @@ class BrandUpdateDetailsParameters implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['main_image_url'] = isset($data['main_image_url']) ? $data['main_image_url'] : null;
-        $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
-        $this->container['company_id'] = isset($data['company_id']) ? $data['company_id'] : null;
+        $this->container['mainImageURL'] = isset($data['mainImageURL']) ? $data['mainImageURL'] : null;
+        $this->container['logoURL'] = isset($data['logoURL']) ? $data['logoURL'] : null;
     }
 
     /**
@@ -178,7 +173,7 @@ class BrandUpdateDetailsParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Brand name must be between 2 and 1084 characters
      * @return $this
      */
     public function setName($name)
@@ -199,7 +194,7 @@ class BrandUpdateDetailsParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Brand description must be between 2 and 1284 characters
      * @return $this
      */
     public function setDescription($description)
@@ -210,64 +205,43 @@ class BrandUpdateDetailsParameters implements ArrayAccess
     }
 
     /**
-     * Gets main_image_url
+     * Gets mainImageURL
      * @return string
      */
-    public function getMainImageUrl()
+    public function getMainImageURL()
     {
-        return $this->container['main_image_url'];
+        return $this->container['mainImageURL'];
     }
 
     /**
-     * Sets main_image_url
-     * @param string $main_image_url
+     * Sets mainImageURL
+     * @param string $mainImageURL Brand main image URL must have valid URL form
      * @return $this
      */
-    public function setMainImageUrl($main_image_url)
+    public function setMainImageURL($mainImageURL)
     {
-        $this->container['main_image_url'] = $main_image_url;
+        $this->container['mainImageURL'] = $mainImageURL;
 
         return $this;
     }
 
     /**
-     * Gets logo_url
+     * Gets logoURL
      * @return string
      */
-    public function getLogoUrl()
+    public function getLogoURL()
     {
-        return $this->container['logo_url'];
+        return $this->container['logoURL'];
     }
 
     /**
-     * Sets logo_url
-     * @param string $logo_url
+     * Sets logoURL
+     * @param string $logoURL Brand logo URL must have valid URL form
      * @return $this
      */
-    public function setLogoUrl($logo_url)
+    public function setLogoURL($logoURL)
     {
-        $this->container['logo_url'] = $logo_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_id
-     * @return string
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     * @param string $company_id
-     * @return $this
-     */
-    public function setCompanyId($company_id)
-    {
-        $this->container['company_id'] = $company_id;
+        $this->container['logoURL'] = $logoURL;
 
         return $this;
     }

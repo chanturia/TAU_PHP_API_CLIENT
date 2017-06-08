@@ -99,25 +99,17 @@ class BrandUpdateDetailsParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "main_image_url"
+     * Test attribute "mainImageURL"
      */
-    public function testPropertyMainImageUrl()
+    public function testPropertyMainImageURL()
     {
 
     }
 
     /**
-     * Test attribute "logo_url"
+     * Test attribute "logoURL"
      */
-    public function testPropertyLogoUrl()
-    {
-
-    }
-
-    /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
+    public function testPropertyLogoURL()
     {
 
     }

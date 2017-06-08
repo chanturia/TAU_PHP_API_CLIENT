@@ -180,7 +180,7 @@ class CreateCouponCategoryParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Coupon category name must be between 2 and 484 characters
      * @return $this
      */
     public function setName($name)
@@ -201,7 +201,7 @@ class CreateCouponCategoryParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Coupon category description must be between 2 and 1084 characters
      * @return $this
      */
     public function setDescription($description)
@@ -222,7 +222,7 @@ class CreateCouponCategoryParameters implements ArrayAccess
 
     /**
      * Sets subcategories
-     * @param string[] $subcategories
+     * @param string[] $subcategories subcategories contain array with subcategoried ids for coupon category
      * @return $this
      */
     public function setSubcategories($subcategories)

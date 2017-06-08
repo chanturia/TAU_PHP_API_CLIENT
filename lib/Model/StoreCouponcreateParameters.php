@@ -246,7 +246,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets userid
-     * @param string $userid
+     * @param string $userid User ID for user who is making the creation of coupon
      * @return $this
      */
     public function setUserid($userid)
@@ -267,7 +267,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Coupon name must be between 2 and 1084 characters
      * @return $this
      */
     public function setName($name)
@@ -288,7 +288,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Coupon description must be between 2 and 1284 characters
      * @return $this
      */
     public function setDescription($description)
@@ -309,7 +309,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets kind
-     * @param string $kind
+     * @param string $kind Coupon type must be between 2 and 484 characters
      * @return $this
      */
     public function setKind($kind)
@@ -330,7 +330,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets primitives
-     * @param string[] $primitives
+     * @param string[] $primitives contain array with elements the primitive ids for coupon
      * @return $this
      */
     public function setPrimitives($primitives)
@@ -351,7 +351,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets categories
-     * @param string[] $categories
+     * @param string[] $categories contain array with elements the category ids for coupon
      * @return $this
      */
     public function setCategories($categories)
@@ -372,7 +372,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets subcategories
-     * @param string[] $subcategories
+     * @param string[] $subcategories contain array with elements the subcategory ids for coupon
      * @return $this
      */
     public function setSubcategories($subcategories)
@@ -393,7 +393,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets products
-     * @param string[] $products
+     * @param string[] $products contain array with elements the product ids for coupon
      * @return $this
      */
     public function setProducts($products)
@@ -414,7 +414,7 @@ class StoreCouponcreateParameters implements ArrayAccess
 
     /**
      * Sets storeids
-     * @param string[] $storeids
+     * @param string[] $storeids contain array with elements the store ids for coupon
      * @return $this
      */
     public function setStoreids($storeids)

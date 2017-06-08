@@ -54,7 +54,7 @@ class CreateCouponUserRole implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user_id' => 'string',
+        'userID' => 'string',
         'role' => 'string'
     ];
 
@@ -68,7 +68,7 @@ class CreateCouponUserRole implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'userID',
+        'userID' => 'userID',
         'role' => 'role'
     ];
 
@@ -78,7 +78,7 @@ class CreateCouponUserRole implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId',
+        'userID' => 'setUserID',
         'role' => 'setRole'
     ];
 
@@ -88,7 +88,7 @@ class CreateCouponUserRole implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId',
+        'userID' => 'getUserID',
         'role' => 'getRole'
     ];
 
@@ -123,7 +123,7 @@ class CreateCouponUserRole implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
         $this->container['role'] = isset($data['role']) ? $data['role'] : null;
     }
 
@@ -136,8 +136,8 @@ class CreateCouponUserRole implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['user_id'] === null) {
-            $invalid_properties[] = "'user_id' can't be null";
+        if ($this->container['userID'] === null) {
+            $invalid_properties[] = "'userID' can't be null";
         }
         if ($this->container['role'] === null) {
             $invalid_properties[] = "'role' can't be null";
@@ -154,7 +154,7 @@ class CreateCouponUserRole implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['user_id'] === null) {
+        if ($this->container['userID'] === null) {
             return false;
         }
         if ($this->container['role'] === null) {
@@ -165,22 +165,22 @@ class CreateCouponUserRole implements ArrayAccess
 
 
     /**
-     * Gets user_id
+     * Gets userID
      * @return string
      */
-    public function getUserId()
+    public function getUserID()
     {
-        return $this->container['user_id'];
+        return $this->container['userID'];
     }
 
     /**
-     * Sets user_id
-     * @param string $user_id
+     * Sets userID
+     * @param string $userID
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserID($userID)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userID'] = $userID;
 
         return $this;
     }

@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **authorizeReturnAccessToken**
-> \Swagger\Client\Model\AccessToken authorizeReturnAccessToken($activation_code_parameters)
+> \Swagger\Client\Model\AccessToken authorizeReturnAccessToken($activationCodeParameters)
 
 
 
@@ -40,10 +40,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$activation_code_parameters = new \Swagger\Client\Model\ActivationCodeParameters(); // \Swagger\Client\Model\ActivationCodeParameters | Activation Code parameters consisting of grant_type that must have the default value \"authorization_code\" and code parameters that must be the Activation Code returned from /oauth2/authorize.
+$activationCodeParameters = new \Swagger\Client\Model\ActivationCodeParameters(); // \Swagger\Client\Model\ActivationCodeParameters | Activation Code parameters consisting of grant_type that must have the default value \"authorization_code\" and code parameters that must be the Activation Code returned from /oauth2/authorize.
 
 try {
-    $result = $api_instance->authorizeReturnAccessToken($activation_code_parameters);
+    $result = $api_instance->authorizeReturnAccessToken($activationCodeParameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->authorizeReturnAccessToken: ', $e->getMessage(), PHP_EOL;
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activation_code_parameters** | [**\Swagger\Client\Model\ActivationCodeParameters**](../Model/\Swagger\Client\Model\ActivationCodeParameters.md)| Activation Code parameters consisting of grant_type that must have the default value \&quot;authorization_code\&quot; and code parameters that must be the Activation Code returned from /oauth2/authorize. |
+ **activationCodeParameters** | [**\Swagger\Client\Model\ActivationCodeParameters**](../Model/\Swagger\Client\Model\ActivationCodeParameters.md)| Activation Code parameters consisting of grant_type that must have the default value \&quot;authorization_code\&quot; and code parameters that must be the Activation Code returned from /oauth2/authorize. |
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **authorizeReturnCode**
-> \Swagger\Client\Model\ActivationCode authorizeReturnCode($client_id, $response_type)
+> \Swagger\Client\Model\ActivationCode authorizeReturnCode($clientId, $responseType)
 
 
 
@@ -89,11 +89,11 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$client_id = "client_id_example"; // string | Client ID for the Application that requests access to the User.
-$response_type = "response_type_example"; // string | response_type must equals the value code for the default functionality.
+$clientId = "clientId_example"; // string | Client ID for the Application that requests access to the User.
+$responseType = "responseType_example"; // string | response_type must equals the value code for the default functionality.
 
 try {
-    $result = $api_instance->authorizeReturnCode($client_id, $response_type);
+    $result = $api_instance->authorizeReturnCode($clientId, $responseType);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->authorizeReturnCode: ', $e->getMessage(), PHP_EOL;
@@ -105,8 +105,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_id** | **string**| Client ID for the Application that requests access to the User. |
- **response_type** | **string**| response_type must equals the value code for the default functionality. |
+ **clientId** | **string**| Client ID for the Application that requests access to the User. |
+ **responseType** | **string**| response_type must equals the value code for the default functionality. |
 
 ### Return type
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeMobile**
-> \Swagger\Client\Model\PIN changeMobile($change_mobile_number_parameter)
+> \Swagger\Client\Model\PIN changeMobile($changeMobileNumberParameter)
 
 
 
@@ -139,10 +139,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$change_mobile_number_parameter = new \Swagger\Client\Model\ChangeMobileNumberParameter(); // \Swagger\Client\Model\ChangeMobileNumberParameter | Id for the user and new mobile number.
+$changeMobileNumberParameter = new \Swagger\Client\Model\ChangeMobileNumberParameter(); // \Swagger\Client\Model\ChangeMobileNumberParameter | Id for the user and new mobile number.
 
 try {
-    $result = $api_instance->changeMobile($change_mobile_number_parameter);
+    $result = $api_instance->changeMobile($changeMobileNumberParameter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->changeMobile: ', $e->getMessage(), PHP_EOL;
@@ -154,7 +154,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **change_mobile_number_parameter** | [**\Swagger\Client\Model\ChangeMobileNumberParameter**](../Model/\Swagger\Client\Model\ChangeMobileNumberParameter.md)| Id for the user and new mobile number. |
+ **changeMobileNumberParameter** | [**\Swagger\Client\Model\ChangeMobileNumberParameter**](../Model/\Swagger\Client\Model\ChangeMobileNumberParameter.md)| Id for the user and new mobile number. |
 
 ### Return type
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeStore**
-> \Swagger\Client\Model\UserID changeStore($change_client_id_store_id)
+> \Swagger\Client\Model\UserID changeStore($changeClientIDStoreID)
 
 
 
@@ -187,10 +187,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$change_client_id_store_id = new \Swagger\Client\Model\ChangeClientIDStoreID(); // \Swagger\Client\Model\ChangeClientIDStoreID | Id for the user and Id for the new Store being selected.
+$changeClientIDStoreID = new \Swagger\Client\Model\ChangeClientIDStoreID(); // \Swagger\Client\Model\ChangeClientIDStoreID | Id for the user and Id for the new Store being selected.
 
 try {
-    $result = $api_instance->changeStore($change_client_id_store_id);
+    $result = $api_instance->changeStore($changeClientIDStoreID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->changeStore: ', $e->getMessage(), PHP_EOL;
@@ -202,7 +202,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **change_client_id_store_id** | [**\Swagger\Client\Model\ChangeClientIDStoreID**](../Model/\Swagger\Client\Model\ChangeClientIDStoreID.md)| Id for the user and Id for the new Store being selected. |
+ **changeClientIDStoreID** | [**\Swagger\Client\Model\ChangeClientIDStoreID**](../Model/\Swagger\Client\Model\ChangeClientIDStoreID.md)| Id for the user and Id for the new Store being selected. |
 
 ### Return type
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **confirmMobilePin**
-> \Swagger\Client\Model\UserID confirmMobilePin($id_pin_number)
+> \Swagger\Client\Model\UserID confirmMobilePin($idPinNumber)
 
 
 
@@ -235,10 +235,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$id_pin_number = new \Swagger\Client\Model\IdPinNumber(); // \Swagger\Client\Model\IdPinNumber | Id for the user and pinNumber to validate.
+$idPinNumber = new \Swagger\Client\Model\IdPinNumber(); // \Swagger\Client\Model\IdPinNumber | Id for the user and pinNumber to validate.
 
 try {
-    $result = $api_instance->confirmMobilePin($id_pin_number);
+    $result = $api_instance->confirmMobilePin($idPinNumber);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->confirmMobilePin: ', $e->getMessage(), PHP_EOL;
@@ -250,7 +250,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id_pin_number** | [**\Swagger\Client\Model\IdPinNumber**](../Model/\Swagger\Client\Model\IdPinNumber.md)| Id for the user and pinNumber to validate. |
+ **idPinNumber** | [**\Swagger\Client\Model\IdPinNumber**](../Model/\Swagger\Client\Model\IdPinNumber.md)| Id for the user and pinNumber to validate. |
 
 ### Return type
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createUser**
-> \Swagger\Client\Model\User createUser($create_credentials)
+> \Swagger\Client\Model\User createUser($createCredentials)
 
 
 
@@ -280,10 +280,10 @@ Creates and registers a new user based on personal details parameters including 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$create_credentials = new \Swagger\Client\Model\CreateCredentials(); // \Swagger\Client\Model\CreateCredentials | User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL.
+$createCredentials = new \Swagger\Client\Model\CreateCredentials(); // \Swagger\Client\Model\CreateCredentials | User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL.
 
 try {
-    $result = $api_instance->createUser($create_credentials);
+    $result = $api_instance->createUser($createCredentials);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->createUser: ', $e->getMessage(), PHP_EOL;
@@ -295,7 +295,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_credentials** | [**\Swagger\Client\Model\CreateCredentials**](../Model/\Swagger\Client\Model\CreateCredentials.md)| User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. |
+ **createCredentials** | [**\Swagger\Client\Model\CreateCredentials**](../Model/\Swagger\Client\Model\CreateCredentials.md)| User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. |
 
 ### Return type
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **generatePasswordResetToken**
-> \Swagger\Client\Model\PasswordResetToken generatePasswordResetToken($password_token_credentials)
+> \Swagger\Client\Model\PasswordResetToken generatePasswordResetToken($passwordTokenCredentials)
 
 
 
@@ -378,10 +378,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$password_token_credentials = new \Swagger\Client\Model\PasswordTokenCredentials(); // \Swagger\Client\Model\PasswordTokenCredentials | User credentials consisting of id, email.
+$passwordTokenCredentials = new \Swagger\Client\Model\PasswordTokenCredentials(); // \Swagger\Client\Model\PasswordTokenCredentials | User credentials consisting of id, email.
 
 try {
-    $result = $api_instance->generatePasswordResetToken($password_token_credentials);
+    $result = $api_instance->generatePasswordResetToken($passwordTokenCredentials);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->generatePasswordResetToken: ', $e->getMessage(), PHP_EOL;
@@ -393,7 +393,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **password_token_credentials** | [**\Swagger\Client\Model\PasswordTokenCredentials**](../Model/\Swagger\Client\Model\PasswordTokenCredentials.md)| User credentials consisting of id, email. |
+ **passwordTokenCredentials** | [**\Swagger\Client\Model\PasswordTokenCredentials**](../Model/\Swagger\Client\Model\PasswordTokenCredentials.md)| User credentials consisting of id, email. |
 
 ### Return type
 
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **loginUser**
-> \Swagger\Client\Model\User loginUser($login_credentials)
+> \Swagger\Client\Model\User loginUser($loginCredentials)
 
 
 
@@ -567,10 +567,10 @@ Base auth login with email as username and password.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$login_credentials = new \Swagger\Client\Model\LoginCredentials(); // \Swagger\Client\Model\LoginCredentials | The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks.
+$loginCredentials = new \Swagger\Client\Model\LoginCredentials(); // \Swagger\Client\Model\LoginCredentials | The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks.
 
 try {
-    $result = $api_instance->loginUser($login_credentials);
+    $result = $api_instance->loginUser($loginCredentials);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->loginUser: ', $e->getMessage(), PHP_EOL;
@@ -582,7 +582,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **login_credentials** | [**\Swagger\Client\Model\LoginCredentials**](../Model/\Swagger\Client\Model\LoginCredentials.md)| The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. |
+ **loginCredentials** | [**\Swagger\Client\Model\LoginCredentials**](../Model/\Swagger\Client\Model\LoginCredentials.md)| The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. |
 
 ### Return type
 
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resetPassword**
-> \Swagger\Client\Model\UserID resetPassword($reset_password_credentials)
+> \Swagger\Client\Model\UserID resetPassword($resetPasswordCredentials)
 
 
 
@@ -663,10 +663,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$reset_password_credentials = new \Swagger\Client\Model\ResetPasswordCredentials(); // \Swagger\Client\Model\ResetPasswordCredentials | Credentials for the User to reset password consisting of User id , ResetTokenToken and new password.
+$resetPasswordCredentials = new \Swagger\Client\Model\ResetPasswordCredentials(); // \Swagger\Client\Model\ResetPasswordCredentials | Credentials for the User to reset password consisting of User id , ResetTokenToken and new password.
 
 try {
-    $result = $api_instance->resetPassword($reset_password_credentials);
+    $result = $api_instance->resetPassword($resetPasswordCredentials);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->resetPassword: ', $e->getMessage(), PHP_EOL;
@@ -678,7 +678,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reset_password_credentials** | [**\Swagger\Client\Model\ResetPasswordCredentials**](../Model/\Swagger\Client\Model\ResetPasswordCredentials.md)| Credentials for the User to reset password consisting of User id , ResetTokenToken and new password. |
+ **resetPasswordCredentials** | [**\Swagger\Client\Model\ResetPasswordCredentials**](../Model/\Swagger\Client\Model\ResetPasswordCredentials.md)| Credentials for the User to reset password consisting of User id , ResetTokenToken and new password. |
 
 ### Return type
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **selectStore**
-> \Swagger\Client\Model\UserID selectStore($select_store_client_id_store_id)
+> \Swagger\Client\Model\UserID selectStore($selectStoreClientIDStoreID)
 
 
 
@@ -711,10 +711,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$select_store_client_id_store_id = new \Swagger\Client\Model\SelectStoreClientIDStoreID(); // \Swagger\Client\Model\SelectStoreClientIDStoreID | Id for the user and Id for the Store.
+$selectStoreClientIDStoreID = new \Swagger\Client\Model\SelectStoreClientIDStoreID(); // \Swagger\Client\Model\SelectStoreClientIDStoreID | Id for the user and Id for the Store.
 
 try {
-    $result = $api_instance->selectStore($select_store_client_id_store_id);
+    $result = $api_instance->selectStore($selectStoreClientIDStoreID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->selectStore: ', $e->getMessage(), PHP_EOL;
@@ -726,7 +726,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **select_store_client_id_store_id** | [**\Swagger\Client\Model\SelectStoreClientIDStoreID**](../Model/\Swagger\Client\Model\SelectStoreClientIDStoreID.md)| Id for the user and Id for the Store. |
+ **selectStoreClientIDStoreID** | [**\Swagger\Client\Model\SelectStoreClientIDStoreID**](../Model/\Swagger\Client\Model\SelectStoreClientIDStoreID.md)| Id for the user and Id for the Store. |
 
 ### Return type
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **submitMobile**
-> \Swagger\Client\Model\PIN submitMobile($submit_mobile_number_parameter)
+> \Swagger\Client\Model\PIN submitMobile($submitMobileNumberParameter)
 
 
 
@@ -759,10 +759,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$submit_mobile_number_parameter = new \Swagger\Client\Model\SubmitMobileNumberParameter(); // \Swagger\Client\Model\SubmitMobileNumberParameter | Single UserId for the user which submits mobile and mobile phone number.
+$submitMobileNumberParameter = new \Swagger\Client\Model\SubmitMobileNumberParameter(); // \Swagger\Client\Model\SubmitMobileNumberParameter | Single UserId for the user which submits mobile and mobile phone number.
 
 try {
-    $result = $api_instance->submitMobile($submit_mobile_number_parameter);
+    $result = $api_instance->submitMobile($submitMobileNumberParameter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->submitMobile: ', $e->getMessage(), PHP_EOL;
@@ -774,7 +774,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **submit_mobile_number_parameter** | [**\Swagger\Client\Model\SubmitMobileNumberParameter**](../Model/\Swagger\Client\Model\SubmitMobileNumberParameter.md)| Single UserId for the user which submits mobile and mobile phone number. |
+ **submitMobileNumberParameter** | [**\Swagger\Client\Model\SubmitMobileNumberParameter**](../Model/\Swagger\Client\Model\SubmitMobileNumberParameter.md)| Single UserId for the user which submits mobile and mobile phone number. |
 
 ### Return type
 

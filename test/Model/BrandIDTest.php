@@ -83,9 +83,9 @@ class BrandIDTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "brand_id"
+     * Test attribute "brandID"
      */
-    public function testPropertyBrandId()
+    public function testPropertyBrandID()
     {
 
     }

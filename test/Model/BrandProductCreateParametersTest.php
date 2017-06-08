@@ -107,7 +107,7 @@ class BrandProductCreateParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "images_uris"
+     * Test attribute "imagesUris"
      */
     public function testPropertyImagesUris()
     {
@@ -115,9 +115,9 @@ class BrandProductCreateParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userID"
      */
-    public function testPropertyUserId()
+    public function testPropertyUserID()
     {
 
     }

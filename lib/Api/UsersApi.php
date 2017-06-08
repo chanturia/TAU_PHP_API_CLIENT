@@ -92,13 +92,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ActivationCodeParameters $activation_code_parameters Activation Code parameters consisting of grant_type that must have the default value \&quot;authorization_code\&quot; and code parameters that must be the Activation Code returned from /oauth2/authorize. (required)
+     * @param \Swagger\Client\Model\ActivationCodeParameters $activationCodeParameters Activation Code parameters consisting of grant_type that must have the default value \&quot;authorization_code\&quot; and code parameters that must be the Activation Code returned from /oauth2/authorize. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\AccessToken
      */
-    public function authorizeReturnAccessToken($activation_code_parameters)
+    public function authorizeReturnAccessToken($activationCodeParameters)
     {
-        list($response) = $this->authorizeReturnAccessTokenWithHttpInfo($activation_code_parameters);
+        list($response) = $this->authorizeReturnAccessTokenWithHttpInfo($activationCodeParameters);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ActivationCodeParameters $activation_code_parameters Activation Code parameters consisting of grant_type that must have the default value \&quot;authorization_code\&quot; and code parameters that must be the Activation Code returned from /oauth2/authorize. (required)
+     * @param \Swagger\Client\Model\ActivationCodeParameters $activationCodeParameters Activation Code parameters consisting of grant_type that must have the default value \&quot;authorization_code\&quot; and code parameters that must be the Activation Code returned from /oauth2/authorize. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\AccessToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authorizeReturnAccessTokenWithHttpInfo($activation_code_parameters)
+    public function authorizeReturnAccessTokenWithHttpInfo($activationCodeParameters)
     {
-        // verify the required parameter 'activation_code_parameters' is set
-        if ($activation_code_parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $activation_code_parameters when calling authorizeReturnAccessToken');
+        // verify the required parameter 'activationCodeParameters' is set
+        if ($activationCodeParameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $activationCodeParameters when calling authorizeReturnAccessToken');
         }
         // parse inputs
         $resourcePath = "/oauth2/token";
@@ -134,8 +134,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($activation_code_parameters)) {
-            $_tempBody = $activation_code_parameters;
+        if (isset($activationCodeParameters)) {
+            $_tempBody = $activationCodeParameters;
         }
 
         // for model (json/xml)
@@ -182,14 +182,14 @@ class UsersApi
      *
      * 
      *
-     * @param string $client_id Client ID for the Application that requests access to the User. (required)
-     * @param string $response_type response_type must equals the value code for the default functionality. (required)
+     * @param string $clientId Client ID for the Application that requests access to the User. (required)
+     * @param string $responseType response_type must equals the value code for the default functionality. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ActivationCode
      */
-    public function authorizeReturnCode($client_id, $response_type)
+    public function authorizeReturnCode($clientId, $responseType)
     {
-        list($response) = $this->authorizeReturnCodeWithHttpInfo($client_id, $response_type);
+        list($response) = $this->authorizeReturnCodeWithHttpInfo($clientId, $responseType);
         return $response;
     }
 
@@ -198,20 +198,20 @@ class UsersApi
      *
      * 
      *
-     * @param string $client_id Client ID for the Application that requests access to the User. (required)
-     * @param string $response_type response_type must equals the value code for the default functionality. (required)
+     * @param string $clientId Client ID for the Application that requests access to the User. (required)
+     * @param string $responseType response_type must equals the value code for the default functionality. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ActivationCode, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authorizeReturnCodeWithHttpInfo($client_id, $response_type)
+    public function authorizeReturnCodeWithHttpInfo($clientId, $responseType)
     {
-        // verify the required parameter 'client_id' is set
-        if ($client_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $client_id when calling authorizeReturnCode');
+        // verify the required parameter 'clientId' is set
+        if ($clientId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $clientId when calling authorizeReturnCode');
         }
-        // verify the required parameter 'response_type' is set
-        if ($response_type === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $response_type when calling authorizeReturnCode');
+        // verify the required parameter 'responseType' is set
+        if ($responseType === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $responseType when calling authorizeReturnCode');
         }
         // parse inputs
         $resourcePath = "/oauth2/authorize";
@@ -226,12 +226,12 @@ class UsersApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($client_id !== null) {
-            $queryParams['client_id'] = $this->apiClient->getSerializer()->toQueryValue($client_id);
+        if ($clientId !== null) {
+            $queryParams['client_id'] = $this->apiClient->getSerializer()->toQueryValue($clientId);
         }
         // query params
-        if ($response_type !== null) {
-            $queryParams['response_type'] = $this->apiClient->getSerializer()->toQueryValue($response_type);
+        if ($responseType !== null) {
+            $queryParams['response_type'] = $this->apiClient->getSerializer()->toQueryValue($responseType);
         }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -281,13 +281,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ChangeMobileNumberParameter $change_mobile_number_parameter Id for the user and new mobile number. (required)
+     * @param \Swagger\Client\Model\ChangeMobileNumberParameter $changeMobileNumberParameter Id for the user and new mobile number. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\PIN
      */
-    public function changeMobile($change_mobile_number_parameter)
+    public function changeMobile($changeMobileNumberParameter)
     {
-        list($response) = $this->changeMobileWithHttpInfo($change_mobile_number_parameter);
+        list($response) = $this->changeMobileWithHttpInfo($changeMobileNumberParameter);
         return $response;
     }
 
@@ -296,15 +296,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ChangeMobileNumberParameter $change_mobile_number_parameter Id for the user and new mobile number. (required)
+     * @param \Swagger\Client\Model\ChangeMobileNumberParameter $changeMobileNumberParameter Id for the user and new mobile number. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PIN, HTTP status code, HTTP response headers (array of strings)
      */
-    public function changeMobileWithHttpInfo($change_mobile_number_parameter)
+    public function changeMobileWithHttpInfo($changeMobileNumberParameter)
     {
-        // verify the required parameter 'change_mobile_number_parameter' is set
-        if ($change_mobile_number_parameter === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $change_mobile_number_parameter when calling changeMobile');
+        // verify the required parameter 'changeMobileNumberParameter' is set
+        if ($changeMobileNumberParameter === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $changeMobileNumberParameter when calling changeMobile');
         }
         // parse inputs
         $resourcePath = "/user/changeMobile";
@@ -323,8 +323,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($change_mobile_number_parameter)) {
-            $_tempBody = $change_mobile_number_parameter;
+        if (isset($changeMobileNumberParameter)) {
+            $_tempBody = $changeMobileNumberParameter;
         }
 
         // for model (json/xml)
@@ -371,13 +371,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ChangeClientIDStoreID $change_client_id_store_id Id for the user and Id for the new Store being selected. (required)
+     * @param \Swagger\Client\Model\ChangeClientIDStoreID $changeClientIDStoreID Id for the user and Id for the new Store being selected. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function changeStore($change_client_id_store_id)
+    public function changeStore($changeClientIDStoreID)
     {
-        list($response) = $this->changeStoreWithHttpInfo($change_client_id_store_id);
+        list($response) = $this->changeStoreWithHttpInfo($changeClientIDStoreID);
         return $response;
     }
 
@@ -386,15 +386,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ChangeClientIDStoreID $change_client_id_store_id Id for the user and Id for the new Store being selected. (required)
+     * @param \Swagger\Client\Model\ChangeClientIDStoreID $changeClientIDStoreID Id for the user and Id for the new Store being selected. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function changeStoreWithHttpInfo($change_client_id_store_id)
+    public function changeStoreWithHttpInfo($changeClientIDStoreID)
     {
-        // verify the required parameter 'change_client_id_store_id' is set
-        if ($change_client_id_store_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $change_client_id_store_id when calling changeStore');
+        // verify the required parameter 'changeClientIDStoreID' is set
+        if ($changeClientIDStoreID === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $changeClientIDStoreID when calling changeStore');
         }
         // parse inputs
         $resourcePath = "/user/changeStore";
@@ -413,8 +413,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($change_client_id_store_id)) {
-            $_tempBody = $change_client_id_store_id;
+        if (isset($changeClientIDStoreID)) {
+            $_tempBody = $changeClientIDStoreID;
         }
 
         // for model (json/xml)
@@ -461,13 +461,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\IdPinNumber $id_pin_number Id for the user and pinNumber to validate. (required)
+     * @param \Swagger\Client\Model\IdPinNumber $idPinNumber Id for the user and pinNumber to validate. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function confirmMobilePin($id_pin_number)
+    public function confirmMobilePin($idPinNumber)
     {
-        list($response) = $this->confirmMobilePinWithHttpInfo($id_pin_number);
+        list($response) = $this->confirmMobilePinWithHttpInfo($idPinNumber);
         return $response;
     }
 
@@ -476,15 +476,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\IdPinNumber $id_pin_number Id for the user and pinNumber to validate. (required)
+     * @param \Swagger\Client\Model\IdPinNumber $idPinNumber Id for the user and pinNumber to validate. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function confirmMobilePinWithHttpInfo($id_pin_number)
+    public function confirmMobilePinWithHttpInfo($idPinNumber)
     {
-        // verify the required parameter 'id_pin_number' is set
-        if ($id_pin_number === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id_pin_number when calling confirmMobilePin');
+        // verify the required parameter 'idPinNumber' is set
+        if ($idPinNumber === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $idPinNumber when calling confirmMobilePin');
         }
         // parse inputs
         $resourcePath = "/user/confirmMobilePin";
@@ -503,8 +503,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($id_pin_number)) {
-            $_tempBody = $id_pin_number;
+        if (isset($idPinNumber)) {
+            $_tempBody = $idPinNumber;
         }
 
         // for model (json/xml)
@@ -551,13 +551,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCredentials $create_credentials User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. (required)
+     * @param \Swagger\Client\Model\CreateCredentials $createCredentials User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\User
      */
-    public function createUser($create_credentials)
+    public function createUser($createCredentials)
     {
-        list($response) = $this->createUserWithHttpInfo($create_credentials);
+        list($response) = $this->createUserWithHttpInfo($createCredentials);
         return $response;
     }
 
@@ -566,15 +566,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCredentials $create_credentials User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. (required)
+     * @param \Swagger\Client\Model\CreateCredentials $createCredentials User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createUserWithHttpInfo($create_credentials)
+    public function createUserWithHttpInfo($createCredentials)
     {
-        // verify the required parameter 'create_credentials' is set
-        if ($create_credentials === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_credentials when calling createUser');
+        // verify the required parameter 'createCredentials' is set
+        if ($createCredentials === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createCredentials when calling createUser');
         }
         // parse inputs
         $resourcePath = "/user/create";
@@ -593,8 +593,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_credentials)) {
-            $_tempBody = $create_credentials;
+        if (isset($createCredentials)) {
+            $_tempBody = $createCredentials;
         }
 
         // for model (json/xml)
@@ -741,13 +741,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\PasswordTokenCredentials $password_token_credentials User credentials consisting of id, email. (required)
+     * @param \Swagger\Client\Model\PasswordTokenCredentials $passwordTokenCredentials User credentials consisting of id, email. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\PasswordResetToken
      */
-    public function generatePasswordResetToken($password_token_credentials)
+    public function generatePasswordResetToken($passwordTokenCredentials)
     {
-        list($response) = $this->generatePasswordResetTokenWithHttpInfo($password_token_credentials);
+        list($response) = $this->generatePasswordResetTokenWithHttpInfo($passwordTokenCredentials);
         return $response;
     }
 
@@ -756,15 +756,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\PasswordTokenCredentials $password_token_credentials User credentials consisting of id, email. (required)
+     * @param \Swagger\Client\Model\PasswordTokenCredentials $passwordTokenCredentials User credentials consisting of id, email. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PasswordResetToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePasswordResetTokenWithHttpInfo($password_token_credentials)
+    public function generatePasswordResetTokenWithHttpInfo($passwordTokenCredentials)
     {
-        // verify the required parameter 'password_token_credentials' is set
-        if ($password_token_credentials === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $password_token_credentials when calling generatePasswordResetToken');
+        // verify the required parameter 'passwordTokenCredentials' is set
+        if ($passwordTokenCredentials === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $passwordTokenCredentials when calling generatePasswordResetToken');
         }
         // parse inputs
         $resourcePath = "/user/generatePasswordResetToken";
@@ -783,8 +783,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($password_token_credentials)) {
-            $_tempBody = $password_token_credentials;
+        if (isset($passwordTokenCredentials)) {
+            $_tempBody = $passwordTokenCredentials;
         }
 
         // for model (json/xml)
@@ -1110,13 +1110,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\LoginCredentials $login_credentials The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. (required)
+     * @param \Swagger\Client\Model\LoginCredentials $loginCredentials The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\User
      */
-    public function loginUser($login_credentials)
+    public function loginUser($loginCredentials)
     {
-        list($response) = $this->loginUserWithHttpInfo($login_credentials);
+        list($response) = $this->loginUserWithHttpInfo($loginCredentials);
         return $response;
     }
 
@@ -1125,15 +1125,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\LoginCredentials $login_credentials The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. (required)
+     * @param \Swagger\Client\Model\LoginCredentials $loginCredentials The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginUserWithHttpInfo($login_credentials)
+    public function loginUserWithHttpInfo($loginCredentials)
     {
-        // verify the required parameter 'login_credentials' is set
-        if ($login_credentials === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $login_credentials when calling loginUser');
+        // verify the required parameter 'loginCredentials' is set
+        if ($loginCredentials === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $loginCredentials when calling loginUser');
         }
         // parse inputs
         $resourcePath = "/user/login";
@@ -1152,8 +1152,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($login_credentials)) {
-            $_tempBody = $login_credentials;
+        if (isset($loginCredentials)) {
+            $_tempBody = $loginCredentials;
         }
 
         // for model (json/xml)
@@ -1289,13 +1289,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ResetPasswordCredentials $reset_password_credentials Credentials for the User to reset password consisting of User id , ResetTokenToken and new password. (required)
+     * @param \Swagger\Client\Model\ResetPasswordCredentials $resetPasswordCredentials Credentials for the User to reset password consisting of User id , ResetTokenToken and new password. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function resetPassword($reset_password_credentials)
+    public function resetPassword($resetPasswordCredentials)
     {
-        list($response) = $this->resetPasswordWithHttpInfo($reset_password_credentials);
+        list($response) = $this->resetPasswordWithHttpInfo($resetPasswordCredentials);
         return $response;
     }
 
@@ -1304,15 +1304,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\ResetPasswordCredentials $reset_password_credentials Credentials for the User to reset password consisting of User id , ResetTokenToken and new password. (required)
+     * @param \Swagger\Client\Model\ResetPasswordCredentials $resetPasswordCredentials Credentials for the User to reset password consisting of User id , ResetTokenToken and new password. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function resetPasswordWithHttpInfo($reset_password_credentials)
+    public function resetPasswordWithHttpInfo($resetPasswordCredentials)
     {
-        // verify the required parameter 'reset_password_credentials' is set
-        if ($reset_password_credentials === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $reset_password_credentials when calling resetPassword');
+        // verify the required parameter 'resetPasswordCredentials' is set
+        if ($resetPasswordCredentials === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $resetPasswordCredentials when calling resetPassword');
         }
         // parse inputs
         $resourcePath = "/user/resetPassword";
@@ -1331,8 +1331,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($reset_password_credentials)) {
-            $_tempBody = $reset_password_credentials;
+        if (isset($resetPasswordCredentials)) {
+            $_tempBody = $resetPasswordCredentials;
         }
 
         // for model (json/xml)
@@ -1379,13 +1379,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\SelectStoreClientIDStoreID $select_store_client_id_store_id Id for the user and Id for the Store. (required)
+     * @param \Swagger\Client\Model\SelectStoreClientIDStoreID $selectStoreClientIDStoreID Id for the user and Id for the Store. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function selectStore($select_store_client_id_store_id)
+    public function selectStore($selectStoreClientIDStoreID)
     {
-        list($response) = $this->selectStoreWithHttpInfo($select_store_client_id_store_id);
+        list($response) = $this->selectStoreWithHttpInfo($selectStoreClientIDStoreID);
         return $response;
     }
 
@@ -1394,15 +1394,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\SelectStoreClientIDStoreID $select_store_client_id_store_id Id for the user and Id for the Store. (required)
+     * @param \Swagger\Client\Model\SelectStoreClientIDStoreID $selectStoreClientIDStoreID Id for the user and Id for the Store. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function selectStoreWithHttpInfo($select_store_client_id_store_id)
+    public function selectStoreWithHttpInfo($selectStoreClientIDStoreID)
     {
-        // verify the required parameter 'select_store_client_id_store_id' is set
-        if ($select_store_client_id_store_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $select_store_client_id_store_id when calling selectStore');
+        // verify the required parameter 'selectStoreClientIDStoreID' is set
+        if ($selectStoreClientIDStoreID === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $selectStoreClientIDStoreID when calling selectStore');
         }
         // parse inputs
         $resourcePath = "/user/selectStore";
@@ -1421,8 +1421,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($select_store_client_id_store_id)) {
-            $_tempBody = $select_store_client_id_store_id;
+        if (isset($selectStoreClientIDStoreID)) {
+            $_tempBody = $selectStoreClientIDStoreID;
         }
 
         // for model (json/xml)
@@ -1469,13 +1469,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\SubmitMobileNumberParameter $submit_mobile_number_parameter Single UserId for the user which submits mobile and mobile phone number. (required)
+     * @param \Swagger\Client\Model\SubmitMobileNumberParameter $submitMobileNumberParameter Single UserId for the user which submits mobile and mobile phone number. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\PIN
      */
-    public function submitMobile($submit_mobile_number_parameter)
+    public function submitMobile($submitMobileNumberParameter)
     {
-        list($response) = $this->submitMobileWithHttpInfo($submit_mobile_number_parameter);
+        list($response) = $this->submitMobileWithHttpInfo($submitMobileNumberParameter);
         return $response;
     }
 
@@ -1484,15 +1484,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\SubmitMobileNumberParameter $submit_mobile_number_parameter Single UserId for the user which submits mobile and mobile phone number. (required)
+     * @param \Swagger\Client\Model\SubmitMobileNumberParameter $submitMobileNumberParameter Single UserId for the user which submits mobile and mobile phone number. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PIN, HTTP status code, HTTP response headers (array of strings)
      */
-    public function submitMobileWithHttpInfo($submit_mobile_number_parameter)
+    public function submitMobileWithHttpInfo($submitMobileNumberParameter)
     {
-        // verify the required parameter 'submit_mobile_number_parameter' is set
-        if ($submit_mobile_number_parameter === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $submit_mobile_number_parameter when calling submitMobile');
+        // verify the required parameter 'submitMobileNumberParameter' is set
+        if ($submitMobileNumberParameter === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $submitMobileNumberParameter when calling submitMobile');
         }
         // parse inputs
         $resourcePath = "/user/submitMobile";
@@ -1511,8 +1511,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($submit_mobile_number_parameter)) {
-            $_tempBody = $submit_mobile_number_parameter;
+        if (isset($submitMobileNumberParameter)) {
+            $_tempBody = $submitMobileNumberParameter;
         }
 
         // for model (json/xml)

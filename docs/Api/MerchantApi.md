@@ -5,7 +5,6 @@ All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addUserMerchantPrivileges**](MerchantApi.md#addUserMerchantPrivileges) | **POST** /merchant/{id}/user | 
-[**changeUserMerchantPrivileges**](MerchantApi.md#changeUserMerchantPrivileges) | **PUT** /merchant/{id}/user | 
 [**createCouponMerchant**](MerchantApi.md#createCouponMerchant) | **POST** /merchant/{id}/coupon/create | 
 [**createMerchant**](MerchantApi.md#createMerchant) | **POST** /merchant/create | 
 [**createProductMerchant**](MerchantApi.md#createProductMerchant) | **POST** /merchant/{id}/product/create | 
@@ -16,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **addUserMerchantPrivileges**
-> \Swagger\Client\Model\UserID addUserMerchantPrivileges($id, $product_id, $coupon_id, $create_merchant_user_role)
+> \Swagger\Client\Model\UserID addUserMerchantPrivileges($id, $productID, $couponID, $createMerchantUserRole)
 
 
 
@@ -32,12 +31,12 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
 $id = "id_example"; // string | ID for the merchant being searched for.
-$product_id = "product_id_example"; // string | ID of the Product connected with the Company
-$coupon_id = "coupon_id_example"; // string | ID of the Coupon connected with the Company
-$create_merchant_user_role = new \Swagger\Client\Model\CreateMerchantUserRole(); // \Swagger\Client\Model\CreateMerchantUserRole | Merchant's User Priveleges Parameters for the merchant ID and userID.
+$productID = "productID_example"; // string | ID of the Product connected with the Company
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Company
+$createMerchantUserRole = new \Swagger\Client\Model\CreateMerchantUserRole(); // \Swagger\Client\Model\CreateMerchantUserRole | Merchant's User Priveleges Parameters for the merchant ID and userID.
 
 try {
-    $result = $api_instance->addUserMerchantPrivileges($id, $product_id, $coupon_id, $create_merchant_user_role);
+    $result = $api_instance->addUserMerchantPrivileges($id, $productID, $couponID, $createMerchantUserRole);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->addUserMerchantPrivileges: ', $e->getMessage(), PHP_EOL;
@@ -50,63 +49,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the merchant being searched for. |
- **product_id** | **string**| ID of the Product connected with the Company | [optional]
- **coupon_id** | **string**| ID of the Coupon connected with the Company | [optional]
- **create_merchant_user_role** | [**\Swagger\Client\Model\CreateMerchantUserRole**](../Model/\Swagger\Client\Model\CreateMerchantUserRole.md)| Merchant&#39;s User Priveleges Parameters for the merchant ID and userID. | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\UserID**](../Model/UserID.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **changeUserMerchantPrivileges**
-> \Swagger\Client\Model\UserID changeUserMerchantPrivileges($id, $update_merchant_user_role, $product_id, $coupon_id)
-
-
-
-Changes a User Role for a Merchant based on selected role. Authorization parameters must be in URL query. Grant Role parameters must be in the body. If authorization parameters include a connected Entitys id ex. for merchantID(id) connected parameter productID then grant roles parameter connected entitys id must match the authorization parameter connected entitys id in the previous ex. productID
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\MerchantApi();
-$id = "id_example"; // string | ID for the merchant being searched for.
-$update_merchant_user_role = new \Swagger\Client\Model\UpdateMerchantUserRole(); // \Swagger\Client\Model\UpdateMerchantUserRole | Merchant's User Priveleges Parameters for the Merchant ID and UserID.
-$product_id = "product_id_example"; // string | ID of the Product connected with the Company
-$coupon_id = "coupon_id_example"; // string | ID of the Coupon connected with the Company
-
-try {
-    $result = $api_instance->changeUserMerchantPrivileges($id, $update_merchant_user_role, $product_id, $coupon_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MerchantApi->changeUserMerchantPrivileges: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the merchant being searched for. |
- **update_merchant_user_role** | [**\Swagger\Client\Model\UpdateMerchantUserRole**](../Model/\Swagger\Client\Model\UpdateMerchantUserRole.md)| Merchant&#39;s User Priveleges Parameters for the Merchant ID and UserID. |
- **product_id** | **string**| ID of the Product connected with the Company | [optional]
- **coupon_id** | **string**| ID of the Coupon connected with the Company | [optional]
+ **productID** | **string**| ID of the Product connected with the Company | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Company | [optional]
+ **createMerchantUserRole** | [**\Swagger\Client\Model\CreateMerchantUserRole**](../Model/\Swagger\Client\Model\CreateMerchantUserRole.md)| Merchant&#39;s User Priveleges Parameters for the merchant ID and userID. | [optional]
 
 ### Return type
 
@@ -124,11 +69,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCouponMerchant**
-> \Swagger\Client\Model\Coupon createCouponMerchant($id, $merchant_coupon_create_parameters)
+> \Swagger\Client\Model\Coupon createCouponMerchant($id, $merchantCouponCreateParameters)
 
 
 
-Creates a new Coupon for a Merchant, for a single user id, based on included parameters of userid who initiated the creation proccess, products ids, categories ids and subcategories ids and primitives ids, optionally storeids and offerproviderids. Validation must ensure userid who initiated the creation has required privileges.
+Creates a new Coupon for a Merchant, for a single user id, based on included parameters of userid who initiated the creation proccess, products ids, categories ids and subcategories ids and primitives ids, optionally storeids. Validation must ensure userid who initiated the creation has required privileges.
 
 ### Example
 ```php
@@ -140,10 +85,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
 $id = "id_example"; // string | ID for the merchant
-$merchant_coupon_create_parameters = new \Swagger\Client\Model\MerchantCouponCreateParameters(); // \Swagger\Client\Model\MerchantCouponCreateParameters | Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids.
+$merchantCouponCreateParameters = new \Swagger\Client\Model\MerchantCouponCreateParameters(); // \Swagger\Client\Model\MerchantCouponCreateParameters | Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids.
 
 try {
-    $result = $api_instance->createCouponMerchant($id, $merchant_coupon_create_parameters);
+    $result = $api_instance->createCouponMerchant($id, $merchantCouponCreateParameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->createCouponMerchant: ', $e->getMessage(), PHP_EOL;
@@ -156,7 +101,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the merchant |
- **merchant_coupon_create_parameters** | [**\Swagger\Client\Model\MerchantCouponCreateParameters**](../Model/\Swagger\Client\Model\MerchantCouponCreateParameters.md)| Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids and offerproviderids. |
+ **merchantCouponCreateParameters** | [**\Swagger\Client\Model\MerchantCouponCreateParameters**](../Model/\Swagger\Client\Model\MerchantCouponCreateParameters.md)| Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. |
 
 ### Return type
 
@@ -174,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createMerchant**
-> \Swagger\Client\Model\Merchant createMerchant($merchant_create_parameters)
+> \Swagger\Client\Model\Merchant createMerchant($merchantCreateParameters)
 
 
 
@@ -189,10 +134,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
-$merchant_create_parameters = new \Swagger\Client\Model\MerchantCreateParameters(); // \Swagger\Client\Model\MerchantCreateParameters | Merchant parameters for creating new Merchant consisting of userID, merchant name, address and logo.
+$merchantCreateParameters = new \Swagger\Client\Model\MerchantCreateParameters(); // \Swagger\Client\Model\MerchantCreateParameters | Merchant parameters for creating new Merchant consisting of userID, merchant name, address and logo.
 
 try {
-    $result = $api_instance->createMerchant($merchant_create_parameters);
+    $result = $api_instance->createMerchant($merchantCreateParameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->createMerchant: ', $e->getMessage(), PHP_EOL;
@@ -204,7 +149,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_create_parameters** | [**\Swagger\Client\Model\MerchantCreateParameters**](../Model/\Swagger\Client\Model\MerchantCreateParameters.md)| Merchant parameters for creating new Merchant consisting of userID, merchant name, address and logo. |
+ **merchantCreateParameters** | [**\Swagger\Client\Model\MerchantCreateParameters**](../Model/\Swagger\Client\Model\MerchantCreateParameters.md)| Merchant parameters for creating new Merchant consisting of userID, merchant name, address and logo. |
 
 ### Return type
 
@@ -222,7 +167,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createProductMerchant**
-> \Swagger\Client\Model\Product createProductMerchant($id, $merchant_product_create_parameters)
+> \Swagger\Client\Model\Product createProductMerchant($id, $merchantProductCreateParameters)
 
 
 
@@ -238,10 +183,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
 $id = "id_example"; // string | ID for the merchant
-$merchant_product_create_parameters = new \Swagger\Client\Model\MerchantProductCreateParameters(); // \Swagger\Client\Model\MerchantProductCreateParameters | Product parameters for creating new product consisting of product type, name, description, brandID, images.
+$merchantProductCreateParameters = new \Swagger\Client\Model\MerchantProductCreateParameters(); // \Swagger\Client\Model\MerchantProductCreateParameters | Product parameters for creating new product consisting of product type, name, description, brandID, images.
 
 try {
-    $result = $api_instance->createProductMerchant($id, $merchant_product_create_parameters);
+    $result = $api_instance->createProductMerchant($id, $merchantProductCreateParameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->createProductMerchant: ', $e->getMessage(), PHP_EOL;
@@ -254,7 +199,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the merchant |
- **merchant_product_create_parameters** | [**\Swagger\Client\Model\MerchantProductCreateParameters**](../Model/\Swagger\Client\Model\MerchantProductCreateParameters.md)| Product parameters for creating new product consisting of product type, name, description, brandID, images. |
+ **merchantProductCreateParameters** | [**\Swagger\Client\Model\MerchantProductCreateParameters**](../Model/\Swagger\Client\Model\MerchantProductCreateParameters.md)| Product parameters for creating new product consisting of product type, name, description, brandID, images. |
 
 ### Return type
 
@@ -368,7 +313,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeUserMerchantPrivileges**
-> \Swagger\Client\Model\UserID removeUserMerchantPrivileges($id, $delete_merchant_user_role, $product_id, $coupon_id)
+> \Swagger\Client\Model\UserID removeUserMerchantPrivileges($id, $deleteMerchantUserRole, $productID, $couponID)
 
 
 
@@ -384,12 +329,12 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
 $id = "id_example"; // string | ID for the merchant being searched for.
-$delete_merchant_user_role = new \Swagger\Client\Model\DeleteMerchantUserRole(); // \Swagger\Client\Model\DeleteMerchantUserRole | Merchant's User ID and privileges to be removed  for the merchant ID.
-$product_id = "product_id_example"; // string | ID of the Product connected with the Company
-$coupon_id = "coupon_id_example"; // string | ID of the Coupon connected with the Company
+$deleteMerchantUserRole = new \Swagger\Client\Model\DeleteMerchantUserRole(); // \Swagger\Client\Model\DeleteMerchantUserRole | Merchant's User ID and privileges to be removed  for the merchant ID.
+$productID = "productID_example"; // string | ID of the Product connected with the Company
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Company
 
 try {
-    $result = $api_instance->removeUserMerchantPrivileges($id, $delete_merchant_user_role, $product_id, $coupon_id);
+    $result = $api_instance->removeUserMerchantPrivileges($id, $deleteMerchantUserRole, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->removeUserMerchantPrivileges: ', $e->getMessage(), PHP_EOL;
@@ -402,9 +347,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the merchant being searched for. |
- **delete_merchant_user_role** | [**\Swagger\Client\Model\DeleteMerchantUserRole**](../Model/\Swagger\Client\Model\DeleteMerchantUserRole.md)| Merchant&#39;s User ID and privileges to be removed  for the merchant ID. |
- **product_id** | **string**| ID of the Product connected with the Company | [optional]
- **coupon_id** | **string**| ID of the Coupon connected with the Company | [optional]
+ **deleteMerchantUserRole** | [**\Swagger\Client\Model\DeleteMerchantUserRole**](../Model/\Swagger\Client\Model\DeleteMerchantUserRole.md)| Merchant&#39;s User ID and privileges to be removed  for the merchant ID. |
+ **productID** | **string**| ID of the Product connected with the Company | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Company | [optional]
 
 ### Return type
 
@@ -422,7 +367,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMerchant**
-> \Swagger\Client\Model\MerchantID updateMerchant($id, $merchant_update_parameters)
+> \Swagger\Client\Model\MerchantID updateMerchant($id, $merchantUpdateParameters)
 
 
 
@@ -438,10 +383,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
 $id = "id_example"; // string | ID for the merchant to be updated.
-$merchant_update_parameters = new \Swagger\Client\Model\MerchantUpdateParameters(); // \Swagger\Client\Model\MerchantUpdateParameters | Merchant parameters for updating merchant consisting of product type, name, description, brandID, images and optionally merchantids.
+$merchantUpdateParameters = new \Swagger\Client\Model\MerchantUpdateParameters(); // \Swagger\Client\Model\MerchantUpdateParameters | Merchant parameters for updating merchant consisting of product type, name, description, brandID, images and optionally merchantids.
 
 try {
-    $result = $api_instance->updateMerchant($id, $merchant_update_parameters);
+    $result = $api_instance->updateMerchant($id, $merchantUpdateParameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->updateMerchant: ', $e->getMessage(), PHP_EOL;
@@ -454,7 +399,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the merchant to be updated. |
- **merchant_update_parameters** | [**\Swagger\Client\Model\MerchantUpdateParameters**](../Model/\Swagger\Client\Model\MerchantUpdateParameters.md)| Merchant parameters for updating merchant consisting of product type, name, description, brandID, images and optionally merchantids. |
+ **merchantUpdateParameters** | [**\Swagger\Client\Model\MerchantUpdateParameters**](../Model/\Swagger\Client\Model\MerchantUpdateParameters.md)| Merchant parameters for updating merchant consisting of product type, name, description, brandID, images and optionally merchantids. |
 
 ### Return type
 

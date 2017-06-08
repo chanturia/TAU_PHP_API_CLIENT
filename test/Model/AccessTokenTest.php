@@ -83,7 +83,7 @@ class AccessTokenTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "access_token"
+     * Test attribute "accessToken"
      */
     public function testPropertyAccessToken()
     {
@@ -91,7 +91,7 @@ class AccessTokenTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "token_type"
+     * Test attribute "tokenType"
      */
     public function testPropertyTokenType()
     {

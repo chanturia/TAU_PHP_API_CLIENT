@@ -54,7 +54,7 @@ class CompanyID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'company_id' => 'string'
+        'companyID' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class CompanyID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'companyID'
+        'companyID' => 'companyID'
     ];
 
 
@@ -76,7 +76,7 @@ class CompanyID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId'
+        'companyID' => 'setCompanyID'
     ];
 
 
@@ -85,7 +85,7 @@ class CompanyID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId'
+        'companyID' => 'getCompanyID'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class CompanyID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = isset($data['company_id']) ? $data['company_id'] : null;
+        $this->container['companyID'] = isset($data['companyID']) ? $data['companyID'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class CompanyID implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['company_id'] === null) {
-            $invalid_properties[] = "'company_id' can't be null";
+        if ($this->container['companyID'] === null) {
+            $invalid_properties[] = "'companyID' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class CompanyID implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['company_id'] === null) {
+        if ($this->container['companyID'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class CompanyID implements ArrayAccess
 
 
     /**
-     * Gets company_id
+     * Gets companyID
      * @return string
      */
-    public function getCompanyId()
+    public function getCompanyID()
     {
-        return $this->container['company_id'];
+        return $this->container['companyID'];
     }
 
     /**
-     * Sets company_id
-     * @param string $company_id
+     * Sets companyID
+     * @param string $companyID
      * @return $this
      */
-    public function setCompanyId($company_id)
+    public function setCompanyID($companyID)
     {
-        $this->container['company_id'] = $company_id;
+        $this->container['companyID'] = $companyID;
 
         return $this;
     }

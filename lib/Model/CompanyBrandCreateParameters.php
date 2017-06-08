@@ -54,11 +54,11 @@ class CompanyBrandCreateParameters implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user_id' => 'string',
+        'userID' => 'string',
         'name' => 'string',
         'description' => 'string',
-        'main_image_url' => 'string',
-        'logo_url' => 'string'
+        'mainImageURL' => 'string',
+        'logoURL' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -71,11 +71,11 @@ class CompanyBrandCreateParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'userID',
+        'userID' => 'userID',
         'name' => 'name',
         'description' => 'description',
-        'main_image_url' => 'mainImageURL',
-        'logo_url' => 'logoURL'
+        'mainImageURL' => 'mainImageURL',
+        'logoURL' => 'logoURL'
     ];
 
 
@@ -84,11 +84,11 @@ class CompanyBrandCreateParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId',
+        'userID' => 'setUserID',
         'name' => 'setName',
         'description' => 'setDescription',
-        'main_image_url' => 'setMainImageUrl',
-        'logo_url' => 'setLogoUrl'
+        'mainImageURL' => 'setMainImageURL',
+        'logoURL' => 'setLogoURL'
     ];
 
 
@@ -97,11 +97,11 @@ class CompanyBrandCreateParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId',
+        'userID' => 'getUserID',
         'name' => 'getName',
         'description' => 'getDescription',
-        'main_image_url' => 'getMainImageUrl',
-        'logo_url' => 'getLogoUrl'
+        'mainImageURL' => 'getMainImageURL',
+        'logoURL' => 'getLogoURL'
     ];
 
     public static function attributeMap()
@@ -135,11 +135,11 @@ class CompanyBrandCreateParameters implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['main_image_url'] = isset($data['main_image_url']) ? $data['main_image_url'] : null;
-        $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
+        $this->container['mainImageURL'] = isset($data['mainImageURL']) ? $data['mainImageURL'] : null;
+        $this->container['logoURL'] = isset($data['logoURL']) ? $data['logoURL'] : null;
     }
 
     /**
@@ -151,8 +151,8 @@ class CompanyBrandCreateParameters implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['user_id'] === null) {
-            $invalid_properties[] = "'user_id' can't be null";
+        if ($this->container['userID'] === null) {
+            $invalid_properties[] = "'userID' can't be null";
         }
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
@@ -160,11 +160,11 @@ class CompanyBrandCreateParameters implements ArrayAccess
         if ($this->container['description'] === null) {
             $invalid_properties[] = "'description' can't be null";
         }
-        if ($this->container['main_image_url'] === null) {
-            $invalid_properties[] = "'main_image_url' can't be null";
+        if ($this->container['mainImageURL'] === null) {
+            $invalid_properties[] = "'mainImageURL' can't be null";
         }
-        if ($this->container['logo_url'] === null) {
-            $invalid_properties[] = "'logo_url' can't be null";
+        if ($this->container['logoURL'] === null) {
+            $invalid_properties[] = "'logoURL' can't be null";
         }
         return $invalid_properties;
     }
@@ -178,7 +178,7 @@ class CompanyBrandCreateParameters implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['user_id'] === null) {
+        if ($this->container['userID'] === null) {
             return false;
         }
         if ($this->container['name'] === null) {
@@ -187,10 +187,10 @@ class CompanyBrandCreateParameters implements ArrayAccess
         if ($this->container['description'] === null) {
             return false;
         }
-        if ($this->container['main_image_url'] === null) {
+        if ($this->container['mainImageURL'] === null) {
             return false;
         }
-        if ($this->container['logo_url'] === null) {
+        if ($this->container['logoURL'] === null) {
             return false;
         }
         return true;
@@ -198,22 +198,22 @@ class CompanyBrandCreateParameters implements ArrayAccess
 
 
     /**
-     * Gets user_id
+     * Gets userID
      * @return string
      */
-    public function getUserId()
+    public function getUserID()
     {
-        return $this->container['user_id'];
+        return $this->container['userID'];
     }
 
     /**
-     * Sets user_id
-     * @param string $user_id
+     * Sets userID
+     * @param string $userID userID for user who is making the creation of Brand
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserID($userID)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userID'] = $userID;
 
         return $this;
     }
@@ -229,7 +229,7 @@ class CompanyBrandCreateParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Brand name must be between 2 and 1084 characters
      * @return $this
      */
     public function setName($name)
@@ -250,7 +250,7 @@ class CompanyBrandCreateParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Brand description must be between 2 and 1284 characters
      * @return $this
      */
     public function setDescription($description)
@@ -261,43 +261,43 @@ class CompanyBrandCreateParameters implements ArrayAccess
     }
 
     /**
-     * Gets main_image_url
+     * Gets mainImageURL
      * @return string
      */
-    public function getMainImageUrl()
+    public function getMainImageURL()
     {
-        return $this->container['main_image_url'];
+        return $this->container['mainImageURL'];
     }
 
     /**
-     * Sets main_image_url
-     * @param string $main_image_url
+     * Sets mainImageURL
+     * @param string $mainImageURL Brand main image URL must have valid URL form
      * @return $this
      */
-    public function setMainImageUrl($main_image_url)
+    public function setMainImageURL($mainImageURL)
     {
-        $this->container['main_image_url'] = $main_image_url;
+        $this->container['mainImageURL'] = $mainImageURL;
 
         return $this;
     }
 
     /**
-     * Gets logo_url
+     * Gets logoURL
      * @return string
      */
-    public function getLogoUrl()
+    public function getLogoURL()
     {
-        return $this->container['logo_url'];
+        return $this->container['logoURL'];
     }
 
     /**
-     * Sets logo_url
-     * @param string $logo_url
+     * Sets logoURL
+     * @param string $logoURL Brand logo URL must have valid URL form
      * @return $this
      */
-    public function setLogoUrl($logo_url)
+    public function setLogoURL($logoURL)
     {
-        $this->container['logo_url'] = $logo_url;
+        $this->container['logoURL'] = $logoURL;
 
         return $this;
     }
