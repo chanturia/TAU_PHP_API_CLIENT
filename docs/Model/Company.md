@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **logoURL** | **string** |  | [optional] 
 **contactPhone** | **string** |  | [optional] 
 **companyType** | **string** |  | [optional] 
-**pointsOfInterest** | **string[]** |  | [optional] 
+**pointsOfInterest** | [**\Swagger\Client\Model\Store[]**](Store.md) |  | [optional] 
 **brands** | **string[]** |  | [optional] 
 **description** | **string** |  | [optional] 
 **facebookPageURL** | **string** |  | [optional] 
