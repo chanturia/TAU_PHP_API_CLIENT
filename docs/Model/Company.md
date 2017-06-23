@@ -14,7 +14,9 @@ Name | Type | Description | Notes
 **contactPhone** | **string** |  | [optional] 
 **companyType** | **string** |  | [optional] 
 **pointsOfInterest** | [**\Swagger\Client\Model\Store[]**](Store.md) |  | [optional] 
-**brands** | **string[]** |  | [optional] 
+**brands** | [**\Swagger\Client\Model\Brand[]**](Brand.md) |  | [optional] 
+**products** | [**\Swagger\Client\Model\Product[]**](Product.md) |  | [optional] 
+**coupons** | [**\Swagger\Client\Model\Coupon[]**](Coupon.md) |  | [optional] 
 **description** | **string** |  | [optional] 
 **facebookPageURL** | **string** |  | [optional] 
 

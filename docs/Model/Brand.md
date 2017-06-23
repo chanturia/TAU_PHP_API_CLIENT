@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **description** | **string** |  | [optional] 
 **mainImageURL** | **string** |  | [optional] 
 **logoURL** | **string** |  | [optional] 
+**products** | [**\Swagger\Client\Model\Product[]**](Product.md) |  | [optional] 
+**coupons** | [**\Swagger\Client\Model\Coupon[]**](Coupon.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
