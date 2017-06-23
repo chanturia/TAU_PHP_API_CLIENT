@@ -455,7 +455,7 @@ class CouponApi
     }
 
     /**
-     * Operation couponCreatePost
+     * Operation createCoupon
      *
      * 
      *
@@ -463,14 +463,14 @@ class CouponApi
      * @return \Swagger\Client\Model\Coupon
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function couponCreatePost($createCouponParameters = null)
+    public function createCoupon($createCouponParameters = null)
     {
-        list($response) = $this->couponCreatePostWithHttpInfo($createCouponParameters);
+        list($response) = $this->createCouponWithHttpInfo($createCouponParameters);
         return $response;
     }
 
     /**
-     * Operation couponCreatePostWithHttpInfo
+     * Operation createCouponWithHttpInfo
      *
      * 
      *
@@ -478,7 +478,7 @@ class CouponApi
      * @return Array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function couponCreatePostWithHttpInfo($createCouponParameters = null)
+    public function createCouponWithHttpInfo($createCouponParameters = null)
     {
         // parse inputs
         $resourcePath = "/coupon/create";

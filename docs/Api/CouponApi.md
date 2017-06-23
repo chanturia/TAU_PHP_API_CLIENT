@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**allCouponCategories**](CouponApi.md#allCouponCategories) | **GET** /coupon/categories | 
 [**allCouponPrimitives**](CouponApi.md#allCouponPrimitives) | **GET** /coupon/primitive/all | 
 [**couponCategoryCreate**](CouponApi.md#couponCategoryCreate) | **POST** /coupon/category/create | 
-[**couponCreatePost**](CouponApi.md#couponCreatePost) | **POST** /coupon/create | 
+[**createCoupon**](CouponApi.md#createCoupon) | **POST** /coupon/create | 
 [**createCouponPrimitive**](CouponApi.md#createCouponPrimitive) | **POST** /coupon/primitive/create | 
 [**editCouponCategory**](CouponApi.md#editCouponCategory) | **PUT** /coupon/category/{couponCategoryID} | 
 [**editCouponPrimitive**](CouponApi.md#editCouponPrimitive) | **PUT** /coupon/primitive/{primitiveID}/details | 
@@ -207,8 +207,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **couponCreatePost**
-> \Swagger\Client\Model\Coupon couponCreatePost($createCouponParameters)
+# **createCoupon**
+> \Swagger\Client\Model\Coupon createCoupon($createCouponParameters)
 
 
 
@@ -226,10 +226,10 @@ $api_instance = new Swagger\Client\Api\CouponApi();
 $createCouponParameters = new \Swagger\Client\Model\CreateCouponParameters(); // \Swagger\Client\Model\CreateCouponParameters | Coupon Parameters
 
 try {
-    $result = $api_instance->couponCreatePost($createCouponParameters);
+    $result = $api_instance->createCoupon($createCouponParameters);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CouponApi->couponCreatePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CouponApi->createCoupon: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

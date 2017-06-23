@@ -134,12 +134,12 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for couponCreatePost
+     * Test case for createCoupon
      *
      * .
      *
      */
-    public function testCouponCreatePost()
+    public function testCreateCoupon()
     {
 
     }
