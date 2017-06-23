@@ -83,6 +83,14 @@ class ProductParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "userID"
+     */
+    public function testPropertyUserID()
+    {
+
+    }
+
+    /**
      * Test attribute "productype"
      */
     public function testPropertyProductype()
@@ -118,14 +126,6 @@ class ProductParametersTest extends \PHPUnit_Framework_TestCase
      * Test attribute "brandID"
      */
     public function testPropertyBrandID()
-    {
-
-    }
-
-    /**
-     * Test attribute "userID"
-     */
-    public function testPropertyUserID()
     {
 
     }

@@ -94,8 +94,8 @@ class StoreApi
      *
      * @param string $id ID for the Store (required)
      * @param \Swagger\Client\Model\CreateStoreUserRole $createStoreUserRole Store&#39;s User Priveleges Parameters for the store ID and UserID. (required)
-     * @param string $productID ID of the Product connected with the Store (optional)
-     * @param string $couponID ID of the Coupon connected with the Store (optional)
+     * @param string $productID ID of the Product connected with the Store (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Store (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
@@ -112,8 +112,8 @@ class StoreApi
      *
      * @param string $id ID for the Store (required)
      * @param \Swagger\Client\Model\CreateStoreUserRole $createStoreUserRole Store&#39;s User Priveleges Parameters for the store ID and UserID. (required)
-     * @param string $productID ID of the Product connected with the Store (optional)
-     * @param string $couponID ID of the Coupon connected with the Store (optional)
+     * @param string $productID ID of the Product connected with the Store (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Store (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -586,9 +586,9 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\DeleteStoreUserRole $deleteStoreUserRole Store&#39;s User ID and privileges to be removed  for the store ID. (required)
-     * @param string $productID ID of the Product connected with the Store (optional)
-     * @param string $couponID ID of the Coupon connected with the Store (optional)
+     * @param \Swagger\Client\Model\DeleteStoreUserRole $deleteStoreUserRole Store&#39;s User ID and role to be removed  for the store ID opionally role connected entities id. (required)
+     * @param string $productID ID of the Product connected with the Store (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Store (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
@@ -604,9 +604,9 @@ class StoreApi
      * 
      *
      * @param string $id ID for the Store (required)
-     * @param \Swagger\Client\Model\DeleteStoreUserRole $deleteStoreUserRole Store&#39;s User ID and privileges to be removed  for the store ID. (required)
-     * @param string $productID ID of the Product connected with the Store (optional)
-     * @param string $couponID ID of the Coupon connected with the Store (optional)
+     * @param \Swagger\Client\Model\DeleteStoreUserRole $deleteStoreUserRole Store&#39;s User ID and role to be removed  for the store ID opionally role connected entities id. (required)
+     * @param string $productID ID of the Product connected with the Store (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Store (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -795,7 +795,7 @@ class StoreApi
      * 
      *
      * @param string $id ID for the store to find the details for. (required)
-     * @param string $companyID Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Store
      */
@@ -811,7 +811,7 @@ class StoreApi
      * 
      *
      * @param string $id ID for the store to find the details for. (required)
-     * @param string $companyID Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Store, HTTP status code, HTTP response headers (array of strings)
      */
@@ -894,8 +894,8 @@ class StoreApi
      * 
      *
      * @param string $id ID for the store to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateStoreParameters $updateStoreParameters Store Parameters for the store to be updated and User ID for the User who makes the update.Company ID Parameter for the company that the store is connected to is required only if the store is connected with a company. (required)
-     * @param string $companyID Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
+     * @param \Swagger\Client\Model\UpdateStoreParameters $updateStoreParameters Store Parameters for the store to be updated (required)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\StoreID
      */
@@ -911,8 +911,8 @@ class StoreApi
      * 
      *
      * @param string $id ID for the store to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateStoreParameters $updateStoreParameters Store Parameters for the store to be updated and User ID for the User who makes the update.Company ID Parameter for the company that the store is connected to is required only if the store is connected with a company. (required)
-     * @param string $companyID Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. (optional)
+     * @param \Swagger\Client\Model\UpdateStoreParameters $updateStoreParameters Store Parameters for the store to be updated (required)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\StoreID, HTTP status code, HTTP response headers (array of strings)
      */

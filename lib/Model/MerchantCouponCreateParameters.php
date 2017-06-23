@@ -246,7 +246,7 @@ class MerchantCouponCreateParameters implements ArrayAccess
 
     /**
      * Sets userid
-     * @param string $userid User ID for user who is making the creation of coupon
+     * @param string $userid User ID of the user who is making the creation of coupon
      * @return $this
      */
     public function setUserid($userid)
@@ -330,7 +330,7 @@ class MerchantCouponCreateParameters implements ArrayAccess
 
     /**
      * Sets primitives
-     * @param string[] $primitives contain array with elements the primitive ids for coupon
+     * @param string[] $primitives contain array with elements the primitive ids for the coupon
      * @return $this
      */
     public function setPrimitives($primitives)
@@ -351,7 +351,7 @@ class MerchantCouponCreateParameters implements ArrayAccess
 
     /**
      * Sets categories
-     * @param string[] $categories contain array with elements the category ids for coupon
+     * @param string[] $categories contain array with elements the category ids for the coupon
      * @return $this
      */
     public function setCategories($categories)
@@ -372,7 +372,7 @@ class MerchantCouponCreateParameters implements ArrayAccess
 
     /**
      * Sets subcategories
-     * @param string[] $subcategories contain array with elements the subcategory ids for coupon
+     * @param string[] $subcategories contain array with elements the subcategory ids for the coupon
      * @return $this
      */
     public function setSubcategories($subcategories)
@@ -393,7 +393,7 @@ class MerchantCouponCreateParameters implements ArrayAccess
 
     /**
      * Sets products
-     * @param string[] $products contain array with elements the product ids for coupon
+     * @param string[] $products contain array with elements the product ids for the coupon
      * @return $this
      */
     public function setProducts($products)
@@ -414,7 +414,7 @@ class MerchantCouponCreateParameters implements ArrayAccess
 
     /**
      * Sets storeids
-     * @param string[] $storeids contain array with elements the store ids for coupon
+     * @param string[] $storeids contain array with elements the store ids for the coupon
      * @return $this
      */
     public function setStoreids($storeids)

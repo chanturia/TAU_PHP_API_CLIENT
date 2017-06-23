@@ -54,12 +54,12 @@ class ProductParameters implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'userID' => 'string',
         'productype' => 'string',
         'name' => 'string',
         'description' => 'string',
         'imagesUris' => 'string[]',
         'brandID' => 'string',
-        'userID' => 'string',
         'merchantsids' => 'string[]'
     ];
 
@@ -73,12 +73,12 @@ class ProductParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'userID' => 'userID',
         'productype' => 'productype',
         'name' => 'name',
         'description' => 'description',
         'imagesUris' => 'imagesUris',
         'brandID' => 'brandID',
-        'userID' => 'userID',
         'merchantsids' => 'merchantsids'
     ];
 
@@ -88,12 +88,12 @@ class ProductParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'userID' => 'setUserID',
         'productype' => 'setProductype',
         'name' => 'setName',
         'description' => 'setDescription',
         'imagesUris' => 'setImagesUris',
         'brandID' => 'setBrandID',
-        'userID' => 'setUserID',
         'merchantsids' => 'setMerchantsids'
     ];
 
@@ -103,12 +103,12 @@ class ProductParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'userID' => 'getUserID',
         'productype' => 'getProductype',
         'name' => 'getName',
         'description' => 'getDescription',
         'imagesUris' => 'getImagesUris',
         'brandID' => 'getBrandID',
-        'userID' => 'getUserID',
         'merchantsids' => 'getMerchantsids'
     ];
 
@@ -143,12 +143,12 @@ class ProductParameters implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
         $this->container['productype'] = isset($data['productype']) ? $data['productype'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['imagesUris'] = isset($data['imagesUris']) ? $data['imagesUris'] : null;
         $this->container['brandID'] = isset($data['brandID']) ? $data['brandID'] : null;
-        $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
         $this->container['merchantsids'] = isset($data['merchantsids']) ? $data['merchantsids'] : null;
     }
 
@@ -161,6 +161,9 @@ class ProductParameters implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['userID'] === null) {
+            $invalid_properties[] = "'userID' can't be null";
+        }
         if ($this->container['productype'] === null) {
             $invalid_properties[] = "'productype' can't be null";
         }
@@ -172,9 +175,6 @@ class ProductParameters implements ArrayAccess
         }
         if ($this->container['imagesUris'] === null) {
             $invalid_properties[] = "'imagesUris' can't be null";
-        }
-        if ($this->container['userID'] === null) {
-            $invalid_properties[] = "'userID' can't be null";
         }
         return $invalid_properties;
     }
@@ -188,6 +188,9 @@ class ProductParameters implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['userID'] === null) {
+            return false;
+        }
         if ($this->container['productype'] === null) {
             return false;
         }
@@ -200,12 +203,30 @@ class ProductParameters implements ArrayAccess
         if ($this->container['imagesUris'] === null) {
             return false;
         }
-        if ($this->container['userID'] === null) {
-            return false;
-        }
         return true;
     }
 
+
+    /**
+     * Gets userID
+     * @return string
+     */
+    public function getUserID()
+    {
+        return $this->container['userID'];
+    }
+
+    /**
+     * Sets userID
+     * @param string $userID UserID for user who is making the creation of product
+     * @return $this
+     */
+    public function setUserID($userID)
+    {
+        $this->container['userID'] = $userID;
+
+        return $this;
+    }
 
     /**
      * Gets productype
@@ -308,27 +329,6 @@ class ProductParameters implements ArrayAccess
     public function setBrandID($brandID)
     {
         $this->container['brandID'] = $brandID;
-
-        return $this;
-    }
-
-    /**
-     * Gets userID
-     * @return string
-     */
-    public function getUserID()
-    {
-        return $this->container['userID'];
-    }
-
-    /**
-     * Sets userID
-     * @param string $userID UserID for user who is making the creation of product
-     * @return $this
-     */
-    public function setUserID($userID)
-    {
-        $this->container['userID'] = $userID;
 
         return $this;
     }

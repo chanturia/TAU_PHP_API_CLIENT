@@ -164,7 +164,7 @@ class PasswordTokenCredentials implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id
+     * @param string $id Registered User id
      * @return $this
      */
     public function setId($id)

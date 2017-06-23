@@ -195,7 +195,7 @@ class DeleteCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID
+     * @param string $userID ID of the User whos role is to be removed
      * @return $this
      */
     public function setUserID($userID)
@@ -216,7 +216,7 @@ class DeleteCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets roleToRemove
-     * @param string $roleToRemove
+     * @param string $roleToRemove Role to be removed
      * @return $this
      */
     public function setRoleToRemove($roleToRemove)
@@ -237,7 +237,7 @@ class DeleteCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets brandID
-     * @param string $brandID
+     * @param string $brandID Role to be removed is connected with this brand ID
      * @return $this
      */
     public function setBrandID($brandID)
@@ -258,7 +258,7 @@ class DeleteCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets storeID
-     * @param string $storeID
+     * @param string $storeID Role to be removed is connected with this store ID
      * @return $this
      */
     public function setStoreID($storeID)
@@ -279,7 +279,7 @@ class DeleteCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets productID
-     * @param string $productID
+     * @param string $productID Role to be removed is connected with this product ID
      * @return $this
      */
     public function setProductID($productID)
@@ -300,7 +300,7 @@ class DeleteCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets couponID
-     * @param string $couponID
+     * @param string $couponID Role to be removed is connected with this coupon ID
      * @return $this
      */
     public function setCouponID($couponID)

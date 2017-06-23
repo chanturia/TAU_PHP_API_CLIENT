@@ -168,7 +168,7 @@ class UpdateCouponCategoryParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Name for the coupon category
      * @return $this
      */
     public function setName($name)
@@ -189,7 +189,7 @@ class UpdateCouponCategoryParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Description for the coupon category
      * @return $this
      */
     public function setDescription($description)
@@ -210,7 +210,7 @@ class UpdateCouponCategoryParameters implements ArrayAccess
 
     /**
      * Sets subcategories
-     * @param string[] $subcategories
+     * @param string[] $subcategories Array with subcategories ids
      * @return $this
      */
     public function setSubcategories($subcategories)

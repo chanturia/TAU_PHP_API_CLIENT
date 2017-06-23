@@ -367,96 +367,6 @@ class UsersApi
     }
 
     /**
-     * Operation changeStore
-     *
-     * 
-     *
-     * @param \Swagger\Client\Model\ChangeClientIDStoreID $changeClientIDStoreID Id for the user and Id for the new Store being selected. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UserID
-     */
-    public function changeStore($changeClientIDStoreID)
-    {
-        list($response) = $this->changeStoreWithHttpInfo($changeClientIDStoreID);
-        return $response;
-    }
-
-    /**
-     * Operation changeStoreWithHttpInfo
-     *
-     * 
-     *
-     * @param \Swagger\Client\Model\ChangeClientIDStoreID $changeClientIDStoreID Id for the user and Id for the new Store being selected. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function changeStoreWithHttpInfo($changeClientIDStoreID)
-    {
-        // verify the required parameter 'changeClientIDStoreID' is set
-        if ($changeClientIDStoreID === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $changeClientIDStoreID when calling changeStore');
-        }
-        // parse inputs
-        $resourcePath = "/user/changeStore";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($changeClientIDStoreID)) {
-            $_tempBody = $changeClientIDStoreID;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\UserID',
-                '/user/changeStore'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserID', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UserID', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation confirmMobilePin
      *
      * 
@@ -637,7 +547,7 @@ class UsersApi
      *
      * 
      *
-     * @param string $id Id for the user to find the details for. (required)
+     * @param string $id Id for the user to update the details for. (required)
      * @param \Swagger\Client\Model\Userdetails $userdetails User-details for the user to be updated. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
@@ -653,7 +563,7 @@ class UsersApi
      *
      * 
      *
-     * @param string $id Id for the user to find the details for. (required)
+     * @param string $id Id for the user to update the details for. (required)
      * @param \Swagger\Client\Model\Userdetails $userdetails User-details for the user to be updated. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
@@ -741,7 +651,7 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\PasswordTokenCredentials $passwordTokenCredentials User credentials consisting of id, email. (required)
+     * @param \Swagger\Client\Model\PasswordTokenCredentials $passwordTokenCredentials User credentials consisting of id. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\PasswordResetToken
      */
@@ -756,7 +666,7 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\PasswordTokenCredentials $passwordTokenCredentials User credentials consisting of id, email. (required)
+     * @param \Swagger\Client\Model\PasswordTokenCredentials $passwordTokenCredentials User credentials consisting of id. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PasswordResetToken, HTTP status code, HTTP response headers (array of strings)
      */
@@ -907,192 +817,6 @@ class UsersApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Product', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getUserRoles
-     *
-     * 
-     *
-     * @param string $id Id for the user to get the roles for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Role
-     */
-    public function getUserRoles($id)
-    {
-        list($response) = $this->getUserRolesWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation getUserRolesWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id Id for the user to get the roles for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Role, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getUserRolesWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling getUserRoles');
-        }
-        // parse inputs
-        $resourcePath = "/user/{id}/roles";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Role',
-                '/user/{id}/roles'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Role', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Role', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getkeyid
-     *
-     * 
-     *
-     * @param string $id Id for the user to find the unique key for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Key
-     */
-    public function getkeyid($id)
-    {
-        list($response) = $this->getkeyidWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation getkeyidWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id Id for the user to find the unique key for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Key, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getkeyidWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling getkeyid');
-        }
-        // parse inputs
-        $resourcePath = "/user/{id}/getkeyid";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Key',
-                '/user/{id}/getkeyid'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Key', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Key', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 0:

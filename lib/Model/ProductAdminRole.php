@@ -180,7 +180,7 @@ class ProductAdminRole implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID
+     * @param string $userID ID of the User to be granted the role
      * @return $this
      */
     public function setUserID($userID)
@@ -201,7 +201,7 @@ class ProductAdminRole implements ArrayAccess
 
     /**
      * Sets role
-     * @param string $role
+     * @param string $role Role to be granted
      * @return $this
      */
     public function setRole($role)
@@ -222,7 +222,7 @@ class ProductAdminRole implements ArrayAccess
 
     /**
      * Sets couponID
-     * @param string $couponID
+     * @param string $couponID Grant role for this coupon ID
      * @return $this
      */
     public function setCouponID($couponID)

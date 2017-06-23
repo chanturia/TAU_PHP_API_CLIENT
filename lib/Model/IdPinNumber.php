@@ -175,7 +175,7 @@ class IdPinNumber implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id
+     * @param string $id ID for the User
      * @return $this
      */
     public function setId($id)
@@ -196,7 +196,7 @@ class IdPinNumber implements ArrayAccess
 
     /**
      * Sets pin
-     * @param string $pin
+     * @param string $pin Mobile generated PIN
      * @return $this
      */
     public function setPin($pin)

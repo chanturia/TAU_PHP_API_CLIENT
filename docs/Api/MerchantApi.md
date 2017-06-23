@@ -1,6 +1,6 @@
 # Swagger\Client\MerchantApi
 
-All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
+All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,9 +30,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
-$id = "id_example"; // string | ID for the merchant being searched for.
-$productID = "productID_example"; // string | ID of the Product connected with the Company
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Company
+$id = "id_example"; // string | ID for the merchant.
+$productID = "productID_example"; // string | ID of the Product connected with the Merchant (only required for Authorization for the User making the request)
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request)
 $createMerchantUserRole = new \Swagger\Client\Model\CreateMerchantUserRole(); // \Swagger\Client\Model\CreateMerchantUserRole | Merchant's User Priveleges Parameters for the merchant ID and userID.
 
 try {
@@ -48,9 +48,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the merchant being searched for. |
- **productID** | **string**| ID of the Product connected with the Company | [optional]
- **couponID** | **string**| ID of the Coupon connected with the Company | [optional]
+ **id** | **string**| ID for the merchant. |
+ **productID** | **string**| ID of the Product connected with the Merchant (only required for Authorization for the User making the request) | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request) | [optional]
  **createMerchantUserRole** | [**\Swagger\Client\Model\CreateMerchantUserRole**](../Model/\Swagger\Client\Model\CreateMerchantUserRole.md)| Merchant&#39;s User Priveleges Parameters for the merchant ID and userID. | [optional]
 
 ### Return type
@@ -84,7 +84,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
-$id = "id_example"; // string | ID for the merchant
+$id = "id_example"; // string | ID of the merchant
 $merchantCouponCreateParameters = new \Swagger\Client\Model\MerchantCouponCreateParameters(); // \Swagger\Client\Model\MerchantCouponCreateParameters | Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids.
 
 try {
@@ -100,7 +100,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the merchant |
+ **id** | **string**| ID of the merchant |
  **merchantCouponCreateParameters** | [**\Swagger\Client\Model\MerchantCouponCreateParameters**](../Model/\Swagger\Client\Model\MerchantCouponCreateParameters.md)| Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. |
 
 ### Return type
@@ -182,7 +182,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
-$id = "id_example"; // string | ID for the merchant
+$id = "id_example"; // string | ID of the merchant
 $merchantProductCreateParameters = new \Swagger\Client\Model\MerchantProductCreateParameters(); // \Swagger\Client\Model\MerchantProductCreateParameters | Product parameters for creating new product consisting of product type, name, description, brandID, images.
 
 try {
@@ -198,7 +198,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the merchant |
+ **id** | **string**| ID of the merchant |
  **merchantProductCreateParameters** | [**\Swagger\Client\Model\MerchantProductCreateParameters**](../Model/\Swagger\Client\Model\MerchantProductCreateParameters.md)| Product parameters for creating new product consisting of product type, name, description, brandID, images. |
 
 ### Return type
@@ -328,10 +328,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\MerchantApi();
-$id = "id_example"; // string | ID for the merchant being searched for.
+$id = "id_example"; // string | ID for the merchant
 $deleteMerchantUserRole = new \Swagger\Client\Model\DeleteMerchantUserRole(); // \Swagger\Client\Model\DeleteMerchantUserRole | Merchant's User ID and privileges to be removed  for the merchant ID.
-$productID = "productID_example"; // string | ID of the Product connected with the Company
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Company
+$productID = "productID_example"; // string | ID of the Product connected with the Merchant (only required for Authorization for the User making the request)
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request)
 
 try {
     $result = $api_instance->removeUserMerchantPrivileges($id, $deleteMerchantUserRole, $productID, $couponID);
@@ -346,10 +346,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the merchant being searched for. |
+ **id** | **string**| ID for the merchant |
  **deleteMerchantUserRole** | [**\Swagger\Client\Model\DeleteMerchantUserRole**](../Model/\Swagger\Client\Model\DeleteMerchantUserRole.md)| Merchant&#39;s User ID and privileges to be removed  for the merchant ID. |
- **productID** | **string**| ID of the Product connected with the Company | [optional]
- **couponID** | **string**| ID of the Coupon connected with the Company | [optional]
+ **productID** | **string**| ID of the Product connected with the Merchant (only required for Authorization for the User making the request) | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request) | [optional]
 
 ### Return type
 

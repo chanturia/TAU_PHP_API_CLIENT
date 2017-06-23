@@ -195,7 +195,7 @@ class CreateCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID
+     * @param string $userID ID for the User to be granted the role
      * @return $this
      */
     public function setUserID($userID)
@@ -216,7 +216,7 @@ class CreateCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets role
-     * @param string $role
+     * @param string $role The role to be granted
      * @return $this
      */
     public function setRole($role)
@@ -237,7 +237,7 @@ class CreateCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets brandID
-     * @param string $brandID
+     * @param string $brandID Grant role for this brand ID
      * @return $this
      */
     public function setBrandID($brandID)
@@ -258,7 +258,7 @@ class CreateCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets storeID
-     * @param string $storeID
+     * @param string $storeID Grant role for this store ID
      * @return $this
      */
     public function setStoreID($storeID)
@@ -279,7 +279,7 @@ class CreateCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets productID
-     * @param string $productID
+     * @param string $productID Grant role for this product ID
      * @return $this
      */
     public function setProductID($productID)
@@ -300,7 +300,7 @@ class CreateCompanyUserRoles implements ArrayAccess
 
     /**
      * Sets couponID
-     * @param string $couponID
+     * @param string $couponID Grant role for this coupon ID
      * @return $this
      */
     public function setCouponID($couponID)

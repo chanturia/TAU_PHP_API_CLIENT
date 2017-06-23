@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **userID** | **string** | userID for user who is making the creation of company | 
 **name** | **string** | Company name must be between 2 and 484 characters | 
-**inChargePersonName** | **string** | In Chanrge Person name must be between 2 and 1084 characters and can contain only letters, digits and dashes | 
+**inChargePersonName** | **string** | In Charge Person name must be between 2 and 1084 characters and can contain only letters, digits and dashes | 
 **mainAddress** | **string** | Company main address must be in the form House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country | 
 **mainImageURL** | **string** | Company main image URL must have valid URL form | 
 **logoURL** | **string** | Company logo URL must have valid URL form | 

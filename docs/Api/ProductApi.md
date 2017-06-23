@@ -1,6 +1,6 @@
 # Swagger\Client\ProductApi
 
-All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
+All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,11 +32,11 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\ProductApi();
 $id = "id_example"; // string | ID for the product to be updated.
-$addBarcode = new \Swagger\Client\Model\AddBarcode(); // \Swagger\Client\Model\AddBarcode | Barcode parameters for updating product consisting of productID, barcodes array of strings and userID for authorization.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company.
-$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand.
-$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store.
-$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant.
+$addBarcode = new \Swagger\Client\Model\AddBarcode(); // \Swagger\Client\Model\AddBarcode | Barcode parameters for updating product
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company.
+$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand.
+$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store.
+$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant.
 
 try {
     $result = $api_instance->addProductBarcode($id, $addBarcode, $companyID, $brandID, $storeID, $merchantID);
@@ -52,11 +52,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the product to be updated. |
- **addBarcode** | [**\Swagger\Client\Model\AddBarcode**](../Model/\Swagger\Client\Model\AddBarcode.md)| Barcode parameters for updating product consisting of productID, barcodes array of strings and userID for authorization. |
- **companyID** | **string**| Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. | [optional]
- **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. | [optional]
- **storeID** | **string**| Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. | [optional]
- **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. | [optional]
+ **addBarcode** | [**\Swagger\Client\Model\AddBarcode**](../Model/\Swagger\Client\Model\AddBarcode.md)| Barcode parameters for updating product |
+ **companyID** | **string**| Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company. | [optional]
+ **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. | [optional]
+ **storeID** | **string**| Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. | [optional]
+ **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. | [optional]
 
 ### Return type
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 
 
-Adds an User for a Product based on selected role. Authorization parameters must be in URL query. Grant Role parameters must be in the body. If authorization parameters include a connected Entitys id ex. for productID(id) connected parameter couponID then grant roles parameter connected entitys id must match the authorization parameter connected entitys id in the previous ex. couponID
+Adds a User for a Product based on selected role. Authorization parameters must be in URL query. Grant Role parameters must be in the body. If authorization parameters include a connected Entitys id ex. for productID(id) connected parameter couponID then grant roles parameter connected entitys id must match the authorization parameter connected entitys id in the previous ex. couponID
 
 ### Example
 ```php
@@ -91,7 +91,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 $api_instance = new Swagger\Client\Api\ProductApi();
 $id = "id_example"; // string | ID for the Product
 $productAdminRole = new \Swagger\Client\Model\ProductAdminRole(); // \Swagger\Client\Model\ProductAdminRole | Product's User Priveleges Parameters for the productID and UserID.
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Product
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Product (only required for Authorization for the User making the request)
 
 try {
     $result = $api_instance->addUserProduct($id, $productAdminRole, $couponID);
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Product |
  **productAdminRole** | [**\Swagger\Client\Model\ProductAdminRole**](../Model/\Swagger\Client\Model\ProductAdminRole.md)| Product&#39;s User Priveleges Parameters for the productID and UserID. |
- **couponID** | **string**| ID of the Coupon connected with the Product | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Product (only required for Authorization for the User making the request) | [optional]
 
 ### Return type
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new Coupon for a Product, for a single user id, based on included parameters of userid who initiated the creation proccess, products ids, categories ids and subcategories ids and primitives ids and optionally storeids . Validation must ensure userid who initiated the creation has required privileges.
+Creates a new Coupon for a Product, for a single user id, based on included parameters
 
 ### Example
 ```php
@@ -141,7 +141,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\ProductApi();
-$id = "id_example"; // string | ID for the Product
+$id = "id_example"; // string | ID of the Product
 $productCouponCreateParameters = new \Swagger\Client\Model\ProductCouponCreateParameters(); // \Swagger\Client\Model\ProductCouponCreateParameters | Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids.
 
 try {
@@ -157,7 +157,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the Product |
+ **id** | **string**| ID of the Product |
  **productCouponCreateParameters** | [**\Swagger\Client\Model\ProductCouponCreateParameters**](../Model/\Swagger\Client\Model\ProductCouponCreateParameters.md)| Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. |
 
 ### Return type
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new Product by included product parameters product type, product name, description, brandID, images and optionally merchantids . Returns JSON Product Object consisting of productID, product name and product description.
+Creates a new Product by included product parameters
 
 ### Example
 ```php
@@ -240,10 +240,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\ProductApi();
 $id = "id_example"; // string | ID for the product being searched for.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company.
-$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand.
-$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store.
-$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a Company.
+$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand.
+$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store.
+$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant.
 
 try {
     $result = $api_instance->getProductById($id, $companyID, $brandID, $storeID, $merchantID);
@@ -259,10 +259,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the product being searched for. |
- **companyID** | **string**| Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. | [optional]
- **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. | [optional]
- **storeID** | **string**| Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. | [optional]
- **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. | [optional]
+ **companyID** | **string**| Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a Company. | [optional]
+ **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. | [optional]
+ **storeID** | **string**| Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. | [optional]
+ **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. | [optional]
 
 ### Return type
 
@@ -345,7 +345,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 $api_instance = new Swagger\Client\Api\ProductApi();
 $id = "id_example"; // string | ID for the Product
 $deleteProductUserRole = new \Swagger\Client\Model\DeleteProductUserRole(); // \Swagger\Client\Model\DeleteProductUserRole | Product's User ID and privileges to be removed  for the product ID.
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Product
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Product (only required for Authorization for the User making the request)
 
 try {
     $result = $api_instance->removeUserProductPrivileges($id, $deleteProductUserRole, $couponID);
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Product |
  **deleteProductUserRole** | [**\Swagger\Client\Model\DeleteProductUserRole**](../Model/\Swagger\Client\Model\DeleteProductUserRole.md)| Product&#39;s User ID and privileges to be removed  for the product ID. |
- **couponID** | **string**| ID of the Coupon connected with the Product | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Product (only required for Authorization for the User making the request) | [optional]
 
 ### Return type
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 
 
-Updates an existing Products Barcodes by included array of barcodes. Returns JSON Object consisting of array of updated products barcodes.
+Updates an existing Products Barcodes by included array of barcodes.
 
 ### Example
 ```php
@@ -397,10 +397,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 $api_instance = new Swagger\Client\Api\ProductApi();
 $id = "id_example"; // string | ID for the product to be updated.
 $updateBarcode = new \Swagger\Client\Model\UpdateBarcode(); // \Swagger\Client\Model\UpdateBarcode | Product parameters for updating product consisting of productID for which to update the barcodes, userID for Authorization to grand permission and barcodes array.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company.
-$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand.
-$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store.
-$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a Company.
+$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand.
+$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store.
+$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant.
 
 try {
     $result = $api_instance->updateBarcodes($id, $updateBarcode, $companyID, $brandID, $storeID, $merchantID);
@@ -417,10 +417,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the product to be updated. |
  **updateBarcode** | [**\Swagger\Client\Model\UpdateBarcode**](../Model/\Swagger\Client\Model\UpdateBarcode.md)| Product parameters for updating product consisting of productID for which to update the barcodes, userID for Authorization to grand permission and barcodes array. |
- **companyID** | **string**| Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. | [optional]
- **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. | [optional]
- **storeID** | **string**| Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. | [optional]
- **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. | [optional]
+ **companyID** | **string**| Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a Company. | [optional]
+ **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. | [optional]
+ **storeID** | **string**| Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. | [optional]
+ **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. | [optional]
 
 ### Return type
 
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 
 
-Updates an existing Product by included product parameters product type, name, description, brandID, images and optionally merchantids . Returns JSON Product Object consisting of productID, product name and product description.
+Updates an existing Product by included product parameters
 
 ### Example
 ```php
@@ -454,11 +454,11 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\ProductApi();
 $id = "id_example"; // string | ID for the product to be updated.
-$updateProductParameters = new \Swagger\Client\Model\UpdateProductParameters(); // \Swagger\Client\Model\UpdateProductParameters | Product parameters for updating product consisting of product type, name, description, brandID, images and optionally merchantids.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company.
-$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand.
-$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store.
-$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant.
+$updateProductParameters = new \Swagger\Client\Model\UpdateProductParameters(); // \Swagger\Client\Model\UpdateProductParameters | Product parameters for updating product consisting of product type, name, description, brandID, images and merchantids.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company.
+$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand.
+$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store.
+$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant.
 
 try {
     $result = $api_instance->updateProduct($id, $updateProductParameters, $companyID, $brandID, $storeID, $merchantID);
@@ -474,11 +474,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the product to be updated. |
- **updateProductParameters** | [**\Swagger\Client\Model\UpdateProductParameters**](../Model/\Swagger\Client\Model\UpdateProductParameters.md)| Product parameters for updating product consisting of product type, name, description, brandID, images and optionally merchantids. |
- **companyID** | **string**| Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. | [optional]
- **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. | [optional]
- **storeID** | **string**| Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. | [optional]
- **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. | [optional]
+ **updateProductParameters** | [**\Swagger\Client\Model\UpdateProductParameters**](../Model/\Swagger\Client\Model\UpdateProductParameters.md)| Product parameters for updating product consisting of product type, name, description, brandID, images and merchantids. |
+ **companyID** | **string**| Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company. | [optional]
+ **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. | [optional]
+ **storeID** | **string**| Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. | [optional]
+ **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. | [optional]
 
 ### Return type
 

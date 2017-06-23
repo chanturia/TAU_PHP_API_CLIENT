@@ -175,7 +175,7 @@ class UpdateBarcode implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID
+     * @param string $userID ID of the User who is making the request
      * @return $this
      */
     public function setUserID($userID)
@@ -196,7 +196,7 @@ class UpdateBarcode implements ArrayAccess
 
     /**
      * Sets barcodes
-     * @param string[] $barcodes
+     * @param string[] $barcodes Array contains the barcodes for the product
      * @return $this
      */
     public function setBarcodes($barcodes)

@@ -239,7 +239,7 @@ class MerchantCreateParameters implements ArrayAccess
 
     /**
      * Sets address
-     * @param string $address Store main address must be in the form House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country
+     * @param string $address Merchant main address must be in the form House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country
      * @return $this
      */
     public function setAddress($address)
@@ -260,7 +260,7 @@ class MerchantCreateParameters implements ArrayAccess
 
     /**
      * Sets logo
-     * @param string $logo Merchant logo must have valid URL form
+     * @param string $logo Merchant logo must be in valid URL form
      * @return $this
      */
     public function setLogo($logo)

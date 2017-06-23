@@ -185,7 +185,7 @@ class LoginCredentials implements ArrayAccess
 
     /**
      * Sets email
-     * @param string $email
+     * @param string $email The email of the user that is to be created
      * @return $this
      */
     public function setEmail($email)
@@ -206,7 +206,7 @@ class LoginCredentials implements ArrayAccess
 
     /**
      * Sets password
-     * @param string $password
+     * @param string $password The password for the user that is to be created
      * @return $this
      */
     public function setPassword($password)
@@ -227,7 +227,7 @@ class LoginCredentials implements ArrayAccess
 
     /**
      * Sets fbID
-     * @param string $fbID
+     * @param string $fbID User can optionally login by facebook id
      * @return $this
      */
     public function setFbID($fbID)
@@ -248,7 +248,7 @@ class LoginCredentials implements ArrayAccess
 
     /**
      * Sets googleID
-     * @param string $googleID
+     * @param string $googleID User can optionally login by google id
      * @return $this
      */
     public function setGoogleID($googleID)

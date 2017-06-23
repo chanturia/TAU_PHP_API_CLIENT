@@ -178,7 +178,7 @@ class CouponPrimitiveParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Coupon primitive name must be between 2 and 484 characters
      * @return $this
      */
     public function setName($name)
@@ -199,7 +199,7 @@ class CouponPrimitiveParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Coupon primitive description must be between 2 and 1284 characters
      * @return $this
      */
     public function setDescription($description)
@@ -220,7 +220,7 @@ class CouponPrimitiveParameters implements ArrayAccess
 
     /**
      * Sets validatorURL
-     * @param string $validatorURL
+     * @param string $validatorURL Coupon primitive validator URL must have valid URL form
      * @return $this
      */
     public function setValidatorURL($validatorURL)
@@ -241,7 +241,7 @@ class CouponPrimitiveParameters implements ArrayAccess
 
     /**
      * Sets validatorInputs
-     * @param string[] $validatorInputs
+     * @param string[] $validatorInputs contain array with validation input constrains
      * @return $this
      */
     public function setValidatorInputs($validatorInputs)
@@ -262,7 +262,7 @@ class CouponPrimitiveParameters implements ArrayAccess
 
     /**
      * Sets validatorOutputs
-     * @param string[] $validatorOutputs
+     * @param string[] $validatorOutputs contain array with validation output results
      * @return $this
      */
     public function setValidatorOutputs($validatorOutputs)

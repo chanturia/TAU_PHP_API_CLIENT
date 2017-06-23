@@ -1,20 +1,17 @@
 # Swagger\Client\UsersApi
 
-All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
+All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authorizeReturnAccessToken**](UsersApi.md#authorizeReturnAccessToken) | **POST** /oauth2/token | 
 [**authorizeReturnCode**](UsersApi.md#authorizeReturnCode) | **GET** /oauth2/authorize | 
 [**changeMobile**](UsersApi.md#changeMobile) | **POST** /user/changeMobile | 
-[**changeStore**](UsersApi.md#changeStore) | **POST** /user/changeStore | 
 [**confirmMobilePin**](UsersApi.md#confirmMobilePin) | **POST** /user/confirmMobilePin | 
 [**createUser**](UsersApi.md#createUser) | **POST** /user/create | 
 [**editDetails**](UsersApi.md#editDetails) | **PUT** /user/details/{id} | 
 [**generatePasswordResetToken**](UsersApi.md#generatePasswordResetToken) | **POST** /user/generatePasswordResetToken | 
 [**getPurchases**](UsersApi.md#getPurchases) | **GET** /user/{id}/getPurchases | 
-[**getUserRoles**](UsersApi.md#getUserRoles) | **GET** /user/{id}/roles | 
-[**getkeyid**](UsersApi.md#getkeyid) | **GET** /user/{id}/getkeyid | 
 [**loginUser**](UsersApi.md#loginUser) | **POST** /user/login | 
 [**logoutUser**](UsersApi.md#logoutUser) | **GET** /user/{id}/logout | 
 [**resetPassword**](UsersApi.md#resetPassword) | **POST** /user/resetPassword | 
@@ -171,54 +168,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **changeStore**
-> \Swagger\Client\Model\UserID changeStore($changeClientIDStoreID)
-
-
-
-Client by single user id changes selection for Store by providing new store id. Returns JSON with userID and new storeID.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\UsersApi();
-$changeClientIDStoreID = new \Swagger\Client\Model\ChangeClientIDStoreID(); // \Swagger\Client\Model\ChangeClientIDStoreID | Id for the user and Id for the new Store being selected.
-
-try {
-    $result = $api_instance->changeStore($changeClientIDStoreID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->changeStore: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **changeClientIDStoreID** | [**\Swagger\Client\Model\ChangeClientIDStoreID**](../Model/\Swagger\Client\Model\ChangeClientIDStoreID.md)| Id for the user and Id for the new Store being selected. |
-
-### Return type
-
-[**\Swagger\Client\Model\UserID**](../Model/UserID.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **confirmMobilePin**
 > \Swagger\Client\Model\UserID confirmMobilePin($idPinNumber)
 
@@ -317,7 +266,7 @@ No authorization required
 
 
 
-Apply changes on User-Details first name, last name, email, date of birth, gender by user single id.
+Apply changes on User Details first name, last name, email, date of birth, gender by user single id.
 
 ### Example
 ```php
@@ -328,7 +277,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$id = "id_example"; // string | Id for the user to find the details for.
+$id = "id_example"; // string | Id for the user to update the details for.
 $userdetails = new \Swagger\Client\Model\Userdetails(); // \Swagger\Client\Model\Userdetails | User-details for the user to be updated.
 
 try {
@@ -344,7 +293,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Id for the user to find the details for. |
+ **id** | **string**| Id for the user to update the details for. |
  **userdetails** | [**\Swagger\Client\Model\Userdetails**](../Model/\Swagger\Client\Model\Userdetails.md)| User-details for the user to be updated. |
 
 ### Return type
@@ -378,7 +327,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$passwordTokenCredentials = new \Swagger\Client\Model\PasswordTokenCredentials(); // \Swagger\Client\Model\PasswordTokenCredentials | User credentials consisting of id, email.
+$passwordTokenCredentials = new \Swagger\Client\Model\PasswordTokenCredentials(); // \Swagger\Client\Model\PasswordTokenCredentials | User credentials consisting of id.
 
 try {
     $result = $api_instance->generatePasswordResetToken($passwordTokenCredentials);
@@ -393,7 +342,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **passwordTokenCredentials** | [**\Swagger\Client\Model\PasswordTokenCredentials**](../Model/\Swagger\Client\Model\PasswordTokenCredentials.md)| User credentials consisting of id, email. |
+ **passwordTokenCredentials** | [**\Swagger\Client\Model\PasswordTokenCredentials**](../Model/\Swagger\Client\Model\PasswordTokenCredentials.md)| User credentials consisting of id. |
 
 ### Return type
 
@@ -446,102 +395,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getUserRoles**
-> \Swagger\Client\Model\Role getUserRoles($id)
-
-
-
-Finds user roles by provided single user id and returns array of JSON roles.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\UsersApi();
-$id = "id_example"; // string | Id for the user to get the roles for.
-
-try {
-    $result = $api_instance->getUserRoles($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->getUserRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Id for the user to get the roles for. |
-
-### Return type
-
-[**\Swagger\Client\Model\Role**](../Model/Role.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getkeyid**
-> \Swagger\Client\Model\Key getkeyid($id)
-
-
-
-Searches for a client unique key id, by specified user single id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\UsersApi();
-$id = "id_example"; // string | Id for the user to find the unique key for.
-
-try {
-    $result = $api_instance->getkeyid($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->getkeyid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Id for the user to find the unique key for. |
-
-### Return type
-
-[**\Swagger\Client\Model\Key**](../Model/Key.md)
 
 ### Authorization
 

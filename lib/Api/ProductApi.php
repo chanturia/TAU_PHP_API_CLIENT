@@ -93,11 +93,11 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\AddBarcode $addBarcode Barcode parameters for updating product consisting of productID, barcodes array of strings and userID for authorization. (required)
-     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\AddBarcode $addBarcode Barcode parameters for updating product (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ProductID
      */
@@ -113,11 +113,11 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\AddBarcode $addBarcode Barcode parameters for updating product consisting of productID, barcodes array of strings and userID for authorization. (required)
-     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\AddBarcode $addBarcode Barcode parameters for updating product (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ProductID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -222,7 +222,7 @@ class ProductApi
      *
      * @param string $id ID for the Product (required)
      * @param \Swagger\Client\Model\ProductAdminRole $productAdminRole Product&#39;s User Priveleges Parameters for the productID and UserID. (required)
-     * @param string $couponID ID of the Coupon connected with the Product (optional)
+     * @param string $couponID ID of the Coupon connected with the Product (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
@@ -239,7 +239,7 @@ class ProductApi
      *
      * @param string $id ID for the Product (required)
      * @param \Swagger\Client\Model\ProductAdminRole $productAdminRole Product&#39;s User Priveleges Parameters for the productID and UserID. (required)
-     * @param string $couponID ID of the Coupon connected with the Product (optional)
+     * @param string $couponID ID of the Coupon connected with the Product (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -330,7 +330,7 @@ class ProductApi
      *
      * 
      *
-     * @param string $id ID for the Product (required)
+     * @param string $id ID of the Product (required)
      * @param \Swagger\Client\Model\ProductCouponCreateParameters $productCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
@@ -346,7 +346,7 @@ class ProductApi
      *
      * 
      *
-     * @param string $id ID for the Product (required)
+     * @param string $id ID of the Product (required)
      * @param \Swagger\Client\Model\ProductCouponCreateParameters $productCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
@@ -525,10 +525,10 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product being searched for. (required)
-     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a Company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
      */
@@ -544,10 +544,10 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product being searched for. (required)
-     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a Company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
@@ -736,7 +736,7 @@ class ProductApi
      *
      * @param string $id ID for the Product (required)
      * @param \Swagger\Client\Model\DeleteProductUserRole $deleteProductUserRole Product&#39;s User ID and privileges to be removed  for the product ID. (required)
-     * @param string $couponID ID of the Coupon connected with the Product (optional)
+     * @param string $couponID ID of the Coupon connected with the Product (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
@@ -753,7 +753,7 @@ class ProductApi
      *
      * @param string $id ID for the Product (required)
      * @param \Swagger\Client\Model\DeleteProductUserRole $deleteProductUserRole Product&#39;s User ID and privileges to be removed  for the product ID. (required)
-     * @param string $couponID ID of the Coupon connected with the Product (optional)
+     * @param string $couponID ID of the Coupon connected with the Product (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -846,10 +846,10 @@ class ProductApi
      *
      * @param string $id ID for the product to be updated. (required)
      * @param \Swagger\Client\Model\UpdateBarcode $updateBarcode Product parameters for updating product consisting of productID for which to update the barcodes, userID for Authorization to grand permission and barcodes array. (required)
-     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a Company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ProductID
      */
@@ -866,10 +866,10 @@ class ProductApi
      *
      * @param string $id ID for the product to be updated. (required)
      * @param \Swagger\Client\Model\UpdateBarcode $updateBarcode Product parameters for updating product consisting of productID for which to update the barcodes, userID for Authorization to grand permission and barcodes array. (required)
-     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a Company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ProductID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -973,11 +973,11 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateProductParameters $updateProductParameters Product parameters for updating product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
-     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\UpdateProductParameters $updateProductParameters Product parameters for updating product consisting of product type, name, description, brandID, images and merchantids. (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ProductID
      */
@@ -993,11 +993,11 @@ class ProductApi
      * 
      *
      * @param string $id ID for the product to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateProductParameters $updateProductParameters Product parameters for updating product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
-     * @param string $companyID Company ID Parameter for the company that the product is connected to.Required only if the product is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to.Required only if the product is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the product is connected to.Required only if the product is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to.Required only if the product is connected with a Merchant. (optional)
+     * @param \Swagger\Client\Model\UpdateProductParameters $updateProductParameters Product parameters for updating product consisting of product type, name, description, brandID, images and merchantids. (required)
+     * @param string $companyID Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ProductID, HTTP status code, HTTP response headers (array of strings)
      */

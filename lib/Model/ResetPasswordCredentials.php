@@ -186,7 +186,7 @@ class ResetPasswordCredentials implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id
+     * @param string $id ID of the User
      * @return $this
      */
     public function setId($id)
@@ -207,7 +207,7 @@ class ResetPasswordCredentials implements ArrayAccess
 
     /**
      * Sets resetToken
-     * @param string $resetToken
+     * @param string $resetToken Reset token that was generated for the User
      * @return $this
      */
     public function setResetToken($resetToken)
@@ -228,7 +228,7 @@ class ResetPasswordCredentials implements ArrayAccess
 
     /**
      * Sets password
-     * @param string $password
+     * @param string $password New User password
      * @return $this
      */
     public function setPassword($password)

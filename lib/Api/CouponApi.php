@@ -440,35 +440,31 @@ class CouponApi
     }
 
     /**
-     * Operation createCoupon
+     * Operation couponCreatePost
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCouponParameters $createCouponParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
+     * @param \Swagger\Client\Model\CreateCouponParameters $createCouponParameters Coupon Parameters (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function createCoupon($createCouponParameters)
+    public function couponCreatePost($createCouponParameters = null)
     {
-        list($response) = $this->createCouponWithHttpInfo($createCouponParameters);
+        list($response) = $this->couponCreatePostWithHttpInfo($createCouponParameters);
         return $response;
     }
 
     /**
-     * Operation createCouponWithHttpInfo
+     * Operation couponCreatePostWithHttpInfo
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCouponParameters $createCouponParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
+     * @param \Swagger\Client\Model\CreateCouponParameters $createCouponParameters Coupon Parameters (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCouponWithHttpInfo($createCouponParameters)
+    public function couponCreatePostWithHttpInfo($createCouponParameters = null)
     {
-        // verify the required parameter 'createCouponParameters' is set
-        if ($createCouponParameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $createCouponParameters when calling createCoupon');
-        }
         // parse inputs
         $resourcePath = "/coupon/create";
         $httpBody = '';
@@ -625,7 +621,7 @@ class CouponApi
      * 
      *
      * @param string $couponCategoryID ID for the Coupon Category to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCouponCategoryParameters $updateCouponCategoryParameters Coupon Category parameters consisting of category id, name, description and subcategories. (required)
+     * @param \Swagger\Client\Model\UpdateCouponCategoryParameters $updateCouponCategoryParameters Coupon Category parameters (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponCategoryID
      */
@@ -641,7 +637,7 @@ class CouponApi
      * 
      *
      * @param string $couponCategoryID ID for the Coupon Category to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCouponCategoryParameters $updateCouponCategoryParameters Coupon Category parameters consisting of category id, name, description and subcategories. (required)
+     * @param \Swagger\Client\Model\UpdateCouponCategoryParameters $updateCouponCategoryParameters Coupon Category parameters (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponCategoryID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -729,7 +725,7 @@ class CouponApi
      * 
      *
      * @param string $primitiveID ID for the Coupon Primitive to be updated. (required)
-     * @param \Swagger\Client\Model\CouponPrimitiveParameters $couponPrimitiveParameters Coupon Primitive parameters including primitive id and primitive name, description, validator URL, validator inputs and validator outputs. (required)
+     * @param \Swagger\Client\Model\CouponPrimitiveParameters $couponPrimitiveParameters Coupon Primitive parameters includingprimitive name, description, validator URL, validator inputs and validator outputs. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponPrimitiveID
      */
@@ -745,7 +741,7 @@ class CouponApi
      * 
      *
      * @param string $primitiveID ID for the Coupon Primitive to be updated. (required)
-     * @param \Swagger\Client\Model\CouponPrimitiveParameters $couponPrimitiveParameters Coupon Primitive parameters including primitive id and primitive name, description, validator URL, validator inputs and validator outputs. (required)
+     * @param \Swagger\Client\Model\CouponPrimitiveParameters $couponPrimitiveParameters Coupon Primitive parameters includingprimitive name, description, validator URL, validator inputs and validator outputs. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponPrimitiveID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -833,11 +829,11 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon being searched for. (required)
-     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
-     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
+     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant. (optional)
+     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
@@ -853,11 +849,11 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon being searched for. (required)
-     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
-     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
+     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant. (optional)
+     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1443,12 +1439,12 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCouponParameters $updateCouponParameters Coupon Parameters consisting of coupon id, userid who initiated the update proccess, name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
-     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
-     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
+     * @param \Swagger\Client\Model\UpdateCouponParameters $updateCouponParameters Coupon Parameters consisting of name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
+     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant. (optional)
+     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CouponID
      */
@@ -1464,12 +1460,12 @@ class CouponApi
      * 
      *
      * @param string $id ID for the coupon to be updated. (required)
-     * @param \Swagger\Client\Model\UpdateCouponParameters $updateCouponParameters Coupon Parameters consisting of coupon id, userid who initiated the update proccess, name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
-     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. (optional)
-     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. (optional)
-     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. (optional)
-     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. (optional)
-     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. (optional)
+     * @param \Swagger\Client\Model\UpdateCouponParameters $updateCouponParameters Coupon Parameters consisting of name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
+     * @param string $companyID Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company. (optional)
+     * @param string $brandID Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand. (optional)
+     * @param string $storeID Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store. (optional)
+     * @param string $merchantID Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant. (optional)
+     * @param string $productID Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\CouponID, HTTP status code, HTTP response headers (array of strings)
      */

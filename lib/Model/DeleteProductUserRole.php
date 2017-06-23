@@ -180,7 +180,7 @@ class DeleteProductUserRole implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID
+     * @param string $userID ID of the User from whom the role will be removed
      * @return $this
      */
     public function setUserID($userID)
@@ -201,7 +201,7 @@ class DeleteProductUserRole implements ArrayAccess
 
     /**
      * Sets roleToRemove
-     * @param string $roleToRemove
+     * @param string $roleToRemove Role to be removed
      * @return $this
      */
     public function setRoleToRemove($roleToRemove)
@@ -222,7 +222,7 @@ class DeleteProductUserRole implements ArrayAccess
 
     /**
      * Sets couponID
-     * @param string $couponID
+     * @param string $couponID Role to be removed is connected with this coupon ID
      * @return $this
      */
     public function setCouponID($couponID)

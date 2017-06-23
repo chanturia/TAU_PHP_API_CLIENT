@@ -175,7 +175,7 @@ class SubmitMobileNumberParameter implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id
+     * @param string $id ID for the User
      * @return $this
      */
     public function setId($id)
@@ -196,7 +196,7 @@ class SubmitMobileNumberParameter implements ArrayAccess
 
     /**
      * Sets mobile
-     * @param string $mobile
+     * @param string $mobile Mobile number of the User
      * @return $this
      */
     public function setMobile($mobile)

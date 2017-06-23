@@ -219,7 +219,7 @@ class UpdateCompanyParameters implements ArrayAccess
 
     /**
      * Sets inChargePersonName
-     * @param string $inChargePersonName In Chanrge Person name must be between 2 and 1084 characters and can contain only letters, digits and dashes
+     * @param string $inChargePersonName In Charge Person name must be between 2 and 1084 characters and can contain only letters, digits and dashes
      * @return $this
      */
     public function setInChargePersonName($inChargePersonName)

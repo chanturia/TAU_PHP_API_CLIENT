@@ -175,7 +175,7 @@ class CreateCouponUserRole implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID
+     * @param string $userID User Id for the user to be granted the role
      * @return $this
      */
     public function setUserID($userID)
@@ -196,7 +196,7 @@ class CreateCouponUserRole implements ArrayAccess
 
     /**
      * Sets role
-     * @param string $role
+     * @param string $role Role to be granted
      * @return $this
      */
     public function setRole($role)

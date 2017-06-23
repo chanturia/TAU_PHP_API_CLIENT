@@ -88,7 +88,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://api.trustanduse.7indigo.website/api/v1';
+    protected $host = 'http://api.trustanduse.com/v1.0';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout

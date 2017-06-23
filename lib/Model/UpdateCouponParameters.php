@@ -193,7 +193,7 @@ class UpdateCouponParameters implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name Name for the Coupon to be updated with
      * @return $this
      */
     public function setName($name)
@@ -214,7 +214,7 @@ class UpdateCouponParameters implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description Description for the Coupon to be updated with
      * @return $this
      */
     public function setDescription($description)
@@ -235,7 +235,7 @@ class UpdateCouponParameters implements ArrayAccess
 
     /**
      * Sets kind
-     * @param string $kind
+     * @param string $kind Kind for the Coupon to be updated with
      * @return $this
      */
     public function setKind($kind)
@@ -256,7 +256,7 @@ class UpdateCouponParameters implements ArrayAccess
 
     /**
      * Sets primitives
-     * @param string[] $primitives
+     * @param string[] $primitives Contains array with primitives ids for the coupon
      * @return $this
      */
     public function setPrimitives($primitives)
@@ -277,7 +277,7 @@ class UpdateCouponParameters implements ArrayAccess
 
     /**
      * Sets categories
-     * @param string[] $categories
+     * @param string[] $categories Contains array with categories ids for the coupon
      * @return $this
      */
     public function setCategories($categories)
@@ -298,7 +298,7 @@ class UpdateCouponParameters implements ArrayAccess
 
     /**
      * Sets subcategories
-     * @param string[] $subcategories
+     * @param string[] $subcategories Contains array with subcategories ids for the coupon
      * @return $this
      */
     public function setSubcategories($subcategories)
@@ -319,7 +319,7 @@ class UpdateCouponParameters implements ArrayAccess
 
     /**
      * Sets products
-     * @param string[] $products
+     * @param string[] $products Contains array with products ids for the coupon
      * @return $this
      */
     public function setProducts($products)
@@ -340,7 +340,7 @@ class UpdateCouponParameters implements ArrayAccess
 
     /**
      * Sets storeids
-     * @param string[] $storeids
+     * @param string[] $storeids Contains array with stores ids for the coupon
      * @return $this
      */
     public function setStoreids($storeids)

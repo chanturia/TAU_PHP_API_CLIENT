@@ -94,8 +94,8 @@ class BrandApi
      *
      * @param string $id ID for the Brand (required)
      * @param \Swagger\Client\Model\CreateBrandUserRoles $createBrandUserRoles Brand&#39;s User Priveleges Parameters for the brand ID and UserID. (required)
-     * @param string $productID ID of the Product connected with the Brand (optional)
-     * @param string $couponID ID of the Coupon connected with the Brand (optional)
+     * @param string $productID ID of the Product connected with the Brand (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Brand (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
@@ -112,8 +112,8 @@ class BrandApi
      *
      * @param string $id ID for the Brand (required)
      * @param \Swagger\Client\Model\CreateBrandUserRoles $createBrandUserRoles Brand&#39;s User Priveleges Parameters for the brand ID and UserID. (required)
-     * @param string $productID ID of the Product connected with the Brand (optional)
-     * @param string $couponID ID of the Coupon connected with the Brand (optional)
+     * @param string $productID ID of the Product connected with the Brand (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Brand (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -482,7 +482,7 @@ class BrandApi
      * 
      *
      * @param string $id ID for the brand (required)
-     * @param \Swagger\Client\Model\BrandProductCreateParameters $brandProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\BrandProductCreateParameters $brandProductCreateParameters Product parameters for creating new product (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
      */
@@ -498,7 +498,7 @@ class BrandApi
      * 
      *
      * @param string $id ID for the brand (required)
-     * @param \Swagger\Client\Model\BrandProductCreateParameters $brandProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\BrandProductCreateParameters $brandProductCreateParameters Product parameters for creating new product (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
@@ -586,7 +586,7 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand being searched for. (required)
-     * @param string $companyID Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
+     * @param string $companyID Company ID Parameter for the company that the brand is connected to. Required only if the brand is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Brand
      */
@@ -602,7 +602,7 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand being searched for. (required)
-     * @param string $companyID Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
+     * @param string $companyID Company ID Parameter for the company that the brand is connected to. Required only if the brand is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Brand, HTTP status code, HTTP response headers (array of strings)
      */
@@ -779,8 +779,8 @@ class BrandApi
      *
      * @param string $id ID for the Brand (required)
      * @param \Swagger\Client\Model\DeleteBrandUserRoles $deleteBrandUserRoles Brand&#39;s User ID and privileges to be removed  for the brand ID. (required)
-     * @param string $productID ID of the Product connected with the Brand (optional)
-     * @param string $couponID ID of the Coupon connected with the Brand (optional)
+     * @param string $productID ID of the Product connected with the Brand (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Brand (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
@@ -797,8 +797,8 @@ class BrandApi
      *
      * @param string $id ID for the Brand (required)
      * @param \Swagger\Client\Model\DeleteBrandUserRoles $deleteBrandUserRoles Brand&#39;s User ID and privileges to be removed  for the brand ID. (required)
-     * @param string $productID ID of the Product connected with the Brand (optional)
-     * @param string $couponID ID of the Coupon connected with the Brand (optional)
+     * @param string $productID ID of the Product connected with the Brand (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Brand (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
@@ -894,8 +894,8 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand to be updated. (required)
-     * @param \Swagger\Client\Model\BrandUpdateDetailsParameters $brandUpdateDetailsParameters Brand Parameters for the brand to be updated and User ID for the User who makes the update. (required)
-     * @param string $companyID Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
+     * @param \Swagger\Client\Model\BrandUpdateDetailsParameters $brandUpdateDetailsParameters Brand Parameters for the brand to be updated (required)
+     * @param string $companyID Company ID Parameter for the company that the brand is connected to. Required only if the brand is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\BrandID
      */
@@ -911,8 +911,8 @@ class BrandApi
      * 
      *
      * @param string $id ID for the Brand to be updated. (required)
-     * @param \Swagger\Client\Model\BrandUpdateDetailsParameters $brandUpdateDetailsParameters Brand Parameters for the brand to be updated and User ID for the User who makes the update. (required)
-     * @param string $companyID Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. (optional)
+     * @param \Swagger\Client\Model\BrandUpdateDetailsParameters $brandUpdateDetailsParameters Brand Parameters for the brand to be updated (required)
+     * @param string $companyID Company ID Parameter for the company that the brand is connected to. Required only if the brand is connected with a company. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\BrandID, HTTP status code, HTTP response headers (array of strings)
      */

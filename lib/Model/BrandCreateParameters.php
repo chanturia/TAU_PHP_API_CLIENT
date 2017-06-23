@@ -208,7 +208,7 @@ class BrandCreateParameters implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID userID for user who is making the creation of Brand
+     * @param string $userID user ID for user who is making the creation of Brand
      * @return $this
      */
     public function setUserID($userID)
@@ -271,7 +271,7 @@ class BrandCreateParameters implements ArrayAccess
 
     /**
      * Sets mainImageURL
-     * @param string $mainImageURL Brand main image URL must have valid URL form
+     * @param string $mainImageURL Brand main image URL must be in valid URL form
      * @return $this
      */
     public function setMainImageURL($mainImageURL)
@@ -292,7 +292,7 @@ class BrandCreateParameters implements ArrayAccess
 
     /**
      * Sets logoURL
-     * @param string $logoURL Brand logo URL must have valid URL form
+     * @param string $logoURL Brand logo URL must be in valid URL form
      * @return $this
      */
     public function setLogoURL($logoURL)

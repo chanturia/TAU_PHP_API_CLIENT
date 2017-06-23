@@ -1,6 +1,6 @@
 # Swagger\Client\BrandApi
 
-All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
+All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,8 +33,8 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 $api_instance = new Swagger\Client\Api\BrandApi();
 $id = "id_example"; // string | ID for the Brand
 $createBrandUserRoles = new \Swagger\Client\Model\CreateBrandUserRoles(); // \Swagger\Client\Model\CreateBrandUserRoles | Brand's User Priveleges Parameters for the brand ID and UserID.
-$productID = "productID_example"; // string | ID of the Product connected with the Brand
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Brand
+$productID = "productID_example"; // string | ID of the Product connected with the Brand (only required for Authorization for the User making the request)
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Brand (only required for Authorization for the User making the request)
 
 try {
     $result = $api_instance->addUserBrand($id, $createBrandUserRoles, $productID, $couponID);
@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Brand |
  **createBrandUserRoles** | [**\Swagger\Client\Model\CreateBrandUserRoles**](../Model/\Swagger\Client\Model\CreateBrandUserRoles.md)| Brand&#39;s User Priveleges Parameters for the brand ID and UserID. |
- **productID** | **string**| ID of the Product connected with the Brand | [optional]
- **couponID** | **string**| ID of the Coupon connected with the Brand | [optional]
+ **productID** | **string**| ID of the Product connected with the Brand (only required for Authorization for the User making the request) | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Brand (only required for Authorization for the User making the request) | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 
 
-Searches for all existing Brands. Returns array of JSON Brand Objects with brand id and brand name.
+Searches for all existing Brands. Returns array of JSON Brand Objects
 
 ### Example
 ```php
@@ -118,7 +118,7 @@ This endpoint does not need any parameter.
 
 
 
-Creates a new Brand by included brand parameters consisting of User ID, brand name, description, main image URL and logo image URL.
+Creates a new Brand by included brand parameters
 
 ### Example
 ```php
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new Coupon for a Brand, for a single user id, based on included parameters of userid who initiated the creation proccess, products ids, categories ids and subcategories ids and primitives ids, optionally storeids. Validation must ensure userid who initiated the creation has required privileges.
+Creates a new Coupon for a Brand, for a single user id, based on included parameters
 
 ### Example
 ```php
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new Product for a Brand by included product parameters product type, product name, description, brandID, images and optionally merchantids . Returns JSON Product Object consisting of productID, product name and product description.
+Creates a new Product for a Brand by included product parameters
 
 ### Example
 ```php
@@ -228,7 +228,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\BrandApi();
 $id = "id_example"; // string | ID for the brand
-$brandProductCreateParameters = new \Swagger\Client\Model\BrandProductCreateParameters(); // \Swagger\Client\Model\BrandProductCreateParameters | Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids.
+$brandProductCreateParameters = new \Swagger\Client\Model\BrandProductCreateParameters(); // \Swagger\Client\Model\BrandProductCreateParameters | Product parameters for creating new product
 
 try {
     $result = $api_instance->createProductBrand($id, $brandProductCreateParameters);
@@ -244,7 +244,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the brand |
- **brandProductCreateParameters** | [**\Swagger\Client\Model\BrandProductCreateParameters**](../Model/\Swagger\Client\Model\BrandProductCreateParameters.md)| Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. |
+ **brandProductCreateParameters** | [**\Swagger\Client\Model\BrandProductCreateParameters**](../Model/\Swagger\Client\Model\BrandProductCreateParameters.md)| Product parameters for creating new product |
 
 ### Return type
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 
 
-Searches a Brand based on single brand id. Returns JSON Brand Object with brand id and brand name.
+Searches a Brand based on single brand id.
 
 ### Example
 ```php
@@ -278,7 +278,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\BrandApi();
 $id = "id_example"; // string | ID for the Brand being searched for.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the brand is connected to. Required only if the brand is connected with a company.
 
 try {
     $result = $api_instance->getBrandDetails($id, $companyID);
@@ -294,7 +294,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Brand being searched for. |
- **companyID** | **string**| Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. | [optional]
+ **companyID** | **string**| Company ID Parameter for the company that the brand is connected to. Required only if the brand is connected with a company. | [optional]
 
 ### Return type
 
@@ -377,8 +377,8 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 $api_instance = new Swagger\Client\Api\BrandApi();
 $id = "id_example"; // string | ID for the Brand
 $deleteBrandUserRoles = new \Swagger\Client\Model\DeleteBrandUserRoles(); // \Swagger\Client\Model\DeleteBrandUserRoles | Brand's User ID and privileges to be removed  for the brand ID.
-$productID = "productID_example"; // string | ID of the Product connected with the Brand
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Brand
+$productID = "productID_example"; // string | ID of the Product connected with the Brand (only required for Authorization for the User making the request)
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Brand (only required for Authorization for the User making the request)
 
 try {
     $result = $api_instance->removeUserBrandPrivileges($id, $deleteBrandUserRoles, $productID, $couponID);
@@ -395,8 +395,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Brand |
  **deleteBrandUserRoles** | [**\Swagger\Client\Model\DeleteBrandUserRoles**](../Model/\Swagger\Client\Model\DeleteBrandUserRoles.md)| Brand&#39;s User ID and privileges to be removed  for the brand ID. |
- **productID** | **string**| ID of the Product connected with the Brand | [optional]
- **couponID** | **string**| ID of the Coupon connected with the Brand | [optional]
+ **productID** | **string**| ID of the Product connected with the Brand (only required for Authorization for the User making the request) | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Brand (only required for Authorization for the User making the request) | [optional]
 
 ### Return type
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 
 
-Updates a Brand's details based on posted parameters.
+Updates Brand's details based on posted parameters.
 
 ### Example
 ```php
@@ -430,8 +430,8 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\BrandApi();
 $id = "id_example"; // string | ID for the Brand to be updated.
-$brandUpdateDetailsParameters = new \Swagger\Client\Model\BrandUpdateDetailsParameters(); // \Swagger\Client\Model\BrandUpdateDetailsParameters | Brand Parameters for the brand to be updated and User ID for the User who makes the update.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company.
+$brandUpdateDetailsParameters = new \Swagger\Client\Model\BrandUpdateDetailsParameters(); // \Swagger\Client\Model\BrandUpdateDetailsParameters | Brand Parameters for the brand to be updated
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the brand is connected to. Required only if the brand is connected with a company.
 
 try {
     $result = $api_instance->updateBrand($id, $brandUpdateDetailsParameters, $companyID);
@@ -447,8 +447,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Brand to be updated. |
- **brandUpdateDetailsParameters** | [**\Swagger\Client\Model\BrandUpdateDetailsParameters**](../Model/\Swagger\Client\Model\BrandUpdateDetailsParameters.md)| Brand Parameters for the brand to be updated and User ID for the User who makes the update. |
- **companyID** | **string**| Company ID Parameter for the company that the brand is connected to.Required only if the brand is connected with a company. | [optional]
+ **brandUpdateDetailsParameters** | [**\Swagger\Client\Model\BrandUpdateDetailsParameters**](../Model/\Swagger\Client\Model\BrandUpdateDetailsParameters.md)| Brand Parameters for the brand to be updated |
+ **companyID** | **string**| Company ID Parameter for the company that the brand is connected to. Required only if the brand is connected with a company. | [optional]
 
 ### Return type
 

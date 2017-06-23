@@ -92,9 +92,9 @@ class MerchantApi
      *
      * 
      *
-     * @param string $id ID for the merchant being searched for. (required)
-     * @param string $productID ID of the Product connected with the Company (optional)
-     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param string $id ID for the merchant. (required)
+     * @param string $productID ID of the Product connected with the Merchant (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request) (optional)
      * @param \Swagger\Client\Model\CreateMerchantUserRole $createMerchantUserRole Merchant&#39;s User Priveleges Parameters for the merchant ID and userID. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
@@ -110,9 +110,9 @@ class MerchantApi
      *
      * 
      *
-     * @param string $id ID for the merchant being searched for. (required)
-     * @param string $productID ID of the Product connected with the Company (optional)
-     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param string $id ID for the merchant. (required)
+     * @param string $productID ID of the Product connected with the Merchant (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request) (optional)
      * @param \Swagger\Client\Model\CreateMerchantUserRole $createMerchantUserRole Merchant&#39;s User Priveleges Parameters for the merchant ID and userID. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
@@ -204,7 +204,7 @@ class MerchantApi
      *
      * 
      *
-     * @param string $id ID for the merchant (required)
+     * @param string $id ID of the merchant (required)
      * @param \Swagger\Client\Model\MerchantCouponCreateParameters $merchantCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
@@ -220,7 +220,7 @@ class MerchantApi
      *
      * 
      *
-     * @param string $id ID for the merchant (required)
+     * @param string $id ID of the merchant (required)
      * @param \Swagger\Client\Model\MerchantCouponCreateParameters $merchantCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
@@ -398,7 +398,7 @@ class MerchantApi
      *
      * 
      *
-     * @param string $id ID for the merchant (required)
+     * @param string $id ID of the merchant (required)
      * @param \Swagger\Client\Model\MerchantProductCreateParameters $merchantProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
@@ -414,7 +414,7 @@ class MerchantApi
      *
      * 
      *
-     * @param string $id ID for the merchant (required)
+     * @param string $id ID of the merchant (required)
      * @param \Swagger\Client\Model\MerchantProductCreateParameters $merchantProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
@@ -688,10 +688,10 @@ class MerchantApi
      *
      * 
      *
-     * @param string $id ID for the merchant being searched for. (required)
+     * @param string $id ID for the merchant (required)
      * @param \Swagger\Client\Model\DeleteMerchantUserRole $deleteMerchantUserRole Merchant&#39;s User ID and privileges to be removed  for the merchant ID. (required)
-     * @param string $productID ID of the Product connected with the Company (optional)
-     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param string $productID ID of the Product connected with the Merchant (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
@@ -706,10 +706,10 @@ class MerchantApi
      *
      * 
      *
-     * @param string $id ID for the merchant being searched for. (required)
+     * @param string $id ID for the merchant (required)
      * @param \Swagger\Client\Model\DeleteMerchantUserRole $deleteMerchantUserRole Merchant&#39;s User ID and privileges to be removed  for the merchant ID. (required)
-     * @param string $productID ID of the Product connected with the Company (optional)
-     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param string $productID ID of the Product connected with the Merchant (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */

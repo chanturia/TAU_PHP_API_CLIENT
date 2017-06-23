@@ -110,17 +110,6 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for changeStore
-     *
-     * .
-     *
-     */
-    public function testChangeStore()
-    {
-
-    }
-
-    /**
      * Test case for confirmMobilePin
      *
      * .
@@ -171,28 +160,6 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testGetPurchases()
-    {
-
-    }
-
-    /**
-     * Test case for getUserRoles
-     *
-     * .
-     *
-     */
-    public function testGetUserRoles()
-    {
-
-    }
-
-    /**
-     * Test case for getkeyid
-     *
-     * .
-     *
-     */
-    public function testGetkeyid()
     {
 
     }

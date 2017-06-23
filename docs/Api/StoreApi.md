@@ -1,6 +1,6 @@
 # Swagger\Client\StoreApi
 
-All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
+All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,8 +33,8 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 $api_instance = new Swagger\Client\Api\StoreApi();
 $id = "id_example"; // string | ID for the Store
 $createStoreUserRole = new \Swagger\Client\Model\CreateStoreUserRole(); // \Swagger\Client\Model\CreateStoreUserRole | Store's User Priveleges Parameters for the store ID and UserID.
-$productID = "productID_example"; // string | ID of the Product connected with the Store
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Store
+$productID = "productID_example"; // string | ID of the Product connected with the Store (only required for Authorization for the User making the request)
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Store (only required for Authorization for the User making the request)
 
 try {
     $result = $api_instance->addUserRoleForStore($id, $createStoreUserRole, $productID, $couponID);
@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Store |
  **createStoreUserRole** | [**\Swagger\Client\Model\CreateStoreUserRole**](../Model/\Swagger\Client\Model\CreateStoreUserRole.md)| Store&#39;s User Priveleges Parameters for the store ID and UserID. |
- **productID** | **string**| ID of the Product connected with the Store | [optional]
- **couponID** | **string**| ID of the Coupon connected with the Store | [optional]
+ **productID** | **string**| ID of the Product connected with the Store (only required for Authorization for the User making the request) | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Store (only required for Authorization for the User making the request) | [optional]
 
 ### Return type
 
@@ -118,7 +118,7 @@ This endpoint does not need any parameter.
 
 
 
-Creates a new Coupon for a Store, for a single user id, based on included parameters of userid who initiated the creation proccess, products ids, categories ids and subcategories ids and primitives ids, optionally storeids. Validation must ensure userid who initiated the creation has required privileges.
+Creates a new Coupon for a Store, for a single user id, based on included parameters
 
 ### Example
 ```php
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new Product for a Store by included product parameters product type, product name, description, brandID, images and optionally merchantids . Returns JSON Product Object consisting of productID, product name and product description.
+Creates a new Product for a Store by included product parameters. Product that will be created will be connected with this Store
 
 ### Example
 ```php
@@ -278,9 +278,9 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\StoreApi();
 $id = "id_example"; // string | ID for the Store
-$deleteStoreUserRole = new \Swagger\Client\Model\DeleteStoreUserRole(); // \Swagger\Client\Model\DeleteStoreUserRole | Store's User ID and privileges to be removed  for the store ID.
-$productID = "productID_example"; // string | ID of the Product connected with the Store
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Store
+$deleteStoreUserRole = new \Swagger\Client\Model\DeleteStoreUserRole(); // \Swagger\Client\Model\DeleteStoreUserRole | Store's User ID and role to be removed  for the store ID opionally role connected entities id.
+$productID = "productID_example"; // string | ID of the Product connected with the Store (only required for Authorization for the User making the request)
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Store (only required for Authorization for the User making the request)
 
 try {
     $result = $api_instance->removeUserStorePrivileges($id, $deleteStoreUserRole, $productID, $couponID);
@@ -296,9 +296,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Store |
- **deleteStoreUserRole** | [**\Swagger\Client\Model\DeleteStoreUserRole**](../Model/\Swagger\Client\Model\DeleteStoreUserRole.md)| Store&#39;s User ID and privileges to be removed  for the store ID. |
- **productID** | **string**| ID of the Product connected with the Store | [optional]
- **couponID** | **string**| ID of the Coupon connected with the Store | [optional]
+ **deleteStoreUserRole** | [**\Swagger\Client\Model\DeleteStoreUserRole**](../Model/\Swagger\Client\Model\DeleteStoreUserRole.md)| Store&#39;s User ID and role to be removed  for the store ID opionally role connected entities id. |
+ **productID** | **string**| ID of the Product connected with the Store (only required for Authorization for the User making the request) | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Store (only required for Authorization for the User making the request) | [optional]
 
 ### Return type
 
@@ -380,7 +380,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\StoreApi();
 $id = "id_example"; // string | ID for the store to find the details for.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company.
 
 try {
     $result = $api_instance->storeGetDetails($id, $companyID);
@@ -396,7 +396,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the store to find the details for. |
- **companyID** | **string**| Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. | [optional]
+ **companyID** | **string**| Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. | [optional]
 
 ### Return type
 
@@ -430,8 +430,8 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\StoreApi();
 $id = "id_example"; // string | ID for the store to be updated.
-$updateStoreParameters = new \Swagger\Client\Model\UpdateStoreParameters(); // \Swagger\Client\Model\UpdateStoreParameters | Store Parameters for the store to be updated and User ID for the User who makes the update.Company ID Parameter for the company that the store is connected to is required only if the store is connected with a company.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company.
+$updateStoreParameters = new \Swagger\Client\Model\UpdateStoreParameters(); // \Swagger\Client\Model\UpdateStoreParameters | Store Parameters for the store to be updated
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company.
 
 try {
     $result = $api_instance->updateStore($id, $updateStoreParameters, $companyID);
@@ -447,8 +447,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the store to be updated. |
- **updateStoreParameters** | [**\Swagger\Client\Model\UpdateStoreParameters**](../Model/\Swagger\Client\Model\UpdateStoreParameters.md)| Store Parameters for the store to be updated and User ID for the User who makes the update.Company ID Parameter for the company that the store is connected to is required only if the store is connected with a company. |
- **companyID** | **string**| Company ID Parameter for the company that the store is connected to.Required only if the store is connected with a company. | [optional]
+ **updateStoreParameters** | [**\Swagger\Client\Model\UpdateStoreParameters**](../Model/\Swagger\Client\Model\UpdateStoreParameters.md)| Store Parameters for the store to be updated |
+ **companyID** | **string**| Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. | [optional]
 
 ### Return type
 

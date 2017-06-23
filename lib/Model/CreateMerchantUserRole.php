@@ -185,7 +185,7 @@ class CreateMerchantUserRole implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID
+     * @param string $userID ID of the user that is to be granted the role
      * @return $this
      */
     public function setUserID($userID)
@@ -206,7 +206,7 @@ class CreateMerchantUserRole implements ArrayAccess
 
     /**
      * Sets role
-     * @param string $role
+     * @param string $role The role that is to be assigned
      * @return $this
      */
     public function setRole($role)
@@ -227,7 +227,7 @@ class CreateMerchantUserRole implements ArrayAccess
 
     /**
      * Sets productID
-     * @param string $productID
+     * @param string $productID Grant role for this product ID
      * @return $this
      */
     public function setProductID($productID)
@@ -248,7 +248,7 @@ class CreateMerchantUserRole implements ArrayAccess
 
     /**
      * Sets couponID
-     * @param string $couponID
+     * @param string $couponID Grant role for this coupon ID
      * @return $this
      */
     public function setCouponID($couponID)

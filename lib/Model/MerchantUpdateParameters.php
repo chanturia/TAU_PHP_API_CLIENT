@@ -210,7 +210,7 @@ class MerchantUpdateParameters implements ArrayAccess
 
     /**
      * Sets logo
-     * @param string $logo Merchant logo must have valid URL form
+     * @param string $logo Merchant logo must be in valid URL form
      * @return $this
      */
     public function setLogo($logo)

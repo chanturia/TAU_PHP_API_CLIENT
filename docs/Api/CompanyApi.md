@@ -1,6 +1,6 @@
 # Swagger\Client\CompanyApi
 
-All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
+All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 
-Adds an Administrator User for a Company based on selected roles. Authorization parameters must be in URL query. Grant Role parameters must be in the body. If authorization parameters include a connected Entitys id ex. for companyID(id) connected parameter storeID then grant roles parameter connected entitys id must match the authorization parameter connected entitys id in the previous ex. storeID
+Adds Role for a User for a Company. Authorization parameters must be in URL query. Grant Role parameters must be in the body. If authorization parameters include a connected Entitys id ex. for companyID(id) connected parameter storeID then grant roles parameter connected entitys id must match the authorization parameter connected entitys id in the previous ex. storeID
 
 ### Example
 ```php
@@ -32,10 +32,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CompanyApi();
 $id = "id_example"; // string | Required ID for the Company the role is for.
-$brandID = "brandID_example"; // string | ID of the Brand connected with the Company
-$storeID = "storeID_example"; // string | ID of the Store connected with the Company
-$productID = "productID_example"; // string | ID of the Product connected with the Company
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Company
+$brandID = "brandID_example"; // string | ID of the Brand connected with the Company (only required for Authorization for the User making the request)
+$storeID = "storeID_example"; // string | ID of the Store connected with the Company (only required for Authorization for the User making the request)
+$productID = "productID_example"; // string | ID of the Product connected with the Company (only required for Authorization for the User making the request)
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Company (only required for Authorization for the User making the request)
 $createCompanyUserRoles = new \Swagger\Client\Model\CreateCompanyUserRoles(); // \Swagger\Client\Model\CreateCompanyUserRoles | Company's User Priveleges Parameters for the company ID and userID.
 
 try {
@@ -52,10 +52,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Required ID for the Company the role is for. |
- **brandID** | **string**| ID of the Brand connected with the Company | [optional]
- **storeID** | **string**| ID of the Store connected with the Company | [optional]
- **productID** | **string**| ID of the Product connected with the Company | [optional]
- **couponID** | **string**| ID of the Coupon connected with the Company | [optional]
+ **brandID** | **string**| ID of the Brand connected with the Company (only required for Authorization for the User making the request) | [optional]
+ **storeID** | **string**| ID of the Store connected with the Company (only required for Authorization for the User making the request) | [optional]
+ **productID** | **string**| ID of the Product connected with the Company (only required for Authorization for the User making the request) | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Company (only required for Authorization for the User making the request) | [optional]
  **createCompanyUserRoles** | [**\Swagger\Client\Model\CreateCompanyUserRoles**](../Model/\Swagger\Client\Model\CreateCompanyUserRoles.md)| Company&#39;s User Priveleges Parameters for the company ID and userID. | [optional]
 
 ### Return type
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 
 
-Searches for a Company details by ID and returns JSON Company Object with company id, type, createdBy, name, inChargePersonName, mainAddress, mainImageURL, logoURL, contactPhone, companyType and optionally description and facebookPageURL.
+Searches for a Company details by ID
 
 ### Example
 ```php
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new Brand for a Company by included brand parameters consisting of User ID, brand name, description, main image URL and logo image URL.
+Creates a new Brand for a Company by included brand parameters
 
 ### Example
 ```php
@@ -187,7 +187,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\CompanyApi();
-$createCompanyParameters = new \Swagger\Client\Model\CreateCompanyParameters(); // \Swagger\Client\Model\CreateCompanyParameters | Company Parameters for the company to be created and User ID of User that creates the company.
+$createCompanyParameters = new \Swagger\Client\Model\CreateCompanyParameters(); // \Swagger\Client\Model\CreateCompanyParameters | Company Parameters for the company to be created and User ID of User who creates the company.
 
 try {
     $result = $api_instance->createCompany($createCompanyParameters);
@@ -202,7 +202,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createCompanyParameters** | [**\Swagger\Client\Model\CreateCompanyParameters**](../Model/\Swagger\Client\Model\CreateCompanyParameters.md)| Company Parameters for the company to be created and User ID of User that creates the company. |
+ **createCompanyParameters** | [**\Swagger\Client\Model\CreateCompanyParameters**](../Model/\Swagger\Client\Model\CreateCompanyParameters.md)| Company Parameters for the company to be created and User ID of User who creates the company. |
 
 ### Return type
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new Coupon for a Company, for a single user id, based on included parameters of userid who initiated the creation proccess, products ids, categories ids and subcategories ids and primitives ids, optionally storeids. Validation must ensure userid who initiated the creation has required privileges.
+Creates a new Coupon for a Company, for a single user id, based on included parameters and userid who initiated the creation proccess
 
 ### Example
 ```php
@@ -236,7 +236,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CompanyApi();
 $id = "id_example"; // string | ID for the Company
-$companyCouponCreateParameters = new \Swagger\Client\Model\CompanyCouponCreateParameters(); // \Swagger\Client\Model\CompanyCouponCreateParameters | Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids.
+$companyCouponCreateParameters = new \Swagger\Client\Model\CompanyCouponCreateParameters(); // \Swagger\Client\Model\CompanyCouponCreateParameters | Coupon Parameters and userid who initiated the creation proccess
 
 try {
     $result = $api_instance->createCouponForCompany($id, $companyCouponCreateParameters);
@@ -252,7 +252,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Company |
- **companyCouponCreateParameters** | [**\Swagger\Client\Model\CompanyCouponCreateParameters**](../Model/\Swagger\Client\Model\CompanyCouponCreateParameters.md)| Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. |
+ **companyCouponCreateParameters** | [**\Swagger\Client\Model\CompanyCouponCreateParameters**](../Model/\Swagger\Client\Model\CompanyCouponCreateParameters.md)| Coupon Parameters and userid who initiated the creation proccess |
 
 ### Return type
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new Product for a Company by included product parameters product type, product name, description, brandID, images and optionally merchantids . Returns JSON Product Object consisting of productID, product name and product description.
+Creates a new Product for a Company by included product parameters
 
 ### Example
 ```php
@@ -286,7 +286,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CompanyApi();
 $id = "id_example"; // string | ID for the Company
-$companyProductCreateParameters = new \Swagger\Client\Model\CompanyProductCreateParameters(); // \Swagger\Client\Model\CompanyProductCreateParameters | Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids.
+$companyProductCreateParameters = new \Swagger\Client\Model\CompanyProductCreateParameters(); // \Swagger\Client\Model\CompanyProductCreateParameters | Product parameters for creating new product
 
 try {
     $result = $api_instance->createProductCompany($id, $companyProductCreateParameters);
@@ -302,7 +302,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Company |
- **companyProductCreateParameters** | [**\Swagger\Client\Model\CompanyProductCreateParameters**](../Model/\Swagger\Client\Model\CompanyProductCreateParameters.md)| Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. |
+ **companyProductCreateParameters** | [**\Swagger\Client\Model\CompanyProductCreateParameters**](../Model/\Swagger\Client\Model\CompanyProductCreateParameters.md)| Product parameters for creating new product |
 
 ### Return type
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 
 
-Removes an User Role for a Company. Authorization parameters must be in URL query. Grant Role parameters must be in the body. If authorization parameters include a connected Entitys id ex. for companyID(id) connected parameter storeID then grant roles parameter connected entity's id must match the authorization parameter connected entitys id in the previous ex. storeID
+Removes a User Role for a Company. Authorization parameters must be in URL query. Grant Role parameters must be in the body. If authorization parameters include a connected Entitys id ex. for companyID(id) connected parameter storeID then grant roles parameter connected entity's id must match the authorization parameter connected entitys id in the previous ex. storeID
 
 ### Example
 ```php
@@ -386,11 +386,11 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CompanyApi();
 $id = "id_example"; // string | ID for the Company
-$deleteCompanyUserRoles = new \Swagger\Client\Model\DeleteCompanyUserRoles(); // \Swagger\Client\Model\DeleteCompanyUserRoles | Company's User ID and privileges to be removed  for the company ID.
-$brandID = "brandID_example"; // string | ID of the Brand connected with the Company
-$storeID = "storeID_example"; // string | ID of the Store connected with the Company
-$productID = "productID_example"; // string | ID of the Product connected with the Company
-$couponID = "couponID_example"; // string | ID of the Coupon connected with the Company
+$deleteCompanyUserRoles = new \Swagger\Client\Model\DeleteCompanyUserRoles(); // \Swagger\Client\Model\DeleteCompanyUserRoles | Company's User ID and privileges to be removed for the company ID.
+$brandID = "brandID_example"; // string | ID of the Brand connected with the Company (only required for Authorization for the User making the request)
+$storeID = "storeID_example"; // string | ID of the Store connected with the Company (only required for Authorization for the User making the request)
+$productID = "productID_example"; // string | ID of the Product connected with the Company (only required for Authorization for the User making the request)
+$couponID = "couponID_example"; // string | ID of the Coupon connected with the Company (only required for Authorization for the User making the request)
 
 try {
     $result = $api_instance->removeAdminUserCompany($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID);
@@ -406,11 +406,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Company |
- **deleteCompanyUserRoles** | [**\Swagger\Client\Model\DeleteCompanyUserRoles**](../Model/\Swagger\Client\Model\DeleteCompanyUserRoles.md)| Company&#39;s User ID and privileges to be removed  for the company ID. |
- **brandID** | **string**| ID of the Brand connected with the Company | [optional]
- **storeID** | **string**| ID of the Store connected with the Company | [optional]
- **productID** | **string**| ID of the Product connected with the Company | [optional]
- **couponID** | **string**| ID of the Coupon connected with the Company | [optional]
+ **deleteCompanyUserRoles** | [**\Swagger\Client\Model\DeleteCompanyUserRoles**](../Model/\Swagger\Client\Model\DeleteCompanyUserRoles.md)| Company&#39;s User ID and privileges to be removed for the company ID. |
+ **brandID** | **string**| ID of the Brand connected with the Company (only required for Authorization for the User making the request) | [optional]
+ **storeID** | **string**| ID of the Store connected with the Company (only required for Authorization for the User making the request) | [optional]
+ **productID** | **string**| ID of the Product connected with the Company (only required for Authorization for the User making the request) | [optional]
+ **couponID** | **string**| ID of the Coupon connected with the Company (only required for Authorization for the User making the request) | [optional]
 
 ### Return type
 

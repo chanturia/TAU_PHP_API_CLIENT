@@ -197,7 +197,7 @@ class CreateStoreParameters implements ArrayAccess
 
     /**
      * Sets userID
-     * @param string $userID UserID for user who is making the creation of store
+     * @param string $userID UserID of the user who is making the creation of store
      * @return $this
      */
     public function setUserID($userID)

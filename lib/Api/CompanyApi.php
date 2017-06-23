@@ -93,10 +93,10 @@ class CompanyApi
      * 
      *
      * @param string $id Required ID for the Company the role is for. (required)
-     * @param string $brandID ID of the Brand connected with the Company (optional)
-     * @param string $storeID ID of the Store connected with the Company (optional)
-     * @param string $productID ID of the Product connected with the Company (optional)
-     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param string $brandID ID of the Brand connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $storeID ID of the Store connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $productID ID of the Product connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Company (only required for Authorization for the User making the request) (optional)
      * @param \Swagger\Client\Model\CreateCompanyUserRoles $createCompanyUserRoles Company&#39;s User Priveleges Parameters for the company ID and userID. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
@@ -113,10 +113,10 @@ class CompanyApi
      * 
      *
      * @param string $id Required ID for the Company the role is for. (required)
-     * @param string $brandID ID of the Brand connected with the Company (optional)
-     * @param string $storeID ID of the Store connected with the Company (optional)
-     * @param string $productID ID of the Product connected with the Company (optional)
-     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param string $brandID ID of the Brand connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $storeID ID of the Store connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $productID ID of the Product connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Company (only required for Authorization for the User making the request) (optional)
      * @param \Swagger\Client\Model\CreateCompanyUserRoles $createCompanyUserRoles Company&#39;s User Priveleges Parameters for the company ID and userID. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
@@ -413,7 +413,7 @@ class CompanyApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCompanyParameters $createCompanyParameters Company Parameters for the company to be created and User ID of User that creates the company. (required)
+     * @param \Swagger\Client\Model\CreateCompanyParameters $createCompanyParameters Company Parameters for the company to be created and User ID of User who creates the company. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Company
      */
@@ -428,7 +428,7 @@ class CompanyApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCompanyParameters $createCompanyParameters Company Parameters for the company to be created and User ID of User that creates the company. (required)
+     * @param \Swagger\Client\Model\CreateCompanyParameters $createCompanyParameters Company Parameters for the company to be created and User ID of User who creates the company. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Company, HTTP status code, HTTP response headers (array of strings)
      */
@@ -504,7 +504,7 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyCouponCreateParameters $companyCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
+     * @param \Swagger\Client\Model\CompanyCouponCreateParameters $companyCouponCreateParameters Coupon Parameters and userid who initiated the creation proccess (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
@@ -520,7 +520,7 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyCouponCreateParameters $companyCouponCreateParameters Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. (required)
+     * @param \Swagger\Client\Model\CompanyCouponCreateParameters $companyCouponCreateParameters Coupon Parameters and userid who initiated the creation proccess (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
@@ -608,7 +608,7 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyProductCreateParameters $companyProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\CompanyProductCreateParameters $companyProductCreateParameters Product parameters for creating new product (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Product
      */
@@ -624,7 +624,7 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\CompanyProductCreateParameters $companyProductCreateParameters Product parameters for creating new product consisting of product type, name, description, brandID, images and optionally merchantids. (required)
+     * @param \Swagger\Client\Model\CompanyProductCreateParameters $companyProductCreateParameters Product parameters for creating new product (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
@@ -816,11 +816,11 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\DeleteCompanyUserRoles $deleteCompanyUserRoles Company&#39;s User ID and privileges to be removed  for the company ID. (required)
-     * @param string $brandID ID of the Brand connected with the Company (optional)
-     * @param string $storeID ID of the Store connected with the Company (optional)
-     * @param string $productID ID of the Product connected with the Company (optional)
-     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param \Swagger\Client\Model\DeleteCompanyUserRoles $deleteCompanyUserRoles Company&#39;s User ID and privileges to be removed for the company ID. (required)
+     * @param string $brandID ID of the Brand connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $storeID ID of the Store connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $productID ID of the Product connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Company (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
@@ -836,11 +836,11 @@ class CompanyApi
      * 
      *
      * @param string $id ID for the Company (required)
-     * @param \Swagger\Client\Model\DeleteCompanyUserRoles $deleteCompanyUserRoles Company&#39;s User ID and privileges to be removed  for the company ID. (required)
-     * @param string $brandID ID of the Brand connected with the Company (optional)
-     * @param string $storeID ID of the Store connected with the Company (optional)
-     * @param string $productID ID of the Product connected with the Company (optional)
-     * @param string $couponID ID of the Coupon connected with the Company (optional)
+     * @param \Swagger\Client\Model\DeleteCompanyUserRoles $deleteCompanyUserRoles Company&#39;s User ID and privileges to be removed for the company ID. (required)
+     * @param string $brandID ID of the Brand connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $storeID ID of the Store connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $productID ID of the Product connected with the Company (only required for Authorization for the User making the request) (optional)
+     * @param string $couponID ID of the Coupon connected with the Company (only required for Authorization for the User making the request) (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */

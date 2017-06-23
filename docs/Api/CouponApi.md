@@ -1,6 +1,6 @@
 # Swagger\Client\CouponApi
 
-All URIs are relative to *http://api.trustanduse.7indigo.website/api/v1*
+All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**allCouponCategories**](CouponApi.md#allCouponCategories) | **GET** /coupon/categories | 
 [**allCouponPrimitives**](CouponApi.md#allCouponPrimitives) | **GET** /coupon/primitive/all | 
 [**couponCategoryCreate**](CouponApi.md#couponCategoryCreate) | **POST** /coupon/category/create | 
-[**createCoupon**](CouponApi.md#createCoupon) | **POST** /coupon/create | 
+[**couponCreatePost**](CouponApi.md#couponCreatePost) | **POST** /coupon/create | 
 [**createCouponPrimitive**](CouponApi.md#createCouponPrimitive) | **POST** /coupon/primitive/create | 
 [**editCouponCategory**](CouponApi.md#editCouponCategory) | **PUT** /coupon/category/{couponCategoryID} | 
 [**editCouponPrimitive**](CouponApi.md#editCouponPrimitive) | **PUT** /coupon/primitive/{primitiveID}/details | 
@@ -164,7 +164,7 @@ This endpoint does not need any parameter.
 
 
 
-Creates a new Category for Coupons by included category parameters consisting of category name, description, subcategories. Returns CouponCategory Object with category id, name, description and subcategories.
+Creates a new Category for Coupons by included category parameters
 
 ### Example
 ```php
@@ -207,12 +207,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createCoupon**
-> \Swagger\Client\Model\Coupon createCoupon($createCouponParameters)
+# **couponCreatePost**
+> \Swagger\Client\Model\Coupon couponCreatePost($createCouponParameters)
 
 
 
-Creates a new Coupon for a single user id, based on included parameters of userid who initiated the creation proccess, products ids, categories ids and subcategories ids and primitives ids, optionally storeids. Validation must ensure userid who initiated the creation has required privileges.
+Creates a new Coupon for a single user id
 
 ### Example
 ```php
@@ -223,13 +223,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\CouponApi();
-$createCouponParameters = new \Swagger\Client\Model\CreateCouponParameters(); // \Swagger\Client\Model\CreateCouponParameters | Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids.
+$createCouponParameters = new \Swagger\Client\Model\CreateCouponParameters(); // \Swagger\Client\Model\CreateCouponParameters | Coupon Parameters
 
 try {
-    $result = $api_instance->createCoupon($createCouponParameters);
+    $result = $api_instance->couponCreatePost($createCouponParameters);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CouponApi->createCoupon: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CouponApi->couponCreatePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -238,7 +238,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createCouponParameters** | [**\Swagger\Client\Model\CreateCouponParameters**](../Model/\Swagger\Client\Model\CreateCouponParameters.md)| Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. |
+ **createCouponParameters** | [**\Swagger\Client\Model\CreateCouponParameters**](../Model/\Swagger\Client\Model\CreateCouponParameters.md)| Coupon Parameters | [optional]
 
 ### Return type
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 
 
-Edit a Coupon Category by included category parameters of category id, name, description and subcategories.
+Edit a Coupon Category by included category parameters
 
 ### Example
 ```php
@@ -320,7 +320,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CouponApi();
 $couponCategoryID = "couponCategoryID_example"; // string | ID for the Coupon Category to be updated.
-$updateCouponCategoryParameters = new \Swagger\Client\Model\UpdateCouponCategoryParameters(); // \Swagger\Client\Model\UpdateCouponCategoryParameters | Coupon Category parameters consisting of category id, name, description and subcategories.
+$updateCouponCategoryParameters = new \Swagger\Client\Model\UpdateCouponCategoryParameters(); // \Swagger\Client\Model\UpdateCouponCategoryParameters | Coupon Category parameters
 
 try {
     $result = $api_instance->editCouponCategory($couponCategoryID, $updateCouponCategoryParameters);
@@ -336,7 +336,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **couponCategoryID** | **string**| ID for the Coupon Category to be updated. |
- **updateCouponCategoryParameters** | [**\Swagger\Client\Model\UpdateCouponCategoryParameters**](../Model/\Swagger\Client\Model\UpdateCouponCategoryParameters.md)| Coupon Category parameters consisting of category id, name, description and subcategories. |
+ **updateCouponCategoryParameters** | [**\Swagger\Client\Model\UpdateCouponCategoryParameters**](../Model/\Swagger\Client\Model\UpdateCouponCategoryParameters.md)| Coupon Category parameters |
 
 ### Return type
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 
 
-Edit a Coupon Primitive by included primitive parameters. Returns JSON CouponPrimitive Object with primitive id, name, description and primitive validator URL, validator inputs and validator outputs.
+Edit a Coupon Primitive by included primitive parameters.
 
 ### Example
 ```php
@@ -370,7 +370,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CouponApi();
 $primitiveID = "primitiveID_example"; // string | ID for the Coupon Primitive to be updated.
-$couponPrimitiveParameters = new \Swagger\Client\Model\CouponPrimitiveParameters(); // \Swagger\Client\Model\CouponPrimitiveParameters | Coupon Primitive parameters including primitive id and primitive name, description, validator URL, validator inputs and validator outputs.
+$couponPrimitiveParameters = new \Swagger\Client\Model\CouponPrimitiveParameters(); // \Swagger\Client\Model\CouponPrimitiveParameters | Coupon Primitive parameters includingprimitive name, description, validator URL, validator inputs and validator outputs.
 
 try {
     $result = $api_instance->editCouponPrimitive($primitiveID, $couponPrimitiveParameters);
@@ -386,7 +386,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **primitiveID** | **string**| ID for the Coupon Primitive to be updated. |
- **couponPrimitiveParameters** | [**\Swagger\Client\Model\CouponPrimitiveParameters**](../Model/\Swagger\Client\Model\CouponPrimitiveParameters.md)| Coupon Primitive parameters including primitive id and primitive name, description, validator URL, validator inputs and validator outputs. |
+ **couponPrimitiveParameters** | [**\Swagger\Client\Model\CouponPrimitiveParameters**](../Model/\Swagger\Client\Model\CouponPrimitiveParameters.md)| Coupon Primitive parameters includingprimitive name, description, validator URL, validator inputs and validator outputs. |
 
 ### Return type
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 
 
-Searches for a Coupon based on single coupon id. Returns JSON Coupon Object consisting of couponid, name, description, coupon createdby userid, coupon kind, coupon primitives, coupon categories and subcategories, coupon products, and optionally stores.
+Searches for a Coupon based on single coupon id. Returns JSON Coupon Object
 
 ### Example
 ```php
@@ -420,11 +420,11 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CouponApi();
 $id = "id_example"; // string | ID for the coupon being searched for.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company.
-$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand.
-$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store.
-$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant.
-$productID = "productID_example"; // string | Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company.
+$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand.
+$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store.
+$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant.
+$productID = "productID_example"; // string | Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product.
 
 try {
     $result = $api_instance->getCouponById($id, $companyID, $brandID, $storeID, $merchantID, $productID);
@@ -440,11 +440,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the coupon being searched for. |
- **companyID** | **string**| Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. | [optional]
- **brandID** | **string**| Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. | [optional]
- **storeID** | **string**| Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. | [optional]
- **merchantID** | **string**| Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. | [optional]
- **productID** | **string**| Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. | [optional]
+ **companyID** | **string**| Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company. | [optional]
+ **brandID** | **string**| Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand. | [optional]
+ **storeID** | **string**| Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store. | [optional]
+ **merchantID** | **string**| Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant. | [optional]
+ **productID** | **string**| Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product. | [optional]
 
 ### Return type
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 
 
-Finds a Coupon Category based on single category id. Returns JSON CouponCategory Object with category id, name, description and subcategories.
+Finds a Coupon Category based on single category id.
 
 ### Example
 ```php
@@ -514,7 +514,7 @@ Name | Type | Description  | Notes
 
 
 
-Searches for a CouponPrimitive based on single primitive id. Returns JSON CouponPrimitive Object with primitive id, name,description, validator URL, validator inputs and validator outputs.
+Searches for a CouponPrimitive based on single primitive id.
 
 ### Example
 ```php
@@ -710,7 +710,7 @@ Name | Type | Description  | Notes
 
 
 
-Updates a Coupon for a single user id, based on posted parameters of coupon id, userid (user who initiated the update proccess), name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally storeids. Validation must ensure userid who initiated the update process has required privileges.
+Updates a Coupon for a single user id, based on posted parameters
 
 ### Example
 ```php
@@ -722,12 +722,12 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CouponApi();
 $id = "id_example"; // string | ID for the coupon to be updated.
-$updateCouponParameters = new \Swagger\Client\Model\UpdateCouponParameters(); // \Swagger\Client\Model\UpdateCouponParameters | Coupon Parameters consisting of coupon id, userid who initiated the update proccess, name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company.
-$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand.
-$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store.
-$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant.
-$productID = "productID_example"; // string | Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product.
+$updateCouponParameters = new \Swagger\Client\Model\UpdateCouponParameters(); // \Swagger\Client\Model\UpdateCouponParameters | Coupon Parameters consisting of name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company.
+$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand.
+$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store.
+$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant.
+$productID = "productID_example"; // string | Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product.
 
 try {
     $result = $api_instance->updateCoupon($id, $updateCouponParameters, $companyID, $brandID, $storeID, $merchantID, $productID);
@@ -743,12 +743,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the coupon to be updated. |
- **updateCouponParameters** | [**\Swagger\Client\Model\UpdateCouponParameters**](../Model/\Swagger\Client\Model\UpdateCouponParameters.md)| Coupon Parameters consisting of coupon id, userid who initiated the update proccess, name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. |
- **companyID** | **string**| Company ID Parameter for the company that the Coupon is connected to.Required only if the Coupon is connected with a company. | [optional]
- **brandID** | **string**| Brand ID Parameter for the Brand that the Coupon is connected to.Required only if the Coupon is connected with a Brand. | [optional]
- **storeID** | **string**| Store ID Parameter for the Store that the Coupon is connected to.Required only if the Coupon is connected with a Store. | [optional]
- **merchantID** | **string**| Merchant ID Parameter for the Merchant that the Coupon is connected to.Required only if the Coupon is connected with a Merchant. | [optional]
- **productID** | **string**| Product ID Parameter for the Product that the Coupon is connected to.Required only if the Coupon is connected with a Product. | [optional]
+ **updateCouponParameters** | [**\Swagger\Client\Model\UpdateCouponParameters**](../Model/\Swagger\Client\Model\UpdateCouponParameters.md)| Coupon Parameters consisting of name, description, kind, products ids, categories ids, subcategories ids, primitives ids and optionally store ids. |
+ **companyID** | **string**| Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company. | [optional]
+ **brandID** | **string**| Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand. | [optional]
+ **storeID** | **string**| Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store. | [optional]
+ **merchantID** | **string**| Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant. | [optional]
+ **productID** | **string**| Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product. | [optional]
 
 ### Return type
 
