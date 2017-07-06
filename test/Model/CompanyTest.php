@@ -216,9 +216,9 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "facebookPageURL"
+     * Test attribute "userDefined"
      */
-    public function testPropertyFacebookPageURL()
+    public function testPropertyUserDefined()
     {
 
     }

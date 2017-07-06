@@ -422,7 +422,7 @@ class CreateCouponParameters implements ArrayAccess
 
     /**
      * Sets storeids
-     * @param string[] $storeids contain array with elements the store ids for coupon
+     * @param string[] $storeids a free form user defined object that includes a key - value array. Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
      * @return $this
      */
     public function setStoreids($storeids)

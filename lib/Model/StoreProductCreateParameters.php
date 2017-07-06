@@ -69,10 +69,10 @@ class StoreProductCreateParameters implements ArrayAccess
         'productype' => 'string',
         'name' => 'string',
         'description' => 'string',
-        'imagesUris' => 'string[]',
         'brandID' => 'string',
         'userID' => 'string',
-        'merchantsids' => 'string[]'
+        'merchantsids' => 'string[]',
+        'userDefinedObject' => 'object'
     );
 
     public static function swaggerTypes()
@@ -88,10 +88,10 @@ class StoreProductCreateParameters implements ArrayAccess
         'productype' => 'productype',
         'name' => 'name',
         'description' => 'description',
-        'imagesUris' => 'imagesUris',
         'brandID' => 'brandID',
         'userID' => 'userID',
-        'merchantsids' => 'merchantsids'
+        'merchantsids' => 'merchantsids',
+        'userDefinedObject' => 'userDefinedObject'
     );
 
     public static function attributeMap()
@@ -107,10 +107,10 @@ class StoreProductCreateParameters implements ArrayAccess
         'productype' => 'setProductype',
         'name' => 'setName',
         'description' => 'setDescription',
-        'imagesUris' => 'setImagesUris',
         'brandID' => 'setBrandID',
         'userID' => 'setUserID',
-        'merchantsids' => 'setMerchantsids'
+        'merchantsids' => 'setMerchantsids',
+        'userDefinedObject' => 'setUserDefinedObject'
     );
 
     public static function setters()
@@ -126,10 +126,10 @@ class StoreProductCreateParameters implements ArrayAccess
         'productype' => 'getProductype',
         'name' => 'getName',
         'description' => 'getDescription',
-        'imagesUris' => 'getImagesUris',
         'brandID' => 'getBrandID',
         'userID' => 'getUserID',
-        'merchantsids' => 'getMerchantsids'
+        'merchantsids' => 'getMerchantsids',
+        'userDefinedObject' => 'getUserDefinedObject'
     );
 
     public static function getters()
@@ -156,10 +156,10 @@ class StoreProductCreateParameters implements ArrayAccess
         $this->container['productype'] = isset($data['productype']) ? $data['productype'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['imagesUris'] = isset($data['imagesUris']) ? $data['imagesUris'] : null;
         $this->container['brandID'] = isset($data['brandID']) ? $data['brandID'] : null;
         $this->container['userID'] = isset($data['userID']) ? $data['userID'] : null;
         $this->container['merchantsids'] = isset($data['merchantsids']) ? $data['merchantsids'] : null;
+        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -178,9 +178,6 @@ class StoreProductCreateParameters implements ArrayAccess
         }
         if ($this->container['description'] === null) {
             $invalid_properties[] = "'description' can't be null";
-        }
-        if ($this->container['imagesUris'] === null) {
-            $invalid_properties[] = "'imagesUris' can't be null";
         }
         if ($this->container['userID'] === null) {
             $invalid_properties[] = "'userID' can't be null";
@@ -203,9 +200,6 @@ class StoreProductCreateParameters implements ArrayAccess
             return false;
         }
         if ($this->container['description'] === null) {
-            return false;
-        }
-        if ($this->container['imagesUris'] === null) {
             return false;
         }
         if ($this->container['userID'] === null) {
@@ -279,27 +273,6 @@ class StoreProductCreateParameters implements ArrayAccess
     }
 
     /**
-     * Gets imagesUris
-     * @return string[]
-     */
-    public function getImagesUris()
-    {
-        return $this->container['imagesUris'];
-    }
-
-    /**
-     * Sets imagesUris
-     * @param string[] $imagesUris imagesUris contain array with elements valid image url
-     * @return $this
-     */
-    public function setImagesUris($imagesUris)
-    {
-        $this->container['imagesUris'] = $imagesUris;
-
-        return $this;
-    }
-
-    /**
      * Gets brandID
      * @return string
      */
@@ -358,6 +331,27 @@ class StoreProductCreateParameters implements ArrayAccess
     public function setMerchantsids($merchantsids)
     {
         $this->container['merchantsids'] = $merchantsids;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefinedObject
+     * @return object
+     */
+    public function getUserDefinedObject()
+    {
+        return $this->container['userDefinedObject'];
+    }
+
+    /**
+     * Sets userDefinedObject
+     * @param object $userDefinedObject a free form user defined object that includes a key - value array. Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
+     * @return $this
+     */
+    public function setUserDefinedObject($userDefinedObject)
+    {
+        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

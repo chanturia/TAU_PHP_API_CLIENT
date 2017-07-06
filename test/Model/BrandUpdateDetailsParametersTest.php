@@ -127,4 +127,12 @@ class BrandUpdateDetailsParametersTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Test attribute "userDefinedObject"
+     */
+    public function testPropertyUserDefinedObject()
+    {
+
+    }
+
 }

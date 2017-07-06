@@ -81,7 +81,7 @@ class Company implements ArrayAccess
         'products' => '\Swagger\Client\Model\Product[]',
         'coupons' => '\Swagger\Client\Model\Coupon[]',
         'description' => 'string',
-        'facebookPageURL' => 'string'
+        'userDefined' => 'object'
     );
 
     public static function swaggerTypes()
@@ -109,7 +109,7 @@ class Company implements ArrayAccess
         'products' => 'products',
         'coupons' => 'coupons',
         'description' => 'description',
-        'facebookPageURL' => 'facebookPageURL'
+        'userDefined' => 'userDefined'
     );
 
     public static function attributeMap()
@@ -137,7 +137,7 @@ class Company implements ArrayAccess
         'products' => 'setProducts',
         'coupons' => 'setCoupons',
         'description' => 'setDescription',
-        'facebookPageURL' => 'setFacebookPageURL'
+        'userDefined' => 'setUserDefined'
     );
 
     public static function setters()
@@ -165,7 +165,7 @@ class Company implements ArrayAccess
         'products' => 'getProducts',
         'coupons' => 'getCoupons',
         'description' => 'getDescription',
-        'facebookPageURL' => 'getFacebookPageURL'
+        'userDefined' => 'getUserDefined'
     );
 
     public static function getters()
@@ -204,7 +204,7 @@ class Company implements ArrayAccess
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
         $this->container['coupons'] = isset($data['coupons']) ? $data['coupons'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['facebookPageURL'] = isset($data['facebookPageURL']) ? $data['facebookPageURL'] : null;
+        $this->container['userDefined'] = isset($data['userDefined']) ? $data['userDefined'] : null;
     }
 
     /**
@@ -552,22 +552,22 @@ class Company implements ArrayAccess
     }
 
     /**
-     * Gets facebookPageURL
-     * @return string
+     * Gets userDefined
+     * @return object
      */
-    public function getFacebookPageURL()
+    public function getUserDefined()
     {
-        return $this->container['facebookPageURL'];
+        return $this->container['userDefined'];
     }
 
     /**
-     * Sets facebookPageURL
-     * @param string $facebookPageURL
+     * Sets userDefined
+     * @param object $userDefined a free form user defined object that includes key - value pairs
      * @return $this
      */
-    public function setFacebookPageURL($facebookPageURL)
+    public function setUserDefined($userDefined)
     {
-        $this->container['facebookPageURL'] = $facebookPageURL;
+        $this->container['userDefined'] = $userDefined;
 
         return $this;
     }

@@ -75,7 +75,7 @@ class CreateCompanyParameters implements ArrayAccess
         'contactPhone' => 'string',
         'companyType' => 'string',
         'description' => 'string',
-        'facebookPageURL' => 'string'
+        'userDefinedObject' => 'object'
     );
 
     public static function swaggerTypes()
@@ -97,7 +97,7 @@ class CreateCompanyParameters implements ArrayAccess
         'contactPhone' => 'contactPhone',
         'companyType' => 'companyType',
         'description' => 'description',
-        'facebookPageURL' => 'facebookPageURL'
+        'userDefinedObject' => 'userDefinedObject'
     );
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class CreateCompanyParameters implements ArrayAccess
         'contactPhone' => 'setContactPhone',
         'companyType' => 'setCompanyType',
         'description' => 'setDescription',
-        'facebookPageURL' => 'setFacebookPageURL'
+        'userDefinedObject' => 'setUserDefinedObject'
     );
 
     public static function setters()
@@ -141,7 +141,7 @@ class CreateCompanyParameters implements ArrayAccess
         'contactPhone' => 'getContactPhone',
         'companyType' => 'getCompanyType',
         'description' => 'getDescription',
-        'facebookPageURL' => 'getFacebookPageURL'
+        'userDefinedObject' => 'getUserDefinedObject'
     );
 
     public static function getters()
@@ -174,7 +174,7 @@ class CreateCompanyParameters implements ArrayAccess
         $this->container['contactPhone'] = isset($data['contactPhone']) ? $data['contactPhone'] : null;
         $this->container['companyType'] = isset($data['companyType']) ? $data['companyType'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['facebookPageURL'] = isset($data['facebookPageURL']) ? $data['facebookPageURL'] : null;
+        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -438,22 +438,22 @@ class CreateCompanyParameters implements ArrayAccess
     }
 
     /**
-     * Gets facebookPageURL
-     * @return string
+     * Gets userDefinedObject
+     * @return object
      */
-    public function getFacebookPageURL()
+    public function getUserDefinedObject()
     {
-        return $this->container['facebookPageURL'];
+        return $this->container['userDefinedObject'];
     }
 
     /**
-     * Sets facebookPageURL
-     * @param string $facebookPageURL Company Facebook Page URL must have valid URL form
+     * Sets userDefinedObject
+     * @param object $userDefinedObject a free form user defined object that includes a key - value array. Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
      * @return $this
      */
-    public function setFacebookPageURL($facebookPageURL)
+    public function setUserDefinedObject($userDefinedObject)
     {
-        $this->container['facebookPageURL'] = $facebookPageURL;
+        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

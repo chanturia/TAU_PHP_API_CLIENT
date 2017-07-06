@@ -69,7 +69,9 @@ class CouponCategory implements ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'description' => 'string',
-        'subcategories' => 'string[]'
+        'subcategories' => 'string[]',
+        'parentID' => 'string',
+        'userDefined' => 'object'
     );
 
     public static function swaggerTypes()
@@ -85,7 +87,9 @@ class CouponCategory implements ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'description' => 'description',
-        'subcategories' => 'subcategories'
+        'subcategories' => 'subcategories',
+        'parentID' => 'parentID',
+        'userDefined' => 'userDefined'
     );
 
     public static function attributeMap()
@@ -101,7 +105,9 @@ class CouponCategory implements ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'description' => 'setDescription',
-        'subcategories' => 'setSubcategories'
+        'subcategories' => 'setSubcategories',
+        'parentID' => 'setParentID',
+        'userDefined' => 'setUserDefined'
     );
 
     public static function setters()
@@ -117,7 +123,9 @@ class CouponCategory implements ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'description' => 'getDescription',
-        'subcategories' => 'getSubcategories'
+        'subcategories' => 'getSubcategories',
+        'parentID' => 'getParentID',
+        'userDefined' => 'getUserDefined'
     );
 
     public static function getters()
@@ -145,6 +153,8 @@ class CouponCategory implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['subcategories'] = isset($data['subcategories']) ? $data['subcategories'] : null;
+        $this->container['parentID'] = isset($data['parentID']) ? $data['parentID'] : null;
+        $this->container['userDefined'] = isset($data['userDefined']) ? $data['userDefined'] : null;
     }
 
     /**
@@ -256,6 +266,48 @@ class CouponCategory implements ArrayAccess
     public function setSubcategories($subcategories)
     {
         $this->container['subcategories'] = $subcategories;
+
+        return $this;
+    }
+
+    /**
+     * Gets parentID
+     * @return string
+     */
+    public function getParentID()
+    {
+        return $this->container['parentID'];
+    }
+
+    /**
+     * Sets parentID
+     * @param string $parentID
+     * @return $this
+     */
+    public function setParentID($parentID)
+    {
+        $this->container['parentID'] = $parentID;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefined
+     * @return object
+     */
+    public function getUserDefined()
+    {
+        return $this->container['userDefined'];
+    }
+
+    /**
+     * Sets userDefined
+     * @param object $userDefined a free form user defined object that includes key - value pairs
+     * @return $this
+     */
+    public function setUserDefined($userDefined)
+    {
+        $this->container['userDefined'] = $userDefined;
 
         return $this;
     }

@@ -215,4 +215,12 @@ class UserTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Test attribute "userDefined"
+     */
+    public function testPropertyUserDefined()
+    {
+
+    }
+
 }

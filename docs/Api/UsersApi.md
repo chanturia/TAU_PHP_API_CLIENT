@@ -12,11 +12,13 @@ Method | HTTP request | Description
 [**editDetails**](UsersApi.md#editDetails) | **PUT** /user/details/{id} | 
 [**generatePasswordResetToken**](UsersApi.md#generatePasswordResetToken) | **POST** /user/generatePasswordResetToken | 
 [**getPurchases**](UsersApi.md#getPurchases) | **GET** /user/{id}/getPurchases | 
+[**getRoleGrants**](UsersApi.md#getRoleGrants) | **GET** /rolegrants/{role} | 
 [**loginUser**](UsersApi.md#loginUser) | **POST** /user/login | 
 [**logoutUser**](UsersApi.md#logoutUser) | **GET** /user/{id}/logout | 
 [**resetPassword**](UsersApi.md#resetPassword) | **POST** /user/resetPassword | 
 [**selectStore**](UsersApi.md#selectStore) | **POST** /user/selectStore | 
 [**submitMobile**](UsersApi.md#submitMobile) | **POST** /user/submitMobile | 
+[**userDelete**](UsersApi.md#userDelete) | **POST** /user/delete | 
 [**userGetDetails**](UsersApi.md#userGetDetails) | **GET** /user/details/{id} | 
 
 
@@ -407,6 +409,54 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getRoleGrants**
+> \Swagger\Client\Model\RolesGrants getRoleGrants($role)
+
+
+
+Returns which roles can be granted by a certain role
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\UsersApi();
+$role = "role_example"; // string | Role that we want to find the possible grant roles.
+
+try {
+    $result = $api_instance->getRoleGrants($role);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->getRoleGrants: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **role** | **string**| Role that we want to find the possible grant roles. |
+
+### Return type
+
+[**\Swagger\Client\Model\RolesGrants**](../Model/RolesGrants.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **loginUser**
 > \Swagger\Client\Model\User loginUser($loginCredentials)
 
@@ -632,6 +682,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\PIN**](../Model/PIN.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **userDelete**
+> \Swagger\Client\Model\Success userDelete($userDeleteId)
+
+
+
+Functionality to delete a User
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\UsersApi();
+$userDeleteId = new \Swagger\Client\Model\UserDeleteId(); // \Swagger\Client\Model\UserDeleteId | Id for the user to be deleted
+
+try {
+    $result = $api_instance->userDelete($userDeleteId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->userDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userDeleteId** | [**\Swagger\Client\Model\UserDeleteId**](../Model/\Swagger\Client\Model\UserDeleteId.md)| Id for the user to be deleted |
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
 
 ### Authorization
 

@@ -71,7 +71,8 @@ class Merchant implements ArrayAccess
         'address' => 'string',
         'logo' => 'string',
         'products' => '\Swagger\Client\Model\Product[]',
-        'coupons' => '\Swagger\Client\Model\Coupon[]'
+        'coupons' => '\Swagger\Client\Model\Coupon[]',
+        'userDefined' => 'object'
     );
 
     public static function swaggerTypes()
@@ -89,7 +90,8 @@ class Merchant implements ArrayAccess
         'address' => 'address',
         'logo' => 'logo',
         'products' => 'products',
-        'coupons' => 'coupons'
+        'coupons' => 'coupons',
+        'userDefined' => 'userDefined'
     );
 
     public static function attributeMap()
@@ -107,7 +109,8 @@ class Merchant implements ArrayAccess
         'address' => 'setAddress',
         'logo' => 'setLogo',
         'products' => 'setProducts',
-        'coupons' => 'setCoupons'
+        'coupons' => 'setCoupons',
+        'userDefined' => 'setUserDefined'
     );
 
     public static function setters()
@@ -125,7 +128,8 @@ class Merchant implements ArrayAccess
         'address' => 'getAddress',
         'logo' => 'getLogo',
         'products' => 'getProducts',
-        'coupons' => 'getCoupons'
+        'coupons' => 'getCoupons',
+        'userDefined' => 'getUserDefined'
     );
 
     public static function getters()
@@ -155,6 +159,7 @@ class Merchant implements ArrayAccess
         $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
         $this->container['coupons'] = isset($data['coupons']) ? $data['coupons'] : null;
+        $this->container['userDefined'] = isset($data['userDefined']) ? $data['userDefined'] : null;
     }
 
     /**
@@ -308,6 +313,27 @@ class Merchant implements ArrayAccess
     public function setCoupons($coupons)
     {
         $this->container['coupons'] = $coupons;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefined
+     * @return object
+     */
+    public function getUserDefined()
+    {
+        return $this->container['userDefined'];
+    }
+
+    /**
+     * Sets userDefined
+     * @param object $userDefined a free form user defined object that includes key - value pairs
+     * @return $this
+     */
+    public function setUserDefined($userDefined)
+    {
+        $this->container['userDefined'] = $userDefined;
 
         return $this;
     }

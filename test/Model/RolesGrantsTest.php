@@ -1,6 +1,6 @@
 <?php
 /**
- * PrimitiveParametersTest
+ * RolesGrantsTest
  *
  * PHP version 5
  *
@@ -42,17 +42,17 @@
 namespace Swagger\Client;
 
 /**
- * PrimitiveParametersTest Class Doc Comment
+ * RolesGrantsTest Class Doc Comment
  *
  * @category    Class */
-// * @description PrimitiveParameters
+// * @description RolesGrants
 /**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PrimitiveParametersTest extends \PHPUnit_Framework_TestCase
+class RolesGrantsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -88,57 +88,17 @@ class PrimitiveParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PrimitiveParameters"
+     * Test "RolesGrants"
      */
-    public function testPrimitiveParameters()
+    public function testRolesGrants()
     {
 
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "rolesGrants"
      */
-    public function testPropertyName()
-    {
-
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-
-    }
-
-    /**
-     * Test attribute "validatorURL"
-     */
-    public function testPropertyValidatorURL()
-    {
-
-    }
-
-    /**
-     * Test attribute "validatorInputs"
-     */
-    public function testPropertyValidatorInputs()
-    {
-
-    }
-
-    /**
-     * Test attribute "validatorOutputs"
-     */
-    public function testPropertyValidatorOutputs()
-    {
-
-    }
-
-    /**
-     * Test attribute "userDefinedObject"
-     */
-    public function testPropertyUserDefinedObject()
+    public function testPropertyRolesGrants()
     {
 
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * CouponSubcategoryTest
+ * UserDeleteIdTest
  *
  * PHP version 5
  *
@@ -42,17 +42,17 @@
 namespace Swagger\Client;
 
 /**
- * CouponSubcategoryTest Class Doc Comment
+ * UserDeleteIdTest Class Doc Comment
  *
  * @category    Class */
-// * @description CouponSubcategory
+// * @description UserDeleteId
 /**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CouponSubcategoryTest extends \PHPUnit_Framework_TestCase
+class UserDeleteIdTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -88,9 +88,9 @@ class CouponSubcategoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CouponSubcategory"
+     * Test "UserDeleteId"
      */
-    public function testCouponSubcategory()
+    public function testUserDeleteId()
     {
 
     }
@@ -99,22 +99,6 @@ class CouponSubcategoryTest extends \PHPUnit_Framework_TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
     {
 
     }

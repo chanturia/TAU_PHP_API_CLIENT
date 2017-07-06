@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **facebookImageURL** | **string** | Facebook Image URL for User that was created with facebook id | [optional] 
 **googleID** | **string** | Google ID for User to be created with his google id | [optional] 
 **googleImgURL** | **string** | Google Image URL for User that was created with Google id | [optional] 
+**userDefinedObject** | **object** | a free form user defined object that includes a key - value array.Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

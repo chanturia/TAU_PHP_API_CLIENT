@@ -69,7 +69,8 @@ class CreateStoreParameters implements ArrayAccess
         'userID' => 'string',
         'name' => 'string',
         'kind' => 'string',
-        'address' => 'string'
+        'address' => 'string',
+        'userDefinedObject' => 'object'
     );
 
     public static function swaggerTypes()
@@ -85,7 +86,8 @@ class CreateStoreParameters implements ArrayAccess
         'userID' => 'userID',
         'name' => 'name',
         'kind' => 'kind',
-        'address' => 'address'
+        'address' => 'address',
+        'userDefinedObject' => 'userDefinedObject'
     );
 
     public static function attributeMap()
@@ -101,7 +103,8 @@ class CreateStoreParameters implements ArrayAccess
         'userID' => 'setUserID',
         'name' => 'setName',
         'kind' => 'setKind',
-        'address' => 'setAddress'
+        'address' => 'setAddress',
+        'userDefinedObject' => 'setUserDefinedObject'
     );
 
     public static function setters()
@@ -117,7 +120,8 @@ class CreateStoreParameters implements ArrayAccess
         'userID' => 'getUserID',
         'name' => 'getName',
         'kind' => 'getKind',
-        'address' => 'getAddress'
+        'address' => 'getAddress',
+        'userDefinedObject' => 'getUserDefinedObject'
     );
 
     public static function getters()
@@ -145,6 +149,7 @@ class CreateStoreParameters implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['kind'] = isset($data['kind']) ? $data['kind'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -274,6 +279,27 @@ class CreateStoreParameters implements ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefinedObject
+     * @return object
+     */
+    public function getUserDefinedObject()
+    {
+        return $this->container['userDefinedObject'];
+    }
+
+    /**
+     * Sets userDefinedObject
+     * @param object $userDefinedObject a free form user defined object that includes a key - value array.Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
+     * @return $this
+     */
+    public function setUserDefinedObject($userDefinedObject)
+    {
+        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

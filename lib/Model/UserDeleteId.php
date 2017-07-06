@@ -1,6 +1,6 @@
 <?php
 /**
- * Userdetails
+ * UserDeleteId
  *
  * PHP version 5
  *
@@ -44,7 +44,7 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * Userdetails Class Doc Comment
+ * UserDeleteId Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,25 +53,20 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Userdetails implements ArrayAccess
+class UserDeleteId implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'userdetails';
+    protected static $swaggerModelName = 'userDeleteId';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'name' => 'string',
-        'lastName' => 'string',
-        'email' => 'string',
-        'dateOfBirth' => '\DateTime',
-        'gender' => 'string',
-        'userDefinedObject' => 'object'
+        'id' => 'string'
     );
 
     public static function swaggerTypes()
@@ -84,12 +79,7 @@ class Userdetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'name' => 'name',
-        'lastName' => 'lastName',
-        'email' => 'email',
-        'dateOfBirth' => 'dateOfBirth',
-        'gender' => 'gender',
-        'userDefinedObject' => 'userDefinedObject'
+        'id' => 'id'
     );
 
     public static function attributeMap()
@@ -102,12 +92,7 @@ class Userdetails implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'name' => 'setName',
-        'lastName' => 'setLastName',
-        'email' => 'setEmail',
-        'dateOfBirth' => 'setDateOfBirth',
-        'gender' => 'setGender',
-        'userDefinedObject' => 'setUserDefinedObject'
+        'id' => 'setId'
     );
 
     public static function setters()
@@ -120,12 +105,7 @@ class Userdetails implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'name' => 'getName',
-        'lastName' => 'getLastName',
-        'email' => 'getEmail',
-        'dateOfBirth' => 'getDateOfBirth',
-        'gender' => 'getGender',
-        'userDefinedObject' => 'getUserDefinedObject'
+        'id' => 'getId'
     );
 
     public static function getters()
@@ -149,12 +129,7 @@ class Userdetails implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
-        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -165,6 +140,9 @@ class Userdetails implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = array();
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -176,132 +154,30 @@ class Userdetails implements ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['id'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets name
+     * Gets id
      * @return string
      */
-    public function getName()
+    public function getId()
     {
-        return $this->container['name'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets name
-     * @param string $name User first name must be between 2 and 485 characters and can contain only letters, digits and dashes.
+     * Sets id
+     * @param string $id ID for the User
      * @return $this
      */
-    public function setName($name)
+    public function setId($id)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastName
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     * @param string $lastName User last name must be between 2 and 485 characters and can contain only letters.
-     * @return $this
-     */
-    public function setLastName($lastName)
-    {
-        $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     * @param string $email User email address
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets dateOfBirth
-     * @return \DateTime
-     */
-    public function getDateOfBirth()
-    {
-        return $this->container['dateOfBirth'];
-    }
-
-    /**
-     * Sets dateOfBirth
-     * @param \DateTime $dateOfBirth User date of birth must be a string representing an RFC2822 or ISO 8601 date
-     * @return $this
-     */
-    public function setDateOfBirth($dateOfBirth)
-    {
-        $this->container['dateOfBirth'] = $dateOfBirth;
-
-        return $this;
-    }
-
-    /**
-     * Gets gender
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->container['gender'];
-    }
-
-    /**
-     * Sets gender
-     * @param string $gender User gender with possible values male/female/other
-     * @return $this
-     */
-    public function setGender($gender)
-    {
-        $this->container['gender'] = $gender;
-
-        return $this;
-    }
-
-    /**
-     * Gets userDefinedObject
-     * @return object
-     */
-    public function getUserDefinedObject()
-    {
-        return $this->container['userDefinedObject'];
-    }
-
-    /**
-     * Sets userDefinedObject
-     * @param object $userDefinedObject a free form user defined object that includes a key - value array.Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
-     * @return $this
-     */
-    public function setUserDefinedObject($userDefinedObject)
-    {
-        $this->container['userDefinedObject'] = $userDefinedObject;
+        $this->container['id'] = $id;
 
         return $this;
     }

@@ -112,9 +112,25 @@ class CreateCouponCategoryParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "parentID"
+     */
+    public function testPropertyParentID()
+    {
+
+    }
+
+    /**
      * Test attribute "subcategories"
      */
     public function testPropertySubcategories()
+    {
+
+    }
+
+    /**
+     * Test attribute "userDefinedObject"
+     */
+    public function testPropertyUserDefinedObject()
     {
 
     }

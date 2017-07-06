@@ -75,7 +75,8 @@ class CreateCredentials implements ArrayAccess
         'fbID' => 'string',
         'facebookImageURL' => 'string',
         'googleID' => 'string',
-        'googleImgURL' => 'string'
+        'googleImgURL' => 'string',
+        'userDefinedObject' => 'object'
     );
 
     public static function swaggerTypes()
@@ -97,7 +98,8 @@ class CreateCredentials implements ArrayAccess
         'fbID' => 'fbID',
         'facebookImageURL' => 'facebookImageURL',
         'googleID' => 'googleID',
-        'googleImgURL' => 'googleImgURL'
+        'googleImgURL' => 'googleImgURL',
+        'userDefinedObject' => 'userDefinedObject'
     );
 
     public static function attributeMap()
@@ -119,7 +121,8 @@ class CreateCredentials implements ArrayAccess
         'fbID' => 'setFbID',
         'facebookImageURL' => 'setFacebookImageURL',
         'googleID' => 'setGoogleID',
-        'googleImgURL' => 'setGoogleImgURL'
+        'googleImgURL' => 'setGoogleImgURL',
+        'userDefinedObject' => 'setUserDefinedObject'
     );
 
     public static function setters()
@@ -141,7 +144,8 @@ class CreateCredentials implements ArrayAccess
         'fbID' => 'getFbID',
         'facebookImageURL' => 'getFacebookImageURL',
         'googleID' => 'getGoogleID',
-        'googleImgURL' => 'getGoogleImgURL'
+        'googleImgURL' => 'getGoogleImgURL',
+        'userDefinedObject' => 'getUserDefinedObject'
     );
 
     public static function getters()
@@ -175,6 +179,7 @@ class CreateCredentials implements ArrayAccess
         $this->container['facebookImageURL'] = isset($data['facebookImageURL']) ? $data['facebookImageURL'] : null;
         $this->container['googleID'] = isset($data['googleID']) ? $data['googleID'] : null;
         $this->container['googleImgURL'] = isset($data['googleImgURL']) ? $data['googleImgURL'] : null;
+        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -430,6 +435,27 @@ class CreateCredentials implements ArrayAccess
     public function setGoogleImgURL($googleImgURL)
     {
         $this->container['googleImgURL'] = $googleImgURL;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefinedObject
+     * @return object
+     */
+    public function getUserDefinedObject()
+    {
+        return $this->container['userDefinedObject'];
+    }
+
+    /**
+     * Sets userDefinedObject
+     * @param object $userDefinedObject a free form user defined object that includes a key - value array.Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
+     * @return $this
+     */
+    public function setUserDefinedObject($userDefinedObject)
+    {
+        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

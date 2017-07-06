@@ -70,7 +70,8 @@ class CompanyBrandCreateParameters implements ArrayAccess
         'name' => 'string',
         'description' => 'string',
         'mainImageURL' => 'string',
-        'logoURL' => 'string'
+        'logoURL' => 'string',
+        'userDefinedObject' => 'object'
     );
 
     public static function swaggerTypes()
@@ -87,7 +88,8 @@ class CompanyBrandCreateParameters implements ArrayAccess
         'name' => 'name',
         'description' => 'description',
         'mainImageURL' => 'mainImageURL',
-        'logoURL' => 'logoURL'
+        'logoURL' => 'logoURL',
+        'userDefinedObject' => 'userDefinedObject'
     );
 
     public static function attributeMap()
@@ -104,7 +106,8 @@ class CompanyBrandCreateParameters implements ArrayAccess
         'name' => 'setName',
         'description' => 'setDescription',
         'mainImageURL' => 'setMainImageURL',
-        'logoURL' => 'setLogoURL'
+        'logoURL' => 'setLogoURL',
+        'userDefinedObject' => 'setUserDefinedObject'
     );
 
     public static function setters()
@@ -121,7 +124,8 @@ class CompanyBrandCreateParameters implements ArrayAccess
         'name' => 'getName',
         'description' => 'getDescription',
         'mainImageURL' => 'getMainImageURL',
-        'logoURL' => 'getLogoURL'
+        'logoURL' => 'getLogoURL',
+        'userDefinedObject' => 'getUserDefinedObject'
     );
 
     public static function getters()
@@ -150,6 +154,7 @@ class CompanyBrandCreateParameters implements ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['mainImageURL'] = isset($data['mainImageURL']) ? $data['mainImageURL'] : null;
         $this->container['logoURL'] = isset($data['logoURL']) ? $data['logoURL'] : null;
+        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -306,6 +311,27 @@ class CompanyBrandCreateParameters implements ArrayAccess
     public function setLogoURL($logoURL)
     {
         $this->container['logoURL'] = $logoURL;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefinedObject
+     * @return object
+     */
+    public function getUserDefinedObject()
+    {
+        return $this->container['userDefinedObject'];
+    }
+
+    /**
+     * Sets userDefinedObject
+     * @param object $userDefinedObject a free form user defined object that includes a key - value array. Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
+     * @return $this
+     */
+    public function setUserDefinedObject($userDefinedObject)
+    {
+        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

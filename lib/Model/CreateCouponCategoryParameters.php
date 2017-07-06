@@ -68,7 +68,9 @@ class CreateCouponCategoryParameters implements ArrayAccess
     protected static $swaggerTypes = array(
         'name' => 'string',
         'description' => 'string',
-        'subcategories' => 'string[]'
+        'parentID' => 'string',
+        'subcategories' => 'string[]',
+        'userDefinedObject' => 'object'
     );
 
     public static function swaggerTypes()
@@ -83,7 +85,9 @@ class CreateCouponCategoryParameters implements ArrayAccess
     protected static $attributeMap = array(
         'name' => 'name',
         'description' => 'description',
-        'subcategories' => 'subcategories'
+        'parentID' => 'parentID',
+        'subcategories' => 'subcategories',
+        'userDefinedObject' => 'userDefinedObject'
     );
 
     public static function attributeMap()
@@ -98,7 +102,9 @@ class CreateCouponCategoryParameters implements ArrayAccess
     protected static $setters = array(
         'name' => 'setName',
         'description' => 'setDescription',
-        'subcategories' => 'setSubcategories'
+        'parentID' => 'setParentID',
+        'subcategories' => 'setSubcategories',
+        'userDefinedObject' => 'setUserDefinedObject'
     );
 
     public static function setters()
@@ -113,7 +119,9 @@ class CreateCouponCategoryParameters implements ArrayAccess
     protected static $getters = array(
         'name' => 'getName',
         'description' => 'getDescription',
-        'subcategories' => 'getSubcategories'
+        'parentID' => 'getParentID',
+        'subcategories' => 'getSubcategories',
+        'userDefinedObject' => 'getUserDefinedObject'
     );
 
     public static function getters()
@@ -139,7 +147,9 @@ class CreateCouponCategoryParameters implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['parentID'] = isset($data['parentID']) ? $data['parentID'] : null;
         $this->container['subcategories'] = isset($data['subcategories']) ? $data['subcategories'] : null;
+        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -220,6 +230,27 @@ class CreateCouponCategoryParameters implements ArrayAccess
     }
 
     /**
+     * Gets parentID
+     * @return string
+     */
+    public function getParentID()
+    {
+        return $this->container['parentID'];
+    }
+
+    /**
+     * Sets parentID
+     * @param string $parentID optional Coupon category ID that represents parent category
+     * @return $this
+     */
+    public function setParentID($parentID)
+    {
+        $this->container['parentID'] = $parentID;
+
+        return $this;
+    }
+
+    /**
      * Gets subcategories
      * @return string[]
      */
@@ -236,6 +267,27 @@ class CreateCouponCategoryParameters implements ArrayAccess
     public function setSubcategories($subcategories)
     {
         $this->container['subcategories'] = $subcategories;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefinedObject
+     * @return object
+     */
+    public function getUserDefinedObject()
+    {
+        return $this->container['userDefinedObject'];
+    }
+
+    /**
+     * Sets userDefinedObject
+     * @param object $userDefinedObject a free form user defined object that includes a key - value array. Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
+     * @return $this
+     */
+    public function setUserDefinedObject($userDefinedObject)
+    {
+        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

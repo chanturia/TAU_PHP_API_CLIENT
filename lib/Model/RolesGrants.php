@@ -1,6 +1,6 @@
 <?php
 /**
- * CouponSubcategory
+ * RolesGrants
  *
  * PHP version 5
  *
@@ -44,7 +44,7 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * CouponSubcategory Class Doc Comment
+ * RolesGrants Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,22 +53,20 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CouponSubcategory implements ArrayAccess
+class RolesGrants implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CouponSubcategory';
+    protected static $swaggerModelName = 'RolesGrants';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'id' => 'string',
-        'name' => 'string',
-        'description' => 'string'
+        'rolesGrants' => 'string[]'
     );
 
     public static function swaggerTypes()
@@ -81,9 +79,7 @@ class CouponSubcategory implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'id' => 'id',
-        'name' => 'name',
-        'description' => 'description'
+        'rolesGrants' => 'rolesGrants'
     );
 
     public static function attributeMap()
@@ -96,9 +92,7 @@ class CouponSubcategory implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'id' => 'setId',
-        'name' => 'setName',
-        'description' => 'setDescription'
+        'rolesGrants' => 'setRolesGrants'
     );
 
     public static function setters()
@@ -111,9 +105,7 @@ class CouponSubcategory implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'id' => 'getId',
-        'name' => 'getName',
-        'description' => 'getDescription'
+        'rolesGrants' => 'getRolesGrants'
     );
 
     public static function getters()
@@ -137,9 +129,7 @@ class CouponSubcategory implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['rolesGrants'] = isset($data['rolesGrants']) ? $data['rolesGrants'] : null;
     }
 
     /**
@@ -150,8 +140,8 @@ class CouponSubcategory implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = array();
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
+        if ($this->container['rolesGrants'] === null) {
+            $invalid_properties[] = "'rolesGrants' can't be null";
         }
         return $invalid_properties;
     }
@@ -164,7 +154,7 @@ class CouponSubcategory implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['id'] === null) {
+        if ($this->container['rolesGrants'] === null) {
             return false;
         }
         return true;
@@ -172,64 +162,22 @@ class CouponSubcategory implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
+     * Gets rolesGrants
+     * @return string[]
      */
-    public function getId()
+    public function getRolesGrants()
     {
-        return $this->container['id'];
+        return $this->container['rolesGrants'];
     }
 
     /**
-     * Sets id
-     * @param string $id
+     * Sets rolesGrants
+     * @param string[] $rolesGrants
      * @return $this
      */
-    public function setId($id)
+    public function setRolesGrants($rolesGrants)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     * @param string $description
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
+        $this->container['rolesGrants'] = $rolesGrants;
 
         return $this;
     }

@@ -845,6 +845,99 @@ class UsersApi
     }
 
     /**
+     * Operation getRoleGrants
+     *
+     * 
+     *
+     * @param string $role Role that we want to find the possible grant roles. (required)
+     * @return \Swagger\Client\Model\RolesGrants
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getRoleGrants($role)
+    {
+        list($response) = $this->getRoleGrantsWithHttpInfo($role);
+        return $response;
+    }
+
+    /**
+     * Operation getRoleGrantsWithHttpInfo
+     *
+     * 
+     *
+     * @param string $role Role that we want to find the possible grant roles. (required)
+     * @return Array of \Swagger\Client\Model\RolesGrants, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getRoleGrantsWithHttpInfo($role)
+    {
+        // verify the required parameter 'role' is set
+        if ($role === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $role when calling getRoleGrants');
+        }
+        // parse inputs
+        $resourcePath = "/rolegrants/{role}";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+
+        // path params
+        if ($role !== null) {
+            $resourcePath = str_replace(
+                "{" . "role" . "}",
+                $this->apiClient->getSerializer()->toPathValue($role),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\RolesGrants',
+                '/rolegrants/{role}'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RolesGrants', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\RolesGrants', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation loginUser
      *
      * 
@@ -1281,6 +1374,96 @@ class UsersApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PIN', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation userDelete
+     *
+     * 
+     *
+     * @param \Swagger\Client\Model\UserDeleteId $userDeleteId Id for the user to be deleted (required)
+     * @return \Swagger\Client\Model\Success
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function userDelete($userDeleteId)
+    {
+        list($response) = $this->userDeleteWithHttpInfo($userDeleteId);
+        return $response;
+    }
+
+    /**
+     * Operation userDeleteWithHttpInfo
+     *
+     * 
+     *
+     * @param \Swagger\Client\Model\UserDeleteId $userDeleteId Id for the user to be deleted (required)
+     * @return Array of \Swagger\Client\Model\Success, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function userDeleteWithHttpInfo($userDeleteId)
+    {
+        // verify the required parameter 'userDeleteId' is set
+        if ($userDeleteId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $userDeleteId when calling userDelete');
+        }
+        // parse inputs
+        $resourcePath = "/user/delete";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($userDeleteId)) {
+            $_tempBody = $userDeleteId;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Success',
+                '/user/delete'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Success', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Success', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:

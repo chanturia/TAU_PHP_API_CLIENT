@@ -120,14 +120,6 @@ class UpdateProductParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "imagesUris"
-     */
-    public function testPropertyImagesUris()
-    {
-
-    }
-
-    /**
      * Test attribute "brandID"
      */
     public function testPropertyBrandID()
@@ -139,6 +131,14 @@ class UpdateProductParametersTest extends \PHPUnit_Framework_TestCase
      * Test attribute "merchantsids"
      */
     public function testPropertyMerchantsids()
+    {
+
+    }
+
+    /**
+     * Test attribute "userDefinedObject"
+     */
+    public function testPropertyUserDefinedObject()
     {
 
     }

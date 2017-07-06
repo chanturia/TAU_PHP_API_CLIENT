@@ -152,14 +152,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "imagesUris"
-     */
-    public function testPropertyImagesUris()
-    {
-
-    }
-
-    /**
      * Test attribute "barcodes"
      */
     public function testPropertyBarcodes()
@@ -171,6 +163,14 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      * Test attribute "coupons"
      */
     public function testPropertyCoupons()
+    {
+
+    }
+
+    /**
+     * Test attribute "userDefined"
+     */
+    public function testPropertyUserDefined()
     {
 
     }

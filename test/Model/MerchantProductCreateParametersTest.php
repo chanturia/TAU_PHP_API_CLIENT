@@ -128,17 +128,17 @@ class MerchantProductCreateParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "imagesUris"
+     * Test attribute "brandID"
      */
-    public function testPropertyImagesUris()
+    public function testPropertyBrandID()
     {
 
     }
 
     /**
-     * Test attribute "brandID"
+     * Test attribute "userDefinedObject"
      */
-    public function testPropertyBrandID()
+    public function testPropertyUserDefinedObject()
     {
 
     }

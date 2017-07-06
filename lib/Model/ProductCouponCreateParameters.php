@@ -74,7 +74,8 @@ class ProductCouponCreateParameters implements ArrayAccess
         'categories' => 'string[]',
         'subcategories' => 'string[]',
         'products' => 'string[]',
-        'storeids' => 'string[]'
+        'storeids' => 'string[]',
+        'userDefinedObject' => 'object'
     );
 
     public static function swaggerTypes()
@@ -95,7 +96,8 @@ class ProductCouponCreateParameters implements ArrayAccess
         'categories' => 'categories',
         'subcategories' => 'subcategories',
         'products' => 'products',
-        'storeids' => 'storeids'
+        'storeids' => 'storeids',
+        'userDefinedObject' => 'userDefinedObject'
     );
 
     public static function attributeMap()
@@ -116,7 +118,8 @@ class ProductCouponCreateParameters implements ArrayAccess
         'categories' => 'setCategories',
         'subcategories' => 'setSubcategories',
         'products' => 'setProducts',
-        'storeids' => 'setStoreids'
+        'storeids' => 'setStoreids',
+        'userDefinedObject' => 'setUserDefinedObject'
     );
 
     public static function setters()
@@ -137,7 +140,8 @@ class ProductCouponCreateParameters implements ArrayAccess
         'categories' => 'getCategories',
         'subcategories' => 'getSubcategories',
         'products' => 'getProducts',
-        'storeids' => 'getStoreids'
+        'storeids' => 'getStoreids',
+        'userDefinedObject' => 'getUserDefinedObject'
     );
 
     public static function getters()
@@ -170,6 +174,7 @@ class ProductCouponCreateParameters implements ArrayAccess
         $this->container['subcategories'] = isset($data['subcategories']) ? $data['subcategories'] : null;
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
         $this->container['storeids'] = isset($data['storeids']) ? $data['storeids'] : null;
+        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -428,6 +433,27 @@ class ProductCouponCreateParameters implements ArrayAccess
     public function setStoreids($storeids)
     {
         $this->container['storeids'] = $storeids;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefinedObject
+     * @return object
+     */
+    public function getUserDefinedObject()
+    {
+        return $this->container['userDefinedObject'];
+    }
+
+    /**
+     * Sets userDefinedObject
+     * @param object $userDefinedObject a free form user defined object that includes a key - value array. Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
+     * @return $this
+     */
+    public function setUserDefinedObject($userDefinedObject)
+    {
+        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

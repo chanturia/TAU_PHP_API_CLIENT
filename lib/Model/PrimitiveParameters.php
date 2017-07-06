@@ -70,7 +70,8 @@ class PrimitiveParameters implements ArrayAccess
         'description' => 'string',
         'validatorURL' => 'string',
         'validatorInputs' => 'string[]',
-        'validatorOutputs' => 'string[]'
+        'validatorOutputs' => 'string[]',
+        'userDefinedObject' => 'object'
     );
 
     public static function swaggerTypes()
@@ -87,7 +88,8 @@ class PrimitiveParameters implements ArrayAccess
         'description' => 'description',
         'validatorURL' => 'validatorURL',
         'validatorInputs' => 'validatorInputs',
-        'validatorOutputs' => 'validatorOutputs'
+        'validatorOutputs' => 'validatorOutputs',
+        'userDefinedObject' => 'userDefinedObject'
     );
 
     public static function attributeMap()
@@ -104,7 +106,8 @@ class PrimitiveParameters implements ArrayAccess
         'description' => 'setDescription',
         'validatorURL' => 'setValidatorURL',
         'validatorInputs' => 'setValidatorInputs',
-        'validatorOutputs' => 'setValidatorOutputs'
+        'validatorOutputs' => 'setValidatorOutputs',
+        'userDefinedObject' => 'setUserDefinedObject'
     );
 
     public static function setters()
@@ -121,7 +124,8 @@ class PrimitiveParameters implements ArrayAccess
         'description' => 'getDescription',
         'validatorURL' => 'getValidatorURL',
         'validatorInputs' => 'getValidatorInputs',
-        'validatorOutputs' => 'getValidatorOutputs'
+        'validatorOutputs' => 'getValidatorOutputs',
+        'userDefinedObject' => 'getUserDefinedObject'
     );
 
     public static function getters()
@@ -150,6 +154,7 @@ class PrimitiveParameters implements ArrayAccess
         $this->container['validatorURL'] = isset($data['validatorURL']) ? $data['validatorURL'] : null;
         $this->container['validatorInputs'] = isset($data['validatorInputs']) ? $data['validatorInputs'] : null;
         $this->container['validatorOutputs'] = isset($data['validatorOutputs']) ? $data['validatorOutputs'] : null;
+        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -306,6 +311,27 @@ class PrimitiveParameters implements ArrayAccess
     public function setValidatorOutputs($validatorOutputs)
     {
         $this->container['validatorOutputs'] = $validatorOutputs;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefinedObject
+     * @return object
+     */
+    public function getUserDefinedObject()
+    {
+        return $this->container['userDefinedObject'];
+    }
+
+    /**
+     * Sets userDefinedObject
+     * @param object $userDefinedObject a free form user defined object that includes a key - value array. Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
+     * @return $this
+     */
+    public function setUserDefinedObject($userDefinedObject)
+    {
+        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

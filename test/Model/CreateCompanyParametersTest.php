@@ -168,9 +168,9 @@ class CreateCompanyParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "facebookPageURL"
+     * Test attribute "userDefinedObject"
      */
-    public function testPropertyFacebookPageURL()
+    public function testPropertyUserDefinedObject()
     {
 
     }

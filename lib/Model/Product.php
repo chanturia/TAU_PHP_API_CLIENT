@@ -73,9 +73,9 @@ class Product implements ArrayAccess
         'productype' => 'string',
         'brandid' => 'string',
         'merchantsids' => 'string[]',
-        'imagesUris' => 'string[]',
         'barcodes' => 'string[]',
-        'coupons' => '\Swagger\Client\Model\Coupon[]'
+        'coupons' => '\Swagger\Client\Model\Coupon[]',
+        'userDefined' => 'object'
     );
 
     public static function swaggerTypes()
@@ -95,9 +95,9 @@ class Product implements ArrayAccess
         'productype' => 'productype',
         'brandid' => 'brandid',
         'merchantsids' => 'merchantsids',
-        'imagesUris' => 'imagesUris',
         'barcodes' => 'barcodes',
-        'coupons' => 'coupons'
+        'coupons' => 'coupons',
+        'userDefined' => 'userDefined'
     );
 
     public static function attributeMap()
@@ -117,9 +117,9 @@ class Product implements ArrayAccess
         'productype' => 'setProductype',
         'brandid' => 'setBrandid',
         'merchantsids' => 'setMerchantsids',
-        'imagesUris' => 'setImagesUris',
         'barcodes' => 'setBarcodes',
-        'coupons' => 'setCoupons'
+        'coupons' => 'setCoupons',
+        'userDefined' => 'setUserDefined'
     );
 
     public static function setters()
@@ -139,9 +139,9 @@ class Product implements ArrayAccess
         'productype' => 'getProductype',
         'brandid' => 'getBrandid',
         'merchantsids' => 'getMerchantsids',
-        'imagesUris' => 'getImagesUris',
         'barcodes' => 'getBarcodes',
-        'coupons' => 'getCoupons'
+        'coupons' => 'getCoupons',
+        'userDefined' => 'getUserDefined'
     );
 
     public static function getters()
@@ -172,9 +172,9 @@ class Product implements ArrayAccess
         $this->container['productype'] = isset($data['productype']) ? $data['productype'] : null;
         $this->container['brandid'] = isset($data['brandid']) ? $data['brandid'] : null;
         $this->container['merchantsids'] = isset($data['merchantsids']) ? $data['merchantsids'] : null;
-        $this->container['imagesUris'] = isset($data['imagesUris']) ? $data['imagesUris'] : null;
         $this->container['barcodes'] = isset($data['barcodes']) ? $data['barcodes'] : null;
         $this->container['coupons'] = isset($data['coupons']) ? $data['coupons'] : null;
+        $this->container['userDefined'] = isset($data['userDefined']) ? $data['userDefined'] : null;
     }
 
     /**
@@ -354,27 +354,6 @@ class Product implements ArrayAccess
     }
 
     /**
-     * Gets imagesUris
-     * @return string[]
-     */
-    public function getImagesUris()
-    {
-        return $this->container['imagesUris'];
-    }
-
-    /**
-     * Sets imagesUris
-     * @param string[] $imagesUris
-     * @return $this
-     */
-    public function setImagesUris($imagesUris)
-    {
-        $this->container['imagesUris'] = $imagesUris;
-
-        return $this;
-    }
-
-    /**
      * Gets barcodes
      * @return string[]
      */
@@ -412,6 +391,27 @@ class Product implements ArrayAccess
     public function setCoupons($coupons)
     {
         $this->container['coupons'] = $coupons;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefined
+     * @return object
+     */
+    public function getUserDefined()
+    {
+        return $this->container['userDefined'];
+    }
+
+    /**
+     * Sets userDefined
+     * @param object $userDefined a free form user defined object that includes key - value pairs
+     * @return $this
+     */
+    public function setUserDefined($userDefined)
+    {
+        $this->container['userDefined'] = $userDefined;
 
         return $this;
     }

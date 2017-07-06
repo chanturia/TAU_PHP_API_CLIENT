@@ -178,6 +178,17 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getRoleGrants
+     *
+     * .
+     *
+     */
+    public function testGetRoleGrants()
+    {
+
+    }
+
+    /**
      * Test case for loginUser
      *
      * .
@@ -228,6 +239,17 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSubmitMobile()
+    {
+
+    }
+
+    /**
+     * Test case for userDelete
+     *
+     * .
+     *
+     */
+    public function testUserDelete()
     {
 
     }

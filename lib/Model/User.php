@@ -80,7 +80,8 @@ class User implements ArrayAccess
         'facebookImageURL' => 'string',
         'googleID' => 'string',
         'googleImgURL' => 'string',
-        'roles' => '\Swagger\Client\Model\Role[]'
+        'roles' => '\Swagger\Client\Model\Role[]',
+        'userDefined' => 'object'
     );
 
     public static function swaggerTypes()
@@ -107,7 +108,8 @@ class User implements ArrayAccess
         'facebookImageURL' => 'facebookImageURL',
         'googleID' => 'googleID',
         'googleImgURL' => 'googleImgURL',
-        'roles' => 'roles'
+        'roles' => 'roles',
+        'userDefined' => 'userDefined'
     );
 
     public static function attributeMap()
@@ -134,7 +136,8 @@ class User implements ArrayAccess
         'facebookImageURL' => 'setFacebookImageURL',
         'googleID' => 'setGoogleID',
         'googleImgURL' => 'setGoogleImgURL',
-        'roles' => 'setRoles'
+        'roles' => 'setRoles',
+        'userDefined' => 'setUserDefined'
     );
 
     public static function setters()
@@ -161,7 +164,8 @@ class User implements ArrayAccess
         'facebookImageURL' => 'getFacebookImageURL',
         'googleID' => 'getGoogleID',
         'googleImgURL' => 'getGoogleImgURL',
-        'roles' => 'getRoles'
+        'roles' => 'getRoles',
+        'userDefined' => 'getUserDefined'
     );
 
     public static function getters()
@@ -200,6 +204,7 @@ class User implements ArrayAccess
         $this->container['googleID'] = isset($data['googleID']) ? $data['googleID'] : null;
         $this->container['googleImgURL'] = isset($data['googleImgURL']) ? $data['googleImgURL'] : null;
         $this->container['roles'] = isset($data['roles']) ? $data['roles'] : null;
+        $this->container['userDefined'] = isset($data['userDefined']) ? $data['userDefined'] : null;
     }
 
     /**
@@ -560,6 +565,27 @@ class User implements ArrayAccess
     public function setRoles($roles)
     {
         $this->container['roles'] = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefined
+     * @return object
+     */
+    public function getUserDefined()
+    {
+        return $this->container['userDefined'];
+    }
+
+    /**
+     * Sets userDefined
+     * @param object $userDefined a free form user defined object that includes key - value pairs
+     * @return $this
+     */
+    public function setUserDefined($userDefined)
+    {
+        $this->container['userDefined'] = $userDefined;
 
         return $this;
     }

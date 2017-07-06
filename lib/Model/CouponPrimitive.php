@@ -71,7 +71,8 @@ class CouponPrimitive implements ArrayAccess
         'description' => 'string',
         'validatorURL' => 'string',
         'validatorInputs' => 'string[]',
-        'validatorOutputs' => 'string[]'
+        'validatorOutputs' => 'string[]',
+        'userDefined' => 'object'
     );
 
     public static function swaggerTypes()
@@ -89,7 +90,8 @@ class CouponPrimitive implements ArrayAccess
         'description' => 'description',
         'validatorURL' => 'validatorURL',
         'validatorInputs' => 'validatorInputs',
-        'validatorOutputs' => 'validatorOutputs'
+        'validatorOutputs' => 'validatorOutputs',
+        'userDefined' => 'userDefined'
     );
 
     public static function attributeMap()
@@ -107,7 +109,8 @@ class CouponPrimitive implements ArrayAccess
         'description' => 'setDescription',
         'validatorURL' => 'setValidatorURL',
         'validatorInputs' => 'setValidatorInputs',
-        'validatorOutputs' => 'setValidatorOutputs'
+        'validatorOutputs' => 'setValidatorOutputs',
+        'userDefined' => 'setUserDefined'
     );
 
     public static function setters()
@@ -125,7 +128,8 @@ class CouponPrimitive implements ArrayAccess
         'description' => 'getDescription',
         'validatorURL' => 'getValidatorURL',
         'validatorInputs' => 'getValidatorInputs',
-        'validatorOutputs' => 'getValidatorOutputs'
+        'validatorOutputs' => 'getValidatorOutputs',
+        'userDefined' => 'getUserDefined'
     );
 
     public static function getters()
@@ -155,6 +159,7 @@ class CouponPrimitive implements ArrayAccess
         $this->container['validatorURL'] = isset($data['validatorURL']) ? $data['validatorURL'] : null;
         $this->container['validatorInputs'] = isset($data['validatorInputs']) ? $data['validatorInputs'] : null;
         $this->container['validatorOutputs'] = isset($data['validatorOutputs']) ? $data['validatorOutputs'] : null;
+        $this->container['userDefined'] = isset($data['userDefined']) ? $data['userDefined'] : null;
     }
 
     /**
@@ -308,6 +313,27 @@ class CouponPrimitive implements ArrayAccess
     public function setValidatorOutputs($validatorOutputs)
     {
         $this->container['validatorOutputs'] = $validatorOutputs;
+
+        return $this;
+    }
+
+    /**
+     * Gets userDefined
+     * @return object
+     */
+    public function getUserDefined()
+    {
+        return $this->container['userDefined'];
+    }
+
+    /**
+     * Sets userDefined
+     * @param object $userDefined a free form user defined object that includes key - value pairs
+     * @return $this
+     */
+    public function setUserDefined($userDefined)
+    {
+        $this->container['userDefined'] = $userDefined;
 
         return $this;
     }
