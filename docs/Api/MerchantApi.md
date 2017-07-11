@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**createMerchant**](MerchantApi.md#createMerchant) | **POST** /merchant/create | 
 [**createProductMerchant**](MerchantApi.md#createProductMerchant) | **POST** /merchant/{id}/product/create | 
 [**getMerchantById**](MerchantApi.md#getMerchantById) | **GET** /merchant/details/{id} | 
+[**merchantDelete**](MerchantApi.md#merchantDelete) | **DELETE** /merchant/{id}/delete | 
 [**merchantGetProducts**](MerchantApi.md#merchantGetProducts) | **GET** /merchant/{id}/getProducts | 
 [**removeUserMerchantPrivileges**](MerchantApi.md#removeUserMerchantPrivileges) | **DELETE** /merchant/{id}/user | 
 [**updateMerchant**](MerchantApi.md#updateMerchant) | **PUT** /merchant/details/{id} | 
@@ -252,6 +253,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Merchant**](../Model/Merchant.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **merchantDelete**
+> \Swagger\Client\Model\Success merchantDelete($id)
+
+
+
+Functionality to delete a Merchant
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\MerchantApi();
+$id = "id_example"; // string | ID for the merchant to be deleted.
+
+try {
+    $result = $api_instance->merchantDelete($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MerchantApi->merchantDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the merchant to be deleted. |
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
 
 ### Authorization
 

@@ -175,7 +175,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\CouponApi();
-$createCouponCategoryParameters = new \Swagger\Client\Model\CreateCouponCategoryParameters(); // \Swagger\Client\Model\CreateCouponCategoryParameters | CouponCategory parameters for creating new category consisting of category name, description and subcategories.
+$createCouponCategoryParameters = new \Swagger\Client\Model\CreateCouponCategoryParameters(); // \Swagger\Client\Model\CreateCouponCategoryParameters | CouponCategory parameters for creating new category consisting of category name and description. Optionally free-form parameter in userDefinedObject and parent Coupon Category ID.
 
 try {
     $result = $api_instance->couponCategoryCreate($createCouponCategoryParameters);
@@ -190,7 +190,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createCouponCategoryParameters** | [**\Swagger\Client\Model\CreateCouponCategoryParameters**](../Model/\Swagger\Client\Model\CreateCouponCategoryParameters.md)| CouponCategory parameters for creating new category consisting of category name, description and subcategories. |
+ **createCouponCategoryParameters** | [**\Swagger\Client\Model\CreateCouponCategoryParameters**](../Model/\Swagger\Client\Model\CreateCouponCategoryParameters.md)| CouponCategory parameters for creating new category consisting of category name and description. Optionally free-form parameter in userDefinedObject and parent Coupon Category ID. |
 
 ### Return type
 

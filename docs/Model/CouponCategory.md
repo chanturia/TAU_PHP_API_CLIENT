@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 **id** | **string** |  | 
 **name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
-**subcategories** | **string[]** |  | [optional] 
 **parentID** | **string** |  | [optional] 
 **userDefined** | **object** | a free form user defined object that includes key - value pairs | [optional] 
 

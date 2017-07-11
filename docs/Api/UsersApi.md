@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**resetPassword**](UsersApi.md#resetPassword) | **POST** /user/resetPassword | 
 [**selectStore**](UsersApi.md#selectStore) | **POST** /user/selectStore | 
 [**submitMobile**](UsersApi.md#submitMobile) | **POST** /user/submitMobile | 
-[**userDelete**](UsersApi.md#userDelete) | **POST** /user/delete | 
+[**userDelete**](UsersApi.md#userDelete) | **DELETE** /user/{id}/delete | 
 [**userGetDetails**](UsersApi.md#userGetDetails) | **GET** /user/details/{id} | 
 
 
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userDelete**
-> \Swagger\Client\Model\Success userDelete($userDeleteId)
+> \Swagger\Client\Model\Success userDelete($id)
 
 
 
@@ -710,10 +710,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$userDeleteId = new \Swagger\Client\Model\UserDeleteId(); // \Swagger\Client\Model\UserDeleteId | Id for the user to be deleted
+$id = "id_example"; // string | ID for the user to be deleted.
 
 try {
-    $result = $api_instance->userDelete($userDeleteId);
+    $result = $api_instance->userDelete($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->userDelete: ', $e->getMessage(), PHP_EOL;
@@ -725,7 +725,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userDeleteId** | [**\Swagger\Client\Model\UserDeleteId**](../Model/\Swagger\Client\Model\UserDeleteId.md)| Id for the user to be deleted |
+ **id** | **string**| ID for the user to be deleted. |
 
 ### Return type
 

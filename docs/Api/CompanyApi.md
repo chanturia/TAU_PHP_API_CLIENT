@@ -5,6 +5,7 @@ All URIs are relative to *http://api.trustanduse.com/v1.0*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addUserCompanyRoles**](CompanyApi.md#addUserCompanyRoles) | **POST** /company/{id}/user | 
+[**companyDelete**](CompanyApi.md#companyDelete) | **DELETE** /company/{id}/delete | 
 [**companyGetDetails**](CompanyApi.md#companyGetDetails) | **GET** /company/details/{id} | 
 [**createBrandForCompany**](CompanyApi.md#createBrandForCompany) | **POST** /company/{id}/brand/create | 
 [**createCompany**](CompanyApi.md#createCompany) | **POST** /company/create | 
@@ -61,6 +62,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\UserID**](../Model/UserID.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **companyDelete**
+> \Swagger\Client\Model\Success companyDelete($id)
+
+
+
+Functionality to delete a Company
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\CompanyApi();
+$id = "id_example"; // string | ID for the company to be deleted.
+
+try {
+    $result = $api_instance->companyDelete($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CompanyApi->companyDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the company to be deleted. |
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
 
 ### Authorization
 

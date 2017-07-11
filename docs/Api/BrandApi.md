@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addUserBrand**](BrandApi.md#addUserBrand) | **POST** /brand/{id}/user | 
 [**allBrands**](BrandApi.md#allBrands) | **GET** /brand/all | 
+[**brandDelete**](BrandApi.md#brandDelete) | **DELETE** /brand/{id}/delete | 
 [**createBrand**](BrandApi.md#createBrand) | **POST** /brand/create | 
 [**createCouponBrand**](BrandApi.md#createCouponBrand) | **POST** /brand/{id}/coupon/create | 
 [**createProductBrand**](BrandApi.md#createProductBrand) | **POST** /brand/{id}/product/create | 
@@ -101,6 +102,56 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\Swagger\Client\Model\BrandsArray**](../Model/BrandsArray.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **brandDelete**
+> \Swagger\Client\Model\Success brandDelete($id, $companyID)
+
+
+
+Functionality to delete a Brand
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\BrandApi();
+$id = "id_example"; // string | ID for the brand to be deleted.
+$companyID = "companyID_example"; // string | ID of the Company connected with the Brand (required for Authorization for the User making the request)
+
+try {
+    $result = $api_instance->brandDelete($id, $companyID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BrandApi->brandDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the brand to be deleted. |
+ **companyID** | **string**| ID of the Company connected with the Brand (required for Authorization for the User making the request) | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
 
 ### Authorization
 

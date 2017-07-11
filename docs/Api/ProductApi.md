@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**addUserProduct**](ProductApi.md#addUserProduct) | **POST** /product/{id}/user | 
 [**createCouponProduct**](ProductApi.md#createCouponProduct) | **POST** /product/{id}/coupon/create | 
 [**createProduct**](ProductApi.md#createProduct) | **POST** /product/create | 
+[**deleteProduct**](ProductApi.md#deleteProduct) | **DELETE** /product/{id}/delete | 
 [**getProductById**](ProductApi.md#getProductById) | **GET** /product/details/{id} | 
 [**getProductCoupons**](ProductApi.md#getProductCoupons) | **GET** /product/{id}/coupons | 
 [**removeUserProductPrivileges**](ProductApi.md#removeUserProductPrivileges) | **DELETE** /product/{id}/user | 
@@ -211,6 +212,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **deleteProduct**
+> \Swagger\Client\Model\Success deleteProduct($id, $companyID, $brandID, $storeID, $merchantID)
+
+
+
+Functionality to delete a Product either connected with a Company or Brand or Merchant or Store or an autonomous Product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\ProductApi();
+$id = "id_example"; // string | ID for the product to be deleted.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company.
+$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand.
+$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store.
+$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant.
+
+try {
+    $result = $api_instance->deleteProduct($id, $companyID, $brandID, $storeID, $merchantID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->deleteProduct: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the product to be deleted. |
+ **companyID** | **string**| Company ID Parameter for the company that the product is connected to. Required only if the product is connected with a company. | [optional]
+ **brandID** | **string**| Brand ID Parameter for the Brand that the product is connected to. Required only if the product is connected with a Brand. | [optional]
+ **storeID** | **string**| Store ID Parameter for the Store that the product is connected to. Required only if the product is connected with a Store. | [optional]
+ **merchantID** | **string**| Merchant ID Parameter for the Merchant that the product is connected to. Required only if the product is connected with a Merchant. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
 
 ### Authorization
 

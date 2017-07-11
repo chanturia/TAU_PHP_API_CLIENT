@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**createProductStore**](StoreApi.md#createProductStore) | **POST** /store/{id}/product/create | 
 [**createStore**](StoreApi.md#createStore) | **POST** /store/create | 
 [**removeUserStorePrivileges**](StoreApi.md#removeUserStorePrivileges) | **DELETE** /store/{id}/user | 
+[**storeDelete**](StoreApi.md#storeDelete) | **DELETE** /store/{id}/delete | 
 [**storeGetCoupons**](StoreApi.md#storeGetCoupons) | **GET** /store/{id}/getCoupons | 
 [**storeGetDetails**](StoreApi.md#storeGetDetails) | **GET** /store/details/{id} | 
 [**updateStore**](StoreApi.md#updateStore) | **PUT** /store/details/{id} | 
@@ -303,6 +304,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\UserID**](../Model/UserID.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **storeDelete**
+> \Swagger\Client\Model\Success storeDelete($id, $companyID)
+
+
+
+Functionality to delete a Store
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\StoreApi();
+$id = "id_example"; // string | ID for the store to be deleted.
+$companyID = "companyID_example"; // string | ID of the Company connected with the Store (required for Authorization for the User making the request)
+
+try {
+    $result = $api_instance->storeDelete($id, $companyID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling StoreApi->storeDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the store to be deleted. |
+ **companyID** | **string**| ID of the Company connected with the Store (required for Authorization for the User making the request) | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
 
 ### Authorization
 
