@@ -8,8 +8,11 @@ Method | HTTP request | Description
 [**allCouponCategories**](CouponApi.md#allCouponCategories) | **GET** /coupon/categories | 
 [**allCouponPrimitives**](CouponApi.md#allCouponPrimitives) | **GET** /coupon/primitive/all | 
 [**couponCategoryCreate**](CouponApi.md#couponCategoryCreate) | **POST** /coupon/category/create | 
+[**couponCategoryDelete**](CouponApi.md#couponCategoryDelete) | **DELETE** /coupon/category/{id}/delete | 
+[**couponPrimitiveDelete**](CouponApi.md#couponPrimitiveDelete) | **DELETE** /coupon/primitive/{id}/delete | 
 [**createCoupon**](CouponApi.md#createCoupon) | **POST** /coupon/create | 
 [**createCouponPrimitive**](CouponApi.md#createCouponPrimitive) | **POST** /coupon/primitive/create | 
+[**deleteCoupon**](CouponApi.md#deleteCoupon) | **DELETE** /coupon/{id}/delete | 
 [**editCouponCategory**](CouponApi.md#editCouponCategory) | **PUT** /coupon/category/{couponCategoryID} | 
 [**editCouponPrimitive**](CouponApi.md#editCouponPrimitive) | **PUT** /coupon/primitive/{primitiveID}/details | 
 [**getCouponById**](CouponApi.md#getCouponById) | **GET** /coupon/{id}/details | 
@@ -207,6 +210,102 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **couponCategoryDelete**
+> \Swagger\Client\Model\Success couponCategoryDelete($id)
+
+
+
+Functionality to delete a Coupon category
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\CouponApi();
+$id = "id_example"; // string | ID for the Coupon category to be deleted.
+
+try {
+    $result = $api_instance->couponCategoryDelete($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CouponApi->couponCategoryDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the Coupon category to be deleted. |
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **couponPrimitiveDelete**
+> \Swagger\Client\Model\Success couponPrimitiveDelete($id)
+
+
+
+Functionality to delete a Coupon primitive
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\CouponApi();
+$id = "id_example"; // string | ID for the Coupon primitive to be deleted.
+
+try {
+    $result = $api_instance->couponPrimitiveDelete($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CouponApi->couponPrimitiveDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the Coupon primitive to be deleted. |
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **createCoupon**
 > \Swagger\Client\Model\Coupon createCoupon($createCouponParameters)
 
@@ -291,6 +390,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\CouponPrimitive**](../Model/CouponPrimitive.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **deleteCoupon**
+> \Swagger\Client\Model\Success deleteCoupon($id, $companyID, $brandID, $storeID, $merchantID, $productID)
+
+
+
+Delete a Coupon based on single coupon id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\CouponApi();
+$id = "id_example"; // string | ID for the coupon being searched for.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company.
+$brandID = "brandID_example"; // string | Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand.
+$storeID = "storeID_example"; // string | Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store.
+$merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant.
+$productID = "productID_example"; // string | Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product.
+
+try {
+    $result = $api_instance->deleteCoupon($id, $companyID, $brandID, $storeID, $merchantID, $productID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CouponApi->deleteCoupon: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the coupon being searched for. |
+ **companyID** | **string**| Company ID Parameter for the company that the Coupon is connected to. Required only if the Coupon is connected with a company. | [optional]
+ **brandID** | **string**| Brand ID Parameter for the Brand that the Coupon is connected to. Required only if the Coupon is connected with a Brand. | [optional]
+ **storeID** | **string**| Store ID Parameter for the Store that the Coupon is connected to. Required only if the Coupon is connected with a Store. | [optional]
+ **merchantID** | **string**| Merchant ID Parameter for the Merchant that the Coupon is connected to. Required only if the Coupon is connected with a Merchant. | [optional]
+ **productID** | **string**| Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Success**](../Model/Success.md)
 
 ### Authorization
 

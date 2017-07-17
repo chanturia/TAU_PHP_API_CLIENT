@@ -1,6 +1,6 @@
 <?php
 /**
- * Userdetails
+ * UserDetails
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * Userdetails Class Doc Comment
+ * UserDetails Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Userdetails implements ArrayAccess
+class UserDetails implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class Userdetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'userdetails';
+    protected static $swaggerModelName = 'UserDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class Userdetails implements ArrayAccess
         'lastName' => 'string',
         'email' => 'string',
         'dateOfBirth' => '\DateTime',
-        'gender' => 'string',
-        'userDefinedObject' => 'object'
+        'gender' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -76,8 +75,7 @@ class Userdetails implements ArrayAccess
         'lastName' => 'lastName',
         'email' => 'email',
         'dateOfBirth' => 'dateOfBirth',
-        'gender' => 'gender',
-        'userDefinedObject' => 'userDefinedObject'
+        'gender' => 'gender'
     ];
 
 
@@ -90,8 +88,7 @@ class Userdetails implements ArrayAccess
         'lastName' => 'setLastName',
         'email' => 'setEmail',
         'dateOfBirth' => 'setDateOfBirth',
-        'gender' => 'setGender',
-        'userDefinedObject' => 'setUserDefinedObject'
+        'gender' => 'setGender'
     ];
 
 
@@ -104,8 +101,7 @@ class Userdetails implements ArrayAccess
         'lastName' => 'getLastName',
         'email' => 'getEmail',
         'dateOfBirth' => 'getDateOfBirth',
-        'gender' => 'getGender',
-        'userDefinedObject' => 'getUserDefinedObject'
+        'gender' => 'getGender'
     ];
 
     public static function attributeMap()
@@ -144,7 +140,6 @@ class Userdetails implements ArrayAccess
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['userDefinedObject'] = isset($data['userDefinedObject']) ? $data['userDefinedObject'] : null;
     }
 
     /**
@@ -156,6 +151,21 @@ class Userdetails implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
+        }
+        if ($this->container['lastName'] === null) {
+            $invalid_properties[] = "'lastName' can't be null";
+        }
+        if ($this->container['email'] === null) {
+            $invalid_properties[] = "'email' can't be null";
+        }
+        if ($this->container['dateOfBirth'] === null) {
+            $invalid_properties[] = "'dateOfBirth' can't be null";
+        }
+        if ($this->container['gender'] === null) {
+            $invalid_properties[] = "'gender' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -168,6 +178,21 @@ class Userdetails implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['name'] === null) {
+            return false;
+        }
+        if ($this->container['lastName'] === null) {
+            return false;
+        }
+        if ($this->container['email'] === null) {
+            return false;
+        }
+        if ($this->container['dateOfBirth'] === null) {
+            return false;
+        }
+        if ($this->container['gender'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -183,7 +208,7 @@ class Userdetails implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name User first name must be between 2 and 485 characters and can contain only letters, digits and dashes.
+     * @param string $name
      * @return $this
      */
     public function setName($name)
@@ -204,7 +229,7 @@ class Userdetails implements ArrayAccess
 
     /**
      * Sets lastName
-     * @param string $lastName User last name must be between 2 and 485 characters and can contain only letters.
+     * @param string $lastName
      * @return $this
      */
     public function setLastName($lastName)
@@ -225,7 +250,7 @@ class Userdetails implements ArrayAccess
 
     /**
      * Sets email
-     * @param string $email User email address
+     * @param string $email
      * @return $this
      */
     public function setEmail($email)
@@ -246,7 +271,7 @@ class Userdetails implements ArrayAccess
 
     /**
      * Sets dateOfBirth
-     * @param \DateTime $dateOfBirth User date of birth must be a string representing an RFC2822 or ISO 8601 date
+     * @param \DateTime $dateOfBirth
      * @return $this
      */
     public function setDateOfBirth($dateOfBirth)
@@ -267,33 +292,12 @@ class Userdetails implements ArrayAccess
 
     /**
      * Sets gender
-     * @param string $gender User gender with possible values male/female/other
+     * @param string $gender
      * @return $this
      */
     public function setGender($gender)
     {
         $this->container['gender'] = $gender;
-
-        return $this;
-    }
-
-    /**
-     * Gets userDefinedObject
-     * @return object
-     */
-    public function getUserDefinedObject()
-    {
-        return $this->container['userDefinedObject'];
-    }
-
-    /**
-     * Sets userDefinedObject
-     * @param object $userDefinedObject a free form user defined object that includes a key - value array.Place your custom properties in array, the key corresponds to property name its length must be not longer that 40 chars and value for each custom key is limited to 2048 chars.
-     * @return $this
-     */
-    public function setUserDefinedObject($userDefinedObject)
-    {
-        $this->container['userDefinedObject'] = $userDefinedObject;
 
         return $this;
     }

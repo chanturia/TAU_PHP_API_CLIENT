@@ -1,6 +1,6 @@
 <?php
 /**
- * UserdetailsTest
+ * UserDetailsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * UserdetailsTest Class Doc Comment
+ * UserDetailsTest Class Doc Comment
  *
  * @category    Class */
-// * @description Userdetails
+// * @description UserDetails
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UserdetailsTest extends \PHPUnit_Framework_TestCase
+class UserDetailsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -75,9 +75,9 @@ class UserdetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Userdetails"
+     * Test "UserDetails"
      */
-    public function testUserdetails()
+    public function testUserDetails()
     {
 
     }
@@ -118,14 +118,6 @@ class UserdetailsTest extends \PHPUnit_Framework_TestCase
      * Test attribute "gender"
      */
     public function testPropertyGender()
-    {
-
-    }
-
-    /**
-     * Test attribute "userDefinedObject"
-     */
-    public function testPropertyUserDefinedObject()
     {
 
     }
