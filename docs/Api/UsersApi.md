@@ -4,6 +4,7 @@ All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**allUsers**](UsersApi.md#allUsers) | **GET** /user/all | 
 [**authorizeReturnAccessToken**](UsersApi.md#authorizeReturnAccessToken) | **POST** /oauth2/token | 
 [**authorizeReturnCode**](UsersApi.md#authorizeReturnCode) | **GET** /oauth2/authorize | 
 [**changeMobile**](UsersApi.md#changeMobile) | **POST** /user/changeMobile | 
@@ -21,6 +22,60 @@ Method | HTTP request | Description
 [**userDelete**](UsersApi.md#userDelete) | **DELETE** /user/{id}/delete | 
 [**userGetDetails**](UsersApi.md#userGetDetails) | **GET** /user/details/{id} | 
 
+
+# **allUsers**
+> \Swagger\Client\Model\UsersArray allUsers($name, $lastName, $email, $dateOfBirth)
+
+
+
+Searches for all existing Users. Returns array of JSON User Objects
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\UsersApi();
+$name = "name_example"; // string | Optional filter parameter to search for users with a name that contains value of parameter name.
+$lastName = "lastName_example"; // string | Optional filter parameter to search for brands with lastName that contains value of parameter lastName.
+$email = "email_example"; // string | Optional filter parameter to search for brands with email that contains value of parameter email.
+$dateOfBirth = "dateOfBirth_example"; // string | Optional filter parameter to search for brands with dateOfBirth that contains value of parameter dateOfBirth.
+
+try {
+    $result = $api_instance->allUsers($name, $lastName, $email, $dateOfBirth);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->allUsers: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for users with a name that contains value of parameter name. | [optional]
+ **lastName** | **string**| Optional filter parameter to search for brands with lastName that contains value of parameter lastName. | [optional]
+ **email** | **string**| Optional filter parameter to search for brands with email that contains value of parameter email. | [optional]
+ **dateOfBirth** | **string**| Optional filter parameter to search for brands with dateOfBirth that contains value of parameter dateOfBirth. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\UsersArray**](../Model/UsersArray.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **authorizeReturnAccessToken**
 > \Swagger\Client\Model\AccessToken authorizeReturnAccessToken($activationCodeParameters)

@@ -5,6 +5,7 @@ All URIs are relative to *http://api.trustanduse.com/v1.0*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addUserMerchantPrivileges**](MerchantApi.md#addUserMerchantPrivileges) | **POST** /merchant/{id}/user | 
+[**allMerchants**](MerchantApi.md#allMerchants) | **GET** /merchant/all | 
 [**createCouponMerchant**](MerchantApi.md#createCouponMerchant) | **POST** /merchant/{id}/coupon/create | 
 [**createMerchant**](MerchantApi.md#createMerchant) | **POST** /merchant/create | 
 [**createProductMerchant**](MerchantApi.md#createProductMerchant) | **POST** /merchant/{id}/product/create | 
@@ -57,6 +58,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\UserID**](../Model/UserID.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **allMerchants**
+> \Swagger\Client\Model\MerchantsArray allMerchants($name, $address)
+
+
+
+Searches for all existing merchants. Returns array of JSON Merchant Objects
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\MerchantApi();
+$name = "name_example"; // string | Optional filter parameter to search for merchants with a name that contains value of parameter name.
+$address = "address_example"; // string | Optional filter parameter to search for address with address that contains value of parameter address.
+
+try {
+    $result = $api_instance->allMerchants($name, $address);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MerchantApi->allMerchants: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for merchants with a name that contains value of parameter name. | [optional]
+ **address** | **string**| Optional filter parameter to search for address with address that contains value of parameter address. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\MerchantsArray**](../Model/MerchantsArray.md)
 
 ### Authorization
 

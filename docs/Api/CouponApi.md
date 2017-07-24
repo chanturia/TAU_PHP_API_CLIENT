@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**addUserCoupon**](CouponApi.md#addUserCoupon) | **POST** /coupon/{id}/user | 
 [**allCouponCategories**](CouponApi.md#allCouponCategories) | **GET** /coupon/categories | 
 [**allCouponPrimitives**](CouponApi.md#allCouponPrimitives) | **GET** /coupon/primitive/all | 
+[**allCoupons**](CouponApi.md#allCoupons) | **GET** /coupon/all | 
 [**couponCategoryCreate**](CouponApi.md#couponCategoryCreate) | **POST** /coupon/category/create | 
 [**couponCategoryDelete**](CouponApi.md#couponCategoryDelete) | **DELETE** /coupon/category/{id}/delete | 
 [**couponPrimitiveDelete**](CouponApi.md#couponPrimitiveDelete) | **DELETE** /coupon/primitive/{id}/delete | 
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **allCouponCategories**
-> \Swagger\Client\Model\CouponCategoriesArray allCouponCategories()
+> \Swagger\Client\Model\CouponCategoriesArray allCouponCategories($name, $description)
 
 
 
@@ -90,9 +91,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\CouponApi();
+$name = "name_example"; // string | Optional filter parameter to search for Coupon Categories with a name that contains value of parameter name.
+$description = "description_example"; // string | Optional filter parameter to search for Coupon Categories with description that contains value of parameter description.
 
 try {
-    $result = $api_instance->allCouponCategories();
+    $result = $api_instance->allCouponCategories($name, $description);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->allCouponCategories: ', $e->getMessage(), PHP_EOL;
@@ -101,7 +104,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for Coupon Categories with a name that contains value of parameter name. | [optional]
+ **description** | **string**| Optional filter parameter to search for Coupon Categories with description that contains value of parameter description. | [optional]
 
 ### Return type
 
@@ -119,7 +126,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **allCouponPrimitives**
-> \Swagger\Client\Model\CouponPrimitivesArray allCouponPrimitives()
+> \Swagger\Client\Model\CouponPrimitivesArray allCouponPrimitives($name, $description)
 
 
 
@@ -134,9 +141,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\CouponApi();
+$name = "name_example"; // string | Optional filter parameter to search for Coupon Primitive with a name that contains value of parameter name.
+$description = "description_example"; // string | Optional filter parameter to search for Coupon Primitive with description that contains value of parameter description.
 
 try {
-    $result = $api_instance->allCouponPrimitives();
+    $result = $api_instance->allCouponPrimitives($name, $description);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->allCouponPrimitives: ', $e->getMessage(), PHP_EOL;
@@ -145,11 +154,67 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for Coupon Primitive with a name that contains value of parameter name. | [optional]
+ **description** | **string**| Optional filter parameter to search for Coupon Primitive with description that contains value of parameter description. | [optional]
 
 ### Return type
 
 [**\Swagger\Client\Model\CouponPrimitivesArray**](../Model/CouponPrimitivesArray.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **allCoupons**
+> \Swagger\Client\Model\CouponsArray allCoupons($name, $description, $kind)
+
+
+
+Searches for all existing Coupons. Returns array of JSON Coupon Objects
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\CouponApi();
+$name = "name_example"; // string | Optional filter parameter to search for Coupons with a name that contains value of parameter name.
+$description = "description_example"; // string | Optional filter parameter to search for Coupons with description that contains value of parameter description.
+$kind = "kind_example"; // string | Optional filter parameter to search for Coupons with kind that contains value of parameter kind.
+
+try {
+    $result = $api_instance->allCoupons($name, $description, $kind);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CouponApi->allCoupons: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for Coupons with a name that contains value of parameter name. | [optional]
+ **description** | **string**| Optional filter parameter to search for Coupons with description that contains value of parameter description. | [optional]
+ **kind** | **string**| Optional filter parameter to search for Coupons with kind that contains value of parameter kind. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\CouponsArray**](../Model/CouponsArray.md)
 
 ### Authorization
 

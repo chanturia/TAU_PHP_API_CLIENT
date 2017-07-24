@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **allStores**
-> \Swagger\Client\Model\StoresArray allStores()
+> \Swagger\Client\Model\StoresArray allStores($name, $kind, $address)
 
 
 
@@ -86,9 +86,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\StoreApi();
+$name = "name_example"; // string | Optional filter parameter to search for stores with a name that contains value of parameter name.
+$kind = "kind_example"; // string | Optional filter parameter to search for stores with kind that contains value of parameter name.
+$address = "address_example"; // string | Optional filter parameter to search for stores with an address that contains value of parameter name.
 
 try {
-    $result = $api_instance->allStores();
+    $result = $api_instance->allStores($name, $kind, $address);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoreApi->allStores: ', $e->getMessage(), PHP_EOL;
@@ -97,7 +100,12 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for stores with a name that contains value of parameter name. | [optional]
+ **kind** | **string**| Optional filter parameter to search for stores with kind that contains value of parameter name. | [optional]
+ **address** | **string**| Optional filter parameter to search for stores with an address that contains value of parameter name. | [optional]
 
 ### Return type
 

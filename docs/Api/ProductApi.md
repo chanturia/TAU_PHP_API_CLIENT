@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addProductBarcode**](ProductApi.md#addProductBarcode) | **POST** /product/{id}/barcodes | 
 [**addUserProduct**](ProductApi.md#addUserProduct) | **POST** /product/{id}/user | 
+[**allProducts**](ProductApi.md#allProducts) | **GET** /product/all | 
 [**createCouponProduct**](ProductApi.md#createCouponProduct) | **POST** /product/{id}/coupon/create | 
 [**createProduct**](ProductApi.md#createProduct) | **POST** /product/create | 
 [**deleteProduct**](ProductApi.md#deleteProduct) | **DELETE** /product/{id}/delete | 
@@ -114,6 +115,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\UserID**](../Model/UserID.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **allProducts**
+> \Swagger\Client\Model\ProductsArray allProducts($name)
+
+
+
+Searches for all existing Products. Returns array of JSON Product Objects
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\ProductApi();
+$name = "name_example"; // string | Optional filter parameter to search for products with a name that contains value of parameter name.
+
+try {
+    $result = $api_instance->allProducts($name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->allProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for products with a name that contains value of parameter name. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\ProductsArray**](../Model/ProductsArray.md)
 
 ### Authorization
 

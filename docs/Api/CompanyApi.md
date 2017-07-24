@@ -5,6 +5,7 @@ All URIs are relative to *http://api.trustanduse.com/v1.0*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addUserCompanyRoles**](CompanyApi.md#addUserCompanyRoles) | **POST** /company/{id}/user | 
+[**allCompanies**](CompanyApi.md#allCompanies) | **GET** /company/all | 
 [**companyDelete**](CompanyApi.md#companyDelete) | **DELETE** /company/{id}/delete | 
 [**companyGetDetails**](CompanyApi.md#companyGetDetails) | **GET** /company/details/{id} | 
 [**createBrandForCompany**](CompanyApi.md#createBrandForCompany) | **POST** /company/{id}/brand/create | 
@@ -62,6 +63,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\UserID**](../Model/UserID.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **allCompanies**
+> \Swagger\Client\Model\CompaniesArray allCompanies($name, $inChargePersonName, $mainAddress, $companyType)
+
+
+
+Searches for all existing companies. Returns array of JSON Company Objects
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\CompanyApi();
+$name = "name_example"; // string | Optional filter parameter to search for companies with a name that contains value of parameter name.
+$inChargePersonName = "inChargePersonName_example"; // string | Optional filter parameter to search for companies with inChargePersonName that contains value of parameter inChargePersonName.
+$mainAddress = "mainAddress_example"; // string | Optional filter parameter to search for companies with mainAddress that contains value of parameter mainAddress.
+$companyType = "companyType_example"; // string | Optional filter parameter to search for companies with companyType that contains value of parameter companyType.
+
+try {
+    $result = $api_instance->allCompanies($name, $inChargePersonName, $mainAddress, $companyType);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CompanyApi->allCompanies: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for companies with a name that contains value of parameter name. | [optional]
+ **inChargePersonName** | **string**| Optional filter parameter to search for companies with inChargePersonName that contains value of parameter inChargePersonName. | [optional]
+ **mainAddress** | **string**| Optional filter parameter to search for companies with mainAddress that contains value of parameter mainAddress. | [optional]
+ **companyType** | **string**| Optional filter parameter to search for companies with companyType that contains value of parameter companyType. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\CompaniesArray**](../Model/CompaniesArray.md)
 
 ### Authorization
 

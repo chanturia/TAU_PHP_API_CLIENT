@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **allBrands**
-> \Swagger\Client\Model\BrandsArray allBrands()
+> \Swagger\Client\Model\BrandsArray allBrands($name, $description)
 
 
 
@@ -86,9 +86,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\BrandApi();
+$name = "name_example"; // string | Optional filter parameter to search for brands with a name that contains value of parameter name.
+$description = "description_example"; // string | Optional filter parameter to search for brands with description that contains value of parameter description.
 
 try {
-    $result = $api_instance->allBrands();
+    $result = $api_instance->allBrands($name, $description);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BrandApi->allBrands: ', $e->getMessage(), PHP_EOL;
@@ -97,7 +99,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Optional filter parameter to search for brands with a name that contains value of parameter name. | [optional]
+ **description** | **string**| Optional filter parameter to search for brands with description that contains value of parameter description. | [optional]
 
 ### Return type
 
