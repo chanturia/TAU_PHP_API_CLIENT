@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **allProducts**
-> \Swagger\Client\Model\ProductsArray allProducts($name)
+> \Swagger\Client\Model\ProductsArray allProducts($name, $productype, $description)
 
 
 
@@ -144,9 +144,11 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\ProductApi();
 $name = "name_example"; // string | Optional filter parameter to search for products with a name that contains value of parameter name.
+$productype = "productype_example"; // string | Optional filter parameter to search for products with a productype that contains value of parameter productype.
+$description = "description_example"; // string | Optional filter parameter to search for products with description that contains value of parameter description.
 
 try {
-    $result = $api_instance->allProducts($name);
+    $result = $api_instance->allProducts($name, $productype, $description);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->allProducts: ', $e->getMessage(), PHP_EOL;
@@ -159,6 +161,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Optional filter parameter to search for products with a name that contains value of parameter name. | [optional]
+ **productype** | **string**| Optional filter parameter to search for products with a productype that contains value of parameter productype. | [optional]
+ **description** | **string**| Optional filter parameter to search for products with description that contains value of parameter description. | [optional]
 
 ### Return type
 

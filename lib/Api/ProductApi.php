@@ -331,12 +331,14 @@ class ProductApi
      * 
      *
      * @param string $name Optional filter parameter to search for products with a name that contains value of parameter name. (optional)
+     * @param string $productype Optional filter parameter to search for products with a productype that contains value of parameter productype. (optional)
+     * @param string $description Optional filter parameter to search for products with description that contains value of parameter description. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ProductsArray
      */
-    public function allProducts($name = null)
+    public function allProducts($name = null, $productype = null, $description = null)
     {
-        list($response) = $this->allProductsWithHttpInfo($name);
+        list($response) = $this->allProductsWithHttpInfo($name, $productype, $description);
         return $response;
     }
 
@@ -346,10 +348,12 @@ class ProductApi
      * 
      *
      * @param string $name Optional filter parameter to search for products with a name that contains value of parameter name. (optional)
+     * @param string $productype Optional filter parameter to search for products with a productype that contains value of parameter productype. (optional)
+     * @param string $description Optional filter parameter to search for products with description that contains value of parameter description. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ProductsArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function allProductsWithHttpInfo($name = null)
+    public function allProductsWithHttpInfo($name = null, $productype = null, $description = null)
     {
         // parse inputs
         $resourcePath = "/product/all";
@@ -366,6 +370,14 @@ class ProductApi
         // query params
         if ($name !== null) {
             $queryParams['name'] = $this->apiClient->getSerializer()->toQueryValue($name);
+        }
+        // query params
+        if ($productype !== null) {
+            $queryParams['productype'] = $this->apiClient->getSerializer()->toQueryValue($productype);
+        }
+        // query params
+        if ($description !== null) {
+            $queryParams['description'] = $this->apiClient->getSerializer()->toQueryValue($description);
         }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
