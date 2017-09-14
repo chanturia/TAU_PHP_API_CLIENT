@@ -1,4 +1,4 @@
-# DeleteCompanyUserRoles
+# DeleteCompanyUserRole
 
 ## Properties
 Name | Type | Description | Notes

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **addUserCompany**
-> \Swagger\Client\Model\UserID addUserCompany($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles)
+> \Swagger\Client\Model\UserID addUserCompany($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRole)
 
 
 
@@ -38,10 +38,10 @@ $brandID = "brandID_example"; // string | ID of the Brand connected with the Com
 $storeID = "storeID_example"; // string | ID of the Store connected with the Company (only required for Authorization for the User making the request)
 $productID = "productID_example"; // string | ID of the Product connected with the Company (only required for Authorization for the User making the request)
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Company (only required for Authorization for the User making the request)
-$createCompanyUserRoles = new \Swagger\Client\Model\CreateCompanyUserRoles(); // \Swagger\Client\Model\CreateCompanyUserRoles | Company's User Priveleges Parameters for the company ID and userID.
+$createCompanyUserRole = new \Swagger\Client\Model\CreateCompanyUserRole(); // \Swagger\Client\Model\CreateCompanyUserRole | Company's User Priveleges Parameters for the company ID and userID.
 
 try {
-    $result = $api_instance->addUserCompany($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles);
+    $result = $api_instance->addUserCompany($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRole);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CompanyApi->addUserCompany: ', $e->getMessage(), PHP_EOL;
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
  **storeID** | **string**| ID of the Store connected with the Company (only required for Authorization for the User making the request) | [optional]
  **productID** | **string**| ID of the Product connected with the Company (only required for Authorization for the User making the request) | [optional]
  **couponID** | **string**| ID of the Coupon connected with the Company (only required for Authorization for the User making the request) | [optional]
- **createCompanyUserRoles** | [**\Swagger\Client\Model\CreateCompanyUserRoles**](../Model/\Swagger\Client\Model\CreateCompanyUserRoles.md)| Company&#39;s User Priveleges Parameters for the company ID and userID. | [optional]
+ **createCompanyUserRole** | [**\Swagger\Client\Model\CreateCompanyUserRole**](../Model/\Swagger\Client\Model\CreateCompanyUserRole.md)| Company&#39;s User Priveleges Parameters for the company ID and userID. | [optional]
 
 ### Return type
 
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeUserCompany**
-> \Swagger\Client\Model\UserID removeUserCompany($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID)
+> \Swagger\Client\Model\UserID removeUserCompany($id, $deleteCompanyUserRole, $brandID, $storeID, $productID, $couponID)
 
 
 
@@ -490,14 +490,14 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\CompanyApi();
 $id = "id_example"; // string | ID for the Company
-$deleteCompanyUserRoles = new \Swagger\Client\Model\DeleteCompanyUserRoles(); // \Swagger\Client\Model\DeleteCompanyUserRoles | Company's User ID and privileges to be removed for the company ID.
+$deleteCompanyUserRole = new \Swagger\Client\Model\DeleteCompanyUserRole(); // \Swagger\Client\Model\DeleteCompanyUserRole | Company's User ID and privileges to be removed for the company ID.
 $brandID = "brandID_example"; // string | ID of the Brand connected with the Company (only required for Authorization for the User making the request)
 $storeID = "storeID_example"; // string | ID of the Store connected with the Company (only required for Authorization for the User making the request)
 $productID = "productID_example"; // string | ID of the Product connected with the Company (only required for Authorization for the User making the request)
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Company (only required for Authorization for the User making the request)
 
 try {
-    $result = $api_instance->removeUserCompany($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID);
+    $result = $api_instance->removeUserCompany($id, $deleteCompanyUserRole, $brandID, $storeID, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CompanyApi->removeUserCompany: ', $e->getMessage(), PHP_EOL;
@@ -510,7 +510,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Company |
- **deleteCompanyUserRoles** | [**\Swagger\Client\Model\DeleteCompanyUserRoles**](../Model/\Swagger\Client\Model\DeleteCompanyUserRoles.md)| Company&#39;s User ID and privileges to be removed for the company ID. |
+ **deleteCompanyUserRole** | [**\Swagger\Client\Model\DeleteCompanyUserRole**](../Model/\Swagger\Client\Model\DeleteCompanyUserRole.md)| Company&#39;s User ID and privileges to be removed for the company ID. |
  **brandID** | **string**| ID of the Brand connected with the Company (only required for Authorization for the User making the request) | [optional]
  **storeID** | **string**| ID of the Store connected with the Company (only required for Authorization for the User making the request) | [optional]
  **productID** | **string**| ID of the Product connected with the Company (only required for Authorization for the User making the request) | [optional]

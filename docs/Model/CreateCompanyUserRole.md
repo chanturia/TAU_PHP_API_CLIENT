@@ -1,4 +1,4 @@
-# CreateCompanyUserRoles
+# CreateCompanyUserRole
 
 ## Properties
 Name | Type | Description | Notes
