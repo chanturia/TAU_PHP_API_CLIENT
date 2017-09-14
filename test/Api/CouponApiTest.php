@@ -187,67 +187,34 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for editCouponCategory
+     * Test case for getCouponCategoryDetails
      *
      * .
      *
      */
-    public function testEditCouponCategory()
+    public function testGetCouponCategoryDetails()
     {
 
     }
 
     /**
-     * Test case for editCouponPrimitive
+     * Test case for getCouponDetails
      *
      * .
      *
      */
-    public function testEditCouponPrimitive()
+    public function testGetCouponDetails()
     {
 
     }
 
     /**
-     * Test case for getCouponById
+     * Test case for getCouponPrimitiveDetails
      *
      * .
      *
      */
-    public function testGetCouponById()
-    {
-
-    }
-
-    /**
-     * Test case for getCouponCategoryById
-     *
-     * .
-     *
-     */
-    public function testGetCouponCategoryById()
-    {
-
-    }
-
-    /**
-     * Test case for getCouponPrimitiveById
-     *
-     * .
-     *
-     */
-    public function testGetCouponPrimitiveById()
-    {
-
-    }
-
-    /**
-     * Test case for getCouponTerms
-     *
-     * .
-     *
-     */
-    public function testGetCouponTerms()
+    public function testGetCouponPrimitiveDetails()
     {
 
     }
@@ -264,23 +231,34 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for setCouponTerms
-     *
-     * .
-     *
-     */
-    public function testSetCouponTerms()
-    {
-
-    }
-
-    /**
      * Test case for updateCoupon
      *
      * .
      *
      */
     public function testUpdateCoupon()
+    {
+
+    }
+
+    /**
+     * Test case for updateCouponCategory
+     *
+     * .
+     *
+     */
+    public function testUpdateCouponCategory()
+    {
+
+    }
+
+    /**
+     * Test case for updateCouponPrimitive
+     *
+     * .
+     *
+     */
+    public function testUpdateCouponPrimitive()
     {
 
     }

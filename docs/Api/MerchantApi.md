@@ -4,20 +4,19 @@ All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addUserMerchantPrivileges**](MerchantApi.md#addUserMerchantPrivileges) | **POST** /merchant/{id}/user | 
+[**addUserMerchant**](MerchantApi.md#addUserMerchant) | **POST** /merchant/{id}/user | 
 [**allMerchants**](MerchantApi.md#allMerchants) | **GET** /merchant/all | 
 [**createCouponMerchant**](MerchantApi.md#createCouponMerchant) | **POST** /merchant/{id}/coupon/create | 
 [**createMerchant**](MerchantApi.md#createMerchant) | **POST** /merchant/create | 
 [**createProductMerchant**](MerchantApi.md#createProductMerchant) | **POST** /merchant/{id}/product/create | 
-[**getMerchantById**](MerchantApi.md#getMerchantById) | **GET** /merchant/details/{id} | 
+[**getMerchantDetails**](MerchantApi.md#getMerchantDetails) | **GET** /merchant/details/{id} | 
 [**merchantDelete**](MerchantApi.md#merchantDelete) | **DELETE** /merchant/{id}/delete | 
-[**merchantGetProducts**](MerchantApi.md#merchantGetProducts) | **GET** /merchant/{id}/getProducts | 
-[**removeUserMerchantPrivileges**](MerchantApi.md#removeUserMerchantPrivileges) | **DELETE** /merchant/{id}/user | 
+[**removeUserMerchant**](MerchantApi.md#removeUserMerchant) | **DELETE** /merchant/{id}/user | 
 [**updateMerchant**](MerchantApi.md#updateMerchant) | **PUT** /merchant/details/{id} | 
 
 
-# **addUserMerchantPrivileges**
-> \Swagger\Client\Model\UserID addUserMerchantPrivileges($id, $productID, $couponID, $createMerchantUserRole)
+# **addUserMerchant**
+> \Swagger\Client\Model\UserID addUserMerchant($id, $productID, $couponID, $createMerchantUserRole)
 
 
 
@@ -38,10 +37,10 @@ $couponID = "couponID_example"; // string | ID of the Coupon connected with the 
 $createMerchantUserRole = new \Swagger\Client\Model\CreateMerchantUserRole(); // \Swagger\Client\Model\CreateMerchantUserRole | Merchant's User Priveleges Parameters for the merchant ID and userID.
 
 try {
-    $result = $api_instance->addUserMerchantPrivileges($id, $productID, $couponID, $createMerchantUserRole);
+    $result = $api_instance->addUserMerchant($id, $productID, $couponID, $createMerchantUserRole);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MerchantApi->addUserMerchantPrivileges: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MerchantApi->addUserMerchant: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -268,8 +267,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getMerchantById**
-> \Swagger\Client\Model\Merchant getMerchantById($id)
+# **getMerchantDetails**
+> \Swagger\Client\Model\Merchant getMerchantDetails($id)
 
 
 
@@ -287,10 +286,10 @@ $api_instance = new Swagger\Client\Api\MerchantApi();
 $id = "id_example"; // string | ID for the merchant being searched for.
 
 try {
-    $result = $api_instance->getMerchantById($id);
+    $result = $api_instance->getMerchantDetails($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MerchantApi->getMerchantById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MerchantApi->getMerchantDetails: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -364,56 +363,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **merchantGetProducts**
-> \Swagger\Client\Model\Product merchantGetProducts($id)
-
-
-
-Searches a Merchant Products by single user id. Returns array of JSON Product Objects consisting of productID, product name and product description.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\MerchantApi();
-$id = "id_example"; // string | UserID for the merchant to find the Products for.
-
-try {
-    $result = $api_instance->merchantGetProducts($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MerchantApi->merchantGetProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| UserID for the merchant to find the Products for. |
-
-### Return type
-
-[**\Swagger\Client\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **removeUserMerchantPrivileges**
-> \Swagger\Client\Model\UserID removeUserMerchantPrivileges($id, $deleteMerchantUserRole, $productID, $couponID)
+# **removeUserMerchant**
+> \Swagger\Client\Model\UserID removeUserMerchant($id, $deleteMerchantUserRole, $productID, $couponID)
 
 
 
@@ -434,10 +385,10 @@ $productID = "productID_example"; // string | ID of the Product connected with t
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Merchant (only required for Authorization for the User making the request)
 
 try {
-    $result = $api_instance->removeUserMerchantPrivileges($id, $deleteMerchantUserRole, $productID, $couponID);
+    $result = $api_instance->removeUserMerchant($id, $deleteMerchantUserRole, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MerchantApi->removeUserMerchantPrivileges: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MerchantApi->removeUserMerchant: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

@@ -88,7 +88,7 @@ class StoreApi
     }
 
     /**
-     * Operation addUserRoleForStore
+     * Operation addUserStore
      *
      * 
      *
@@ -99,14 +99,14 @@ class StoreApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function addUserRoleForStore($id, $createStoreUserRole, $productID = null, $couponID = null)
+    public function addUserStore($id, $createStoreUserRole, $productID = null, $couponID = null)
     {
-        list($response) = $this->addUserRoleForStoreWithHttpInfo($id, $createStoreUserRole, $productID, $couponID);
+        list($response) = $this->addUserStoreWithHttpInfo($id, $createStoreUserRole, $productID, $couponID);
         return $response;
     }
 
     /**
-     * Operation addUserRoleForStoreWithHttpInfo
+     * Operation addUserStoreWithHttpInfo
      *
      * 
      *
@@ -117,15 +117,15 @@ class StoreApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserRoleForStoreWithHttpInfo($id, $createStoreUserRole, $productID = null, $couponID = null)
+    public function addUserStoreWithHttpInfo($id, $createStoreUserRole, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserRoleForStore');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserStore');
         }
         // verify the required parameter 'createStoreUserRole' is set
         if ($createStoreUserRole === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $createStoreUserRole when calling addUserRoleForStore');
+            throw new \InvalidArgumentException('Missing the required parameter $createStoreUserRole when calling addUserStore');
         }
         // parse inputs
         $resourcePath = "/store/{id}/user";
@@ -301,7 +301,7 @@ class StoreApi
     }
 
     /**
-     * Operation createCouponForStore
+     * Operation createCouponStore
      *
      * 
      *
@@ -310,14 +310,14 @@ class StoreApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Coupon
      */
-    public function createCouponForStore($id, $storeCouponcreateParameters)
+    public function createCouponStore($id, $storeCouponcreateParameters)
     {
-        list($response) = $this->createCouponForStoreWithHttpInfo($id, $storeCouponcreateParameters);
+        list($response) = $this->createCouponStoreWithHttpInfo($id, $storeCouponcreateParameters);
         return $response;
     }
 
     /**
-     * Operation createCouponForStoreWithHttpInfo
+     * Operation createCouponStoreWithHttpInfo
      *
      * 
      *
@@ -326,15 +326,15 @@ class StoreApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCouponForStoreWithHttpInfo($id, $storeCouponcreateParameters)
+    public function createCouponStoreWithHttpInfo($id, $storeCouponcreateParameters)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling createCouponForStore');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling createCouponStore');
         }
         // verify the required parameter 'storeCouponcreateParameters' is set
         if ($storeCouponcreateParameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $storeCouponcreateParameters when calling createCouponForStore');
+            throw new \InvalidArgumentException('Missing the required parameter $storeCouponcreateParameters when calling createCouponStore');
         }
         // parse inputs
         $resourcePath = "/store/{id}/coupon/create";
@@ -599,7 +599,106 @@ class StoreApi
     }
 
     /**
-     * Operation removeUserStorePrivileges
+     * Operation getStoreDetails
+     *
+     * 
+     *
+     * @param string $id ID for the store to find the details for. (required)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\Store
+     */
+    public function getStoreDetails($id, $companyID = null)
+    {
+        list($response) = $this->getStoreDetailsWithHttpInfo($id, $companyID);
+        return $response;
+    }
+
+    /**
+     * Operation getStoreDetailsWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id ID for the store to find the details for. (required)
+     * @param string $companyID Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\Store, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStoreDetailsWithHttpInfo($id, $companyID = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling getStoreDetails');
+        }
+        // parse inputs
+        $resourcePath = "/store/details/{id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // query params
+        if ($companyID !== null) {
+            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Store',
+                '/store/details/{id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Store', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Store', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 0:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation removeUserStore
      *
      * 
      *
@@ -610,14 +709,14 @@ class StoreApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function removeUserStorePrivileges($id, $deleteStoreUserRole, $productID = null, $couponID = null)
+    public function removeUserStore($id, $deleteStoreUserRole, $productID = null, $couponID = null)
     {
-        list($response) = $this->removeUserStorePrivilegesWithHttpInfo($id, $deleteStoreUserRole, $productID, $couponID);
+        list($response) = $this->removeUserStoreWithHttpInfo($id, $deleteStoreUserRole, $productID, $couponID);
         return $response;
     }
 
     /**
-     * Operation removeUserStorePrivilegesWithHttpInfo
+     * Operation removeUserStoreWithHttpInfo
      *
      * 
      *
@@ -628,15 +727,15 @@ class StoreApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserStorePrivilegesWithHttpInfo($id, $deleteStoreUserRole, $productID = null, $couponID = null)
+    public function removeUserStoreWithHttpInfo($id, $deleteStoreUserRole, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserStorePrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserStore');
         }
         // verify the required parameter 'deleteStoreUserRole' is set
         if ($deleteStoreUserRole === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $deleteStoreUserRole when calling removeUserStorePrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $deleteStoreUserRole when calling removeUserStore');
         }
         // parse inputs
         $resourcePath = "/store/{id}/user";
@@ -801,198 +900,6 @@ class StoreApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Success', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation storeGetCoupons
-     *
-     * 
-     *
-     * @param string $id ID for the store for which to find the coupons for (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Coupon
-     */
-    public function storeGetCoupons($id)
-    {
-        list($response) = $this->storeGetCouponsWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation storeGetCouponsWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id ID for the store for which to find the coupons for (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Coupon, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function storeGetCouponsWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling storeGetCoupons');
-        }
-        // parse inputs
-        $resourcePath = "/store/{id}/getCoupons";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Coupon',
-                '/store/{id}/getCoupons'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Coupon', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Coupon', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation storeGetDetails
-     *
-     * 
-     *
-     * @param string $id ID for the store to find the details for. (required)
-     * @param string $companyID Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Store
-     */
-    public function storeGetDetails($id, $companyID = null)
-    {
-        list($response) = $this->storeGetDetailsWithHttpInfo($id, $companyID);
-        return $response;
-    }
-
-    /**
-     * Operation storeGetDetailsWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id ID for the store to find the details for. (required)
-     * @param string $companyID Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Store, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function storeGetDetailsWithHttpInfo($id, $companyID = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling storeGetDetails');
-        }
-        // parse inputs
-        $resourcePath = "/store/details/{id}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // query params
-        if ($companyID !== null) {
-            $queryParams['companyID'] = $this->apiClient->getSerializer()->toQueryValue($companyID);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Store',
-                '/store/details/{id}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Store', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Store', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 0:

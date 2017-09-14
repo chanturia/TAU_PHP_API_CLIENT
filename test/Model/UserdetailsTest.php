@@ -99,14 +99,6 @@ class UserdetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
      * Test attribute "dateOfBirth"
      */
     public function testPropertyDateOfBirth()

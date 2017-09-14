@@ -77,12 +77,12 @@ class CompanyApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addUserCompanyRoles
+     * Test case for addUserCompany
      *
      * .
      *
      */
-    public function testAddUserCompanyRoles()
+    public function testAddUserCompany()
     {
 
     }
@@ -176,12 +176,12 @@ class CompanyApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for removeAdminUserCompany
+     * Test case for removeUserCompany
      *
      * .
      *
      */
-    public function testRemoveAdminUserCompany()
+    public function testRemoveUserCompany()
     {
 
     }

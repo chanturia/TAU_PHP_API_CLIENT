@@ -88,7 +88,7 @@ class CompanyApi
     }
 
     /**
-     * Operation addUserCompanyRoles
+     * Operation addUserCompany
      *
      * 
      *
@@ -101,14 +101,14 @@ class CompanyApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function addUserCompanyRoles($id, $brandID = null, $storeID = null, $productID = null, $couponID = null, $createCompanyUserRoles = null)
+    public function addUserCompany($id, $brandID = null, $storeID = null, $productID = null, $couponID = null, $createCompanyUserRoles = null)
     {
-        list($response) = $this->addUserCompanyRolesWithHttpInfo($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles);
+        list($response) = $this->addUserCompanyWithHttpInfo($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles);
         return $response;
     }
 
     /**
-     * Operation addUserCompanyRolesWithHttpInfo
+     * Operation addUserCompanyWithHttpInfo
      *
      * 
      *
@@ -121,11 +121,11 @@ class CompanyApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserCompanyRolesWithHttpInfo($id, $brandID = null, $storeID = null, $productID = null, $couponID = null, $createCompanyUserRoles = null)
+    public function addUserCompanyWithHttpInfo($id, $brandID = null, $storeID = null, $productID = null, $couponID = null, $createCompanyUserRoles = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserCompanyRoles');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserCompany');
         }
         // parse inputs
         $resourcePath = "/company/{id}/user";
@@ -1007,7 +1007,7 @@ class CompanyApi
     }
 
     /**
-     * Operation removeAdminUserCompany
+     * Operation removeUserCompany
      *
      * 
      *
@@ -1020,14 +1020,14 @@ class CompanyApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function removeAdminUserCompany($id, $deleteCompanyUserRoles, $brandID = null, $storeID = null, $productID = null, $couponID = null)
+    public function removeUserCompany($id, $deleteCompanyUserRoles, $brandID = null, $storeID = null, $productID = null, $couponID = null)
     {
-        list($response) = $this->removeAdminUserCompanyWithHttpInfo($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID);
+        list($response) = $this->removeUserCompanyWithHttpInfo($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID);
         return $response;
     }
 
     /**
-     * Operation removeAdminUserCompanyWithHttpInfo
+     * Operation removeUserCompanyWithHttpInfo
      *
      * 
      *
@@ -1040,15 +1040,15 @@ class CompanyApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeAdminUserCompanyWithHttpInfo($id, $deleteCompanyUserRoles, $brandID = null, $storeID = null, $productID = null, $couponID = null)
+    public function removeUserCompanyWithHttpInfo($id, $deleteCompanyUserRoles, $brandID = null, $storeID = null, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling removeAdminUserCompany');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserCompany');
         }
         // verify the required parameter 'deleteCompanyUserRoles' is set
         if ($deleteCompanyUserRoles === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $deleteCompanyUserRoles when calling removeAdminUserCompany');
+            throw new \InvalidArgumentException('Missing the required parameter $deleteCompanyUserRoles when calling removeUserCompany');
         }
         // parse inputs
         $resourcePath = "/company/{id}/user";

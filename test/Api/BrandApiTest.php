@@ -154,23 +154,12 @@ class BrandApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getBrandProducts
+     * Test case for removeUserBrand
      *
      * .
      *
      */
-    public function testGetBrandProducts()
-    {
-
-    }
-
-    /**
-     * Test case for removeUserBrandPrivileges
-     *
-     * .
-     *
-     */
-    public function testRemoveUserBrandPrivileges()
+    public function testRemoveUserBrand()
     {
 
     }

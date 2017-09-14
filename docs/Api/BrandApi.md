@@ -11,13 +11,12 @@ Method | HTTP request | Description
 [**createCouponBrand**](BrandApi.md#createCouponBrand) | **POST** /brand/{id}/coupon/create | 
 [**createProductBrand**](BrandApi.md#createProductBrand) | **POST** /brand/{id}/product/create | 
 [**getBrandDetails**](BrandApi.md#getBrandDetails) | **GET** /brand/details/{id} | 
-[**getBrandProducts**](BrandApi.md#getBrandProducts) | **GET** /brand/{id}/products | 
-[**removeUserBrandPrivileges**](BrandApi.md#removeUserBrandPrivileges) | **DELETE** /brand/{id}/user | 
+[**removeUserBrand**](BrandApi.md#removeUserBrand) | **DELETE** /brand/{id}/user | 
 [**updateBrand**](BrandApi.md#updateBrand) | **PUT** /brand/details/{id} | 
 
 
 # **addUserBrand**
-> \Swagger\Client\Model\UserID addUserBrand($id, $createBrandUserRoles, $productID, $couponID)
+> \Swagger\Client\Model\UserID addUserBrand($id, $createBrandUserRole, $productID, $couponID)
 
 
 
@@ -33,12 +32,12 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\BrandApi();
 $id = "id_example"; // string | ID for the Brand
-$createBrandUserRoles = new \Swagger\Client\Model\CreateBrandUserRoles(); // \Swagger\Client\Model\CreateBrandUserRoles | Brand's User Priveleges Parameters for the brand ID and UserID.
+$createBrandUserRole = new \Swagger\Client\Model\CreateBrandUserRole(); // \Swagger\Client\Model\CreateBrandUserRole | Brand's User Priveleges Parameters for the brand ID and UserID.
 $productID = "productID_example"; // string | ID of the Product connected with the Brand (only required for Authorization for the User making the request)
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Brand (only required for Authorization for the User making the request)
 
 try {
-    $result = $api_instance->addUserBrand($id, $createBrandUserRoles, $productID, $couponID);
+    $result = $api_instance->addUserBrand($id, $createBrandUserRole, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BrandApi->addUserBrand: ', $e->getMessage(), PHP_EOL;
@@ -51,7 +50,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Brand |
- **createBrandUserRoles** | [**\Swagger\Client\Model\CreateBrandUserRoles**](../Model/\Swagger\Client\Model\CreateBrandUserRoles.md)| Brand&#39;s User Priveleges Parameters for the brand ID and UserID. |
+ **createBrandUserRole** | [**\Swagger\Client\Model\CreateBrandUserRole**](../Model/\Swagger\Client\Model\CreateBrandUserRole.md)| Brand&#39;s User Priveleges Parameters for the brand ID and UserID. |
  **productID** | **string**| ID of the Product connected with the Brand (only required for Authorization for the User making the request) | [optional]
  **couponID** | **string**| ID of the Coupon connected with the Brand (only required for Authorization for the User making the request) | [optional]
 
@@ -368,56 +367,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getBrandProducts**
-> \Swagger\Client\Model\Product getBrandProducts($id)
-
-
-
-Searches for a Brands Products based on single brand id. Returns array of JSON Product Objects consisting of product id, product name and description.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\BrandApi();
-$id = "id_example"; // string | ID for the Brand to find the products for.
-
-try {
-    $result = $api_instance->getBrandProducts($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling BrandApi->getBrandProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the Brand to find the products for. |
-
-### Return type
-
-[**\Swagger\Client\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **removeUserBrandPrivileges**
-> \Swagger\Client\Model\UserID removeUserBrandPrivileges($id, $deleteBrandUserRoles, $productID, $couponID)
+# **removeUserBrand**
+> \Swagger\Client\Model\UserID removeUserBrand($id, $deleteBrandUserRole, $productID, $couponID)
 
 
 
@@ -433,15 +384,15 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\BrandApi();
 $id = "id_example"; // string | ID for the Brand
-$deleteBrandUserRoles = new \Swagger\Client\Model\DeleteBrandUserRoles(); // \Swagger\Client\Model\DeleteBrandUserRoles | Brand's User ID and privileges to be removed  for the brand ID.
+$deleteBrandUserRole = new \Swagger\Client\Model\DeleteBrandUserRole(); // \Swagger\Client\Model\DeleteBrandUserRole | Brand's User ID and privileges to be removed  for the brand ID.
 $productID = "productID_example"; // string | ID of the Product connected with the Brand (only required for Authorization for the User making the request)
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Brand (only required for Authorization for the User making the request)
 
 try {
-    $result = $api_instance->removeUserBrandPrivileges($id, $deleteBrandUserRoles, $productID, $couponID);
+    $result = $api_instance->removeUserBrand($id, $deleteBrandUserRole, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BrandApi->removeUserBrandPrivileges: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BrandApi->removeUserBrand: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -451,7 +402,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID for the Brand |
- **deleteBrandUserRoles** | [**\Swagger\Client\Model\DeleteBrandUserRoles**](../Model/\Swagger\Client\Model\DeleteBrandUserRoles.md)| Brand&#39;s User ID and privileges to be removed  for the brand ID. |
+ **deleteBrandUserRole** | [**\Swagger\Client\Model\DeleteBrandUserRole**](../Model/\Swagger\Client\Model\DeleteBrandUserRole.md)| Brand&#39;s User ID and privileges to be removed  for the brand ID. |
  **productID** | **string**| ID of the Product connected with the Brand (only required for Authorization for the User making the request) | [optional]
  **couponID** | **string**| ID of the Coupon connected with the Brand (only required for Authorization for the User making the request) | [optional]
 

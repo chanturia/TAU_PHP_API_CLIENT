@@ -77,12 +77,12 @@ class MerchantApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addUserMerchantPrivileges
+     * Test case for addUserMerchant
      *
      * .
      *
      */
-    public function testAddUserMerchantPrivileges()
+    public function testAddUserMerchant()
     {
 
     }
@@ -132,12 +132,12 @@ class MerchantApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getMerchantById
+     * Test case for getMerchantDetails
      *
      * .
      *
      */
-    public function testGetMerchantById()
+    public function testGetMerchantDetails()
     {
 
     }
@@ -154,23 +154,12 @@ class MerchantApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for merchantGetProducts
+     * Test case for removeUserMerchant
      *
      * .
      *
      */
-    public function testMerchantGetProducts()
-    {
-
-    }
-
-    /**
-     * Test case for removeUserMerchantPrivileges
-     *
-     * .
-     *
-     */
-    public function testRemoveUserMerchantPrivileges()
+    public function testRemoveUserMerchant()
     {
 
     }

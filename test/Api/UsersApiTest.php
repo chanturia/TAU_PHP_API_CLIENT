@@ -165,17 +165,6 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getPurchases
-     *
-     * .
-     *
-     */
-    public function testGetPurchases()
-    {
-
-    }
-
-    /**
      * Test case for getRoleGrants
      *
      * .
@@ -215,17 +204,6 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testResetPassword()
-    {
-
-    }
-
-    /**
-     * Test case for selectStore
-     *
-     * .
-     *
-     */
-    public function testSelectStore()
     {
 
     }

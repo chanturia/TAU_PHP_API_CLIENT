@@ -564,13 +564,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCredentials $createCredentials User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. (required)
+     * @param \Swagger\Client\Model\UserCreateCredentials $userCreateCredentials User credentials consisting of first name, last name , email and password. Optionally date of birth, gender, position coordinates and custom defined properties. Also a User can be created by its Facebook ID and optionally a Facebook image URL or by its Google ID and optionally a Google image URL. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\User
      */
-    public function createUser($createCredentials)
+    public function createUser($userCreateCredentials)
     {
-        list($response) = $this->createUserWithHttpInfo($createCredentials);
+        list($response) = $this->createUserWithHttpInfo($userCreateCredentials);
         return $response;
     }
 
@@ -579,15 +579,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\CreateCredentials $createCredentials User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. (required)
+     * @param \Swagger\Client\Model\UserCreateCredentials $userCreateCredentials User credentials consisting of first name, last name , email and password. Optionally date of birth, gender, position coordinates and custom defined properties. Also a User can be created by its Facebook ID and optionally a Facebook image URL or by its Google ID and optionally a Google image URL. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createUserWithHttpInfo($createCredentials)
+    public function createUserWithHttpInfo($userCreateCredentials)
     {
-        // verify the required parameter 'createCredentials' is set
-        if ($createCredentials === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $createCredentials when calling createUser');
+        // verify the required parameter 'userCreateCredentials' is set
+        if ($userCreateCredentials === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $userCreateCredentials when calling createUser');
         }
         // parse inputs
         $resourcePath = "/user/create";
@@ -606,8 +606,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($createCredentials)) {
-            $_tempBody = $createCredentials;
+        if (isset($userCreateCredentials)) {
+            $_tempBody = $userCreateCredentials;
         }
 
         // for model (json/xml)
@@ -840,99 +840,6 @@ class UsersApi
     }
 
     /**
-     * Operation getPurchases
-     *
-     * 
-     *
-     * @param string $id Id for the user to find the purchases for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Product
-     */
-    public function getPurchases($id)
-    {
-        list($response) = $this->getPurchasesWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation getPurchasesWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id Id for the user to find the purchases for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getPurchasesWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling getPurchases');
-        }
-        // parse inputs
-        $resourcePath = "/user/{id}/getPurchases";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Product',
-                '/user/{id}/getPurchases'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Product', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Product', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation getRoleGrants
      *
      * 
@@ -1030,13 +937,13 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\LoginCredentials $loginCredentials The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. (required)
+     * @param \Swagger\Client\Model\UserLoginCredentials $userLoginCredentials The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\User
      */
-    public function loginUser($loginCredentials)
+    public function loginUser($userLoginCredentials)
     {
-        list($response) = $this->loginUserWithHttpInfo($loginCredentials);
+        list($response) = $this->loginUserWithHttpInfo($userLoginCredentials);
         return $response;
     }
 
@@ -1045,15 +952,15 @@ class UsersApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\LoginCredentials $loginCredentials The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. (required)
+     * @param \Swagger\Client\Model\UserLoginCredentials $userLoginCredentials The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginUserWithHttpInfo($loginCredentials)
+    public function loginUserWithHttpInfo($userLoginCredentials)
     {
-        // verify the required parameter 'loginCredentials' is set
-        if ($loginCredentials === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $loginCredentials when calling loginUser');
+        // verify the required parameter 'userLoginCredentials' is set
+        if ($userLoginCredentials === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $userLoginCredentials when calling loginUser');
         }
         // parse inputs
         $resourcePath = "/user/login";
@@ -1072,8 +979,8 @@ class UsersApi
 
         // body params
         $_tempBody = null;
-        if (isset($loginCredentials)) {
-            $_tempBody = $loginCredentials;
+        if (isset($userLoginCredentials)) {
+            $_tempBody = $userLoginCredentials;
         }
 
         // for model (json/xml)
@@ -1275,96 +1182,6 @@ class UsersApi
                 $headerParams,
                 '\Swagger\Client\Model\UserID',
                 '/user/resetPassword'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserID', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UserID', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation selectStore
-     *
-     * 
-     *
-     * @param \Swagger\Client\Model\SelectStoreClientIDStoreID $selectStoreClientIDStoreID Id for the user and Id for the Store. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UserID
-     */
-    public function selectStore($selectStoreClientIDStoreID)
-    {
-        list($response) = $this->selectStoreWithHttpInfo($selectStoreClientIDStoreID);
-        return $response;
-    }
-
-    /**
-     * Operation selectStoreWithHttpInfo
-     *
-     * 
-     *
-     * @param \Swagger\Client\Model\SelectStoreClientIDStoreID $selectStoreClientIDStoreID Id for the user and Id for the Store. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function selectStoreWithHttpInfo($selectStoreClientIDStoreID)
-    {
-        // verify the required parameter 'selectStoreClientIDStoreID' is set
-        if ($selectStoreClientIDStoreID === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $selectStoreClientIDStoreID when calling selectStore');
-        }
-        // parse inputs
-        $resourcePath = "/user/selectStore";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($selectStoreClientIDStoreID)) {
-            $_tempBody = $selectStoreClientIDStoreID;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\UserID',
-                '/user/selectStore'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserID', $httpHeader), $statusCode, $httpHeader];

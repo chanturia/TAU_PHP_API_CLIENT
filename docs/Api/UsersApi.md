@@ -12,12 +12,10 @@ Method | HTTP request | Description
 [**createUser**](UsersApi.md#createUser) | **POST** /user/create | 
 [**editDetails**](UsersApi.md#editDetails) | **PUT** /user/details/{id} | 
 [**generatePasswordResetToken**](UsersApi.md#generatePasswordResetToken) | **POST** /user/generatePasswordResetToken | 
-[**getPurchases**](UsersApi.md#getPurchases) | **GET** /user/{id}/getPurchases | 
 [**getRoleGrants**](UsersApi.md#getRoleGrants) | **GET** /rolegrants/{role} | 
 [**loginUser**](UsersApi.md#loginUser) | **POST** /user/login | 
 [**logoutUser**](UsersApi.md#logoutUser) | **GET** /user/{id}/logout | 
 [**resetPassword**](UsersApi.md#resetPassword) | **POST** /user/resetPassword | 
-[**selectStore**](UsersApi.md#selectStore) | **POST** /user/selectStore | 
 [**submitMobile**](UsersApi.md#submitMobile) | **POST** /user/submitMobile | 
 [**userDelete**](UsersApi.md#userDelete) | **DELETE** /user/{id}/delete | 
 [**userGetDetails**](UsersApi.md#userGetDetails) | **GET** /user/details/{id} | 
@@ -274,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createUser**
-> \Swagger\Client\Model\User createUser($createCredentials)
+> \Swagger\Client\Model\User createUser($userCreateCredentials)
 
 
 
@@ -286,10 +284,10 @@ Creates and registers a new user based on personal details parameters including 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$createCredentials = new \Swagger\Client\Model\CreateCredentials(); // \Swagger\Client\Model\CreateCredentials | User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL.
+$userCreateCredentials = new \Swagger\Client\Model\UserCreateCredentials(); // \Swagger\Client\Model\UserCreateCredentials | User credentials consisting of first name, last name , email and password. Optionally date of birth, gender, position coordinates and custom defined properties. Also a User can be created by its Facebook ID and optionally a Facebook image URL or by its Google ID and optionally a Google image URL.
 
 try {
-    $result = $api_instance->createUser($createCredentials);
+    $result = $api_instance->createUser($userCreateCredentials);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->createUser: ', $e->getMessage(), PHP_EOL;
@@ -301,7 +299,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createCredentials** | [**\Swagger\Client\Model\CreateCredentials**](../Model/\Swagger\Client\Model\CreateCredentials.md)| User credentials consisting of first name, last name , email and password and optional date of birth and gender.Also User can be created by its facebookID and optionallu a facebook image URL or by its Google ID anad optionally a Google image URL. |
+ **userCreateCredentials** | [**\Swagger\Client\Model\UserCreateCredentials**](../Model/\Swagger\Client\Model\UserCreateCredentials.md)| User credentials consisting of first name, last name , email and password. Optionally date of birth, gender, position coordinates and custom defined properties. Also a User can be created by its Facebook ID and optionally a Facebook image URL or by its Google ID and optionally a Google image URL. |
 
 ### Return type
 
@@ -416,54 +414,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getPurchases**
-> \Swagger\Client\Model\Product getPurchases($id)
-
-
-
-Searches a client purchases by single user id. Returns array of JSON Products objects(Products can be any User purchase Service or Product).
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\UsersApi();
-$id = "id_example"; // string | Id for the user to find the purchases for.
-
-try {
-    $result = $api_instance->getPurchases($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->getPurchases: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Id for the user to find the purchases for. |
-
-### Return type
-
-[**\Swagger\Client\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **getRoleGrants**
 > \Swagger\Client\Model\RolesGrants getRoleGrants($role)
 
@@ -513,7 +463,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **loginUser**
-> \Swagger\Client\Model\User loginUser($loginCredentials)
+> \Swagger\Client\Model\User loginUser($userLoginCredentials)
 
 
 
@@ -525,10 +475,10 @@ Base auth login with email as username and password.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UsersApi();
-$loginCredentials = new \Swagger\Client\Model\LoginCredentials(); // \Swagger\Client\Model\LoginCredentials | The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks.
+$userLoginCredentials = new \Swagger\Client\Model\UserLoginCredentials(); // \Swagger\Client\Model\UserLoginCredentials | The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks.
 
 try {
-    $result = $api_instance->loginUser($loginCredentials);
+    $result = $api_instance->loginUser($userLoginCredentials);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->loginUser: ', $e->getMessage(), PHP_EOL;
@@ -540,7 +490,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginCredentials** | [**\Swagger\Client\Model\LoginCredentials**](../Model/\Swagger\Client\Model\LoginCredentials.md)| The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. |
+ **userLoginCredentials** | [**\Swagger\Client\Model\UserLoginCredentials**](../Model/\Swagger\Client\Model\UserLoginCredentials.md)| The user credentials consisting of email as username and password. Also Facebook ID or Google ID if the User is performing login with Social Networks. |
 
 ### Return type
 
@@ -637,54 +587,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resetPasswordCredentials** | [**\Swagger\Client\Model\ResetPasswordCredentials**](../Model/\Swagger\Client\Model\ResetPasswordCredentials.md)| Credentials for the User to reset password consisting of User id , ResetTokenToken and new password. |
-
-### Return type
-
-[**\Swagger\Client\Model\UserID**](../Model/UserID.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **selectStore**
-> \Swagger\Client\Model\UserID selectStore($selectStoreClientIDStoreID)
-
-
-
-Client by single user id selects Store by store id. Returns JSON with userID and storeID.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\UsersApi();
-$selectStoreClientIDStoreID = new \Swagger\Client\Model\SelectStoreClientIDStoreID(); // \Swagger\Client\Model\SelectStoreClientIDStoreID | Id for the user and Id for the Store.
-
-try {
-    $result = $api_instance->selectStore($selectStoreClientIDStoreID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->selectStore: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **selectStoreClientIDStoreID** | [**\Swagger\Client\Model\SelectStoreClientIDStoreID**](../Model/\Swagger\Client\Model\SelectStoreClientIDStoreID.md)| Id for the user and Id for the Store. |
 
 ### Return type
 

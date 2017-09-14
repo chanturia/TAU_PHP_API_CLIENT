@@ -227,7 +227,7 @@ class CreateBrandUserRoles implements ArrayAccess
 
     /**
      * Sets productID
-     * @param string $productID Grant role for this product ID
+     * @param string $productID Grant role for this product ID of the Brand.
      * @return $this
      */
     public function setProductID($productID)
@@ -248,7 +248,7 @@ class CreateBrandUserRoles implements ArrayAccess
 
     /**
      * Sets couponID
-     * @param string $couponID Grant role for this coupon ID
+     * @param string $couponID Grant role for this coupon ID  of the Brand.
      * @return $this
      */
     public function setCouponID($couponID)

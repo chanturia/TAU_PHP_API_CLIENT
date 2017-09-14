@@ -4,20 +4,19 @@ All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addUserRoleForStore**](StoreApi.md#addUserRoleForStore) | **POST** /store/{id}/user | 
+[**addUserStore**](StoreApi.md#addUserStore) | **POST** /store/{id}/user | 
 [**allStores**](StoreApi.md#allStores) | **GET** /store/all | 
-[**createCouponForStore**](StoreApi.md#createCouponForStore) | **POST** /store/{id}/coupon/create | 
+[**createCouponStore**](StoreApi.md#createCouponStore) | **POST** /store/{id}/coupon/create | 
 [**createProductStore**](StoreApi.md#createProductStore) | **POST** /store/{id}/product/create | 
 [**createStore**](StoreApi.md#createStore) | **POST** /store/create | 
-[**removeUserStorePrivileges**](StoreApi.md#removeUserStorePrivileges) | **DELETE** /store/{id}/user | 
+[**getStoreDetails**](StoreApi.md#getStoreDetails) | **GET** /store/details/{id} | 
+[**removeUserStore**](StoreApi.md#removeUserStore) | **DELETE** /store/{id}/user | 
 [**storeDelete**](StoreApi.md#storeDelete) | **DELETE** /store/{id}/delete | 
-[**storeGetCoupons**](StoreApi.md#storeGetCoupons) | **GET** /store/{id}/getCoupons | 
-[**storeGetDetails**](StoreApi.md#storeGetDetails) | **GET** /store/details/{id} | 
 [**updateStore**](StoreApi.md#updateStore) | **PUT** /store/details/{id} | 
 
 
-# **addUserRoleForStore**
-> \Swagger\Client\Model\UserID addUserRoleForStore($id, $createStoreUserRole, $productID, $couponID)
+# **addUserStore**
+> \Swagger\Client\Model\UserID addUserStore($id, $createStoreUserRole, $productID, $couponID)
 
 
 
@@ -38,10 +37,10 @@ $productID = "productID_example"; // string | ID of the Product connected with t
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Store (only required for Authorization for the User making the request)
 
 try {
-    $result = $api_instance->addUserRoleForStore($id, $createStoreUserRole, $productID, $couponID);
+    $result = $api_instance->addUserStore($id, $createStoreUserRole, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StoreApi->addUserRoleForStore: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StoreApi->addUserStore: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -122,8 +121,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createCouponForStore**
-> \Swagger\Client\Model\Coupon createCouponForStore($id, $storeCouponcreateParameters)
+# **createCouponStore**
+> \Swagger\Client\Model\Coupon createCouponStore($id, $storeCouponcreateParameters)
 
 
 
@@ -142,10 +141,10 @@ $id = "id_example"; // string | ID for the Store
 $storeCouponcreateParameters = new \Swagger\Client\Model\StoreCouponcreateParameters(); // \Swagger\Client\Model\StoreCouponcreateParameters | Coupon Parameters consisting of userid who initiated the creation proccess, products ids, categories ids, subcategories ids, primitives ids and optionally store ids.
 
 try {
-    $result = $api_instance->createCouponForStore($id, $storeCouponcreateParameters);
+    $result = $api_instance->createCouponStore($id, $storeCouponcreateParameters);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StoreApi->createCouponForStore: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StoreApi->createCouponStore: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -270,8 +269,58 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **removeUserStorePrivileges**
-> \Swagger\Client\Model\UserID removeUserStorePrivileges($id, $deleteStoreUserRole, $productID, $couponID)
+# **getStoreDetails**
+> \Swagger\Client\Model\Store getStoreDetails($id, $companyID)
+
+
+
+Searches for a Stores details by ID and returns JSON Store Object with store id and optionally type, kind, createdBy, name and address.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\StoreApi();
+$id = "id_example"; // string | ID for the store to find the details for.
+$companyID = "companyID_example"; // string | Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company.
+
+try {
+    $result = $api_instance->getStoreDetails($id, $companyID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling StoreApi->getStoreDetails: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID for the store to find the details for. |
+ **companyID** | **string**| Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Store**](../Model/Store.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **removeUserStore**
+> \Swagger\Client\Model\UserID removeUserStore($id, $deleteStoreUserRole, $productID, $couponID)
 
 
 
@@ -292,10 +341,10 @@ $productID = "productID_example"; // string | ID of the Product connected with t
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Store (only required for Authorization for the User making the request)
 
 try {
-    $result = $api_instance->removeUserStorePrivileges($id, $deleteStoreUserRole, $productID, $couponID);
+    $result = $api_instance->removeUserStore($id, $deleteStoreUserRole, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StoreApi->removeUserStorePrivileges: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StoreApi->removeUserStore: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -362,104 +411,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Success**](../Model/Success.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **storeGetCoupons**
-> \Swagger\Client\Model\Coupon storeGetCoupons($id)
-
-
-
-Searches for a Stores available Coupons by single store id. Returns array of JSON Coupon objects consisting of couponID, coupon type, coupon categories, coupon subcategories, coupon products and coupon brands.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\StoreApi();
-$id = "id_example"; // string | ID for the store for which to find the coupons for
-
-try {
-    $result = $api_instance->storeGetCoupons($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StoreApi->storeGetCoupons: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the store for which to find the coupons for |
-
-### Return type
-
-[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **storeGetDetails**
-> \Swagger\Client\Model\Store storeGetDetails($id, $companyID)
-
-
-
-Searches for a Stores details by ID and returns JSON Store Object with store id and optionally type, kind, createdBy, name and address.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\StoreApi();
-$id = "id_example"; // string | ID for the store to find the details for.
-$companyID = "companyID_example"; // string | Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company.
-
-try {
-    $result = $api_instance->storeGetDetails($id, $companyID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StoreApi->storeGetDetails: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the store to find the details for. |
- **companyID** | **string**| Company ID Parameter for the company that the store is connected to. Required only if the store is connected with a company. | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\Store**](../Model/Store.md)
 
 ### Authorization
 

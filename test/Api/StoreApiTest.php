@@ -77,12 +77,12 @@ class StoreApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addUserRoleForStore
+     * Test case for addUserStore
      *
      * .
      *
      */
-    public function testAddUserRoleForStore()
+    public function testAddUserStore()
     {
 
     }
@@ -99,12 +99,12 @@ class StoreApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createCouponForStore
+     * Test case for createCouponStore
      *
      * .
      *
      */
-    public function testCreateCouponForStore()
+    public function testCreateCouponStore()
     {
 
     }
@@ -132,12 +132,23 @@ class StoreApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for removeUserStorePrivileges
+     * Test case for getStoreDetails
      *
      * .
      *
      */
-    public function testRemoveUserStorePrivileges()
+    public function testGetStoreDetails()
+    {
+
+    }
+
+    /**
+     * Test case for removeUserStore
+     *
+     * .
+     *
+     */
+    public function testRemoveUserStore()
     {
 
     }
@@ -149,28 +160,6 @@ class StoreApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testStoreDelete()
-    {
-
-    }
-
-    /**
-     * Test case for storeGetCoupons
-     *
-     * .
-     *
-     */
-    public function testStoreGetCoupons()
-    {
-
-    }
-
-    /**
-     * Test case for storeGetDetails
-     *
-     * .
-     *
-     */
-    public function testStoreGetDetails()
     {
 
     }

@@ -132,56 +132,34 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for deleteProduct
+     * Test case for getProductDetails
      *
      * .
      *
      */
-    public function testDeleteProduct()
+    public function testGetProductDetails()
     {
 
     }
 
     /**
-     * Test case for getProductById
+     * Test case for productDelete
      *
      * .
      *
      */
-    public function testGetProductById()
+    public function testProductDelete()
     {
 
     }
 
     /**
-     * Test case for getProductCoupons
+     * Test case for removeUserProduct
      *
      * .
      *
      */
-    public function testGetProductCoupons()
-    {
-
-    }
-
-    /**
-     * Test case for removeUserProductPrivileges
-     *
-     * .
-     *
-     */
-    public function testRemoveUserProductPrivileges()
-    {
-
-    }
-
-    /**
-     * Test case for updateBarcodes
-     *
-     * .
-     *
-     */
-    public function testUpdateBarcodes()
+    public function testRemoveUserProduct()
     {
 
     }
@@ -193,6 +171,17 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testUpdateProduct()
+    {
+
+    }
+
+    /**
+     * Test case for updateProductBarcodes
+     *
+     * .
+     *
+     */
+    public function testUpdateProductBarcodes()
     {
 
     }

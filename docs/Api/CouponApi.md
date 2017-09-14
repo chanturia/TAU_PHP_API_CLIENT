@@ -14,15 +14,13 @@ Method | HTTP request | Description
 [**createCoupon**](CouponApi.md#createCoupon) | **POST** /coupon/create | 
 [**createCouponPrimitive**](CouponApi.md#createCouponPrimitive) | **POST** /coupon/primitive/create | 
 [**deleteCoupon**](CouponApi.md#deleteCoupon) | **DELETE** /coupon/{id}/delete | 
-[**editCouponCategory**](CouponApi.md#editCouponCategory) | **PUT** /coupon/category/{couponCategoryID} | 
-[**editCouponPrimitive**](CouponApi.md#editCouponPrimitive) | **PUT** /coupon/primitive/{primitiveID}/details | 
-[**getCouponById**](CouponApi.md#getCouponById) | **GET** /coupon/{id}/details | 
-[**getCouponCategoryById**](CouponApi.md#getCouponCategoryById) | **GET** /coupon/category/{couponCategoryID} | 
-[**getCouponPrimitiveById**](CouponApi.md#getCouponPrimitiveById) | **GET** /coupon/primitive/{primitiveID}/details | 
-[**getCouponTerms**](CouponApi.md#getCouponTerms) | **GET** /coupon/{id}/terms | 
+[**getCouponCategoryDetails**](CouponApi.md#getCouponCategoryDetails) | **GET** /coupon/category/{couponCategoryID} | 
+[**getCouponDetails**](CouponApi.md#getCouponDetails) | **GET** /coupon/{id}/details | 
+[**getCouponPrimitiveDetails**](CouponApi.md#getCouponPrimitiveDetails) | **GET** /coupon/primitive/{primitiveID}/details | 
 [**removeUserCouponPrivileges**](CouponApi.md#removeUserCouponPrivileges) | **DELETE** /coupon/{id}/user | 
-[**setCouponTerms**](CouponApi.md#setCouponTerms) | **POST** /coupon/{id}/terms | 
 [**updateCoupon**](CouponApi.md#updateCoupon) | **PUT** /coupon/{id}/details | 
+[**updateCouponCategory**](CouponApi.md#updateCouponCategory) | **PUT** /coupon/category/{couponCategoryID} | 
+[**updateCouponPrimitive**](CouponApi.md#updateCouponPrimitive) | **PUT** /coupon/primitive/{primitiveID}/details | 
 
 
 # **addUserCoupon**
@@ -420,7 +418,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCouponPrimitive**
-> \Swagger\Client\Model\CouponPrimitive createCouponPrimitive($primitiveParameters)
+> \Swagger\Client\Model\CouponPrimitive createCouponPrimitive($createPrimitiveParameters)
 
 
 
@@ -435,10 +433,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\CouponApi();
-$primitiveParameters = new \Swagger\Client\Model\PrimitiveParameters(); // \Swagger\Client\Model\PrimitiveParameters | Coupon Primitive parameters including primitive name, description and primitive validator URL, validator inputs and validator outputs.
+$createPrimitiveParameters = new \Swagger\Client\Model\CreatePrimitiveParameters(); // \Swagger\Client\Model\CreatePrimitiveParameters | Coupon Primitive parameters including primitive name, description and primitive validator URL, validator inputs and validator outputs.
 
 try {
-    $result = $api_instance->createCouponPrimitive($primitiveParameters);
+    $result = $api_instance->createCouponPrimitive($createPrimitiveParameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->createCouponPrimitive: ', $e->getMessage(), PHP_EOL;
@@ -450,7 +448,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **primitiveParameters** | [**\Swagger\Client\Model\PrimitiveParameters**](../Model/\Swagger\Client\Model\PrimitiveParameters.md)| Coupon Primitive parameters including primitive name, description and primitive validator URL, validator inputs and validator outputs. |
+ **createPrimitiveParameters** | [**\Swagger\Client\Model\CreatePrimitiveParameters**](../Model/\Swagger\Client\Model\CreatePrimitiveParameters.md)| Coupon Primitive parameters including primitive name, description and primitive validator URL, validator inputs and validator outputs. |
 
 ### Return type
 
@@ -525,12 +523,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **editCouponCategory**
-> \Swagger\Client\Model\CouponCategoryID editCouponCategory($couponCategoryID, $updateCouponCategoryParameters)
+# **getCouponCategoryDetails**
+> \Swagger\Client\Model\CouponCategory getCouponCategoryDetails($couponCategoryID)
 
 
 
-Edit a Coupon Category by included category parameters
+Finds a Coupon Category based on single category id.
 
 ### Example
 ```php
@@ -541,14 +539,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Swagger\Client\Api\CouponApi();
-$couponCategoryID = "couponCategoryID_example"; // string | ID for the Coupon Category to be updated.
-$updateCouponCategoryParameters = new \Swagger\Client\Model\UpdateCouponCategoryParameters(); // \Swagger\Client\Model\UpdateCouponCategoryParameters | Coupon Category parameters
+$couponCategoryID = "couponCategoryID_example"; // string | ID for the Coupon Category being searched for.
 
 try {
-    $result = $api_instance->editCouponCategory($couponCategoryID, $updateCouponCategoryParameters);
+    $result = $api_instance->getCouponCategoryDetails($couponCategoryID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CouponApi->editCouponCategory: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CouponApi->getCouponCategoryDetails: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -557,12 +554,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **couponCategoryID** | **string**| ID for the Coupon Category to be updated. |
- **updateCouponCategoryParameters** | [**\Swagger\Client\Model\UpdateCouponCategoryParameters**](../Model/\Swagger\Client\Model\UpdateCouponCategoryParameters.md)| Coupon Category parameters |
+ **couponCategoryID** | **string**| ID for the Coupon Category being searched for. |
 
 ### Return type
 
-[**\Swagger\Client\Model\CouponCategoryID**](../Model/CouponCategoryID.md)
+[**\Swagger\Client\Model\CouponCategory**](../Model/CouponCategory.md)
 
 ### Authorization
 
@@ -575,58 +571,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **editCouponPrimitive**
-> \Swagger\Client\Model\CouponPrimitiveID editCouponPrimitive($primitiveID, $couponPrimitiveParameters)
-
-
-
-Edit a Coupon Primitive by included primitive parameters.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\CouponApi();
-$primitiveID = "primitiveID_example"; // string | ID for the Coupon Primitive to be updated.
-$couponPrimitiveParameters = new \Swagger\Client\Model\CouponPrimitiveParameters(); // \Swagger\Client\Model\CouponPrimitiveParameters | Coupon Primitive parameters includingprimitive name, description, validator URL, validator inputs and validator outputs.
-
-try {
-    $result = $api_instance->editCouponPrimitive($primitiveID, $couponPrimitiveParameters);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CouponApi->editCouponPrimitive: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **primitiveID** | **string**| ID for the Coupon Primitive to be updated. |
- **couponPrimitiveParameters** | [**\Swagger\Client\Model\CouponPrimitiveParameters**](../Model/\Swagger\Client\Model\CouponPrimitiveParameters.md)| Coupon Primitive parameters includingprimitive name, description, validator URL, validator inputs and validator outputs. |
-
-### Return type
-
-[**\Swagger\Client\Model\CouponPrimitiveID**](../Model/CouponPrimitiveID.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getCouponById**
-> \Swagger\Client\Model\Coupon getCouponById($id, $companyID, $brandID, $storeID, $merchantID, $productID)
+# **getCouponDetails**
+> \Swagger\Client\Model\Coupon getCouponDetails($id, $companyID, $brandID, $storeID, $merchantID, $productID)
 
 
 
@@ -649,10 +595,10 @@ $merchantID = "merchantID_example"; // string | Merchant ID Parameter for the Me
 $productID = "productID_example"; // string | Product ID Parameter for the Product that the Coupon is connected to. Required only if the Coupon is connected with a Product.
 
 try {
-    $result = $api_instance->getCouponById($id, $companyID, $brandID, $storeID, $merchantID, $productID);
+    $result = $api_instance->getCouponDetails($id, $companyID, $brandID, $storeID, $merchantID, $productID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CouponApi->getCouponById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CouponApi->getCouponDetails: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -683,56 +629,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getCouponCategoryById**
-> \Swagger\Client\Model\CouponCategory getCouponCategoryById($couponCategoryID)
-
-
-
-Finds a Coupon Category based on single category id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\CouponApi();
-$couponCategoryID = "couponCategoryID_example"; // string | ID for the Coupon Category being searched for.
-
-try {
-    $result = $api_instance->getCouponCategoryById($couponCategoryID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CouponApi->getCouponCategoryById: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **couponCategoryID** | **string**| ID for the Coupon Category being searched for. |
-
-### Return type
-
-[**\Swagger\Client\Model\CouponCategory**](../Model/CouponCategory.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getCouponPrimitiveById**
-> \Swagger\Client\Model\CouponPrimitive getCouponPrimitiveById($primitiveID)
+# **getCouponPrimitiveDetails**
+> \Swagger\Client\Model\CouponPrimitive getCouponPrimitiveDetails($primitiveID)
 
 
 
@@ -750,10 +648,10 @@ $api_instance = new Swagger\Client\Api\CouponApi();
 $primitiveID = "primitiveID_example"; // string | ID for the Coupon Primitive being searched for.
 
 try {
-    $result = $api_instance->getCouponPrimitiveById($primitiveID);
+    $result = $api_instance->getCouponPrimitiveDetails($primitiveID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CouponApi->getCouponPrimitiveById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CouponApi->getCouponPrimitiveDetails: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -767,54 +665,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\CouponPrimitive**](../Model/CouponPrimitive.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getCouponTerms**
-> \Swagger\Client\Model\CouponTerms getCouponTerms($id)
-
-
-
-Finds a Coupons Terms & Conditions based on single coupon id
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\CouponApi();
-$id = "id_example"; // string | ID for the coupon being searched for
-
-try {
-    $result = $api_instance->getCouponTerms($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CouponApi->getCouponTerms: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the coupon being searched for |
-
-### Return type
-
-[**\Swagger\Client\Model\CouponTerms**](../Model/CouponTerms.md)
 
 ### Authorization
 
@@ -877,56 +727,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **setCouponTerms**
-> \Swagger\Client\Model\Coupon setCouponTerms($id, $setCouponTermsParameters)
-
-
-
-Sets a Coupons Terms & Conditions based on single coupon id
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: OauthSecurityApplications
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new Swagger\Client\Api\CouponApi();
-$id = "id_example"; // string | ID for the coupon being searched for
-$setCouponTermsParameters = new \Swagger\Client\Model\SetCouponTermsParameters(); // \Swagger\Client\Model\SetCouponTermsParameters | Coupon Parameters for the coupon to be updated
-
-try {
-    $result = $api_instance->setCouponTerms($id, $setCouponTermsParameters);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CouponApi->setCouponTerms: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ID for the coupon being searched for |
- **setCouponTermsParameters** | [**\Swagger\Client\Model\SetCouponTermsParameters**](../Model/\Swagger\Client\Model\SetCouponTermsParameters.md)| Coupon Parameters for the coupon to be updated |
-
-### Return type
-
-[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
-
-### Authorization
-
-[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **updateCoupon**
 > \Swagger\Client\Model\CouponID updateCoupon($id, $updateCouponParameters, $companyID, $brandID, $storeID, $merchantID, $productID)
 
@@ -975,6 +775,106 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\CouponID**](../Model/CouponID.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateCouponCategory**
+> \Swagger\Client\Model\CouponCategoryID updateCouponCategory($couponCategoryID, $updateCouponCategoryParameters)
+
+
+
+Edit a Coupon Category by included category parameters
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\CouponApi();
+$couponCategoryID = "couponCategoryID_example"; // string | ID for the Coupon Category to be updated.
+$updateCouponCategoryParameters = new \Swagger\Client\Model\UpdateCouponCategoryParameters(); // \Swagger\Client\Model\UpdateCouponCategoryParameters | Coupon Category parameters
+
+try {
+    $result = $api_instance->updateCouponCategory($couponCategoryID, $updateCouponCategoryParameters);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CouponApi->updateCouponCategory: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **couponCategoryID** | **string**| ID for the Coupon Category to be updated. |
+ **updateCouponCategoryParameters** | [**\Swagger\Client\Model\UpdateCouponCategoryParameters**](../Model/\Swagger\Client\Model\UpdateCouponCategoryParameters.md)| Coupon Category parameters |
+
+### Return type
+
+[**\Swagger\Client\Model\CouponCategoryID**](../Model/CouponCategoryID.md)
+
+### Authorization
+
+[OauthSecurityApplications](../../README.md#OauthSecurityApplications)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateCouponPrimitive**
+> \Swagger\Client\Model\CouponPrimitiveID updateCouponPrimitive($primitiveID, $updateCouponPrimitiveParameters)
+
+
+
+Edit a Coupon Primitive by included primitive parameters.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OauthSecurityApplications
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new Swagger\Client\Api\CouponApi();
+$primitiveID = "primitiveID_example"; // string | ID for the Coupon Primitive to be updated.
+$updateCouponPrimitiveParameters = new \Swagger\Client\Model\UpdateCouponPrimitiveParameters(); // \Swagger\Client\Model\UpdateCouponPrimitiveParameters | Coupon Primitive parameters includingprimitive name, description, validator URL, validator inputs and validator outputs.
+
+try {
+    $result = $api_instance->updateCouponPrimitive($primitiveID, $updateCouponPrimitiveParameters);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CouponApi->updateCouponPrimitive: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **primitiveID** | **string**| ID for the Coupon Primitive to be updated. |
+ **updateCouponPrimitiveParameters** | [**\Swagger\Client\Model\UpdateCouponPrimitiveParameters**](../Model/\Swagger\Client\Model\UpdateCouponPrimitiveParameters.md)| Coupon Primitive parameters includingprimitive name, description, validator URL, validator inputs and validator outputs. |
+
+### Return type
+
+[**\Swagger\Client\Model\CouponPrimitiveID**](../Model/CouponPrimitiveID.md)
 
 ### Authorization
 

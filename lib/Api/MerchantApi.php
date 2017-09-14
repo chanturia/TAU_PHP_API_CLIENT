@@ -88,7 +88,7 @@ class MerchantApi
     }
 
     /**
-     * Operation addUserMerchantPrivileges
+     * Operation addUserMerchant
      *
      * 
      *
@@ -99,14 +99,14 @@ class MerchantApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function addUserMerchantPrivileges($id, $productID = null, $couponID = null, $createMerchantUserRole = null)
+    public function addUserMerchant($id, $productID = null, $couponID = null, $createMerchantUserRole = null)
     {
-        list($response) = $this->addUserMerchantPrivilegesWithHttpInfo($id, $productID, $couponID, $createMerchantUserRole);
+        list($response) = $this->addUserMerchantWithHttpInfo($id, $productID, $couponID, $createMerchantUserRole);
         return $response;
     }
 
     /**
-     * Operation addUserMerchantPrivilegesWithHttpInfo
+     * Operation addUserMerchantWithHttpInfo
      *
      * 
      *
@@ -117,11 +117,11 @@ class MerchantApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserMerchantPrivilegesWithHttpInfo($id, $productID = null, $couponID = null, $createMerchantUserRole = null)
+    public function addUserMerchantWithHttpInfo($id, $productID = null, $couponID = null, $createMerchantUserRole = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserMerchantPrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling addUserMerchant');
         }
         // parse inputs
         $resourcePath = "/merchant/{id}/user";
@@ -589,7 +589,7 @@ class MerchantApi
     }
 
     /**
-     * Operation getMerchantById
+     * Operation getMerchantDetails
      *
      * 
      *
@@ -597,14 +597,14 @@ class MerchantApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Merchant
      */
-    public function getMerchantById($id)
+    public function getMerchantDetails($id)
     {
-        list($response) = $this->getMerchantByIdWithHttpInfo($id);
+        list($response) = $this->getMerchantDetailsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation getMerchantByIdWithHttpInfo
+     * Operation getMerchantDetailsWithHttpInfo
      *
      * 
      *
@@ -612,11 +612,11 @@ class MerchantApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Merchant, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMerchantByIdWithHttpInfo($id)
+    public function getMerchantDetailsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling getMerchantById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling getMerchantDetails');
         }
         // parse inputs
         $resourcePath = "/merchant/details/{id}";
@@ -775,100 +775,7 @@ class MerchantApi
     }
 
     /**
-     * Operation merchantGetProducts
-     *
-     * 
-     *
-     * @param string $id UserID for the merchant to find the Products for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Product
-     */
-    public function merchantGetProducts($id)
-    {
-        list($response) = $this->merchantGetProductsWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation merchantGetProductsWithHttpInfo
-     *
-     * 
-     *
-     * @param string $id UserID for the merchant to find the Products for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function merchantGetProductsWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling merchantGetProducts');
-        }
-        // parse inputs
-        $resourcePath = "/merchant/{id}/getProducts";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Product',
-                '/merchant/{id}/getProducts'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Product', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Product', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation removeUserMerchantPrivileges
+     * Operation removeUserMerchant
      *
      * 
      *
@@ -879,14 +786,14 @@ class MerchantApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserID
      */
-    public function removeUserMerchantPrivileges($id, $deleteMerchantUserRole, $productID = null, $couponID = null)
+    public function removeUserMerchant($id, $deleteMerchantUserRole, $productID = null, $couponID = null)
     {
-        list($response) = $this->removeUserMerchantPrivilegesWithHttpInfo($id, $deleteMerchantUserRole, $productID, $couponID);
+        list($response) = $this->removeUserMerchantWithHttpInfo($id, $deleteMerchantUserRole, $productID, $couponID);
         return $response;
     }
 
     /**
-     * Operation removeUserMerchantPrivilegesWithHttpInfo
+     * Operation removeUserMerchantWithHttpInfo
      *
      * 
      *
@@ -897,15 +804,15 @@ class MerchantApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserID, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserMerchantPrivilegesWithHttpInfo($id, $deleteMerchantUserRole, $productID = null, $couponID = null)
+    public function removeUserMerchantWithHttpInfo($id, $deleteMerchantUserRole, $productID = null, $couponID = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserMerchantPrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling removeUserMerchant');
         }
         // verify the required parameter 'deleteMerchantUserRole' is set
         if ($deleteMerchantUserRole === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $deleteMerchantUserRole when calling removeUserMerchantPrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $deleteMerchantUserRole when calling removeUserMerchant');
         }
         // parse inputs
         $resourcePath = "/merchant/{id}/user";

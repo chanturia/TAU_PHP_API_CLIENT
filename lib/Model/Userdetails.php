@@ -56,7 +56,6 @@ class Userdetails implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'lastName' => 'string',
-        'email' => 'string',
         'dateOfBirth' => '\DateTime',
         'gender' => 'string',
         'geoPosition' => '\Swagger\Client\Model\Geometry',
@@ -75,7 +74,6 @@ class Userdetails implements ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'lastName' => 'lastName',
-        'email' => 'email',
         'dateOfBirth' => 'dateOfBirth',
         'gender' => 'gender',
         'geoPosition' => 'geoPosition',
@@ -90,7 +88,6 @@ class Userdetails implements ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'lastName' => 'setLastName',
-        'email' => 'setEmail',
         'dateOfBirth' => 'setDateOfBirth',
         'gender' => 'setGender',
         'geoPosition' => 'setGeoPosition',
@@ -105,7 +102,6 @@ class Userdetails implements ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'lastName' => 'getLastName',
-        'email' => 'getEmail',
         'dateOfBirth' => 'getDateOfBirth',
         'gender' => 'getGender',
         'geoPosition' => 'getGeoPosition',
@@ -145,7 +141,6 @@ class Userdetails implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['geoPosition'] = isset($data['geoPosition']) ? $data['geoPosition'] : null;
@@ -215,27 +210,6 @@ class Userdetails implements ArrayAccess
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     * @param string $email User email address
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
 
         return $this;
     }

@@ -4,7 +4,7 @@ All URIs are relative to *http://api.trustanduse.com/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addUserCompanyRoles**](CompanyApi.md#addUserCompanyRoles) | **POST** /company/{id}/user | 
+[**addUserCompany**](CompanyApi.md#addUserCompany) | **POST** /company/{id}/user | 
 [**allCompanies**](CompanyApi.md#allCompanies) | **GET** /company/all | 
 [**companyDelete**](CompanyApi.md#companyDelete) | **DELETE** /company/{id}/delete | 
 [**companyGetDetails**](CompanyApi.md#companyGetDetails) | **GET** /company/details/{id} | 
@@ -13,12 +13,12 @@ Method | HTTP request | Description
 [**createCouponForCompany**](CompanyApi.md#createCouponForCompany) | **POST** /company/{id}/coupon/create | 
 [**createProductCompany**](CompanyApi.md#createProductCompany) | **POST** /company/{id}/product/create | 
 [**createStoreForCompany**](CompanyApi.md#createStoreForCompany) | **POST** /company/{id}/store/create | 
-[**removeAdminUserCompany**](CompanyApi.md#removeAdminUserCompany) | **DELETE** /company/{id}/user | 
+[**removeUserCompany**](CompanyApi.md#removeUserCompany) | **DELETE** /company/{id}/user | 
 [**updateCompany**](CompanyApi.md#updateCompany) | **PUT** /company/details/{id} | 
 
 
-# **addUserCompanyRoles**
-> \Swagger\Client\Model\UserID addUserCompanyRoles($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles)
+# **addUserCompany**
+> \Swagger\Client\Model\UserID addUserCompany($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles)
 
 
 
@@ -41,10 +41,10 @@ $couponID = "couponID_example"; // string | ID of the Coupon connected with the 
 $createCompanyUserRoles = new \Swagger\Client\Model\CreateCompanyUserRoles(); // \Swagger\Client\Model\CreateCompanyUserRoles | Company's User Priveleges Parameters for the company ID and userID.
 
 try {
-    $result = $api_instance->addUserCompanyRoles($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles);
+    $result = $api_instance->addUserCompany($id, $brandID, $storeID, $productID, $couponID, $createCompanyUserRoles);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CompanyApi->addUserCompanyRoles: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CompanyApi->addUserCompany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -473,8 +473,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **removeAdminUserCompany**
-> \Swagger\Client\Model\UserID removeAdminUserCompany($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID)
+# **removeUserCompany**
+> \Swagger\Client\Model\UserID removeUserCompany($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID)
 
 
 
@@ -497,10 +497,10 @@ $productID = "productID_example"; // string | ID of the Product connected with t
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Company (only required for Authorization for the User making the request)
 
 try {
-    $result = $api_instance->removeAdminUserCompany($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID);
+    $result = $api_instance->removeUserCompany($id, $deleteCompanyUserRoles, $brandID, $storeID, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CompanyApi->removeAdminUserCompany: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CompanyApi->removeUserCompany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

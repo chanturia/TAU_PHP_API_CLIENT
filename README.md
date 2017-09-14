@@ -62,12 +62,12 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api\BrandApi();
 $id = "id_example"; // string | ID for the Brand
-$createBrandUserRoles = new \Swagger\Client\Model\CreateBrandUserRoles(); // \Swagger\Client\Model\CreateBrandUserRoles | Brand's User Priveleges Parameters for the brand ID and UserID.
+$createBrandUserRole = new \Swagger\Client\Model\CreateBrandUserRole(); // \Swagger\Client\Model\CreateBrandUserRole | Brand's User Priveleges Parameters for the brand ID and UserID.
 $productID = "productID_example"; // string | ID of the Product connected with the Brand (only required for Authorization for the User making the request)
 $couponID = "couponID_example"; // string | ID of the Coupon connected with the Brand (only required for Authorization for the User making the request)
 
 try {
-    $result = $api_instance->addUserBrand($id, $createBrandUserRoles, $productID, $couponID);
+    $result = $api_instance->addUserBrand($id, $createBrandUserRole, $productID, $couponID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BrandApi->addUserBrand: ', $e->getMessage(), PHP_EOL;
@@ -89,10 +89,12 @@ Class | Method | HTTP request | Description
 *BrandApi* | [**createCouponBrand**](docs/Api/BrandApi.md#createcouponbrand) | **POST** /brand/{id}/coupon/create | 
 *BrandApi* | [**createProductBrand**](docs/Api/BrandApi.md#createproductbrand) | **POST** /brand/{id}/product/create | 
 *BrandApi* | [**getBrandDetails**](docs/Api/BrandApi.md#getbranddetails) | **GET** /brand/details/{id} | 
-*BrandApi* | [**getBrandProducts**](docs/Api/BrandApi.md#getbrandproducts) | **GET** /brand/{id}/products | 
-*BrandApi* | [**removeUserBrandPrivileges**](docs/Api/BrandApi.md#removeuserbrandprivileges) | **DELETE** /brand/{id}/user | 
+*BrandApi* | [**removeUserBrand**](docs/Api/BrandApi.md#removeuserbrand) | **DELETE** /brand/{id}/user | 
 *BrandApi* | [**updateBrand**](docs/Api/BrandApi.md#updatebrand) | **PUT** /brand/details/{id} | 
-*CompanyApi* | [**addUserCompanyRoles**](docs/Api/CompanyApi.md#addusercompanyroles) | **POST** /company/{id}/user | 
+*ClientappsApi* | [**createClientApplication**](docs/Api/ClientappsApi.md#createclientapplication) | **POST** /clientapp | 
+*ClientappsApi* | [**generateAccessTokenForClientApp**](docs/Api/ClientappsApi.md#generateaccesstokenforclientapp) | **POST** /clientapp/generateAccessToken | 
+*ClientappsApi* | [**getClientAppDetails**](docs/Api/ClientappsApi.md#getclientappdetails) | **GET** /clientapp/{id} | 
+*CompanyApi* | [**addUserCompany**](docs/Api/CompanyApi.md#addusercompany) | **POST** /company/{id}/user | 
 *CompanyApi* | [**allCompanies**](docs/Api/CompanyApi.md#allcompanies) | **GET** /company/all | 
 *CompanyApi* | [**companyDelete**](docs/Api/CompanyApi.md#companydelete) | **DELETE** /company/{id}/delete | 
 *CompanyApi* | [**companyGetDetails**](docs/Api/CompanyApi.md#companygetdetails) | **GET** /company/details/{id} | 
@@ -101,7 +103,7 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**createCouponForCompany**](docs/Api/CompanyApi.md#createcouponforcompany) | **POST** /company/{id}/coupon/create | 
 *CompanyApi* | [**createProductCompany**](docs/Api/CompanyApi.md#createproductcompany) | **POST** /company/{id}/product/create | 
 *CompanyApi* | [**createStoreForCompany**](docs/Api/CompanyApi.md#createstoreforcompany) | **POST** /company/{id}/store/create | 
-*CompanyApi* | [**removeAdminUserCompany**](docs/Api/CompanyApi.md#removeadminusercompany) | **DELETE** /company/{id}/user | 
+*CompanyApi* | [**removeUserCompany**](docs/Api/CompanyApi.md#removeusercompany) | **DELETE** /company/{id}/user | 
 *CompanyApi* | [**updateCompany**](docs/Api/CompanyApi.md#updatecompany) | **PUT** /company/details/{id} | 
 *CouponApi* | [**addUserCoupon**](docs/Api/CouponApi.md#addusercoupon) | **POST** /coupon/{id}/user | 
 *CouponApi* | [**allCouponCategories**](docs/Api/CouponApi.md#allcouponcategories) | **GET** /coupon/categories | 
@@ -113,45 +115,40 @@ Class | Method | HTTP request | Description
 *CouponApi* | [**createCoupon**](docs/Api/CouponApi.md#createcoupon) | **POST** /coupon/create | 
 *CouponApi* | [**createCouponPrimitive**](docs/Api/CouponApi.md#createcouponprimitive) | **POST** /coupon/primitive/create | 
 *CouponApi* | [**deleteCoupon**](docs/Api/CouponApi.md#deletecoupon) | **DELETE** /coupon/{id}/delete | 
-*CouponApi* | [**editCouponCategory**](docs/Api/CouponApi.md#editcouponcategory) | **PUT** /coupon/category/{couponCategoryID} | 
-*CouponApi* | [**editCouponPrimitive**](docs/Api/CouponApi.md#editcouponprimitive) | **PUT** /coupon/primitive/{primitiveID}/details | 
-*CouponApi* | [**getCouponById**](docs/Api/CouponApi.md#getcouponbyid) | **GET** /coupon/{id}/details | 
-*CouponApi* | [**getCouponCategoryById**](docs/Api/CouponApi.md#getcouponcategorybyid) | **GET** /coupon/category/{couponCategoryID} | 
-*CouponApi* | [**getCouponPrimitiveById**](docs/Api/CouponApi.md#getcouponprimitivebyid) | **GET** /coupon/primitive/{primitiveID}/details | 
-*CouponApi* | [**getCouponTerms**](docs/Api/CouponApi.md#getcouponterms) | **GET** /coupon/{id}/terms | 
+*CouponApi* | [**getCouponCategoryDetails**](docs/Api/CouponApi.md#getcouponcategorydetails) | **GET** /coupon/category/{couponCategoryID} | 
+*CouponApi* | [**getCouponDetails**](docs/Api/CouponApi.md#getcoupondetails) | **GET** /coupon/{id}/details | 
+*CouponApi* | [**getCouponPrimitiveDetails**](docs/Api/CouponApi.md#getcouponprimitivedetails) | **GET** /coupon/primitive/{primitiveID}/details | 
 *CouponApi* | [**removeUserCouponPrivileges**](docs/Api/CouponApi.md#removeusercouponprivileges) | **DELETE** /coupon/{id}/user | 
-*CouponApi* | [**setCouponTerms**](docs/Api/CouponApi.md#setcouponterms) | **POST** /coupon/{id}/terms | 
 *CouponApi* | [**updateCoupon**](docs/Api/CouponApi.md#updatecoupon) | **PUT** /coupon/{id}/details | 
-*MerchantApi* | [**addUserMerchantPrivileges**](docs/Api/MerchantApi.md#addusermerchantprivileges) | **POST** /merchant/{id}/user | 
+*CouponApi* | [**updateCouponCategory**](docs/Api/CouponApi.md#updatecouponcategory) | **PUT** /coupon/category/{couponCategoryID} | 
+*CouponApi* | [**updateCouponPrimitive**](docs/Api/CouponApi.md#updatecouponprimitive) | **PUT** /coupon/primitive/{primitiveID}/details | 
+*MerchantApi* | [**addUserMerchant**](docs/Api/MerchantApi.md#addusermerchant) | **POST** /merchant/{id}/user | 
 *MerchantApi* | [**allMerchants**](docs/Api/MerchantApi.md#allmerchants) | **GET** /merchant/all | 
 *MerchantApi* | [**createCouponMerchant**](docs/Api/MerchantApi.md#createcouponmerchant) | **POST** /merchant/{id}/coupon/create | 
 *MerchantApi* | [**createMerchant**](docs/Api/MerchantApi.md#createmerchant) | **POST** /merchant/create | 
 *MerchantApi* | [**createProductMerchant**](docs/Api/MerchantApi.md#createproductmerchant) | **POST** /merchant/{id}/product/create | 
-*MerchantApi* | [**getMerchantById**](docs/Api/MerchantApi.md#getmerchantbyid) | **GET** /merchant/details/{id} | 
+*MerchantApi* | [**getMerchantDetails**](docs/Api/MerchantApi.md#getmerchantdetails) | **GET** /merchant/details/{id} | 
 *MerchantApi* | [**merchantDelete**](docs/Api/MerchantApi.md#merchantdelete) | **DELETE** /merchant/{id}/delete | 
-*MerchantApi* | [**merchantGetProducts**](docs/Api/MerchantApi.md#merchantgetproducts) | **GET** /merchant/{id}/getProducts | 
-*MerchantApi* | [**removeUserMerchantPrivileges**](docs/Api/MerchantApi.md#removeusermerchantprivileges) | **DELETE** /merchant/{id}/user | 
+*MerchantApi* | [**removeUserMerchant**](docs/Api/MerchantApi.md#removeusermerchant) | **DELETE** /merchant/{id}/user | 
 *MerchantApi* | [**updateMerchant**](docs/Api/MerchantApi.md#updatemerchant) | **PUT** /merchant/details/{id} | 
 *ProductApi* | [**addProductBarcode**](docs/Api/ProductApi.md#addproductbarcode) | **POST** /product/{id}/barcodes | 
 *ProductApi* | [**addUserProduct**](docs/Api/ProductApi.md#adduserproduct) | **POST** /product/{id}/user | 
 *ProductApi* | [**allProducts**](docs/Api/ProductApi.md#allproducts) | **GET** /product/all | 
 *ProductApi* | [**createCouponProduct**](docs/Api/ProductApi.md#createcouponproduct) | **POST** /product/{id}/coupon/create | 
 *ProductApi* | [**createProduct**](docs/Api/ProductApi.md#createproduct) | **POST** /product/create | 
-*ProductApi* | [**deleteProduct**](docs/Api/ProductApi.md#deleteproduct) | **DELETE** /product/{id}/delete | 
-*ProductApi* | [**getProductById**](docs/Api/ProductApi.md#getproductbyid) | **GET** /product/details/{id} | 
-*ProductApi* | [**getProductCoupons**](docs/Api/ProductApi.md#getproductcoupons) | **GET** /product/{id}/coupons | 
-*ProductApi* | [**removeUserProductPrivileges**](docs/Api/ProductApi.md#removeuserproductprivileges) | **DELETE** /product/{id}/user | 
-*ProductApi* | [**updateBarcodes**](docs/Api/ProductApi.md#updatebarcodes) | **PUT** /product/{id}/barcodes | 
+*ProductApi* | [**getProductDetails**](docs/Api/ProductApi.md#getproductdetails) | **GET** /product/details/{id} | 
+*ProductApi* | [**productDelete**](docs/Api/ProductApi.md#productdelete) | **DELETE** /product/{id}/delete | 
+*ProductApi* | [**removeUserProduct**](docs/Api/ProductApi.md#removeuserproduct) | **DELETE** /product/{id}/user | 
 *ProductApi* | [**updateProduct**](docs/Api/ProductApi.md#updateproduct) | **PUT** /product/details/{id} | 
-*StoreApi* | [**addUserRoleForStore**](docs/Api/StoreApi.md#adduserroleforstore) | **POST** /store/{id}/user | 
+*ProductApi* | [**updateProductBarcodes**](docs/Api/ProductApi.md#updateproductbarcodes) | **PUT** /product/{id}/barcodes | 
+*StoreApi* | [**addUserStore**](docs/Api/StoreApi.md#adduserstore) | **POST** /store/{id}/user | 
 *StoreApi* | [**allStores**](docs/Api/StoreApi.md#allstores) | **GET** /store/all | 
-*StoreApi* | [**createCouponForStore**](docs/Api/StoreApi.md#createcouponforstore) | **POST** /store/{id}/coupon/create | 
+*StoreApi* | [**createCouponStore**](docs/Api/StoreApi.md#createcouponstore) | **POST** /store/{id}/coupon/create | 
 *StoreApi* | [**createProductStore**](docs/Api/StoreApi.md#createproductstore) | **POST** /store/{id}/product/create | 
 *StoreApi* | [**createStore**](docs/Api/StoreApi.md#createstore) | **POST** /store/create | 
-*StoreApi* | [**removeUserStorePrivileges**](docs/Api/StoreApi.md#removeuserstoreprivileges) | **DELETE** /store/{id}/user | 
+*StoreApi* | [**getStoreDetails**](docs/Api/StoreApi.md#getstoredetails) | **GET** /store/details/{id} | 
+*StoreApi* | [**removeUserStore**](docs/Api/StoreApi.md#removeuserstore) | **DELETE** /store/{id}/user | 
 *StoreApi* | [**storeDelete**](docs/Api/StoreApi.md#storedelete) | **DELETE** /store/{id}/delete | 
-*StoreApi* | [**storeGetCoupons**](docs/Api/StoreApi.md#storegetcoupons) | **GET** /store/{id}/getCoupons | 
-*StoreApi* | [**storeGetDetails**](docs/Api/StoreApi.md#storegetdetails) | **GET** /store/details/{id} | 
 *StoreApi* | [**updateStore**](docs/Api/StoreApi.md#updatestore) | **PUT** /store/details/{id} | 
 *UsersApi* | [**allUsers**](docs/Api/UsersApi.md#allusers) | **GET** /user/all | 
 *UsersApi* | [**authorizeReturnAccessToken**](docs/Api/UsersApi.md#authorizereturnaccesstoken) | **POST** /oauth2/token | 
@@ -161,12 +158,10 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**createUser**](docs/Api/UsersApi.md#createuser) | **POST** /user/create | 
 *UsersApi* | [**editDetails**](docs/Api/UsersApi.md#editdetails) | **PUT** /user/details/{id} | 
 *UsersApi* | [**generatePasswordResetToken**](docs/Api/UsersApi.md#generatepasswordresettoken) | **POST** /user/generatePasswordResetToken | 
-*UsersApi* | [**getPurchases**](docs/Api/UsersApi.md#getpurchases) | **GET** /user/{id}/getPurchases | 
 *UsersApi* | [**getRoleGrants**](docs/Api/UsersApi.md#getrolegrants) | **GET** /rolegrants/{role} | 
 *UsersApi* | [**loginUser**](docs/Api/UsersApi.md#loginuser) | **POST** /user/login | 
 *UsersApi* | [**logoutUser**](docs/Api/UsersApi.md#logoutuser) | **GET** /user/{id}/logout | 
 *UsersApi* | [**resetPassword**](docs/Api/UsersApi.md#resetpassword) | **POST** /user/resetPassword | 
-*UsersApi* | [**selectStore**](docs/Api/UsersApi.md#selectstore) | **POST** /user/selectStore | 
 *UsersApi* | [**submitMobile**](docs/Api/UsersApi.md#submitmobile) | **POST** /user/submitMobile | 
 *UsersApi* | [**userDelete**](docs/Api/UsersApi.md#userdelete) | **DELETE** /user/{id}/delete | 
 *UsersApi* | [**userGetDetails**](docs/Api/UsersApi.md#usergetdetails) | **GET** /user/details/{id} | 
@@ -187,6 +182,10 @@ Class | Method | HTTP request | Description
  - [BrandUpdateDetailsParameters](docs/Model/BrandUpdateDetailsParameters.md)
  - [BrandsArray](docs/Model/BrandsArray.md)
  - [ChangeMobileNumberParameter](docs/Model/ChangeMobileNumberParameter.md)
+ - [ClientAppAccessToken](docs/Model/ClientAppAccessToken.md)
+ - [ClientApplication](docs/Model/ClientApplication.md)
+ - [ClientApplicationClientapp](docs/Model/ClientApplicationClientapp.md)
+ - [ClientApplicationID](docs/Model/ClientApplicationID.md)
  - [CompaniesArray](docs/Model/CompaniesArray.md)
  - [Company](docs/Model/Company.md)
  - [CompanyBrandCreateParameters](docs/Model/CompanyBrandCreateParameters.md)
@@ -201,32 +200,33 @@ Class | Method | HTTP request | Description
  - [CouponID](docs/Model/CouponID.md)
  - [CouponPrimitive](docs/Model/CouponPrimitive.md)
  - [CouponPrimitiveID](docs/Model/CouponPrimitiveID.md)
- - [CouponPrimitiveParameters](docs/Model/CouponPrimitiveParameters.md)
  - [CouponPrimitivesArray](docs/Model/CouponPrimitivesArray.md)
  - [CouponTerms](docs/Model/CouponTerms.md)
  - [CouponsArray](docs/Model/CouponsArray.md)
- - [CreateBrandUserRoles](docs/Model/CreateBrandUserRoles.md)
+ - [CreateBrandUserRole](docs/Model/CreateBrandUserRole.md)
+ - [CreateClientAppParameters](docs/Model/CreateClientAppParameters.md)
  - [CreateCompanyParameters](docs/Model/CreateCompanyParameters.md)
  - [CreateCompanyUserRoles](docs/Model/CreateCompanyUserRoles.md)
  - [CreateCouponCategoryParameters](docs/Model/CreateCouponCategoryParameters.md)
  - [CreateCouponParameters](docs/Model/CreateCouponParameters.md)
  - [CreateCouponUserRole](docs/Model/CreateCouponUserRole.md)
- - [CreateCredentials](docs/Model/CreateCredentials.md)
  - [CreateMerchantUserRole](docs/Model/CreateMerchantUserRole.md)
+ - [CreatePrimitiveParameters](docs/Model/CreatePrimitiveParameters.md)
+ - [CreateProductUserRole](docs/Model/CreateProductUserRole.md)
  - [CreateStoreParameters](docs/Model/CreateStoreParameters.md)
  - [CreateStoreUserRole](docs/Model/CreateStoreUserRole.md)
- - [DeleteBrandUserRoles](docs/Model/DeleteBrandUserRoles.md)
+ - [DeleteBrandUserRole](docs/Model/DeleteBrandUserRole.md)
  - [DeleteCompanyUserRoles](docs/Model/DeleteCompanyUserRoles.md)
  - [DeleteCouponUserRole](docs/Model/DeleteCouponUserRole.md)
  - [DeleteMerchantUserRole](docs/Model/DeleteMerchantUserRole.md)
  - [DeleteProductUserRole](docs/Model/DeleteProductUserRole.md)
  - [DeleteStoreUserRole](docs/Model/DeleteStoreUserRole.md)
  - [Error](docs/Model/Error.md)
+ - [GenerateAccessTokenClientAppParameters](docs/Model/GenerateAccessTokenClientAppParameters.md)
  - [Geometry](docs/Model/Geometry.md)
  - [IdPinNumber](docs/Model/IdPinNumber.md)
  - [Image](docs/Model/Image.md)
  - [LineString](docs/Model/LineString.md)
- - [LoginCredentials](docs/Model/LoginCredentials.md)
  - [Merchant](docs/Model/Merchant.md)
  - [MerchantCouponCreateParameters](docs/Model/MerchantCouponCreateParameters.md)
  - [MerchantCreateParameters](docs/Model/MerchantCreateParameters.md)
@@ -244,18 +244,14 @@ Class | Method | HTTP request | Description
  - [Point](docs/Model/Point.md)
  - [Point2D](docs/Model/Point2D.md)
  - [Polygon](docs/Model/Polygon.md)
- - [PrimitiveParameters](docs/Model/PrimitiveParameters.md)
  - [Product](docs/Model/Product.md)
- - [ProductAdminRole](docs/Model/ProductAdminRole.md)
  - [ProductCouponCreateParameters](docs/Model/ProductCouponCreateParameters.md)
+ - [ProductCreateParameters](docs/Model/ProductCreateParameters.md)
  - [ProductID](docs/Model/ProductID.md)
- - [ProductParameters](docs/Model/ProductParameters.md)
  - [ProductsArray](docs/Model/ProductsArray.md)
  - [ResetPasswordCredentials](docs/Model/ResetPasswordCredentials.md)
  - [Role](docs/Model/Role.md)
  - [RolesGrants](docs/Model/RolesGrants.md)
- - [SelectStoreClientIDStoreID](docs/Model/SelectStoreClientIDStoreID.md)
- - [SetCouponTermsParameters](docs/Model/SetCouponTermsParameters.md)
  - [Store](docs/Model/Store.md)
  - [StoreCouponcreateParameters](docs/Model/StoreCouponcreateParameters.md)
  - [StoreID](docs/Model/StoreID.md)
@@ -267,10 +263,13 @@ Class | Method | HTTP request | Description
  - [UpdateCompanyParameters](docs/Model/UpdateCompanyParameters.md)
  - [UpdateCouponCategoryParameters](docs/Model/UpdateCouponCategoryParameters.md)
  - [UpdateCouponParameters](docs/Model/UpdateCouponParameters.md)
+ - [UpdateCouponPrimitiveParameters](docs/Model/UpdateCouponPrimitiveParameters.md)
  - [UpdateProductParameters](docs/Model/UpdateProductParameters.md)
  - [UpdateStoreParameters](docs/Model/UpdateStoreParameters.md)
  - [User](docs/Model/User.md)
+ - [UserCreateCredentials](docs/Model/UserCreateCredentials.md)
  - [UserID](docs/Model/UserID.md)
+ - [UserLoginCredentials](docs/Model/UserLoginCredentials.md)
  - [Userdetails](docs/Model/Userdetails.md)
  - [UsersArray](docs/Model/UsersArray.md)
 

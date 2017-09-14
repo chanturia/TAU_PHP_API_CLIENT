@@ -227,7 +227,7 @@ class DeleteBrandUserRoles implements ArrayAccess
 
     /**
      * Sets productID
-     * @param string $productID Role to be removed is connected with this product ID
+     * @param string $productID Role to be removed is connected with this product ID of the Brand.
      * @return $this
      */
     public function setProductID($productID)
@@ -248,7 +248,7 @@ class DeleteBrandUserRoles implements ArrayAccess
 
     /**
      * Sets couponID
-     * @param string $couponID Role to be removed is connected with this coupon ID
+     * @param string $couponID Role to be removed is connected with this coupon ID of the Brand.
      * @return $this
      */
     public function setCouponID($couponID)
